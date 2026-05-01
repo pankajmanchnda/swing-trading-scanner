@@ -1,483 +1,592 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Swing Trading Scanner</title>
+    <meta charset="UTF-8">
+    <title>High-Conviction Swing Trading Scanner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
+        :root {
+            --bg: #f3f4f6;
+            --card: #ffffff;
+            --text: #111827;
+            --muted: #6b7280;
+            --border: #e5e7eb;
+            --dark: #111827;
+            --green: #047857;
+            --green-bg: #d1fae5;
+            --red: #b91c1c;
+            --red-bg: #fee2e2;
+            --orange: #f97316;
+            --orange-bg: #fff7ed;
+            --blue: #1d4ed8;
+            --blue-bg: #dbeafe;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
             margin: 0;
-            padding: 30px;
-            color: #222;
+            padding: 28px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
         }
 
         .container {
-            max-width: 1200px;
-            margin: auto;
+            max-width: 1500px;
+            margin: 0 auto;
         }
 
-        h1 {
-            color: #111827;
-            margin-bottom: 5px;
+        .header {
+            margin-bottom: 26px;
         }
 
-        .subtitle {
-            color: #6b7280;
-            margin-bottom: 25px;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .card {
-            background: white;
-            padding: 18px;
-            border-radius: 14px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .card h3 {
+        .header h1 {
+            font-size: 38px;
             margin: 0 0 8px;
-            font-size: 15px;
-            color: #374151;
+            letter-spacing: -0.8px;
         }
 
-        .card p {
+        .header p {
+            color: var(--muted);
             margin: 0;
-            font-size: 22px;
-            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(160px, 1fr));
+            gap: 16px;
+            margin-bottom: 26px;
+        }
+
+        .metric {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+            border: 1px solid var(--border);
+        }
+
+        .metric span {
+            color: var(--muted);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .metric strong {
+            display: block;
+            font-size: 28px;
+            margin-top: 8px;
         }
 
         .explain {
-            background: #fff7ed;
-            border-left: 5px solid #f97316;
-            padding: 18px;
+            background: var(--orange-bg);
+            border-left: 6px solid var(--orange);
+            padding: 20px 24px;
+            border-radius: 16px;
+            margin-bottom: 22px;
+            line-height: 1.65;
+            font-size: 15px;
+        }
+
+        .explain h2 {
+            margin: 0 0 8px;
+            font-size: 20px;
+        }
+
+        .rules {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-bottom: 24px;
+        }
+
+        .rule-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 3px 14px rgba(0,0,0,0.06);
+        }
+
+        .rule-card h3 {
+            margin: 0 0 12px;
+            font-size: 19px;
+        }
+
+        .rule-card ul {
+            margin: 0;
+            padding-left: 20px;
+            line-height: 1.65;
+            color: #374151;
+        }
+
+        .criteria {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 3px 14px rgba(0,0,0,0.06);
+        }
+
+        .criteria h2 {
+            margin-top: 0;
+        }
+
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .criteria-item {
+            background: #f9fafb;
+            border: 1px solid var(--border);
+            padding: 14px;
             border-radius: 12px;
-            margin-bottom: 25px;
-            line-height: 1.6;
+        }
+
+        .criteria-item strong {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            background: var(--card);
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            box-shadow: 0 3px 14px rgba(0,0,0,0.08);
         }
 
         table {
             width: 100%;
+            min-width: 1700px;
             border-collapse: collapse;
-            background: white;
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
         th {
-            background: #111827;
+            background: var(--dark);
             color: white;
-            padding: 12px;
             text-align: left;
+            padding: 14px 12px;
             font-size: 13px;
+            white-space: nowrap;
         }
 
         td {
-            padding: 12px;
-            border-bottom: 1px solid #e5e7eb;
+            padding: 14px 12px;
+            border-bottom: 1px solid var(--border);
             font-size: 13px;
+            vertical-align: top;
+            color: #1f2937;
         }
 
         tr:hover {
             background: #f9fafb;
         }
 
+        .stock {
+            font-weight: 800;
+            color: #111827;
+            white-space: nowrap;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 7px 10px;
+            border-radius: 999px;
+            font-weight: 800;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
         .buy {
-            color: #047857;
-            font-weight: bold;
+            background: var(--green-bg);
+            color: var(--green);
         }
 
         .sell {
-            color: #b91c1c;
-            font-weight: bold;
+            background: var(--red-bg);
+            color: var(--red);
+        }
+
+        .neutral {
+            background: #e5e7eb;
+            color: #374151;
+        }
+
+        .grade {
+            display: inline-block;
+            min-width: 44px;
+            text-align: center;
+            padding: 7px 10px;
+            border-radius: 10px;
+            font-weight: 800;
+        }
+
+        .grade-a {
+            background: var(--green-bg);
+            color: var(--green);
+        }
+
+        .grade-b {
+            background: var(--blue-bg);
+            color: var(--blue);
+        }
+
+        .grade-neutral {
+            background: #e5e7eb;
+            color: #374151;
+        }
+
+        .score {
+            font-weight: 900;
+            font-size: 15px;
+        }
+
+        .empty {
+            text-align: center;
+            padding: 40px;
+            font-size: 16px;
+            color: var(--muted);
         }
 
         .footer {
-            margin-top: 25px;
-            color: #6b7280;
+            margin-top: 24px;
+            color: var(--muted);
             font-size: 13px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 900px) {
+            body {
+                padding: 18px;
+            }
+
+            .metrics {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .rules {
+                grid-template-columns: 1fr;
+            }
+
+            .criteria-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 30px;
+            }
         }
     </style>
 </head>
+
 <body>
 <div class="container">
 
-    <h1>📈 Swing Trading Scanner Report</h1>
-    <p class="subtitle">Generated on 01 May 2026, 11:58 AM</p>
+    <section class="header">
+        <h1>📈 High-Conviction Swing Trading Scanner</h1>
+        <p>Generated on 01 May 2026, 02:36 PM · NIFTY 500 watchlist · Educational research dashboard</p>
+    </section>
 
-    <div class="cards">
-        <div class="card">
-            <h3>Total Candidates</h3>
-            <p>20</p>
+    <section class="metrics">
+        <div class="metric">
+            <span>Total Candidates</span>
+            <strong>9</strong>
         </div>
-        <div class="card">
-            <h3>BUY Watchlist</h3>
-            <p>10</p>
+        <div class="metric">
+            <span>BUY Setups</span>
+            <strong>3</strong>
         </div>
-        <div class="card">
-            <h3>SELL Watchlist</h3>
-            <p>10</p>
+        <div class="metric">
+            <span>SELL Setups</span>
+            <strong>6</strong>
         </div>
-        <div class="card">
-            <h3>Best Score</h3>
-            <p>8.0</p>
+        <div class="metric">
+            <span>Best Conviction</span>
+            <strong>84</strong>
         </div>
-    </div>
+        <div class="metric">
+            <span>Average Risk/Reward</span>
+            <strong>2.5</strong>
+        </div>
+    </section>
 
-    <div class="explain">
-        <strong>How to read this report:</strong><br>
-        A stock in the BUY watchlist is near a breakout.  
-        If it crosses the <strong>Entry Trigger</strong>, it becomes a valid trade candidate.  
-        The <strong>Stop Loss</strong> is your risk control level.  
-        The <strong>Target</strong> is the expected reward area.  
-        The <strong>Score</strong> ranks the quality of the setup — higher is better.
-    </div>
+    <section class="explain">
+        <h2>How to read this report</h2>
+        <strong>BUY</strong> means the stock is showing bullish strength and is close to a breakout trigger.
+        <strong>SELL</strong> means the stock is showing weakness and is close to a breakdown trigger.
+        Do not enter just because the stock appears in the table. Enter only if the price crosses the
+        <strong>Entry Trigger</strong> with convincing volume. The <strong>Stop Loss</strong> defines your risk,
+        the <strong>Target</strong> defines the reward zone, and the <strong>Conviction Score</strong> ranks setup quality.
+    </section>
 
-    <table>
+    <section class="rules">
+        <div class="rule-card">
+            <h3>✅ Entry Rules</h3>
+            <ul>
+                <li>For BUY: price must move above the Entry Trigger.</li>
+                <li>For SELL: price must move below the Entry Trigger.</li>
+                <li>Prefer trades where market direction supports the trade.</li>
+                <li>Use the Stop Loss exactly; do not average losing trades.</li>
+                <li>Risk only a small fixed percentage of capital per trade.</li>
+            </ul>
+        </div>
+
+        <div class="rule-card">
+            <h3>🚫 Avoid Rules</h3>
+            <ul>
+                <li>Avoid if price opens far beyond the trigger; do not chase.</li>
+                <li>Avoid if volume is weak at the trigger.</li>
+                <li>Avoid BUY trades if NIFTY is sharply weak.</li>
+                <li>Avoid SELL trades if NIFTY is sharply strong.</li>
+                <li>Avoid if the setup is near major news, results, or event risk.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="criteria">
+        <h2>Suggested Investment Criteria</h2>
+        <div class="criteria-grid">
+            <div class="criteria-item">
+                <strong>Conviction 85–100</strong>
+                Grade A. Best setups. Consider only if trigger breaks with strong volume.
+            </div>
+            <div class="criteria-item">
+                <strong>Conviction 75–84</strong>
+                Grade B+. Watchlist. Use smaller position or wait for stronger confirmation.
+            </div>
+            <div class="criteria-item">
+                <strong>Conviction below 75</strong>
+                Not shown. Setup is too weak for this scanner.
+            </div>
+            <div class="criteria-item">
+                <strong>Risk Rule</strong>
+                Avoid any trade where risk/reward is below 2.5.
+            </div>
+        </div>
+    </section>
+
+    <section class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Stock</th>
+                    <th>Signal</th>
+                    <th>Grade</th>
+                    <th>Conviction</th>
+                    <th>Close</th>
+                    <th>Entry Trigger</th>
+                    <th>Stop Loss</th>
+                    <th>Target</th>
+                    <th>Risk/Reward</th>
+                    <th>RSI</th>
+                    <th>ATR%</th>
+                    <th>Volume Ratio</th>
+                    <th>Rel. Strength vs NIFTY</th>
+                    <th>Distance to Trigger</th>
+                    <th>When to Enter</th>
+                    <th>When to Avoid</th>
+                    <th>Why It Qualified</th>
+                </tr>
+            </thead>
+            <tbody>
+                
         <tr>
-            <th>Stock</th>
-            <th>Signal</th>
-            <th>Close</th>
-            <th>Entry Trigger</th>
-            <th>Stop Loss</th>
-            <th>Target</th>
-            <th>Change %</th>
-            <th>Volume Ratio</th>
-            <th>Score</th>
-            <th>Explanation</th>
+            <td class="stock">INDUSINDBK.NS</td>
+            <td><span class="badge buy">BUY</span></td>
+            <td><span class="grade grade-b">B+</span></td>
+            <td class="score">84</td>
+            <td>916.05</td>
+            <td>925.0</td>
+            <td>882.9</td>
+            <td>1030.24</td>
+            <td>2.5</td>
+            <td>63.2</td>
+            <td>3.06%</td>
+            <td>1.12</td>
+            <td>14.28</td>
+            <td>0.98%</td>
+            <td>Enter only if price moves above Entry Trigger with strong volume.</td>
+            <td>Avoid if price opens far beyond trigger, volume is weak, or market index is sharply against the trade.</td>
+            <td>High-conviction bullish setup: uptrend, relative strength versus NIFTY, acceptable volume, controlled volatility, and close to breakout trigger.</td>
         </tr>
         
         <tr>
-            <td><strong>BAJFINANCE.NS</strong></td>
-            <td class="buy">BUY WATCHLIST</td>
-            <td>937.0</td>
-            <td>937.0</td>
-            <td>916.6</td>
-            <td>977.8</td>
-            <td>0.75%</td>
-            <td>2.8</td>
-            <td>8.0</td>
-            <td>
-                Stock is near breakout/breakdown.  
-                Trade only if it crosses the entry trigger.
-            </td>
-        </tr>
-        
-        <tr>
-            <td><strong>KPITTECH.NS</strong></td>
-            <td class="buy">BUY WATCHLIST</td>
-            <td>759.05</td>
-            <td>758.9</td>
-            <td>737.0</td>
-            <td>802.7</td>
-            <td>2.57%</td>
-            <td>1.67</td>
-            <td>7.98</td>
-            <td>
-                Stock is near breakout/breakdown.  
-                Trade only if it crosses the entry trigger.
-            </td>
-        </tr>
-        
-        <tr>
-            <td><strong>SUNTV.NS</strong></td>
-            <td class="buy">BUY WATCHLIST</td>
-            <td>605.6</td>
-            <td>605.4</td>
-            <td>584.0</td>
-            <td>648.2</td>
-            <td>3.3%</td>
-            <td>1.65</td>
-            <td>7.97</td>
-            <td>
-                Stock is near breakout/breakdown.  
-                Trade only if it crosses the entry trigger.
-            </td>
-        </tr>
-        
-        <tr>
-            <td><strong>HOMEFIRST.NS</strong></td>
-            <td class="buy">BUY WATCHLIST</td>
-            <td>1161.7</td>
-            <td>1161.25</td>
-            <td>1123.4</td>
-            <td>1236.95</td>
-            <td>0.57%</td>
-            <td>1.08</td>
-            <td>7.96</td>
-            <td>
-                Stock is near breakout/breakdown.  
-                Trade only if it crosses the entry trigger.
-            </td>
-        </tr>
-        
-        <tr>
-            <td><strong>CGCL.NS</strong></td>
-            <td class="buy">BUY WATCHLIST</td>
-            <td>186.18</td>
-            <td>186.3</td>
-            <td>182.5</td>
-            <td>193.9</td>
-            <td>1.36%</td>
-            <td>1.65</td>
-            <td>7.94</td>
-            <td>
-                Stock is near breakout/breakdown.  
-                Trade only if it crosses the entry trigger.
-            </td>
-        </tr>
-        
-        <tr>
-            <td><strong>CONCOR.NS</strong></td>
-            <td class="sell">SELL WATCHLIST</td>
-            <td>508.85</td>
-            <td>508.5</td>
-            <td>521.95</td>
-            <td>481.6</td>
-            <td>-1.12%</td>
-            <td>1.18</td>
-            <td>7.93</td>
-            <td>
-                Stock is near breakout/breakdown.  
-                Trade only if it crosses the entry trigger.
-            </td>
-        </tr>
-        
-        <tr>
-            <td><strong>NAVINFLUOR.NS</strong></td>
-            <td class="buy">BUY WATCHLIST</td>
-            <td>6821.0</td>
-            <td>6816.0</td>
-            <td>6660.0</td>
-            <td>7128.0</td>
-            <td>0.92%</td>
-            <td>7.73</td>
-            <td>7.93</td>
-            <td>
-                Stock is near breakout/breakdown.  
-                Trade only if it crosses the entry trigger.
-            </td>
-        </tr>
-        
-        <tr>
-            <td><strong>IOB.NS</strong></td>
-            <td class="sell">SELL WATCHLIST</td>
-            <td>35.0</td>
-            <td>35.03</td>
-            <td>36.39</td>
-            <td>32.31</td>
-            <td>-0.48%</td>
-            <td>1.25</td>
-            <td>7.91</td>
-            <td>
-                Stock is near breakout/breakdown.  
-                Trade only if it crosses the entry trigger.
-            </td>
-        </tr>
-        
-        <tr>
-            <td><strong>ICICIGI.NS</strong></td>
-            <td class="sell">SELL WATCHLIST</td>
-            <td>1763.2</td>
-            <td>1765.1</td>
-            <td>1806.7</td>
-            <td>1681.9</td>
-            <td>-0.42%</td>
-            <td>1.18</td>
-            <td>7.89</td>
-            <td>
-                Stock is near breakout/breakdown.  
-                Trade only if it crosses the entry trigger.
-            </td>
-        </tr>
-        
-        <tr>
-            <td><strong>GLENMARK.NS</strong></td>
-            <td class="sell">SELL WATCHLIST</td>
-            <td>2406.3</td>
-            <td>2403.7</td>
-            <td>2474.0</td>
-            <td>2263.1</td>
-            <td>-0.31%</td>
-            <td>1.14</td>
-            <td>7.89</td>
-            <td>
-                Stock is near breakout/breakdown.  
-                Trade only if it crosses the entry trigger.
-            </td>
-        </tr>
-        
-        <tr>
-            <td><strong>HSCL.NS</strong></td>
-            <td class="buy">BUY WATCHLIST</td>
-            <td>607.75</td>
-            <td>608.5</td>
-            <td>570.05</td>
-            <td>685.4</td>
-            <td>1.02%</td>
-            <td>1.43</td>
-            <td>7.88</td>
-            <td>
-                Stock is near breakout/breakdown.  
-                Trade only if it crosses the entry trigger.
-            </td>
-        </tr>
-        
-        <tr>
-            <td><strong>SBICARD.NS</strong></td>
-            <td class="sell">SELL WATCHLIST</td>
-            <td>643.9</td>
-            <td>643.05</td>
-            <td>661.05</td>
-            <td>607.05</td>
-            <td>-1.12%</td>
-            <td>1.37</td>
-            <td>7.87</td>
-            <td>
-                Stock is near breakout/breakdown.  
-                Trade only if it crosses the entry trigger.
-            </td>
-        </tr>
-        
-        <tr>
-            <td><strong>M&M.NS</strong></td>
-            <td class="sell">SELL WATCHLIST</td>
-            <td>3097.5</td>
-            <td>3092.0</td>
-            <td>3192.0</td>
-            <td>2892.0</td>
-            <td>-1.74%</td>
-            <td>1.13</td>
-            <td>7.82</td>
-            <td>
-                Stock is near breakout/breakdown.  
-                Trade only if it crosses the entry trigger.
-            </td>
-        </tr>
-        
-        <tr>
-            <td><strong>RELIANCE.NS</strong></td>
-            <td class="buy">BUY WATCHLIST</td>
-            <td>1430.8</td>
-            <td>1433.8</td>
-            <td>1391.3</td>
-            <td>1518.8</td>
+            <td class="stock">RAMCOCEM.NS</td>
+            <td><span class="badge sell">SELL</span></td>
+            <td><span class="grade grade-b">B+</span></td>
+            <td class="score">84</td>
+            <td>935.1</td>
+            <td>938.7</td>
+            <td>988.09</td>
+            <td>815.22</td>
+            <td>2.5</td>
+            <td>37.5</td>
+            <td>3.52%</td>
+            <td>1.56</td>
+            <td>-5.83</td>
             <td>0.38%</td>
-            <td>1.38</td>
-            <td>7.79</td>
-            <td>
-                Stock is near breakout/breakdown.  
-                Trade only if it crosses the entry trigger.
-            </td>
+            <td>Enter only if price breaks below Entry Trigger with strong volume.</td>
+            <td>Avoid if price opens far beyond trigger, volume is weak, or market index is sharply against the trade.</td>
+            <td>High-conviction bearish setup: downtrend, weak relative strength versus NIFTY, acceptable volume, controlled volatility, and close to breakdown trigger.</td>
         </tr>
         
         <tr>
-            <td><strong>TVSMOTOR.NS</strong></td>
-            <td class="sell">SELL WATCHLIST</td>
-            <td>3492.9</td>
-            <td>3501.0</td>
-            <td>3602.0</td>
-            <td>3299.0</td>
-            <td>-1.72%</td>
-            <td>1.06</td>
-            <td>7.77</td>
-            <td>
-                Stock is near breakout/breakdown.  
-                Trade only if it crosses the entry trigger.
-            </td>
-        </tr>
-        
-        <tr>
-            <td><strong>GODREJPROP.NS</strong></td>
-            <td class="sell">SELL WATCHLIST</td>
-            <td>1835.2</td>
-            <td>1831.0</td>
-            <td>1883.8</td>
-            <td>1725.4</td>
-            <td>-1.46%</td>
-            <td>1.06</td>
-            <td>7.77</td>
-            <td>
-                Stock is near breakout/breakdown.  
-                Trade only if it crosses the entry trigger.
-            </td>
-        </tr>
-        
-        <tr>
-            <td><strong>CREDITACC.NS</strong></td>
-            <td class="buy">BUY WATCHLIST</td>
-            <td>1300.1</td>
-            <td>1297.0</td>
-            <td>1259.4</td>
-            <td>1372.2</td>
-            <td>0.85%</td>
+            <td class="stock">THERMAX.NS</td>
+            <td><span class="badge buy">BUY</span></td>
+            <td><span class="grade grade-b">B+</span></td>
+            <td class="score">81</td>
+            <td>4077.6</td>
+            <td>4058.4</td>
+            <td>3823.52</td>
+            <td>4645.6</td>
+            <td>2.5</td>
+            <td>65.7</td>
+            <td>3.84%</td>
             <td>1.11</td>
-            <td>7.76</td>
-            <td>
-                Stock is near breakout/breakdown.  
-                Trade only if it crosses the entry trigger.
-            </td>
+            <td>17.59</td>
+            <td>0.47%</td>
+            <td>Enter only if price moves above Entry Trigger with strong volume.</td>
+            <td>Avoid if price opens far beyond trigger, volume is weak, or market index is sharply against the trade.</td>
+            <td>High-conviction bullish setup: uptrend, relative strength versus NIFTY, acceptable volume, controlled volatility, and close to breakout trigger.</td>
         </tr>
         
         <tr>
-            <td><strong>CASTROLIND.NS</strong></td>
-            <td class="buy">BUY WATCHLIST</td>
-            <td>184.82</td>
-            <td>185.3</td>
-            <td>182.85</td>
-            <td>190.2</td>
-            <td>0.1%</td>
-            <td>1.02</td>
-            <td>7.74</td>
-            <td>
-                Stock is near breakout/breakdown.  
-                Trade only if it crosses the entry trigger.
-            </td>
+            <td class="stock">BHARTIHEXA.NS</td>
+            <td><span class="badge sell">SELL</span></td>
+            <td><span class="grade grade-b">B+</span></td>
+            <td class="score">80</td>
+            <td>1517.4</td>
+            <td>1511.0</td>
+            <td>1581.42</td>
+            <td>1334.95</td>
+            <td>2.5</td>
+            <td>44.9</td>
+            <td>3.09%</td>
+            <td>1.31</td>
+            <td>-6.88</td>
+            <td>0.42%</td>
+            <td>Enter only if price breaks below Entry Trigger with strong volume.</td>
+            <td>Avoid if price opens far beyond trigger, volume is weak, or market index is sharply against the trade.</td>
+            <td>High-conviction bearish setup: downtrend, weak relative strength versus NIFTY, acceptable volume, controlled volatility, and close to breakdown trigger.</td>
         </tr>
         
         <tr>
-            <td><strong>M&MFIN.NS</strong></td>
-            <td class="sell">SELL WATCHLIST</td>
-            <td>310.7</td>
-            <td>311.7</td>
-            <td>322.55</td>
-            <td>290.0</td>
-            <td>-2.97%</td>
-            <td>1.16</td>
-            <td>7.68</td>
-            <td>
-                Stock is near breakout/breakdown.  
-                Trade only if it crosses the entry trigger.
-            </td>
-        </tr>
-        
-        <tr>
-            <td><strong>MRF.NS</strong></td>
-            <td class="sell">SELL WATCHLIST</td>
+            <td class="stock">MRF.NS</td>
+            <td><span class="badge sell">SELL</span></td>
+            <td><span class="grade grade-b">B+</span></td>
+            <td class="score">80</td>
             <td>129710.0</td>
             <td>130150.0</td>
-            <td>134100.0</td>
-            <td>122250.0</td>
-            <td>-0.55%</td>
+            <td>135050.61</td>
+            <td>117898.47</td>
+            <td>2.5</td>
+            <td>40.4</td>
+            <td>2.52%</td>
             <td>1.04</td>
-            <td>7.66</td>
-            <td>
-                Stock is near breakout/breakdown.  
-                Trade only if it crosses the entry trigger.
-            </td>
+            <td>-6.52</td>
+            <td>0.34%</td>
+            <td>Enter only if price breaks below Entry Trigger with strong volume.</td>
+            <td>Avoid if price opens far beyond trigger, volume is weak, or market index is sharply against the trade.</td>
+            <td>High-conviction bearish setup: downtrend, weak relative strength versus NIFTY, acceptable volume, controlled volatility, and close to breakdown trigger.</td>
         </tr>
         
-    </table>
+        <tr>
+            <td class="stock">SBICARD.NS</td>
+            <td><span class="badge sell">SELL</span></td>
+            <td><span class="grade grade-b">B+</span></td>
+            <td class="score">80</td>
+            <td>643.9</td>
+            <td>643.05</td>
+            <td>674.99</td>
+            <td>563.2</td>
+            <td>2.5</td>
+            <td>37.3</td>
+            <td>3.31%</td>
+            <td>1.37</td>
+            <td>-6.13</td>
+            <td>0.13%</td>
+            <td>Enter only if price breaks below Entry Trigger with strong volume.</td>
+            <td>Avoid if price opens far beyond trigger, volume is weak, or market index is sharply against the trade.</td>
+            <td>High-conviction bearish setup: downtrend, weak relative strength versus NIFTY, acceptable volume, controlled volatility, and close to breakdown trigger.</td>
+        </tr>
+        
+        <tr>
+            <td class="stock">SONACOMS.NS</td>
+            <td><span class="badge buy">BUY</span></td>
+            <td><span class="grade grade-b">B+</span></td>
+            <td class="score">79</td>
+            <td>607.25</td>
+            <td>611.4</td>
+            <td>580.59</td>
+            <td>688.42</td>
+            <td>2.5</td>
+            <td>66.6</td>
+            <td>3.38%</td>
+            <td>1.12</td>
+            <td>18.66</td>
+            <td>0.68%</td>
+            <td>Enter only if price moves above Entry Trigger with strong volume.</td>
+            <td>Avoid if price opens far beyond trigger, volume is weak, or market index is sharply against the trade.</td>
+            <td>High-conviction bullish setup: uptrend, relative strength versus NIFTY, acceptable volume, controlled volatility, and close to breakout trigger.</td>
+        </tr>
+        
+        <tr>
+            <td class="stock">ICICIGI.NS</td>
+            <td><span class="badge sell">SELL</span></td>
+            <td><span class="grade grade-b">B+</span></td>
+            <td class="score">76</td>
+            <td>1763.2</td>
+            <td>1765.1</td>
+            <td>1836.91</td>
+            <td>1585.58</td>
+            <td>2.5</td>
+            <td>41.8</td>
+            <td>2.71%</td>
+            <td>1.18</td>
+            <td>-4.39</td>
+            <td>0.11%</td>
+            <td>Enter only if price breaks below Entry Trigger with strong volume.</td>
+            <td>Avoid if price opens far beyond trigger, volume is weak, or market index is sharply against the trade.</td>
+            <td>High-conviction bearish setup: downtrend, weak relative strength versus NIFTY, acceptable volume, controlled volatility, and close to breakdown trigger.</td>
+        </tr>
+        
+        <tr>
+            <td class="stock">TVSMOTOR.NS</td>
+            <td><span class="badge sell">SELL</span></td>
+            <td><span class="grade grade-b">B+</span></td>
+            <td class="score">76</td>
+            <td>3492.9</td>
+            <td>3501.0</td>
+            <td>3665.51</td>
+            <td>3089.72</td>
+            <td>2.5</td>
+            <td>43.7</td>
+            <td>3.14%</td>
+            <td>1.06</td>
+            <td>-3.62</td>
+            <td>0.23%</td>
+            <td>Enter only if price breaks below Entry Trigger with strong volume.</td>
+            <td>Avoid if price opens far beyond trigger, volume is weak, or market index is sharply against the trade.</td>
+            <td>High-conviction bearish setup: downtrend, weak relative strength versus NIFTY, acceptable volume, controlled volatility, and close to breakdown trigger.</td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </section>
 
     <p class="footer">
-        Educational scanner only. Not financial advice. Always verify chart structure and market conditions before trading.
+        Disclaimer: This dashboard is for educational and research use only. It is not financial advice or a recommendation to buy or sell securities.
+        Always verify chart structure, news flow, liquidity, results calendar, market trend, and your personal risk limits before taking any trade.
     </p>
 
 </div>
