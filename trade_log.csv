@@ -1,0 +1,4 @@
+Signal Date,Rank,Symbol,Signal,Conviction Score,Grade,Entry Trigger,Stop Loss,Target,Risk/Reward,Status,Triggered Date,Exit Date,Exit Price,Result,R Multiple,Days Tracked,Notes
+2026-05-01,1,INDUSINDBK.NS,BUY,84,B+,925.0,882.9,1030.24,2.5,Pending Trigger,,,,,,0,Top 3 scanner pick
+2026-05-01,2,RAMCOCEM.NS,SELL,84,B+,938.7,988.09,815.22,2.5,Pending Trigger,,,,,,0,Top 3 scanner pick
+2026-05-01,3,THERMAX.NS,BUY,81,B+,4058.4,3823.52,4645.6,2.5,Pending Trigger,,,,,,0,Top 3 scanner pick

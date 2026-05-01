@@ -22,6 +22,10 @@ try:
     df = pd.read_csv("scanner_output.csv")
 except FileNotFoundError:
     df = pd.DataFrame()
+try:
+    trade_log = pd.read_csv("trade_log.csv")
+except FileNotFoundError:
+    trade_log = pd.DataFrame()
 
 if not df.empty and "Conviction Score" in df.columns:
     df = df.sort_values(by="Conviction Score", ascending=False)
@@ -220,6 +224,130 @@ def calculate_position(row):
             "risk_amount": "-"
         }
 
+def status_class(status):
+    s = str(status).upper()
+
+    if "TARGET" in s:
+        return "status-win"
+    if "STOP" in s:
+        return "status-loss"
+    if "TRIGGERED" in s:
+        return "status-triggered"
+    if "PENDING" in s:
+        return "status-pending"
+    if "EXPIRED" in s:
+        return "status-expired"
+    if "GAP" in s:
+        return "status-gap"
+
+    return "status-neutral"
+
+
+def build_trade_log_tabs(trade_log):
+    if trade_log.empty:
+        return """
+        <div class="empty-card">
+            No performance history yet. Run performance_tracker.py after scanner.py to start logging Top 3 picks.
+        </div>
+        """
+
+    trade_log = trade_log.copy()
+
+    if "Signal Date" in trade_log.columns:
+        trade_log["Signal Date"] = trade_log["Signal Date"].astype(str)
+        trade_log = trade_log.sort_values(by="Signal Date", ascending=False)
+
+    chunks = [
+        trade_log.iloc[i:i + 60]
+        for i in range(0, len(trade_log), 60)
+    ]
+
+    buttons = ""
+    panels = ""
+
+    for idx, chunk in enumerate(chunks):
+        tab_id = f"log-tab-{idx}"
+
+        if idx == 0:
+            label = "Latest 60"
+            active_class = "active"
+            display_style = "block"
+        else:
+            start = idx * 60 + 1
+            end = idx * 60 + len(chunk)
+            label = f"Trades {start}-{end}"
+            active_class = ""
+            display_style = "none"
+
+        buttons += f"""
+        <button class="tab-button {active_class}" onclick="showTab('{tab_id}', this)">
+            {label}
+        </button>
+        """
+
+        rows = ""
+
+        for _, row in chunk.iterrows():
+            status = row.get("Status", "-")
+
+            rows += f"""
+            <tr>
+                <td>{row.get("Signal Date", "-")}</td>
+                <td>{row.get("Rank", "-")}</td>
+                <td class="stock">{row.get("Symbol", "-")}</td>
+                <td><span class="badge {signal_class(row.get("Signal", ""))}">{row.get("Signal", "-")}</span></td>
+                <td>{row.get("Conviction Score", "-")}</td>
+                <td>{row.get("Entry Trigger", "-")}</td>
+                <td>{row.get("Stop Loss", "-")}</td>
+                <td>{row.get("Target", "-")}</td>
+                <td>{row.get("Risk/Reward", "-")}</td>
+                <td><span class="status-pill {status_class(status)}">{status}</span></td>
+                <td>{row.get("Result", "-")}</td>
+                <td>{row.get("R Multiple", "-")}</td>
+                <td>{row.get("Days Tracked", "-")}</td>
+                <td>{row.get("Notes", "-")}</td>
+            </tr>
+            """
+
+        panels += f"""
+        <div id="{tab_id}" class="tab-panel" style="display:{display_style};">
+            <div class="table-wrap performance-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Rank</th>
+                            <th>Stock</th>
+                            <th>Signal</th>
+                            <th>Conviction</th>
+                            <th>Entry</th>
+                            <th>Stop</th>
+                            <th>Target</th>
+                            <th>RR</th>
+                            <th>Status</th>
+                            <th>Result</th>
+                            <th>R</th>
+                            <th>Days</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {rows}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        """
+
+    return f"""
+    <div class="tabs">
+        <div class="tab-buttons">
+            {buttons}
+        </div>
+        {panels}
+    </div>
+    """
+
 # ============================================================
 # SUMMARY METRICS
 # ============================================================
@@ -341,7 +469,7 @@ else:
 # ============================================================
 # HTML
 # ============================================================
-
+performance_log_html = build_trade_log_tabs(trade_log)
 html = f"""
 <!DOCTYPE html>
 <html lang="en">
@@ -732,14 +860,104 @@ html = f"""
             border-radius: 16px;
             border: 1px solid var(--border);
         }}
-
+<section class="performance-section">
+    <h2>📊 Top 3 Performance Log</h2>
+    <p class="section-note">
+        This log tracks the platform's Top 3 daily picks. The latest 60 trade ideas appear first.
+        Older records are grouped into 60-trade tabs.
+    </p>
+    {performance_log_html}
+</section>
         .footer {{
             margin-top: 20px;
             color: var(--muted);
             font-size: 13px;
             line-height: 1.5;
         }}
+.performance-section {
+    margin-top: 24px;
+}
 
+.performance-section h2 {
+    margin-bottom: 6px;
+}
+
+.section-note {
+    color: var(--muted);
+    margin-top: 0;
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.tab-button {
+    border: 1px solid var(--border);
+    background: white;
+    color: #374151;
+    padding: 9px 14px;
+    border-radius: 999px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.tab-button.active {
+    background: var(--dark);
+    color: white;
+}
+
+.performance-table table {
+    min-width: 1300px;
+}
+
+.status-pill {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.status-win {
+    background: var(--green-bg);
+    color: var(--green);
+}
+
+.status-loss {
+    background: var(--red-bg);
+    color: var(--red);
+}
+
+.status-triggered {
+    background: var(--blue-bg);
+    color: var(--blue);
+}
+
+.status-pending {
+    background: var(--yellow-bg);
+    color: var(--yellow);
+}
+
+.status-expired {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.status-gap {
+    background: var(--orange-bg);
+    color: var(--orange);
+}
+
+.status-neutral {
+    background: #f3f4f6;
+    color: #374151;
+}
         @media (max-width: 1000px) {{
             body {{
                 padding: 16px;
@@ -883,6 +1101,90 @@ html = f"""
                 </tr>
             </thead>
             <tbody>
+            .performance-section {
+    margin-top: 24px;
+}
+
+.performance-section h2 {
+    margin-bottom: 6px;
+}
+
+.section-note {
+    color: var(--muted);
+    margin-top: 0;
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.tab-button {
+    border: 1px solid var(--border);
+    background: white;
+    color: #374151;
+    padding: 9px 14px;
+    border-radius: 999px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.tab-button.active {
+    background: var(--dark);
+    color: white;
+}
+
+.performance-table table {
+    min-width: 1300px;
+}
+
+.status-pill {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.status-win {
+    background: var(--green-bg);
+    color: var(--green);
+}
+
+.status-loss {
+    background: var(--red-bg);
+    color: var(--red);
+}
+
+.status-triggered {
+    background: var(--blue-bg);
+    color: var(--blue);
+}
+
+.status-pending {
+    background: var(--yellow-bg);
+    color: var(--yellow);
+}
+
+.status-expired {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.status-gap {
+    background: var(--orange-bg);
+    color: var(--orange);
+}
+
+.status-neutral {
+    background: #f3f4f6;
+    color: #374151;
+}
                 {html_rows}
             </tbody>
         </table>
