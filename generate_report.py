@@ -1,19 +1,109 @@
 import pandas as pd
+import yfinance as yf
 from datetime import datetime
+import math
 
-# ---------------- LOAD DATA ----------------
+# ============================================================
+# USER SETTINGS
+# ============================================================
+
+TOTAL_CAPITAL = 1000000        # Example: ₹10,00,000 capital
+RISK_PER_TRADE_PCT = 1.0       # Risk 1% of capital per trade
+MAX_ALLOCATION_PCT = 20        # Max 20% capital allocation per trade
+
+RISK_AMOUNT = TOTAL_CAPITAL * (RISK_PER_TRADE_PCT / 100)
+MAX_ALLOCATION = TOTAL_CAPITAL * (MAX_ALLOCATION_PCT / 100)
+
+# ============================================================
+# LOAD SCANNER DATA
+# ============================================================
 
 try:
     df = pd.read_csv("scanner_output.csv")
 except FileNotFoundError:
     df = pd.DataFrame()
 
-# ---------------- HELPERS ----------------
+if not df.empty and "Conviction Score" in df.columns:
+    df = df.sort_values(by="Conviction Score", ascending=False)
+
+# ============================================================
+# MARKET BIAS — NIFTY
+# ============================================================
+
+def flatten_columns(data):
+    if isinstance(data.columns, pd.MultiIndex):
+        data.columns = data.columns.get_level_values(0)
+    return data
+
+def get_nifty_bias():
+    try:
+        nifty = yf.download("^NSEI", period="6mo", interval="1d", progress=False, auto_adjust=False)
+        nifty = flatten_columns(nifty)
+
+        if nifty.empty or len(nifty) < 60:
+            return {
+                "bias": "Unknown",
+                "class": "bias-neutral",
+                "text": "NIFTY data unavailable.",
+                "close": "-",
+                "ema20": "-",
+                "ema50": "-",
+                "change_5d": "-"
+            }
+
+        nifty["EMA20"] = nifty["Close"].ewm(span=20).mean()
+        nifty["EMA50"] = nifty["Close"].ewm(span=50).mean()
+
+        close = float(nifty["Close"].iloc[-1])
+        ema20 = float(nifty["EMA20"].iloc[-1])
+        ema50 = float(nifty["EMA50"].iloc[-1])
+        close_5d = float(nifty["Close"].iloc[-6])
+        change_5d = ((close - close_5d) / close_5d) * 100
+
+        if close > ema20 > ema50:
+            bias = "Bullish"
+            css = "bias-bullish"
+            text = "Market trend supports BUY setups. SELL setups require extra caution."
+        elif close < ema20 < ema50:
+            bias = "Bearish"
+            css = "bias-bearish"
+            text = "Market trend supports SELL setups. BUY setups require extra caution."
+        else:
+            bias = "Mixed"
+            css = "bias-neutral"
+            text = "Market is mixed. Prefer only the highest-conviction setups."
+
+        return {
+            "bias": bias,
+            "class": css,
+            "text": text,
+            "close": round(close, 2),
+            "ema20": round(ema20, 2),
+            "ema50": round(ema50, 2),
+            "change_5d": round(change_5d, 2)
+        }
+
+    except Exception:
+        return {
+            "bias": "Unknown",
+            "class": "bias-neutral",
+            "text": "Could not calculate NIFTY market bias.",
+            "close": "-",
+            "ema20": "-",
+            "ema50": "-",
+            "change_5d": "-"
+        }
+
+market = get_nifty_bias()
+
+# ============================================================
+# HELPER FUNCTIONS
+# ============================================================
 
 def safe_value(row, col, default="-"):
     return row[col] if col in row and pd.notna(row[col]) else default
 
-def badge_class(signal):
+def signal_class(signal):
     s = str(signal).upper()
     if "BUY" in s:
         return "buy"
@@ -24,15 +114,16 @@ def badge_class(signal):
 def priority_info(score):
     try:
         score = float(score)
-    except:
+    except Exception:
         score = 0
 
     if score >= 85:
-        return ("Must Trade", "priority-must", "row-must")
+        return ("Highest Priority", "priority-high", "row-high")
     elif score >= 80:
-        return ("Medium", "priority-medium", "row-medium")
-    else:
-        return ("Low", "priority-low", "row-low")
+        return ("Medium Priority", "priority-medium", "row-medium")
+    elif score >= 75:
+        return ("Low Priority", "priority-low", "row-low")
+    return ("Avoid", "priority-avoid", "row-avoid")
 
 def compact_action(signal):
     s = str(signal).upper()
@@ -42,6 +133,17 @@ def compact_action(signal):
         return "Enter only below trigger"
     return "Wait"
 
+def market_warning(signal):
+    s = str(signal).upper()
+
+    if market["bias"] == "Bearish" and "BUY" in s:
+        return "⚠️ Market bias against BUY"
+    if market["bias"] == "Bullish" and "SELL" in s:
+        return "⚠️ Market bias against SELL"
+    if market["bias"] == "Mixed":
+        return "⚠️ Mixed market"
+    return "Market aligned"
+
 def compact_notes(row):
     signal = str(safe_value(row, "Signal", "")).upper()
     rs = safe_value(row, "Relative Strength vs NIFTY", 0)
@@ -49,12 +151,12 @@ def compact_notes(row):
 
     try:
         rs = float(rs)
-    except:
+    except Exception:
         rs = 0
 
     try:
         vol = float(vol)
-    except:
+    except Exception:
         vol = 0
 
     rs_text = "Strong RS" if abs(rs) >= 8 else "Decent RS"
@@ -64,9 +166,65 @@ def compact_notes(row):
         return f"Uptrend · {rs_text} · {vol_text}"
     elif "SELL" in signal:
         return f"Downtrend · {rs_text} · {vol_text}"
+
     return "Watch"
 
-# ---------------- SUMMARY METRICS ----------------
+def calculate_position(row):
+    try:
+        entry = float(safe_value(row, "Entry Trigger", 0))
+        stop = float(safe_value(row, "Stop Loss", 0))
+
+        per_share_risk = abs(entry - stop)
+
+        if per_share_risk <= 0:
+            return {
+                "qty": "-",
+                "trade_value": "-",
+                "capital_pct": "-",
+                "risk_amount": "-"
+            }
+
+        qty_by_risk = math.floor(RISK_AMOUNT / per_share_risk)
+
+        if qty_by_risk <= 0:
+            return {
+                "qty": "Too risky",
+                "trade_value": "-",
+                "capital_pct": "-",
+                "risk_amount": round(RISK_AMOUNT, 0)
+            }
+
+        trade_value = qty_by_risk * entry
+
+        if trade_value > MAX_ALLOCATION:
+            qty_by_allocation = math.floor(MAX_ALLOCATION / entry)
+            qty = max(qty_by_allocation, 0)
+            trade_value = qty * entry
+        else:
+            qty = qty_by_risk
+
+        capital_pct = (trade_value / TOTAL_CAPITAL) * 100 if TOTAL_CAPITAL > 0 else 0
+
+        return {
+            "qty": qty,
+            "trade_value": round(trade_value, 0),
+            "capital_pct": round(capital_pct, 1),
+            "risk_amount": round(RISK_AMOUNT, 0)
+        }
+
+    except Exception:
+        return {
+            "qty": "-",
+            "trade_value": "-",
+            "capital_pct": "-",
+            "risk_amount": "-"
+        }
+
+# ============================================================
+# SUMMARY METRICS
+# ============================================================
+
+total = len(df)
 
 if not df.empty and "Signal" in df.columns:
     buy_count = len(df[df["Signal"].astype(str).str.contains("BUY", case=False, na=False)])
@@ -76,23 +234,72 @@ else:
     sell_count = 0
 
 if not df.empty and "Conviction Score" in df.columns:
-    must_count = len(df[df["Conviction Score"] >= 85])
+    high_count = len(df[df["Conviction Score"] >= 85])
     medium_count = len(df[(df["Conviction Score"] >= 80) & (df["Conviction Score"] < 85)])
     low_count = len(df[(df["Conviction Score"] >= 75) & (df["Conviction Score"] < 80)])
     best_score = df["Conviction Score"].max()
 else:
-    must_count = medium_count = low_count = 0
+    high_count = medium_count = low_count = 0
     best_score = 0
 
 avg_rr = df["Risk/Reward"].mean() if not df.empty and "Risk/Reward" in df.columns else 0
-total = len(df)
 
-# ---------------- TABLE ROWS ----------------
+# ============================================================
+# TOP 3 CARDS
+# ============================================================
+
+if df.empty:
+    top_cards = """
+    <div class="empty-card">
+        No high-conviction setups today. Protecting capital is also a valid trading decision.
+    </div>
+    """
+else:
+    top_cards = ""
+    top3 = df.head(3)
+
+    for _, row in top3.iterrows():
+        conviction = safe_value(row, "Conviction Score", 0)
+        priority_text, priority_css, _ = priority_info(conviction)
+        signal = safe_value(row, "Signal")
+        pos = calculate_position(row)
+
+        top_cards += f"""
+        <div class="top-card">
+            <div class="top-card-header">
+                <span class="stock-name">{safe_value(row, "Symbol")}</span>
+                <span class="badge {signal_class(signal)}">{signal}</span>
+            </div>
+
+            <div class="priority-line">
+                <span class="priority {priority_css}">{priority_text}</span>
+                <strong>Score: {conviction}</strong>
+            </div>
+
+            <div class="mini-grid">
+                <div><span>Entry</span><strong>{safe_value(row, "Entry Trigger")}</strong></div>
+                <div><span>Stop</span><strong>{safe_value(row, "Stop Loss")}</strong></div>
+                <div><span>Target</span><strong>{safe_value(row, "Target")}</strong></div>
+                <div><span>RR</span><strong>{safe_value(row, "Risk/Reward")}</strong></div>
+            </div>
+
+            <div class="position-box">
+                Suggested position: <strong>{pos["qty"]} shares</strong><br>
+                Approx trade value: <strong>₹{pos["trade_value"]}</strong> · Capital used: <strong>{pos["capital_pct"]}%</strong>
+            </div>
+
+            <p class="small-note">{compact_action(signal)} · {market_warning(signal)}</p>
+        </div>
+        """
+
+# ============================================================
+# TABLE ROWS
+# ============================================================
 
 if df.empty:
     html_rows = """
     <tr>
-        <td colspan="15" class="empty">
+        <td colspan="19" class="empty">
             No high-conviction trade candidates today. No trade is also a valid decision.
         </td>
     </tr>
@@ -104,13 +311,14 @@ else:
         signal = safe_value(row, "Signal")
         conviction = safe_value(row, "Conviction Score", 0)
         priority_text, priority_class, row_class = priority_info(conviction)
+        pos = calculate_position(row)
 
         html_rows += f"""
         <tr class="{row_class}">
             <td><span class="priority {priority_class}">{priority_text}</span></td>
             <td class="stock">{safe_value(row, "Symbol")}</td>
-            <td><span class="badge {badge_class(signal)}">{signal}</span></td>
-            <td class="score">{safe_value(row, "Conviction Score")}</td>
+            <td><span class="badge {signal_class(signal)}">{signal}</span></td>
+            <td class="score">{conviction}</td>
             <td>{safe_value(row, "Grade")}</td>
             <td>{safe_value(row, "Close")}</td>
             <td>{safe_value(row, "Entry Trigger")}</td>
@@ -121,12 +329,18 @@ else:
             <td>{safe_value(row, "ATR%")}%</td>
             <td>{safe_value(row, "Volume Ratio")}</td>
             <td>{safe_value(row, "Relative Strength vs NIFTY")}</td>
+            <td>{safe_value(row, "Distance to Trigger%")}%</td>
+            <td>{pos["qty"]}</td>
+            <td>₹{pos["trade_value"]}</td>
             <td>{compact_action(signal)}</td>
+            <td>{market_warning(signal)}</td>
             <td>{compact_notes(row)}</td>
         </tr>
         """
 
-# ---------------- HTML ----------------
+# ============================================================
+# HTML
+# ============================================================
 
 html = f"""
 <!DOCTYPE html>
@@ -177,12 +391,12 @@ html = f"""
         }}
 
         .container {{
-            max-width: 1500px;
+            max-width: 1600px;
             margin: 0 auto;
         }}
 
         .header {{
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }}
 
         .header h1 {{
@@ -201,12 +415,12 @@ html = f"""
             display: grid;
             grid-template-columns: repeat(6, minmax(150px, 1fr));
             gap: 14px;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }}
 
         .metric {{
             background: var(--card);
-            padding: 18px;
+            padding: 16px;
             border-radius: 14px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.06);
             border: 1px solid var(--border);
@@ -220,14 +434,153 @@ html = f"""
 
         .metric strong {{
             display: block;
-            font-size: 26px;
-            margin-top: 8px;
+            font-size: 25px;
+            margin-top: 6px;
+        }}
+
+        .market-box {{
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px;
+            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: 1.3fr 3fr;
+            gap: 18px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }}
+
+        .bias-pill {{
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }}
+
+        .bias-bullish {{
+            background: var(--green-bg);
+            color: var(--green);
+        }}
+
+        .bias-bearish {{
+            background: var(--red-bg);
+            color: var(--red);
+        }}
+
+        .bias-neutral {{
+            background: var(--yellow-bg);
+            color: var(--yellow);
+        }}
+
+        .market-stats {{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }}
+
+        .market-stats div {{
+            background: #f9fafb;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }}
+
+        .market-stats span {{
+            color: var(--muted);
+            font-size: 12px;
+            display: block;
+        }}
+
+        .market-stats strong {{
+            font-size: 18px;
+        }}
+
+        .top-section {{
+            margin-bottom: 20px;
+        }}
+
+        .top-section h2 {{
+            margin: 0 0 12px;
+        }}
+
+        .top-cards {{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }}
+
+        .top-card {{
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }}
+
+        .top-card-header {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }}
+
+        .stock-name {{
+            font-size: 20px;
+            font-weight: 900;
+        }}
+
+        .priority-line {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }}
+
+        .mini-grid {{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 12px;
+        }}
+
+        .mini-grid div {{
+            background: #f9fafb;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }}
+
+        .mini-grid span {{
+            color: var(--muted);
+            display: block;
+            font-size: 12px;
+        }}
+
+        .mini-grid strong {{
+            font-size: 15px;
+        }}
+
+        .position-box {{
+            background: #eff6ff;
+            color: #1e3a8a;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }}
+
+        .small-note {{
+            color: var(--muted);
+            margin: 0;
+            font-size: 13px;
         }}
 
         .explain {{
             background: #fff7ed;
             border-left: 6px solid #f97316;
-            padding: 18px 22px;
+            padding: 16px 20px;
             border-radius: 14px;
             margin-bottom: 20px;
             line-height: 1.55;
@@ -277,7 +630,7 @@ html = f"""
 
         table {{
             width: 100%;
-            min-width: 1500px;
+            min-width: 1800px;
             border-collapse: collapse;
         }}
 
@@ -285,27 +638,23 @@ html = f"""
             background: var(--dark);
             color: white;
             text-align: left;
-            padding: 12px 10px;
-            font-size: 13px;
+            padding: 11px 10px;
+            font-size: 12px;
             white-space: nowrap;
             position: sticky;
             top: 0;
         }}
 
         td {{
-            padding: 10px 10px;
+            padding: 9px 10px;
             border-bottom: 1px solid var(--border);
-            font-size: 13px;
+            font-size: 12.5px;
             vertical-align: middle;
-            line-height: 1.25;
+            line-height: 1.2;
             white-space: nowrap;
         }}
 
-        tr:hover {{
-            filter: brightness(0.99);
-        }}
-
-        .row-must {{
+        .row-high {{
             background: var(--green-row);
         }}
 
@@ -318,13 +667,13 @@ html = f"""
         }}
 
         .stock {{
-            font-weight: 800;
+            font-weight: 900;
             color: #111827;
         }}
 
         .score {{
             font-weight: 900;
-            font-size: 15px;
+            font-size: 14px;
         }}
 
         .badge {{
@@ -332,7 +681,7 @@ html = f"""
             padding: 6px 10px;
             border-radius: 999px;
             font-weight: 800;
-            font-size: 12px;
+            font-size: 11px;
         }}
 
         .buy {{
@@ -345,20 +694,15 @@ html = f"""
             color: var(--red);
         }}
 
-        .neutral {{
-            background: #e5e7eb;
-            color: #374151;
-        }}
-
         .priority {{
             display: inline-block;
             padding: 6px 10px;
             border-radius: 999px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 800;
         }}
 
-        .priority-must {{
+        .priority-high {{
             background: var(--green-bg);
             color: var(--green);
         }}
@@ -373,11 +717,20 @@ html = f"""
             color: var(--orange);
         }}
 
-        .empty {{
+        .priority-avoid {{
+            background: #e5e7eb;
+            color: #374151;
+        }}
+
+        .empty,
+        .empty-card {{
             text-align: center;
             padding: 30px;
             font-size: 16px;
             color: var(--muted);
+            background: var(--card);
+            border-radius: 16px;
+            border: 1px solid var(--border);
         }}
 
         .footer {{
@@ -387,13 +740,25 @@ html = f"""
             line-height: 1.5;
         }}
 
-        @media (max-width: 900px) {{
+        @media (max-width: 1000px) {{
             body {{
                 padding: 16px;
             }}
 
             .metrics {{
                 grid-template-columns: 1fr 1fr;
+            }}
+
+            .market-box {{
+                grid-template-columns: 1fr;
+            }}
+
+            .market-stats {{
+                grid-template-columns: 1fr 1fr;
+            }}
+
+            .top-cards {{
+                grid-template-columns: 1fr;
             }}
 
             .criteria-grid {{
@@ -421,15 +786,15 @@ html = f"""
             <strong>{total}</strong>
         </div>
         <div class="metric">
-            <span>Must Trade</span>
-            <strong>{must_count}</strong>
+            <span>Highest Priority</span>
+            <strong>{high_count}</strong>
         </div>
         <div class="metric">
-            <span>Medium</span>
+            <span>Medium Priority</span>
             <strong>{medium_count}</strong>
         </div>
         <div class="metric">
-            <span>Low</span>
+            <span>Low Priority</span>
             <strong>{low_count}</strong>
         </div>
         <div class="metric">
@@ -437,35 +802,56 @@ html = f"""
             <strong>{round(best_score, 1) if best_score else 0}</strong>
         </div>
         <div class="metric">
-            <span>Average Risk/Reward</span>
+            <span>Avg Risk/Reward</span>
             <strong>{round(avg_rr, 2) if avg_rr else 0}</strong>
+        </div>
+    </section>
+
+    <section class="market-box">
+        <div>
+            <span class="bias-pill {market["class"]}">NIFTY Bias: {market["bias"]}</span>
+            <p>{market["text"]}</p>
+        </div>
+        <div class="market-stats">
+            <div><span>NIFTY Close</span><strong>{market["close"]}</strong></div>
+            <div><span>EMA 20</span><strong>{market["ema20"]}</strong></div>
+            <div><span>EMA 50</span><strong>{market["ema50"]}</strong></div>
+            <div><span>5-Day Change</span><strong>{market["change_5d"]}%</strong></div>
+        </div>
+    </section>
+
+    <section class="top-section">
+        <h2>Top 3 Setups</h2>
+        <div class="top-cards">
+            {top_cards}
         </div>
     </section>
 
     <section class="explain">
         <strong>Quick reading guide:</strong>
         Green rows are the strongest setups, yellow rows are decent setups, and orange rows are lower-conviction setups.
-        Enter only if the price crosses the trigger in the direction of the signal. Avoid chasing if the opening price is already too far beyond the trigger.
+        Enter only if the price crosses the trigger in the direction of the signal. Position size is calculated using
+        ₹{round(TOTAL_CAPITAL):,} capital and {RISK_PER_TRADE_PCT}% risk per trade.
     </section>
 
     <section class="criteria">
         <h2>Suggested Investment Criteria</h2>
         <div class="criteria-grid">
             <div class="criteria-item">
-                <strong>Green · 85+</strong>
-                Must Trade. Best setups. Consider only if trigger breaks with strong volume.
+                <strong>85+ · Highest Priority</strong>
+                Best setups. Consider only if trigger breaks with strong volume and market direction supports it.
             </div>
             <div class="criteria-item">
-                <strong>Yellow · 80–84</strong>
-                Medium conviction. Good watchlist names. Smaller position size.
+                <strong>80–84 · Medium Priority</strong>
+                Decent setups. Use smaller size or wait for stronger confirmation.
             </div>
             <div class="criteria-item">
-                <strong>Orange · 75–79</strong>
-                Low conviction. Trade only with extra confirmation.
+                <strong>75–79 · Low Priority</strong>
+                Trade only with extra confirmation. Otherwise skip.
             </div>
             <div class="criteria-item">
                 <strong>Risk Rule</strong>
-                Avoid any trade where risk/reward is below 2.5 or the trigger is badly chased.
+                Suggested quantity uses fixed-risk sizing and max allocation cap.
             </div>
         </div>
     </section>
@@ -480,16 +866,20 @@ html = f"""
                     <th>Conviction</th>
                     <th>Grade</th>
                     <th>Close</th>
-                    <th>Entry Trigger</th>
-                    <th>Stop Loss</th>
+                    <th>Entry</th>
+                    <th>Stop</th>
                     <th>Target</th>
-                    <th>Risk/Reward</th>
+                    <th>RR</th>
                     <th>RSI</th>
                     <th>ATR%</th>
-                    <th>Volume Ratio</th>
-                    <th>Rel. Strength vs NIFTY</th>
-                    <th>When to Enter</th>
-                    <th>Setup Notes</th>
+                    <th>Vol Ratio</th>
+                    <th>RS vs NIFTY</th>
+                    <th>Dist. Trigger</th>
+                    <th>Qty</th>
+                    <th>Trade Value</th>
+                    <th>Entry Rule</th>
+                    <th>Market Warning</th>
+                    <th>Notes</th>
                 </tr>
             </thead>
             <tbody>
@@ -499,7 +889,8 @@ html = f"""
     </section>
 
     <p class="footer">
-        Disclaimer: This dashboard is for educational and research purposes only. Always verify market trend, news flow, event risk, and position sizing before taking a trade.
+        Disclaimer: This dashboard is for educational and research purposes only. It is not financial advice or a recommendation.
+        Always verify chart structure, market trend, liquidity, news flow, event risk, and your personal risk limits before trading.
     </p>
 
 </div>
@@ -510,4 +901,4 @@ html = f"""
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(html)
 
-print("Compact color-coded report created: index.html")
+print("Upgraded dashboard report created: index.html")

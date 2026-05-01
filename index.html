@@ -47,12 +47,12 @@
         }
 
         .container {
-            max-width: 1500px;
+            max-width: 1600px;
             margin: 0 auto;
         }
 
         .header {
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .header h1 {
@@ -71,12 +71,12 @@
             display: grid;
             grid-template-columns: repeat(6, minmax(150px, 1fr));
             gap: 14px;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
 
         .metric {
             background: var(--card);
-            padding: 18px;
+            padding: 16px;
             border-radius: 14px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.06);
             border: 1px solid var(--border);
@@ -90,14 +90,153 @@
 
         .metric strong {
             display: block;
-            font-size: 26px;
-            margin-top: 8px;
+            font-size: 25px;
+            margin-top: 6px;
+        }
+
+        .market-box {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px;
+            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: 1.3fr 3fr;
+            gap: 18px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .bias-pill {
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .bias-bullish {
+            background: var(--green-bg);
+            color: var(--green);
+        }
+
+        .bias-bearish {
+            background: var(--red-bg);
+            color: var(--red);
+        }
+
+        .bias-neutral {
+            background: var(--yellow-bg);
+            color: var(--yellow);
+        }
+
+        .market-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .market-stats div {
+            background: #f9fafb;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .market-stats span {
+            color: var(--muted);
+            font-size: 12px;
+            display: block;
+        }
+
+        .market-stats strong {
+            font-size: 18px;
+        }
+
+        .top-section {
+            margin-bottom: 20px;
+        }
+
+        .top-section h2 {
+            margin: 0 0 12px;
+        }
+
+        .top-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .top-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+
+        .top-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .stock-name {
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        .priority-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .mini-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .mini-grid div {
+            background: #f9fafb;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .mini-grid span {
+            color: var(--muted);
+            display: block;
+            font-size: 12px;
+        }
+
+        .mini-grid strong {
+            font-size: 15px;
+        }
+
+        .position-box {
+            background: #eff6ff;
+            color: #1e3a8a;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .small-note {
+            color: var(--muted);
+            margin: 0;
+            font-size: 13px;
         }
 
         .explain {
             background: #fff7ed;
             border-left: 6px solid #f97316;
-            padding: 18px 22px;
+            padding: 16px 20px;
             border-radius: 14px;
             margin-bottom: 20px;
             line-height: 1.55;
@@ -147,7 +286,7 @@
 
         table {
             width: 100%;
-            min-width: 1500px;
+            min-width: 1800px;
             border-collapse: collapse;
         }
 
@@ -155,27 +294,23 @@
             background: var(--dark);
             color: white;
             text-align: left;
-            padding: 12px 10px;
-            font-size: 13px;
+            padding: 11px 10px;
+            font-size: 12px;
             white-space: nowrap;
             position: sticky;
             top: 0;
         }
 
         td {
-            padding: 10px 10px;
+            padding: 9px 10px;
             border-bottom: 1px solid var(--border);
-            font-size: 13px;
+            font-size: 12.5px;
             vertical-align: middle;
-            line-height: 1.25;
+            line-height: 1.2;
             white-space: nowrap;
         }
 
-        tr:hover {
-            filter: brightness(0.99);
-        }
-
-        .row-must {
+        .row-high {
             background: var(--green-row);
         }
 
@@ -188,13 +323,13 @@
         }
 
         .stock {
-            font-weight: 800;
+            font-weight: 900;
             color: #111827;
         }
 
         .score {
             font-weight: 900;
-            font-size: 15px;
+            font-size: 14px;
         }
 
         .badge {
@@ -202,7 +337,7 @@
             padding: 6px 10px;
             border-radius: 999px;
             font-weight: 800;
-            font-size: 12px;
+            font-size: 11px;
         }
 
         .buy {
@@ -215,20 +350,15 @@
             color: var(--red);
         }
 
-        .neutral {
-            background: #e5e7eb;
-            color: #374151;
-        }
-
         .priority {
             display: inline-block;
             padding: 6px 10px;
             border-radius: 999px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 800;
         }
 
-        .priority-must {
+        .priority-high {
             background: var(--green-bg);
             color: var(--green);
         }
@@ -243,11 +373,20 @@
             color: var(--orange);
         }
 
-        .empty {
+        .priority-avoid {
+            background: #e5e7eb;
+            color: #374151;
+        }
+
+        .empty,
+        .empty-card {
             text-align: center;
             padding: 30px;
             font-size: 16px;
             color: var(--muted);
+            background: var(--card);
+            border-radius: 16px;
+            border: 1px solid var(--border);
         }
 
         .footer {
@@ -257,13 +396,25 @@
             line-height: 1.5;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
             body {
                 padding: 16px;
             }
 
             .metrics {
                 grid-template-columns: 1fr 1fr;
+            }
+
+            .market-box {
+                grid-template-columns: 1fr;
+            }
+
+            .market-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .top-cards {
+                grid-template-columns: 1fr;
             }
 
             .criteria-grid {
@@ -282,7 +433,7 @@
 
     <section class="header">
         <h1>📈 High-Conviction Swing Trading Scanner</h1>
-        <p>Generated on 01 May 2026, 02:57 PM · NIFTY 500 watchlist · Educational research dashboard</p>
+        <p>Generated on 01 May 2026, 03:11 PM · NIFTY 500 watchlist · Educational research dashboard</p>
     </section>
 
     <section class="metrics">
@@ -291,15 +442,15 @@
             <strong>9</strong>
         </div>
         <div class="metric">
-            <span>Must Trade</span>
+            <span>Highest Priority</span>
             <strong>0</strong>
         </div>
         <div class="metric">
-            <span>Medium</span>
+            <span>Medium Priority</span>
             <strong>6</strong>
         </div>
         <div class="metric">
-            <span>Low</span>
+            <span>Low Priority</span>
             <strong>3</strong>
         </div>
         <div class="metric">
@@ -307,35 +458,134 @@
             <strong>84</strong>
         </div>
         <div class="metric">
-            <span>Average Risk/Reward</span>
+            <span>Avg Risk/Reward</span>
             <strong>2.5</strong>
+        </div>
+    </section>
+
+    <section class="market-box">
+        <div>
+            <span class="bias-pill bias-neutral">NIFTY Bias: Mixed</span>
+            <p>Market is mixed. Prefer only the highest-conviction setups.</p>
+        </div>
+        <div class="market-stats">
+            <div><span>NIFTY Close</span><strong>23997.55</strong></div>
+            <div><span>EMA 20</span><strong>23979.15</strong></div>
+            <div><span>EMA 50</span><strong>24181.97</strong></div>
+            <div><span>5-Day Change</span><strong>-0.73%</strong></div>
+        </div>
+    </section>
+
+    <section class="top-section">
+        <h2>Top 3 Setups</h2>
+        <div class="top-cards">
+            
+        <div class="top-card">
+            <div class="top-card-header">
+                <span class="stock-name">INDUSINDBK.NS</span>
+                <span class="badge buy">BUY</span>
+            </div>
+
+            <div class="priority-line">
+                <span class="priority priority-medium">Medium Priority</span>
+                <strong>Score: 84</strong>
+            </div>
+
+            <div class="mini-grid">
+                <div><span>Entry</span><strong>925.0</strong></div>
+                <div><span>Stop</span><strong>882.9</strong></div>
+                <div><span>Target</span><strong>1030.24</strong></div>
+                <div><span>RR</span><strong>2.5</strong></div>
+            </div>
+
+            <div class="position-box">
+                Suggested position: <strong>216 shares</strong><br>
+                Approx trade value: <strong>₹199800.0</strong> · Capital used: <strong>20.0%</strong>
+            </div>
+
+            <p class="small-note">Enter only above trigger · ⚠️ Mixed market</p>
+        </div>
+        
+        <div class="top-card">
+            <div class="top-card-header">
+                <span class="stock-name">RAMCOCEM.NS</span>
+                <span class="badge sell">SELL</span>
+            </div>
+
+            <div class="priority-line">
+                <span class="priority priority-medium">Medium Priority</span>
+                <strong>Score: 84</strong>
+            </div>
+
+            <div class="mini-grid">
+                <div><span>Entry</span><strong>938.7</strong></div>
+                <div><span>Stop</span><strong>988.09</strong></div>
+                <div><span>Target</span><strong>815.22</strong></div>
+                <div><span>RR</span><strong>2.5</strong></div>
+            </div>
+
+            <div class="position-box">
+                Suggested position: <strong>202 shares</strong><br>
+                Approx trade value: <strong>₹189617.0</strong> · Capital used: <strong>19.0%</strong>
+            </div>
+
+            <p class="small-note">Enter only below trigger · ⚠️ Mixed market</p>
+        </div>
+        
+        <div class="top-card">
+            <div class="top-card-header">
+                <span class="stock-name">THERMAX.NS</span>
+                <span class="badge buy">BUY</span>
+            </div>
+
+            <div class="priority-line">
+                <span class="priority priority-medium">Medium Priority</span>
+                <strong>Score: 81</strong>
+            </div>
+
+            <div class="mini-grid">
+                <div><span>Entry</span><strong>4058.4</strong></div>
+                <div><span>Stop</span><strong>3823.52</strong></div>
+                <div><span>Target</span><strong>4645.6</strong></div>
+                <div><span>RR</span><strong>2.5</strong></div>
+            </div>
+
+            <div class="position-box">
+                Suggested position: <strong>42 shares</strong><br>
+                Approx trade value: <strong>₹170453.0</strong> · Capital used: <strong>17.0%</strong>
+            </div>
+
+            <p class="small-note">Enter only above trigger · ⚠️ Mixed market</p>
+        </div>
+        
         </div>
     </section>
 
     <section class="explain">
         <strong>Quick reading guide:</strong>
         Green rows are the strongest setups, yellow rows are decent setups, and orange rows are lower-conviction setups.
-        Enter only if the price crosses the trigger in the direction of the signal. Avoid chasing if the opening price is already too far beyond the trigger.
+        Enter only if the price crosses the trigger in the direction of the signal. Position size is calculated using
+        ₹1,000,000 capital and 1.0% risk per trade.
     </section>
 
     <section class="criteria">
         <h2>Suggested Investment Criteria</h2>
         <div class="criteria-grid">
             <div class="criteria-item">
-                <strong>Green · 85+</strong>
-                Must Trade. Best setups. Consider only if trigger breaks with strong volume.
+                <strong>85+ · Highest Priority</strong>
+                Best setups. Consider only if trigger breaks with strong volume and market direction supports it.
             </div>
             <div class="criteria-item">
-                <strong>Yellow · 80–84</strong>
-                Medium conviction. Good watchlist names. Smaller position size.
+                <strong>80–84 · Medium Priority</strong>
+                Decent setups. Use smaller size or wait for stronger confirmation.
             </div>
             <div class="criteria-item">
-                <strong>Orange · 75–79</strong>
-                Low conviction. Trade only with extra confirmation.
+                <strong>75–79 · Low Priority</strong>
+                Trade only with extra confirmation. Otherwise skip.
             </div>
             <div class="criteria-item">
                 <strong>Risk Rule</strong>
-                Avoid any trade where risk/reward is below 2.5 or the trigger is badly chased.
+                Suggested quantity uses fixed-risk sizing and max allocation cap.
             </div>
         </div>
     </section>
@@ -350,22 +600,26 @@
                     <th>Conviction</th>
                     <th>Grade</th>
                     <th>Close</th>
-                    <th>Entry Trigger</th>
-                    <th>Stop Loss</th>
+                    <th>Entry</th>
+                    <th>Stop</th>
                     <th>Target</th>
-                    <th>Risk/Reward</th>
+                    <th>RR</th>
                     <th>RSI</th>
                     <th>ATR%</th>
-                    <th>Volume Ratio</th>
-                    <th>Rel. Strength vs NIFTY</th>
-                    <th>When to Enter</th>
-                    <th>Setup Notes</th>
+                    <th>Vol Ratio</th>
+                    <th>RS vs NIFTY</th>
+                    <th>Dist. Trigger</th>
+                    <th>Qty</th>
+                    <th>Trade Value</th>
+                    <th>Entry Rule</th>
+                    <th>Market Warning</th>
+                    <th>Notes</th>
                 </tr>
             </thead>
             <tbody>
                 
         <tr class="row-medium">
-            <td><span class="priority priority-medium">Medium</span></td>
+            <td><span class="priority priority-medium">Medium Priority</span></td>
             <td class="stock">INDUSINDBK.NS</td>
             <td><span class="badge buy">BUY</span></td>
             <td class="score">84</td>
@@ -379,12 +633,16 @@
             <td>3.06%</td>
             <td>1.12</td>
             <td>14.28</td>
+            <td>0.98%</td>
+            <td>216</td>
+            <td>₹199800.0</td>
             <td>Enter only above trigger</td>
+            <td>⚠️ Mixed market</td>
             <td>Uptrend · Strong RS · Normal volume</td>
         </tr>
         
         <tr class="row-medium">
-            <td><span class="priority priority-medium">Medium</span></td>
+            <td><span class="priority priority-medium">Medium Priority</span></td>
             <td class="stock">RAMCOCEM.NS</td>
             <td><span class="badge sell">SELL</span></td>
             <td class="score">84</td>
@@ -398,12 +656,16 @@
             <td>3.52%</td>
             <td>1.56</td>
             <td>-5.83</td>
+            <td>0.38%</td>
+            <td>202</td>
+            <td>₹189617.0</td>
             <td>Enter only below trigger</td>
+            <td>⚠️ Mixed market</td>
             <td>Downtrend · Decent RS · Strong volume</td>
         </tr>
         
         <tr class="row-medium">
-            <td><span class="priority priority-medium">Medium</span></td>
+            <td><span class="priority priority-medium">Medium Priority</span></td>
             <td class="stock">THERMAX.NS</td>
             <td><span class="badge buy">BUY</span></td>
             <td class="score">81</td>
@@ -417,12 +679,16 @@
             <td>3.84%</td>
             <td>1.11</td>
             <td>17.59</td>
+            <td>0.47%</td>
+            <td>42</td>
+            <td>₹170453.0</td>
             <td>Enter only above trigger</td>
+            <td>⚠️ Mixed market</td>
             <td>Uptrend · Strong RS · Normal volume</td>
         </tr>
         
         <tr class="row-medium">
-            <td><span class="priority priority-medium">Medium</span></td>
+            <td><span class="priority priority-medium">Medium Priority</span></td>
             <td class="stock">BHARTIHEXA.NS</td>
             <td><span class="badge sell">SELL</span></td>
             <td class="score">80</td>
@@ -436,12 +702,16 @@
             <td>3.09%</td>
             <td>1.31</td>
             <td>-6.88</td>
+            <td>0.42%</td>
+            <td>132</td>
+            <td>₹199452.0</td>
             <td>Enter only below trigger</td>
+            <td>⚠️ Mixed market</td>
             <td>Downtrend · Decent RS · Normal volume</td>
         </tr>
         
         <tr class="row-medium">
-            <td><span class="priority priority-medium">Medium</span></td>
+            <td><span class="priority priority-medium">Medium Priority</span></td>
             <td class="stock">MRF.NS</td>
             <td><span class="badge sell">SELL</span></td>
             <td class="score">80</td>
@@ -455,12 +725,16 @@
             <td>2.52%</td>
             <td>1.04</td>
             <td>-6.52</td>
+            <td>0.34%</td>
+            <td>1</td>
+            <td>₹130150.0</td>
             <td>Enter only below trigger</td>
+            <td>⚠️ Mixed market</td>
             <td>Downtrend · Decent RS · Normal volume</td>
         </tr>
         
         <tr class="row-medium">
-            <td><span class="priority priority-medium">Medium</span></td>
+            <td><span class="priority priority-medium">Medium Priority</span></td>
             <td class="stock">SBICARD.NS</td>
             <td><span class="badge sell">SELL</span></td>
             <td class="score">80</td>
@@ -474,12 +748,16 @@
             <td>3.31%</td>
             <td>1.37</td>
             <td>-6.13</td>
+            <td>0.13%</td>
+            <td>311</td>
+            <td>₹199989.0</td>
             <td>Enter only below trigger</td>
+            <td>⚠️ Mixed market</td>
             <td>Downtrend · Decent RS · Normal volume</td>
         </tr>
         
         <tr class="row-low">
-            <td><span class="priority priority-low">Low</span></td>
+            <td><span class="priority priority-low">Low Priority</span></td>
             <td class="stock">SONACOMS.NS</td>
             <td><span class="badge buy">BUY</span></td>
             <td class="score">79</td>
@@ -493,12 +771,16 @@
             <td>3.38%</td>
             <td>1.12</td>
             <td>18.66</td>
+            <td>0.68%</td>
+            <td>324</td>
+            <td>₹198094.0</td>
             <td>Enter only above trigger</td>
+            <td>⚠️ Mixed market</td>
             <td>Uptrend · Strong RS · Normal volume</td>
         </tr>
         
         <tr class="row-low">
-            <td><span class="priority priority-low">Low</span></td>
+            <td><span class="priority priority-low">Low Priority</span></td>
             <td class="stock">ICICIGI.NS</td>
             <td><span class="badge sell">SELL</span></td>
             <td class="score">76</td>
@@ -512,12 +794,16 @@
             <td>2.71%</td>
             <td>1.18</td>
             <td>-4.39</td>
+            <td>0.11%</td>
+            <td>113</td>
+            <td>₹199456.0</td>
             <td>Enter only below trigger</td>
+            <td>⚠️ Mixed market</td>
             <td>Downtrend · Decent RS · Normal volume</td>
         </tr>
         
         <tr class="row-low">
-            <td><span class="priority priority-low">Low</span></td>
+            <td><span class="priority priority-low">Low Priority</span></td>
             <td class="stock">TVSMOTOR.NS</td>
             <td><span class="badge sell">SELL</span></td>
             <td class="score">76</td>
@@ -531,7 +817,11 @@
             <td>3.14%</td>
             <td>1.06</td>
             <td>-3.62</td>
+            <td>0.23%</td>
+            <td>57</td>
+            <td>₹199557.0</td>
             <td>Enter only below trigger</td>
+            <td>⚠️ Mixed market</td>
             <td>Downtrend · Decent RS · Normal volume</td>
         </tr>
         
@@ -540,7 +830,8 @@
     </section>
 
     <p class="footer">
-        Disclaimer: This dashboard is for educational and research purposes only. Always verify market trend, news flow, event risk, and position sizing before taking a trade.
+        Disclaimer: This dashboard is for educational and research purposes only. It is not financial advice or a recommendation.
+        Always verify chart structure, market trend, liquidity, news flow, event risk, and your personal risk limits before trading.
     </p>
 
 </div>
