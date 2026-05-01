@@ -1,6 +1,8 @@
 def scan_stock(symbol):
     try:
         df = yf.download(symbol, period="3mo", interval="1d", progress=False)
+        if isinstance(df.columns, pd.MultiIndex):
+    df.columns = df.columns.get_level_values(0)
 
         if df.empty or len(df) < 20:
             return None
