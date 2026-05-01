@@ -829,7 +829,249 @@
         </table>
     </section>
 
-    <p class="footer">
+    
+<!-- PERFORMANCE_LOG_START -->
+<style>
+.performance-section {
+    margin-top: 28px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.performance-section h2 {
+    margin: 0 0 6px;
+    font-size: 26px;
+}
+
+.performance-section .section-note {
+    color: #6b7280;
+    margin: 0 0 16px;
+    font-size: 14px;
+}
+
+.perf-tab-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+
+.perf-tab-button {
+    border: 1px solid #e5e7eb;
+    background: white;
+    color: #374151;
+    padding: 9px 14px;
+    border-radius: 999px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.perf-tab-button.active {
+    background: #111827;
+    color: white;
+}
+
+.performance-table-wrap {
+    overflow-x: auto;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+}
+
+.performance-table-wrap table {
+    width: 100%;
+    min-width: 1200px;
+    border-collapse: collapse;
+}
+
+.performance-table-wrap th {
+    background: #111827;
+    color: white;
+    text-align: left;
+    padding: 10px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.performance-table-wrap td {
+    padding: 9px 10px;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 12.5px;
+    white-space: nowrap;
+}
+
+.status-pill {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.status-win {
+    background: #d1fae5;
+    color: #047857;
+}
+
+.status-loss {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.status-triggered {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.status-pending {
+    background: #fef3c7;
+    color: #a16207;
+}
+
+.status-expired {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.status-gap {
+    background: #ffedd5;
+    color: #c2410c;
+}
+
+.status-neutral {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.performance-empty {
+    padding: 24px;
+    color: #6b7280;
+    background: #f9fafb;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+}
+</style>
+
+<section class="performance-section">
+    <h2>📊 Top 3 Performance Log</h2>
+    <p class="section-note">
+        Tracks the platform's Top 3 daily picks. Latest 60 ideas are shown first; older records appear in 60-trade tabs.
+    </p>
+    
+    <div class="perf-tabs">
+        <div class="perf-tab-buttons">
+            
+        <button class="perf-tab-button active" onclick="showPerfTab('log-tab-0', this)">
+            Latest 60
+        </button>
+        
+        </div>
+        
+        <div id="log-tab-0" class="perf-tab-panel" style="display:block;">
+            <div class="performance-table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Rank</th>
+                            <th>Stock</th>
+                            <th>Signal</th>
+                            <th>Conviction</th>
+                            <th>Entry</th>
+                            <th>Stop</th>
+                            <th>Target</th>
+                            <th>RR</th>
+                            <th>Status</th>
+                            <th>Result</th>
+                            <th>R</th>
+                            <th>Days</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr>
+                <td>2026-05-01</td>
+                <td>1</td>
+                <td class="stock">INDUSINDBK.NS</td>
+                <td><span class="badge buy">BUY</span></td>
+                <td>84</td>
+                <td>925.0</td>
+                <td>882.9</td>
+                <td>1030.24</td>
+                <td>2.5</td>
+                <td><span class="status-pill status-pending">Pending Trigger</span></td>
+                <td>nan</td>
+                <td>nan</td>
+                <td>0</td>
+                <td>Top 3 scanner pick</td>
+            </tr>
+            
+            <tr>
+                <td>2026-05-01</td>
+                <td>2</td>
+                <td class="stock">RAMCOCEM.NS</td>
+                <td><span class="badge sell">SELL</span></td>
+                <td>84</td>
+                <td>938.7</td>
+                <td>988.09</td>
+                <td>815.22</td>
+                <td>2.5</td>
+                <td><span class="status-pill status-pending">Pending Trigger</span></td>
+                <td>nan</td>
+                <td>nan</td>
+                <td>0</td>
+                <td>Top 3 scanner pick</td>
+            </tr>
+            
+            <tr>
+                <td>2026-05-01</td>
+                <td>3</td>
+                <td class="stock">THERMAX.NS</td>
+                <td><span class="badge buy">BUY</span></td>
+                <td>81</td>
+                <td>4058.4</td>
+                <td>3823.52</td>
+                <td>4645.6</td>
+                <td>2.5</td>
+                <td><span class="status-pill status-pending">Pending Trigger</span></td>
+                <td>nan</td>
+                <td>nan</td>
+                <td>0</td>
+                <td>Top 3 scanner pick</td>
+            </tr>
+            
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+    
+</section>
+
+<script>
+function showPerfTab(tabId, button) {
+    const panels = document.querySelectorAll('.perf-tab-panel');
+    const buttons = document.querySelectorAll('.perf-tab-button');
+
+    panels.forEach(panel => {
+        panel.style.display = 'none';
+    });
+
+    buttons.forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    document.getElementById(tabId).style.display = 'block';
+    button.classList.add('active');
+}
+</script>
+<!-- PERFORMANCE_LOG_END -->
+
+<p class="footer">
         Disclaimer: This dashboard is for educational and research purposes only. It is not financial advice or a recommendation.
         Always verify chart structure, market trend, liquidity, news flow, event risk, and your personal risk limits before trading.
     </p>
