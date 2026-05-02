@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,6 +48,32 @@
         .container {
             max-width: 1600px;
             margin: 0 auto;
+        }
+
+        .topbar {
+            max-width: 1600px;
+            margin: 0 auto 18px auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 14px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            padding: 10px 14px;
+            border-radius: 999px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+
+        .back-link:hover {
+            color: #1d4ed8;
+            background: #eff6ff;
+            border-color: #bfdbfe;
         }
 
         .header {
@@ -429,6 +454,13 @@
 </head>
 
 <body>
+
+<div class="topbar">
+    <a class="back-link" href="https://pankajmanchnda.github.io/trading-agents/">
+        ← Back to Trading Agents Dashboard
+    </a>
+</div>
+
 <div class="container">
 
     <section class="header">
@@ -479,85 +511,85 @@
     <section class="top-section">
         <h2>Top 3 Setups</h2>
         <div class="top-cards">
-            
-        <div class="top-card">
-            <div class="top-card-header">
-                <span class="stock-name">INDUSINDBK.NS</span>
-                <span class="badge buy">BUY</span>
+
+            <div class="top-card">
+                <div class="top-card-header">
+                    <span class="stock-name">INDUSINDBK.NS</span>
+                    <span class="badge buy">BUY</span>
+                </div>
+
+                <div class="priority-line">
+                    <span class="priority priority-medium">Medium Priority</span>
+                    <strong>Score: 84</strong>
+                </div>
+
+                <div class="mini-grid">
+                    <div><span>Entry</span><strong>925.0</strong></div>
+                    <div><span>Stop</span><strong>882.9</strong></div>
+                    <div><span>Target</span><strong>1030.24</strong></div>
+                    <div><span>RR</span><strong>2.5</strong></div>
+                </div>
+
+                <div class="position-box">
+                    Suggested position: <strong>216 shares</strong><br>
+                    Approx trade value: <strong>₹199800.0</strong> · Capital used: <strong>20.0%</strong>
+                </div>
+
+                <p class="small-note">Enter only above trigger · ⚠️ Mixed market</p>
             </div>
 
-            <div class="priority-line">
-                <span class="priority priority-medium">Medium Priority</span>
-                <strong>Score: 84</strong>
+            <div class="top-card">
+                <div class="top-card-header">
+                    <span class="stock-name">RAMCOCEM.NS</span>
+                    <span class="badge sell">SELL</span>
+                </div>
+
+                <div class="priority-line">
+                    <span class="priority priority-medium">Medium Priority</span>
+                    <strong>Score: 84</strong>
+                </div>
+
+                <div class="mini-grid">
+                    <div><span>Entry</span><strong>938.7</strong></div>
+                    <div><span>Stop</span><strong>988.09</strong></div>
+                    <div><span>Target</span><strong>815.22</strong></div>
+                    <div><span>RR</span><strong>2.5</strong></div>
+                </div>
+
+                <div class="position-box">
+                    Suggested position: <strong>202 shares</strong><br>
+                    Approx trade value: <strong>₹189617.0</strong> · Capital used: <strong>19.0%</strong>
+                </div>
+
+                <p class="small-note">Enter only below trigger · ⚠️ Mixed market</p>
             </div>
 
-            <div class="mini-grid">
-                <div><span>Entry</span><strong>925.0</strong></div>
-                <div><span>Stop</span><strong>882.9</strong></div>
-                <div><span>Target</span><strong>1030.24</strong></div>
-                <div><span>RR</span><strong>2.5</strong></div>
+            <div class="top-card">
+                <div class="top-card-header">
+                    <span class="stock-name">THERMAX.NS</span>
+                    <span class="badge buy">BUY</span>
+                </div>
+
+                <div class="priority-line">
+                    <span class="priority priority-medium">Medium Priority</span>
+                    <strong>Score: 81</strong>
+                </div>
+
+                <div class="mini-grid">
+                    <div><span>Entry</span><strong>4058.4</strong></div>
+                    <div><span>Stop</span><strong>3823.52</strong></div>
+                    <div><span>Target</span><strong>4645.6</strong></div>
+                    <div><span>RR</span><strong>2.5</strong></div>
+                </div>
+
+                <div class="position-box">
+                    Suggested position: <strong>42 shares</strong><br>
+                    Approx trade value: <strong>₹170453.0</strong> · Capital used: <strong>17.0%</strong>
+                </div>
+
+                <p class="small-note">Enter only above trigger · ⚠️ Mixed market</p>
             </div>
 
-            <div class="position-box">
-                Suggested position: <strong>216 shares</strong><br>
-                Approx trade value: <strong>₹199800.0</strong> · Capital used: <strong>20.0%</strong>
-            </div>
-
-            <p class="small-note">Enter only above trigger · ⚠️ Mixed market</p>
-        </div>
-        
-        <div class="top-card">
-            <div class="top-card-header">
-                <span class="stock-name">RAMCOCEM.NS</span>
-                <span class="badge sell">SELL</span>
-            </div>
-
-            <div class="priority-line">
-                <span class="priority priority-medium">Medium Priority</span>
-                <strong>Score: 84</strong>
-            </div>
-
-            <div class="mini-grid">
-                <div><span>Entry</span><strong>938.7</strong></div>
-                <div><span>Stop</span><strong>988.09</strong></div>
-                <div><span>Target</span><strong>815.22</strong></div>
-                <div><span>RR</span><strong>2.5</strong></div>
-            </div>
-
-            <div class="position-box">
-                Suggested position: <strong>202 shares</strong><br>
-                Approx trade value: <strong>₹189617.0</strong> · Capital used: <strong>19.0%</strong>
-            </div>
-
-            <p class="small-note">Enter only below trigger · ⚠️ Mixed market</p>
-        </div>
-        
-        <div class="top-card">
-            <div class="top-card-header">
-                <span class="stock-name">THERMAX.NS</span>
-                <span class="badge buy">BUY</span>
-            </div>
-
-            <div class="priority-line">
-                <span class="priority priority-medium">Medium Priority</span>
-                <strong>Score: 81</strong>
-            </div>
-
-            <div class="mini-grid">
-                <div><span>Entry</span><strong>4058.4</strong></div>
-                <div><span>Stop</span><strong>3823.52</strong></div>
-                <div><span>Target</span><strong>4645.6</strong></div>
-                <div><span>RR</span><strong>2.5</strong></div>
-            </div>
-
-            <div class="position-box">
-                Suggested position: <strong>42 shares</strong><br>
-                Approx trade value: <strong>₹170453.0</strong> · Capital used: <strong>17.0%</strong>
-            </div>
-
-            <p class="small-note">Enter only above trigger · ⚠️ Mixed market</p>
-        </div>
-        
         </div>
     </section>
 
@@ -617,461 +649,456 @@
                 </tr>
             </thead>
             <tbody>
-                
-        <tr class="row-medium">
-            <td><span class="priority priority-medium">Medium Priority</span></td>
-            <td class="stock">INDUSINDBK.NS</td>
-            <td><span class="badge buy">BUY</span></td>
-            <td class="score">84</td>
-            <td>B+</td>
-            <td>916.05</td>
-            <td>925.0</td>
-            <td>882.9</td>
-            <td>1030.24</td>
-            <td>2.5</td>
-            <td>63.2</td>
-            <td>3.06%</td>
-            <td>1.12</td>
-            <td>14.28</td>
-            <td>0.98%</td>
-            <td>216</td>
-            <td>₹199800.0</td>
-            <td>Enter only above trigger</td>
-            <td>⚠️ Mixed market</td>
-            <td>Uptrend · Strong RS · Normal volume</td>
-        </tr>
-        
-        <tr class="row-medium">
-            <td><span class="priority priority-medium">Medium Priority</span></td>
-            <td class="stock">RAMCOCEM.NS</td>
-            <td><span class="badge sell">SELL</span></td>
-            <td class="score">84</td>
-            <td>B+</td>
-            <td>935.1</td>
-            <td>938.7</td>
-            <td>988.09</td>
-            <td>815.22</td>
-            <td>2.5</td>
-            <td>37.5</td>
-            <td>3.52%</td>
-            <td>1.56</td>
-            <td>-5.83</td>
-            <td>0.38%</td>
-            <td>202</td>
-            <td>₹189617.0</td>
-            <td>Enter only below trigger</td>
-            <td>⚠️ Mixed market</td>
-            <td>Downtrend · Decent RS · Strong volume</td>
-        </tr>
-        
-        <tr class="row-medium">
-            <td><span class="priority priority-medium">Medium Priority</span></td>
-            <td class="stock">THERMAX.NS</td>
-            <td><span class="badge buy">BUY</span></td>
-            <td class="score">81</td>
-            <td>B+</td>
-            <td>4077.6</td>
-            <td>4058.4</td>
-            <td>3823.52</td>
-            <td>4645.6</td>
-            <td>2.5</td>
-            <td>65.7</td>
-            <td>3.84%</td>
-            <td>1.11</td>
-            <td>17.59</td>
-            <td>0.47%</td>
-            <td>42</td>
-            <td>₹170453.0</td>
-            <td>Enter only above trigger</td>
-            <td>⚠️ Mixed market</td>
-            <td>Uptrend · Strong RS · Normal volume</td>
-        </tr>
-        
-        <tr class="row-medium">
-            <td><span class="priority priority-medium">Medium Priority</span></td>
-            <td class="stock">BHARTIHEXA.NS</td>
-            <td><span class="badge sell">SELL</span></td>
-            <td class="score">80</td>
-            <td>B+</td>
-            <td>1517.4</td>
-            <td>1511.0</td>
-            <td>1581.42</td>
-            <td>1334.95</td>
-            <td>2.5</td>
-            <td>44.9</td>
-            <td>3.09%</td>
-            <td>1.31</td>
-            <td>-6.88</td>
-            <td>0.42%</td>
-            <td>132</td>
-            <td>₹199452.0</td>
-            <td>Enter only below trigger</td>
-            <td>⚠️ Mixed market</td>
-            <td>Downtrend · Decent RS · Normal volume</td>
-        </tr>
-        
-        <tr class="row-medium">
-            <td><span class="priority priority-medium">Medium Priority</span></td>
-            <td class="stock">MRF.NS</td>
-            <td><span class="badge sell">SELL</span></td>
-            <td class="score">80</td>
-            <td>B+</td>
-            <td>129710.0</td>
-            <td>130150.0</td>
-            <td>135050.61</td>
-            <td>117898.47</td>
-            <td>2.5</td>
-            <td>40.4</td>
-            <td>2.52%</td>
-            <td>1.04</td>
-            <td>-6.52</td>
-            <td>0.34%</td>
-            <td>1</td>
-            <td>₹130150.0</td>
-            <td>Enter only below trigger</td>
-            <td>⚠️ Mixed market</td>
-            <td>Downtrend · Decent RS · Normal volume</td>
-        </tr>
-        
-        <tr class="row-medium">
-            <td><span class="priority priority-medium">Medium Priority</span></td>
-            <td class="stock">SBICARD.NS</td>
-            <td><span class="badge sell">SELL</span></td>
-            <td class="score">80</td>
-            <td>B+</td>
-            <td>643.9</td>
-            <td>643.05</td>
-            <td>674.99</td>
-            <td>563.2</td>
-            <td>2.5</td>
-            <td>37.3</td>
-            <td>3.31%</td>
-            <td>1.37</td>
-            <td>-6.13</td>
-            <td>0.13%</td>
-            <td>311</td>
-            <td>₹199989.0</td>
-            <td>Enter only below trigger</td>
-            <td>⚠️ Mixed market</td>
-            <td>Downtrend · Decent RS · Normal volume</td>
-        </tr>
-        
-        <tr class="row-low">
-            <td><span class="priority priority-low">Low Priority</span></td>
-            <td class="stock">SONACOMS.NS</td>
-            <td><span class="badge buy">BUY</span></td>
-            <td class="score">79</td>
-            <td>B+</td>
-            <td>607.25</td>
-            <td>611.4</td>
-            <td>580.59</td>
-            <td>688.42</td>
-            <td>2.5</td>
-            <td>66.6</td>
-            <td>3.38%</td>
-            <td>1.12</td>
-            <td>18.66</td>
-            <td>0.68%</td>
-            <td>324</td>
-            <td>₹198094.0</td>
-            <td>Enter only above trigger</td>
-            <td>⚠️ Mixed market</td>
-            <td>Uptrend · Strong RS · Normal volume</td>
-        </tr>
-        
-        <tr class="row-low">
-            <td><span class="priority priority-low">Low Priority</span></td>
-            <td class="stock">ICICIGI.NS</td>
-            <td><span class="badge sell">SELL</span></td>
-            <td class="score">76</td>
-            <td>B+</td>
-            <td>1763.2</td>
-            <td>1765.1</td>
-            <td>1836.91</td>
-            <td>1585.58</td>
-            <td>2.5</td>
-            <td>41.8</td>
-            <td>2.71%</td>
-            <td>1.18</td>
-            <td>-4.39</td>
-            <td>0.11%</td>
-            <td>113</td>
-            <td>₹199456.0</td>
-            <td>Enter only below trigger</td>
-            <td>⚠️ Mixed market</td>
-            <td>Downtrend · Decent RS · Normal volume</td>
-        </tr>
-        
-        <tr class="row-low">
-            <td><span class="priority priority-low">Low Priority</span></td>
-            <td class="stock">TVSMOTOR.NS</td>
-            <td><span class="badge sell">SELL</span></td>
-            <td class="score">76</td>
-            <td>B+</td>
-            <td>3492.9</td>
-            <td>3501.0</td>
-            <td>3665.51</td>
-            <td>3089.72</td>
-            <td>2.5</td>
-            <td>43.7</td>
-            <td>3.14%</td>
-            <td>1.06</td>
-            <td>-3.62</td>
-            <td>0.23%</td>
-            <td>57</td>
-            <td>₹199557.0</td>
-            <td>Enter only below trigger</td>
-            <td>⚠️ Mixed market</td>
-            <td>Downtrend · Decent RS · Normal volume</td>
-        </tr>
-        
+
+                <tr class="row-medium">
+                    <td><span class="priority priority-medium">Medium Priority</span></td>
+                    <td class="stock">INDUSINDBK.NS</td>
+                    <td><span class="badge buy">BUY</span></td>
+                    <td class="score">84</td>
+                    <td>B+</td>
+                    <td>916.05</td>
+                    <td>925.0</td>
+                    <td>882.9</td>
+                    <td>1030.24</td>
+                    <td>2.5</td>
+                    <td>63.2</td>
+                    <td>3.06%</td>
+                    <td>1.12</td>
+                    <td>14.28</td>
+                    <td>0.98%</td>
+                    <td>216</td>
+                    <td>₹199800.0</td>
+                    <td>Enter only above trigger</td>
+                    <td>⚠️ Mixed market</td>
+                    <td>Uptrend · Strong RS · Normal volume</td>
+                </tr>
+
+                <tr class="row-medium">
+                    <td><span class="priority priority-medium">Medium Priority</span></td>
+                    <td class="stock">RAMCOCEM.NS</td>
+                    <td><span class="badge sell">SELL</span></td>
+                    <td class="score">84</td>
+                    <td>B+</td>
+                    <td>935.1</td>
+                    <td>938.7</td>
+                    <td>988.09</td>
+                    <td>815.22</td>
+                    <td>2.5</td>
+                    <td>37.5</td>
+                    <td>3.52%</td>
+                    <td>1.56</td>
+                    <td>-5.83</td>
+                    <td>0.38%</td>
+                    <td>202</td>
+                    <td>₹189617.0</td>
+                    <td>Enter only below trigger</td>
+                    <td>⚠️ Mixed market</td>
+                    <td>Downtrend · Decent RS · Strong volume</td>
+                </tr>
+
+                <tr class="row-medium">
+                    <td><span class="priority priority-medium">Medium Priority</span></td>
+                    <td class="stock">THERMAX.NS</td>
+                    <td><span class="badge buy">BUY</span></td>
+                    <td class="score">81</td>
+                    <td>B+</td>
+                    <td>4077.6</td>
+                    <td>4058.4</td>
+                    <td>3823.52</td>
+                    <td>4645.6</td>
+                    <td>2.5</td>
+                    <td>65.7</td>
+                    <td>3.84%</td>
+                    <td>1.11</td>
+                    <td>17.59</td>
+                    <td>0.47%</td>
+                    <td>42</td>
+                    <td>₹170453.0</td>
+                    <td>Enter only above trigger</td>
+                    <td>⚠️ Mixed market</td>
+                    <td>Uptrend · Strong RS · Normal volume</td>
+                </tr>
+
+                <tr class="row-medium">
+                    <td><span class="priority priority-medium">Medium Priority</span></td>
+                    <td class="stock">BHARTIHEXA.NS</td>
+                    <td><span class="badge sell">SELL</span></td>
+                    <td class="score">80</td>
+                    <td>B+</td>
+                    <td>1517.4</td>
+                    <td>1511.0</td>
+                    <td>1581.42</td>
+                    <td>1334.95</td>
+                    <td>2.5</td>
+                    <td>44.9</td>
+                    <td>3.09%</td>
+                    <td>1.31</td>
+                    <td>-6.88</td>
+                    <td>0.42%</td>
+                    <td>132</td>
+                    <td>₹199452.0</td>
+                    <td>Enter only below trigger</td>
+                    <td>⚠️ Mixed market</td>
+                    <td>Downtrend · Decent RS · Normal volume</td>
+                </tr>
+
+                <tr class="row-medium">
+                    <td><span class="priority priority-medium">Medium Priority</span></td>
+                    <td class="stock">MRF.NS</td>
+                    <td><span class="badge sell">SELL</span></td>
+                    <td class="score">80</td>
+                    <td>B+</td>
+                    <td>129710.0</td>
+                    <td>130150.0</td>
+                    <td>135050.61</td>
+                    <td>117898.47</td>
+                    <td>2.5</td>
+                    <td>40.4</td>
+                    <td>2.52%</td>
+                    <td>1.04</td>
+                    <td>-6.52</td>
+                    <td>0.34%</td>
+                    <td>1</td>
+                    <td>₹130150.0</td>
+                    <td>Enter only below trigger</td>
+                    <td>⚠️ Mixed market</td>
+                    <td>Downtrend · Decent RS · Normal volume</td>
+                </tr>
+
+                <tr class="row-medium">
+                    <td><span class="priority priority-medium">Medium Priority</span></td>
+                    <td class="stock">SBICARD.NS</td>
+                    <td><span class="badge sell">SELL</span></td>
+                    <td class="score">80</td>
+                    <td>B+</td>
+                    <td>643.9</td>
+                    <td>643.05</td>
+                    <td>674.99</td>
+                    <td>563.2</td>
+                    <td>2.5</td>
+                    <td>37.3</td>
+                    <td>3.31%</td>
+                    <td>1.37</td>
+                    <td>-6.13</td>
+                    <td>0.13%</td>
+                    <td>311</td>
+                    <td>₹199989.0</td>
+                    <td>Enter only below trigger</td>
+                    <td>⚠️ Mixed market</td>
+                    <td>Downtrend · Decent RS · Normal volume</td>
+                </tr>
+
+                <tr class="row-low">
+                    <td><span class="priority priority-low">Low Priority</span></td>
+                    <td class="stock">SONACOMS.NS</td>
+                    <td><span class="badge buy">BUY</span></td>
+                    <td class="score">79</td>
+                    <td>B+</td>
+                    <td>607.25</td>
+                    <td>611.4</td>
+                    <td>580.59</td>
+                    <td>688.42</td>
+                    <td>2.5</td>
+                    <td>66.6</td>
+                    <td>3.38%</td>
+                    <td>1.12</td>
+                    <td>18.66</td>
+                    <td>0.68%</td>
+                    <td>324</td>
+                    <td>₹198094.0</td>
+                    <td>Enter only above trigger</td>
+                    <td>⚠️ Mixed market</td>
+                    <td>Uptrend · Strong RS · Normal volume</td>
+                </tr>
+
+                <tr class="row-low">
+                    <td><span class="priority priority-low">Low Priority</span></td>
+                    <td class="stock">ICICIGI.NS</td>
+                    <td><span class="badge sell">SELL</span></td>
+                    <td class="score">76</td>
+                    <td>B+</td>
+                    <td>1763.2</td>
+                    <td>1765.1</td>
+                    <td>1836.91</td>
+                    <td>1585.58</td>
+                    <td>2.5</td>
+                    <td>41.8</td>
+                    <td>2.71%</td>
+                    <td>1.18</td>
+                    <td>-4.39</td>
+                    <td>0.11%</td>
+                    <td>113</td>
+                    <td>₹199456.0</td>
+                    <td>Enter only below trigger</td>
+                    <td>⚠️ Mixed market</td>
+                    <td>Downtrend · Decent RS · Normal volume</td>
+                </tr>
+
+                <tr class="row-low">
+                    <td><span class="priority priority-low">Low Priority</span></td>
+                    <td class="stock">TVSMOTOR.NS</td>
+                    <td><span class="badge sell">SELL</span></td>
+                    <td class="score">76</td>
+                    <td>B+</td>
+                    <td>3492.9</td>
+                    <td>3501.0</td>
+                    <td>3665.51</td>
+                    <td>3089.72</td>
+                    <td>2.5</td>
+                    <td>43.7</td>
+                    <td>3.14%</td>
+                    <td>1.06</td>
+                    <td>-3.62</td>
+                    <td>0.23%</td>
+                    <td>57</td>
+                    <td>₹199557.0</td>
+                    <td>Enter only below trigger</td>
+                    <td>⚠️ Mixed market</td>
+                    <td>Downtrend · Decent RS · Normal volume</td>
+                </tr>
+
             </tbody>
         </table>
     </section>
 
-    
-<!-- PERFORMANCE_LOG_START -->
-<style>
-.performance-section {
-    margin-top: 28px;
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 18px;
-    padding: 22px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-}
+    <!-- PERFORMANCE_LOG_START -->
+    <style>
+        .performance-section {
+            margin-top: 28px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 18px;
+            padding: 22px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
 
-.performance-section h2 {
-    margin: 0 0 6px;
-    font-size: 26px;
-}
+        .performance-section h2 {
+            margin: 0 0 6px;
+            font-size: 26px;
+        }
 
-.performance-section .section-note {
-    color: #6b7280;
-    margin: 0 0 16px;
-    font-size: 14px;
-}
+        .performance-section .section-note {
+            color: #6b7280;
+            margin: 0 0 16px;
+            font-size: 14px;
+        }
 
-.perf-tab-buttons {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 14px;
-}
+        .perf-tab-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
 
-.perf-tab-button {
-    border: 1px solid #e5e7eb;
-    background: white;
-    color: #374151;
-    padding: 9px 14px;
-    border-radius: 999px;
-    font-weight: 800;
-    cursor: pointer;
-}
+        .perf-tab-button {
+            border: 1px solid #e5e7eb;
+            background: white;
+            color: #374151;
+            padding: 9px 14px;
+            border-radius: 999px;
+            font-weight: 800;
+            cursor: pointer;
+        }
 
-.perf-tab-button.active {
-    background: #111827;
-    color: white;
-}
+        .perf-tab-button.active {
+            background: #111827;
+            color: white;
+        }
 
-.performance-table-wrap {
-    overflow-x: auto;
-    border-radius: 14px;
-    border: 1px solid #e5e7eb;
-}
+        .performance-table-wrap {
+            overflow-x: auto;
+            border-radius: 14px;
+            border: 1px solid #e5e7eb;
+        }
 
-.performance-table-wrap table {
-    width: 100%;
-    min-width: 1200px;
-    border-collapse: collapse;
-}
+        .performance-table-wrap table {
+            width: 100%;
+            min-width: 1200px;
+            border-collapse: collapse;
+        }
 
-.performance-table-wrap th {
-    background: #111827;
-    color: white;
-    text-align: left;
-    padding: 10px;
-    font-size: 12px;
-    white-space: nowrap;
-}
+        .performance-table-wrap th {
+            background: #111827;
+            color: white;
+            text-align: left;
+            padding: 10px;
+            font-size: 12px;
+            white-space: nowrap;
+        }
 
-.performance-table-wrap td {
-    padding: 9px 10px;
-    border-bottom: 1px solid #e5e7eb;
-    font-size: 12.5px;
-    white-space: nowrap;
-}
+        .performance-table-wrap td {
+            padding: 9px 10px;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 12.5px;
+            white-space: nowrap;
+        }
 
-.status-pill {
-    display: inline-block;
-    padding: 6px 10px;
-    border-radius: 999px;
-    font-size: 11px;
-    font-weight: 800;
-}
+        .status-pill {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 800;
+        }
 
-.status-win {
-    background: #d1fae5;
-    color: #047857;
-}
+        .status-win {
+            background: #d1fae5;
+            color: #047857;
+        }
 
-.status-loss {
-    background: #fee2e2;
-    color: #b91c1c;
-}
+        .status-loss {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
 
-.status-triggered {
-    background: #dbeafe;
-    color: #1d4ed8;
-}
+        .status-triggered {
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
 
-.status-pending {
-    background: #fef3c7;
-    color: #a16207;
-}
+        .status-pending {
+            background: #fef3c7;
+            color: #a16207;
+        }
 
-.status-expired {
-    background: #e5e7eb;
-    color: #374151;
-}
+        .status-expired {
+            background: #e5e7eb;
+            color: #374151;
+        }
 
-.status-gap {
-    background: #ffedd5;
-    color: #c2410c;
-}
+        .status-gap {
+            background: #ffedd5;
+            color: #c2410c;
+        }
 
-.status-neutral {
-    background: #f3f4f6;
-    color: #374151;
-}
+        .status-neutral {
+            background: #f3f4f6;
+            color: #374151;
+        }
 
-.performance-empty {
-    padding: 24px;
-    color: #6b7280;
-    background: #f9fafb;
-    border-radius: 14px;
-    border: 1px solid #e5e7eb;
-}
-</style>
+        .performance-empty {
+            padding: 24px;
+            color: #6b7280;
+            background: #f9fafb;
+            border-radius: 14px;
+            border: 1px solid #e5e7eb;
+        }
+    </style>
 
-<section class="performance-section">
-    <h2>📊 Top 3 Performance Log</h2>
-    <p class="section-note">
-        Tracks the platform's Top 3 daily picks. Latest 60 ideas are shown first; older records appear in 60-trade tabs.
-    </p>
-    
-    <div class="perf-tabs">
-        <div class="perf-tab-buttons">
-            
-        <button class="perf-tab-button active" onclick="showPerfTab('log-tab-0', this)">
-            Latest 60
-        </button>
-        
-        </div>
-        
-        <div id="log-tab-0" class="perf-tab-panel" style="display:block;">
-            <div class="performance-table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Rank</th>
-                            <th>Stock</th>
-                            <th>Signal</th>
-                            <th>Conviction</th>
-                            <th>Entry</th>
-                            <th>Stop</th>
-                            <th>Target</th>
-                            <th>RR</th>
-                            <th>Status</th>
-                            <th>Result</th>
-                            <th>R</th>
-                            <th>Days</th>
-                            <th>Notes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-            <tr>
-                <td>2026-05-01</td>
-                <td>1</td>
-                <td class="stock">INDUSINDBK.NS</td>
-                <td><span class="badge buy">BUY</span></td>
-                <td>84</td>
-                <td>925.0</td>
-                <td>882.9</td>
-                <td>1030.24</td>
-                <td>2.5</td>
-                <td><span class="status-pill status-pending">Pending Trigger</span></td>
-                <td>nan</td>
-                <td>nan</td>
-                <td>0</td>
-                <td>Top 3 scanner pick</td>
-            </tr>
-            
-            <tr>
-                <td>2026-05-01</td>
-                <td>2</td>
-                <td class="stock">RAMCOCEM.NS</td>
-                <td><span class="badge sell">SELL</span></td>
-                <td>84</td>
-                <td>938.7</td>
-                <td>988.09</td>
-                <td>815.22</td>
-                <td>2.5</td>
-                <td><span class="status-pill status-pending">Pending Trigger</span></td>
-                <td>nan</td>
-                <td>nan</td>
-                <td>0</td>
-                <td>Top 3 scanner pick</td>
-            </tr>
-            
-            <tr>
-                <td>2026-05-01</td>
-                <td>3</td>
-                <td class="stock">THERMAX.NS</td>
-                <td><span class="badge buy">BUY</span></td>
-                <td>81</td>
-                <td>4058.4</td>
-                <td>3823.52</td>
-                <td>4645.6</td>
-                <td>2.5</td>
-                <td><span class="status-pill status-pending">Pending Trigger</span></td>
-                <td>nan</td>
-                <td>nan</td>
-                <td>0</td>
-                <td>Top 3 scanner pick</td>
-            </tr>
-            
-                    </tbody>
-                </table>
+    <section class="performance-section">
+        <h2>📊 Top 3 Performance Log</h2>
+        <p class="section-note">
+            Tracks the platform's Top 3 daily picks. Latest 60 ideas are shown first; older records appear in 60-trade tabs.
+        </p>
+
+        <div class="perf-tabs">
+            <div class="perf-tab-buttons">
+                <button class="perf-tab-button active" onclick="showPerfTab('log-tab-0', this)">
+                    Latest 60
+                </button>
+            </div>
+
+            <div id="log-tab-0" class="perf-tab-panel" style="display:block;">
+                <div class="performance-table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Rank</th>
+                                <th>Stock</th>
+                                <th>Signal</th>
+                                <th>Conviction</th>
+                                <th>Entry</th>
+                                <th>Stop</th>
+                                <th>Target</th>
+                                <th>RR</th>
+                                <th>Status</th>
+                                <th>Result</th>
+                                <th>R</th>
+                                <th>Days</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>2026-05-01</td>
+                                <td>1</td>
+                                <td class="stock">INDUSINDBK.NS</td>
+                                <td><span class="badge buy">BUY</span></td>
+                                <td>84</td>
+                                <td>925.0</td>
+                                <td>882.9</td>
+                                <td>1030.24</td>
+                                <td>2.5</td>
+                                <td><span class="status-pill status-pending">Pending Trigger</span></td>
+                                <td>nan</td>
+                                <td>nan</td>
+                                <td>0</td>
+                                <td>Top 3 scanner pick</td>
+                            </tr>
+
+                            <tr>
+                                <td>2026-05-01</td>
+                                <td>2</td>
+                                <td class="stock">RAMCOCEM.NS</td>
+                                <td><span class="badge sell">SELL</span></td>
+                                <td>84</td>
+                                <td>938.7</td>
+                                <td>988.09</td>
+                                <td>815.22</td>
+                                <td>2.5</td>
+                                <td><span class="status-pill status-pending">Pending Trigger</span></td>
+                                <td>nan</td>
+                                <td>nan</td>
+                                <td>0</td>
+                                <td>Top 3 scanner pick</td>
+                            </tr>
+
+                            <tr>
+                                <td>2026-05-01</td>
+                                <td>3</td>
+                                <td class="stock">THERMAX.NS</td>
+                                <td><span class="badge buy">BUY</span></td>
+                                <td>81</td>
+                                <td>4058.4</td>
+                                <td>3823.52</td>
+                                <td>4645.6</td>
+                                <td>2.5</td>
+                                <td><span class="status-pill status-pending">Pending Trigger</span></td>
+                                <td>nan</td>
+                                <td>nan</td>
+                                <td>0</td>
+                                <td>Top 3 scanner pick</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-        
-    </div>
-    
-</section>
+    </section>
 
-<script>
-function showPerfTab(tabId, button) {
-    const panels = document.querySelectorAll('.perf-tab-panel');
-    const buttons = document.querySelectorAll('.perf-tab-button');
+    <script>
+        function showPerfTab(tabId, button) {
+            const panels = document.querySelectorAll('.perf-tab-panel');
+            const buttons = document.querySelectorAll('.perf-tab-button');
 
-    panels.forEach(panel => {
-        panel.style.display = 'none';
-    });
+            panels.forEach(panel => {
+                panel.style.display = 'none';
+            });
 
-    buttons.forEach(btn => {
-        btn.classList.remove('active');
-    });
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
 
-    document.getElementById(tabId).style.display = 'block';
-    button.classList.add('active');
-}
-</script>
-<!-- PERFORMANCE_LOG_END -->
+            document.getElementById(tabId).style.display = 'block';
+            button.classList.add('active');
+        }
+    </script>
+    <!-- PERFORMANCE_LOG_END -->
 
-<p class="footer">
+    <p class="footer">
         Disclaimer: This dashboard is for educational and research purposes only. It is not financial advice or a recommendation.
         Always verify chart structure, market trend, liquidity, news flow, event risk, and your personal risk limits before trading.
     </p>
