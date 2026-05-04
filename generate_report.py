@@ -27,11 +27,18 @@ def format_number(value, decimals=2):
 
 
 def get_priority(row):
-    for col in ["Priority", "priority", "Signal Priority", "signal_priority"]:
-        val = safe_value(row, col, "")
-        if val != "":
-            return str(val)
-    return "Watchlist"
+    direct_priority = get_col(
+        row,
+        ["Priority", "priority", "Signal Priority", "signal_priority"],
+        ""
+    )
+
+    direct_priority_text = str(direct_priority).strip().lower()
+
+    if direct_priority_text not in ["", "-", "watchlist", "nan", "none"]:
+        return str(direct_priority)
+
+    return get_priority_from_score(get_score(row))
 
 
 def get_score(row):
