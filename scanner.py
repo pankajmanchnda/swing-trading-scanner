@@ -301,10 +301,20 @@ if not output.empty:
 else:
     print("\nNo fresh high-conviction candidates found in this run.")
 
-    if Path(OUTPUT_FILE).exists() and Path(OUTPUT_FILE).stat().st_size > 0:
-        print(f"Keeping previous {OUTPUT_FILE} instead of overwriting it with a blank file.")
+    keep_existing = False
+
+    if Path(OUTPUT_FILE).exists():
+        try:
+            previous_output = pd.read_csv(OUTPUT_FILE)
+            if not previous_output.empty:
+                keep_existing = True
+        except Exception:
+            keep_existing = False
+
+    if keep_existing:
+        print(f"Keeping previous valid {OUTPUT_FILE} instead of overwriting it with a blank file.")
     else:
-        print(f"No previous {OUTPUT_FILE} found. Creating an empty file with expected columns.")
+        print(f"No previous valid {OUTPUT_FILE} found. Creating an empty file with expected columns.")
 
         empty_columns = [
             "Symbol",
