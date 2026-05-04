@@ -282,14 +282,48 @@ for symbol in symbols:
 
 # ---------------- OUTPUT ----------------
 
+# ---------------- OUTPUT ----------------
+
+from pathlib import Path
+
+OUTPUT_FILE = "scanner_output.csv"
 output = pd.DataFrame(results)
 
 if not output.empty:
     output = output.sort_values(by="Conviction Score", ascending=False).head(MAX_RESULTS)
 
-print("\nHigh-Conviction Watchlist:")
-print(output)
+    print("\nHigh-Conviction Watchlist:")
+    print(output)
 
-output.to_csv("scanner_output.csv", index=False)
+    output.to_csv(OUTPUT_FILE, index=False)
+    print(f"\nSaved fresh high-conviction results to {OUTPUT_FILE}")
 
-print("\nSaved high-conviction scanner_output.csv")
+else:
+    print("\nNo fresh high-conviction candidates found in this run.")
+
+    if Path(OUTPUT_FILE).exists() and Path(OUTPUT_FILE).stat().st_size > 0:
+        print(f"Keeping previous {OUTPUT_FILE} instead of overwriting it with a blank file.")
+    else:
+        print(f"No previous {OUTPUT_FILE} found. Creating an empty file with expected columns.")
+
+        empty_columns = [
+            "Symbol",
+            "Signal",
+            "Conviction Score",
+            "Grade",
+            "Close",
+            "Entry Trigger",
+            "Stop Loss",
+            "Target",
+            "Risk/Reward",
+            "RSI",
+            "ATR%",
+            "Volume Ratio",
+            "Relative Strength vs NIFTY",
+            "Distance to Trigger%",
+            "Suggested Action",
+            "Avoid If",
+            "Explanation"
+        ]
+
+        pd.DataFrame(columns=empty_columns).to_csv(OUTPUT_FILE, index=False)
