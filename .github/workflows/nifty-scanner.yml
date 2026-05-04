@@ -29,6 +29,7 @@ jobs:
       - name: Run Nifty scanner
         run: |
           python scanner.py
+python generate_report.py
 
       - name: Commit and push updated results
         run: |
