@@ -875,7 +875,6 @@ html = f"""
             line-height: 1.5;
         }}
 .performance-section {
-    margin-top: 24px;
 }
 
 .performance-section h2 {
