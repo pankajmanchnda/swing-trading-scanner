@@ -1,13 +1,75 @@
 import html
+# ---------------- OUTPUT ----------------
+
 from pathlib import Path
 from datetime import datetime
 
-import pandas as pd
+OUTPUT_FILE = "scanner_output.csv"
+STATUS_FILE = "scanner_status.txt"
 
+output = pd.DataFrame(results)
 
-OUTPUT_CSV = "scanner_output.csv"
-OUTPUT_HTML = "index.html"
+run_time = datetime.now().strftime("%d %b %Y, %I:%M %p")
 
+if not output.empty:
+    output = output.sort_values(by="Conviction Score", ascending=False).head(MAX_RESULTS)
+
+    print("\nHigh-Conviction Watchlist:")
+    print(output)
+
+    output.to_csv(OUTPUT_FILE, index=False)
+
+    with open(STATUS_FILE, "w", encoding="utf-8") as f:
+        f.write(f"Fresh scan generated on {run_time}")
+
+    print(f"\nSaved fresh high-conviction results to {OUTPUT_FILE}")
+
+else:
+    print("\nNo fresh high-conviction candidates found in this run.")
+
+    keep_existing = False
+
+    if Path(OUTPUT_FILE).exists():
+        try:
+            previous_output = pd.read_csv(OUTPUT_FILE)
+            if not previous_output.empty:
+                keep_existing = True
+        except Exception:
+            keep_existing = False
+
+    if keep_existing:
+        with open(STATUS_FILE, "w", encoding="utf-8") as f:
+            f.write(f"No fresh candidates found on {run_time}. Showing previous valid scanner output.")
+
+        print(f"Keeping previous valid {OUTPUT_FILE} instead of overwriting it with a blank file.")
+
+    else:
+        print(f"No previous valid {OUTPUT_FILE} found. Creating an empty file with expected columns.")
+
+        empty_columns = [
+            "Symbol",
+            "Signal",
+            "Conviction Score",
+            "Grade",
+            "Close",
+            "Entry Trigger",
+            "Stop Loss",
+            "Target",
+            "Risk/Reward",
+            "RSI",
+            "ATR%",
+            "Volume Ratio",
+            "Relative Strength vs NIFTY",
+            "Distance to Trigger%",
+            "Suggested Action",
+            "Avoid If",
+            "Explanation"
+        ]
+
+        pd.DataFrame(columns=empty_columns).to_csv(OUTPUT_FILE, index=False)
+
+        with open(STATUS_FILE, "w", encoding="utf-8") as f:
+            f.write(f"No candidates found on {run_time}. No previous valid scanner output available.")
 
 # ---------------- BASIC HELPERS ----------------
 
