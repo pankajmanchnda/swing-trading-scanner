@@ -9,7 +9,7 @@ import yfinance as yf
 
 # =========================
 # Indian Market Scanner
-# Swing vs Intraday Toggle - Stabilised Parameters
+# Swing vs Intraday Toggle - Professional Risk Model
 # =========================
 
 CAPITAL_INR = 1_000_000
@@ -368,18 +368,27 @@ def score_ticker(df, bench_df, ticker, mode_key):
     if qty <= 0 or trade_value <= 0:
         return None
 
-    # Normalize conviction to a clean 0–100 scale.
-    # Final priority labels are assigned after ranking so that only the top
-    # 1–5 ideas can become Highest Priority.
-    score = max(0, min(int(round(score)), 100))
+    # Professional risk-model normalization.
+    # This is a setup-quality score, NOT a win-probability score.
+    # No live market setup should display 100 because no trade is loss-proof.
+    # Excellent setups are intentionally capped in the low/mid-90s.
+    raw_score = int(round(score))
+    if raw_score >= 98:
+        score = 94
+    elif raw_score >= 94:
+        score = 92
+    elif raw_score >= 90:
+        score = 90
+    else:
+        score = max(0, min(raw_score, 89))
 
-    if score >= 88:
+    if score >= 90:
         priority = "Qualified Candidate"
         grade = "A"
-    elif score >= 82:
+    elif score >= 84:
         priority = "Qualified Candidate"
         grade = "B+"
-    elif score >= 76:
+    elif score >= 78:
         priority = "Qualified Candidate"
         grade = "B"
     else:
@@ -423,13 +432,13 @@ def calibrate_priorities(rows, highest_cap=5):
     for rank, row in enumerate(sorted(rows, key=lambda x: x["Conviction"], reverse=True), start=1):
         score = int(row["Conviction"])
 
-        if rank <= highest_cap and score >= 88:
+        if rank <= highest_cap and score >= 90:
             row["Priority"] = "Highest Priority"
             row["Grade"] = "A"
-        elif score >= 82:
+        elif score >= 84:
             row["Priority"] = "Medium Priority"
             row["Grade"] = "B+"
-        elif score >= 76:
+        elif score >= 78:
             row["Priority"] = "Low Priority"
             row["Grade"] = "B"
         else:
@@ -517,7 +526,9 @@ def scan_mode(mode_key):
         if market["bias"] == "Bearish" and result["Signal"] != "SELL":
             continue
 
-        if market["bias"] == "Mixed" and result["Conviction"] < 82:
+        # In a mixed NIFTY tape, demand stronger setup quality.
+        # This avoids treating ordinary watchlist names as actionable trades.
+        if market["bias"] == "Mixed" and result["Conviction"] < 84:
             continue
 
         rows.append(result)
@@ -542,6 +553,8 @@ def update_performance_log(all_rows_by_mode):
             if col not in log.columns:
                 log[col] = ""
         log = log[columns]
+        # Clean older over-inflated scores from previous experimental builds.
+        log["Conviction"] = pd.to_numeric(log["Conviction"], errors="coerce").clip(upper=94)
     else:
         log = pd.DataFrame(columns=columns)
 
@@ -671,10 +684,10 @@ def render_mode_block(mode_key, rows, market, perf_log, active=False):
       <div class="section">
         <h2>Suggested Investment Criteria</h2>
         <p>
-          <b>88+</b> can qualify for Highest Priority, but only the top 5 ranked ideas per mode receive that label ·
-          <b>82–87</b> Medium Priority ·
-          <b>76–81</b> Low Priority.
-          Stabilised filter requires trend alignment, NIFTY relative strength, volume confirmation, controlled volatility, and a nearby trigger. Entry should only be considered if the trigger level breaks with confirmation.
+          <b>90–94</b> Highest Priority candidate range, but only the top 5 ranked ideas per mode can receive that label ·
+          <b>84–89</b> Medium Priority ·
+          <b>78–83</b> Low Priority.
+          Score is setup quality, not probability of profit. No trade is assumed loss-proof, so the model intentionally avoids 100 scores. Expert filter requires trend alignment, NIFTY relative strength, volume confirmation, controlled volatility, and a nearby trigger. Entry should only be considered if the trigger level breaks with confirmation.
         </p>
       </div>
 
@@ -935,7 +948,8 @@ h2 {{
 
   <p class="disclaimer">
     Disclaimer: This dashboard is for educational and research purposes only.
-    It is not financial advice or a trade recommendation.
+    Scores are setup-quality rankings, not win probabilities. No market setup is guaranteed or loss-proof.
+    This is not financial advice or a trade recommendation.
     Intraday prices from Yahoo Finance may be delayed depending on exchange/feed availability.
   </p>
 </div>
