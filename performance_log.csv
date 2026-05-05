@@ -1,19 +1,19 @@
-Date,Mode,Rank,Stock,Signal,Conviction,Entry,Stop,Target,RR,Status,Result,R,Days,Notes
-2026-05-05,Intraday,1,SBILIFE,BUY,94,1837.87,1826.75,1865.66,2.5,Pending Trigger,,,0,Top 3 Intraday scanner pick
-2026-05-05,Intraday,1,AUROPHARMA,BUY,94,1402.8,1393.38,1426.35,2.5,Pending Trigger,,,0,Top 3 Intraday scanner pick
-2026-05-05,Intraday,2,CHOLAFIN,BUY,94,1654.0,1642.75,1682.13,2.5,Pending Trigger,,,0,Top 3 Intraday scanner pick
-2026-05-05,Swing,1,AMBUJACEM,SELL,94,430.64,448.08,387.03,2.5,Pending Trigger,,,0,Top 3 Swing scanner pick
-2026-05-05,Swing,2,ABCAPITAL,BUY,94,363.48,348.35,401.3,2.5,Pending Trigger,,,0,Top 3 Swing scanner pick
-2026-05-05,Intraday,2,BHARTIARTL,SELL,94,1799.89,1812.11,1769.35,2.5,Pending Trigger,,,0,Top 3 Intraday scanner pick
-2026-05-05,Intraday,3,VBL,SELL,91,498.9,502.18,490.7,2.5,Pending Trigger,,,0,Top 3 Intraday scanner pick
-2026-05-05,Swing,1,ABCAPITAL,BUY,94,363.48,348.35,401.3,2.5,Pending Trigger,,,0,Top 3 Swing scanner pick
-2026-05-05,Swing,2,AMBUJACEM,SELL,94,430.64,448.08,387.03,2.5,Pending Trigger,,,0,Top 3 Swing scanner pick
-2026-05-05,Swing,3,JINDALSTEL,BUY,91,1285.87,1234.57,1414.12,2.5,Pending Trigger,,,0,Top 3 Swing scanner pick
-2026-05-05,Intraday,1,ABBOTINDIA,SELL,88,25294.31,25416.29,24989.35,2.5,Pending Trigger,,,0,Top 3 Intraday scanner pick
-2026-05-05,Intraday,2,PAYTM,SELL,88,1076.94,1087.7,1050.04,2.5,Pending Trigger,,,0,Top 3 Intraday scanner pick
-2026-05-05,Intraday,3,RECLTD,SELL,88,351.5,353.66,346.08,2.5,Pending Trigger,,,0,Top 3 Intraday scanner pick
-2026-05-05,Intraday,1,PAYTM,SELL,88,1084.83,1095.19,1058.91,2.5,Pending Trigger,,,0,Top 3 Intraday scanner pick
-2026-05-05,Intraday,2,BAJFINANCE,SELL,84,939.62,947.08,920.97,2.5,Pending Trigger,,,0,Top 3 Intraday scanner pick
-2026-05-05,Intraday,3,HDFCBANK,SELL,84,763.12,767.68,751.73,2.5,Pending Trigger,,,0,Top 3 Intraday scanner pick
-2026-05-05,Intraday,1,JSWSTEEL,SELL,84,1251.19,1258.24,1233.57,2.5,Pending Trigger,,,0,Top 3 Intraday scanner pick
-2026-05-05,Intraday,2,M&M,SELL,84,3071.34,3090.84,3022.6,2.5,Pending Trigger,,,0,Top 3 Intraday scanner pick
+Date,Mode,Rank,Stock,Signal,Conviction,Entry,Stop,Target,RR,Current Price,Status,First Hit,Hit Date,Result,R,Days,Notes
+2026-05-05,Intraday,1,SBILIFE,BUY,94,1837.87,1826.75,1865.66,2.5,1828.2,Pending Trigger,,,,,0,Top 3 Intraday scanner pick
+2026-05-05,Intraday,1,AUROPHARMA,BUY,94,1402.8,1393.38,1426.35,2.5,1404.5,Active After Trigger,,,,,0,Top 3 Intraday scanner pick
+2026-05-05,Intraday,2,CHOLAFIN,BUY,94,1654.0,1642.75,1682.13,2.5,1662.8,Active After Trigger,,,,,0,Top 3 Intraday scanner pick
+2026-05-05,Swing,1,AMBUJACEM,SELL,94,430.64,448.08,387.03,2.5,435.55,Pending Trigger,,,,,0,Top 3 Swing scanner pick
+2026-05-05,Swing,2,ABCAPITAL,BUY,94,363.48,348.35,401.3,2.5,361.1,Stop Hit First,Stop,2026-05-05,Loss,-1,0,Top 3 Swing scanner pick
+2026-05-05,Intraday,2,BHARTIARTL,SELL,94,1799.89,1812.11,1769.35,2.5,1819.7,Pending Trigger,,,,,0,Top 3 Intraday scanner pick
+2026-05-05,Intraday,3,VBL,SELL,91,498.9,502.18,490.7,2.5,506.65,Pending Trigger,,,,,0,Top 3 Intraday scanner pick
+2026-05-05,Swing,1,ABCAPITAL,BUY,94,363.48,348.35,401.3,2.5,361.1,Stop Hit First,Stop,2026-05-05,Loss,-1,0,Top 3 Swing scanner pick
+2026-05-05,Swing,2,AMBUJACEM,SELL,94,430.64,448.08,387.03,2.5,435.55,Pending Trigger,,,,,0,Top 3 Swing scanner pick
+2026-05-05,Swing,3,JINDALSTEL,BUY,91,1285.87,1234.57,1414.12,2.5,1265.6,Pending Trigger,,,,,0,Top 3 Swing scanner pick
+2026-05-05,Intraday,1,ABBOTINDIA,SELL,88,25294.31,25416.29,24989.35,2.5,25315.0,Stop Hit First,Stop,2026-05-05,Loss,-1,0,Top 3 Intraday scanner pick
+2026-05-05,Intraday,2,PAYTM,SELL,88,1076.94,1087.7,1050.04,2.5,1096.3,Stop Hit First,Stop,2026-05-05,Loss,-1,0,Top 3 Intraday scanner pick
+2026-05-05,Intraday,3,RECLTD,SELL,88,351.5,353.66,346.08,2.5,355.6,Stop Hit First,Stop,2026-05-05,Loss,-1,0,Top 3 Intraday scanner pick
+2026-05-05,Intraday,1,PAYTM,SELL,88,1084.83,1095.19,1058.91,2.5,1096.3,Stop Hit First,Stop,2026-05-05,Loss,-1,0,Top 3 Intraday scanner pick
+2026-05-05,Intraday,2,BAJFINANCE,SELL,84,939.62,947.08,920.97,2.5,952.2,Stop Hit First,Stop,2026-05-05,Loss,-1,0,Top 3 Intraday scanner pick
+2026-05-05,Intraday,3,HDFCBANK,SELL,84,763.12,767.68,751.73,2.5,769.35,Pending Trigger,,,,,0,Top 3 Intraday scanner pick
+2026-05-05,Intraday,1,JSWSTEEL,SELL,84,1251.19,1258.24,1233.57,2.5,1255.6,Active After Trigger,,,,,0,Top 3 Intraday scanner pick
+2026-05-05,Intraday,2,M&M,SELL,84,3071.34,3090.84,3022.6,2.5,3125.0,Stop Hit First,Stop,2026-05-05,Loss,-1,0,Top 3 Intraday scanner pick
