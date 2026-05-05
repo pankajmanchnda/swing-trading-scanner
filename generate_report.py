@@ -415,7 +415,7 @@ def generate_html():
 
         .hero h1 {
             margin: 0 0 14px;
-            font-size: clamp(42px, 6vw, 68px);
+            font-size: clamp(30px, 4.2vw, 48px);
             line-height: 0.98;
             letter-spacing: -0.06em;
             font-weight: 900;
