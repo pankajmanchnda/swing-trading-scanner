@@ -22,6 +22,7 @@ OUTPUT_HTML = "index.html"
 PERFORMANCE_LOG = "performance_log.csv"
 
 BENCHMARK = "^NSEI"
+BENCHMARK_FALLBACKS = ["^NSEI", "NIFTYBEES.NS"]
 
 # NIFTY / liquid large-cap universe.
 # Yahoo Finance uses ".NS" suffix for NSE cash-market symbols.
@@ -54,10 +55,10 @@ SCAN_MODES = {
     "intraday": {
         "label": "Intraday",
         "description": "15-Min Candle",
-        "period": "30d",
+        "period": "5d",
         "interval": "15m",
         "benchmark_name": "NIFTY",
-        "min_rows": 80,
+        "min_rows": 60,
     },
 }
 
@@ -329,12 +330,10 @@ def score_ticker(df, bench_df, ticker, mode_key):
     }
 
 
-def scan_mode(mode_key):
-    mode = SCAN_MODES[mode_key]
-    tickers = sorted(set(UNIVERSE + [BENCHMARK]))
-
-    data = yf.download(
-        tickers=tickers,
+def download_data(tickers, mode):
+    """Download market data safely. Yahoo can intermittently fail for a few NSE symbols."""
+    return yf.download(
+        tickers=sorted(set(tickers)),
         period=mode["period"],
         interval=mode["interval"],
         auto_adjust=False,
@@ -343,15 +342,60 @@ def scan_mode(mode_key):
         progress=False,
     )
 
-    bench_df = get_single_df(data, BENCHMARK)
+
+def get_benchmark_df(data, mode):
+    """
+    Prefer ^NSEI for NIFTY. If Yahoo does not return intraday/index data,
+    fall back to NIFTYBEES.NS as a tradable NIFTY proxy.
+    """
+    for symbol in BENCHMARK_FALLBACKS:
+        df = get_single_df(data, symbol)
+        if not df.empty and len(df) >= mode["min_rows"]:
+            return df, symbol
+
+    # Individual retry helps when bulk Yahoo download misses the index.
+    for symbol in BENCHMARK_FALLBACKS:
+        try:
+            retry = download_data([symbol], mode)
+            df = get_single_df(retry, symbol)
+            if not df.empty and len(df) >= mode["min_rows"]:
+                return df, symbol
+        except Exception as exc:
+            print(f"Benchmark retry failed for {symbol}: {exc}")
+
+    return pd.DataFrame(), ""
+
+
+def scan_mode(mode_key):
+    mode = SCAN_MODES[mode_key]
+    tickers = sorted(set(UNIVERSE + BENCHMARK_FALLBACKS))
+
+    data = download_data(tickers, mode)
+
+    bench_df, bench_symbol = get_benchmark_df(data, mode)
     if bench_df.empty:
-        raise RuntimeError(f"NIFTY benchmark data could not be downloaded for {mode['label']} mode.")
+        print(f"Warning: NIFTY benchmark data unavailable for {mode['label']} mode. Rendering empty mode instead of failing workflow.")
+        market = {
+            "bias": "Unavailable",
+            "message": "NIFTY benchmark data could not be downloaded from Yahoo Finance for this run.",
+            "close": "-",
+            "ema20": "-",
+            "ema50": "-",
+            "change_5": "-",
+        }
+        return [], market
 
     market = benchmark_bias(bench_df)
+    if bench_symbol != "^NSEI":
+        market["message"] += f" Benchmark proxy used: {clean_symbol(bench_symbol)}."
+
     rows = []
 
     for ticker in sorted(set(UNIVERSE)):
         df = get_single_df(data, ticker)
+        if df.empty:
+            continue
+
         result = score_ticker(df, bench_df, ticker, mode_key)
 
         if not result:
