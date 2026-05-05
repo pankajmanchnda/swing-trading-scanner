@@ -147,7 +147,7 @@ def benchmark_bias(bench_df):
         message = "NIFTY trend is weak. Scanner will only show SELL setups."
     else:
         bias = "Mixed"
-message = "NIFTY is mixed/constructive. Scanner will show qualified setups, but entries need stricter confirmation."
+        message = "NIFTY is mixed/constructive. Scanner will show qualified setups, but entries need stricter confirmation."
 
     return {
         "bias": bias,
