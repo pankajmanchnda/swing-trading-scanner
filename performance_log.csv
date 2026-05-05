@@ -1,3 +1,6 @@
 Date,Mode,Rank,Stock,Signal,Conviction,Entry,Stop,Target,RR,Status,Result,R,Days,Notes
+2026-05-05,Intraday,1,PAYTM,SELL,88,1084.83,1095.19,1058.91,2.5,Pending Trigger,,,0,Top 3 Intraday scanner pick
+2026-05-05,Intraday,2,BAJFINANCE,SELL,84,939.62,947.08,920.97,2.5,Pending Trigger,,,0,Top 3 Intraday scanner pick
+2026-05-05,Intraday,3,HDFCBANK,SELL,84,763.12,767.68,751.73,2.5,Pending Trigger,,,0,Top 3 Intraday scanner pick
 2026-05-05,Intraday,1,JSWSTEEL,SELL,84,1251.19,1258.24,1233.57,2.5,Pending Trigger,,,0,Top 3 Intraday scanner pick
 2026-05-05,Intraday,2,M&M,SELL,84,3071.34,3090.84,3022.6,2.5,Pending Trigger,,,0,Top 3 Intraday scanner pick
