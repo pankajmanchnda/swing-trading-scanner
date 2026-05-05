@@ -729,9 +729,16 @@ def evaluate_trade_path(row, hist):
 
 
 def refresh_performance_status(log):
-    """Add current price and first-hit outcome markers to the performance log."""
+    """Add current price and first-hit outcome markers to the performance log.
+
+    Keep all log columns as object dtype before assigning numeric values.
+    This prevents pandas/GitHub runner dtype errors when older CSV columns
+    were inferred as string columns but we later assign prices like 1828.4.
+    """
     if log.empty:
         return log
+
+    log = log.copy().astype(object)
 
     # Keep the runtime manageable on GitHub Actions by updating the latest 120 rows.
     rows_to_update = log.head(120).copy()
@@ -769,7 +776,7 @@ def update_performance_log(all_rows_by_mode):
         for col in columns:
             if col not in log.columns:
                 log[col] = ""
-        log = log[columns]
+        log = log[columns].astype(object)
         # Clean older over-inflated scores from previous experimental builds.
         log["Conviction"] = pd.to_numeric(log["Conviction"], errors="coerce").clip(upper=94)
     else:
@@ -814,6 +821,8 @@ def update_performance_log(all_rows_by_mode):
     if new_rows:
         log = pd.concat([pd.DataFrame(new_rows), log], ignore_index=True)
 
+    # Make the dataframe assignment-safe before refreshing current prices/results.
+    log = log.astype(object)
     log = refresh_performance_status(log)
     log.to_csv(log_path, index=False)
     return log.head(120)
