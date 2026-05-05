@@ -15,7 +15,7 @@ import yfinance as yf
 CAPITAL_INR = 1_000_000
 RISK_PER_TRADE = 0.01
 MAX_ALLOCATION = 0.20
-RR_TARGET = 2.5
+RR_TARGET = 2.0
 TOP_N = 3
 
 OUTPUT_HTML = "index.html"
@@ -258,22 +258,48 @@ def score_ticker(df, bench_df, ticker, mode_key):
     else:
         return None
 
+    # Structure-aware stop logic. Earlier builds used a fixed ATR stop from entry.
+    # This version places the stop beyond recent market structure plus an ATR buffer,
+    # which is less vulnerable to ordinary noise/whipsaws. Position size then adjusts
+    # downward automatically if the stop is wider.
+    if mode_key == "swing":
+        stop_atr_mult = 1.60
+        structure_lookback = 10
+        stop_buffer_mult = 0.15
+        max_risk_pct = 6.5
+    else:
+        stop_atr_mult = 1.25
+        structure_lookback = 12
+        stop_buffer_mult = 0.10
+        max_risk_pct = 3.5
+
+    recent_swing_low = float(d["Low"].tail(structure_lookback).min())
+    recent_swing_high = float(d["High"].tail(structure_lookback).max())
+
     if signal == "BUY":
         extension_pct = ((close / ema20) - 1) * 100 if ema20 > 0 else np.nan
         if not np.isfinite(extension_pct) or extension_pct > max_extension:
             return None
         entry = max(close, last_high * 1.002)
-        stop = entry - 1.35 * atr14
+        atr_stop = entry - stop_atr_mult * atr14
+        structure_stop = recent_swing_low - stop_buffer_mult * atr14
+        stop = min(atr_stop, structure_stop)
         target = entry + RR_TARGET * (entry - stop)
-        entry_rule = "Enter only above trigger"
+        entry_rule = "Enter only above trigger; prefer candle close confirmation"
     else:
         extension_pct = ((ema20 / close) - 1) * 100 if close > 0 else np.nan
         if not np.isfinite(extension_pct) or extension_pct > max_extension:
             return None
         entry = min(close, last_low * 0.998)
-        stop = entry + 1.35 * atr14
+        atr_stop = entry + stop_atr_mult * atr14
+        structure_stop = recent_swing_high + stop_buffer_mult * atr14
+        stop = max(atr_stop, structure_stop)
         target = entry - RR_TARGET * (stop - entry)
-        entry_rule = "Enter only below trigger"
+        entry_rule = "Enter only below trigger; prefer candle close confirmation"
+
+    risk_pct = abs(entry - stop) / entry * 100 if entry > 0 else np.nan
+    if not np.isfinite(risk_pct) or risk_pct > max_risk_pct:
+        return None
 
     trigger_distance_pct = abs(entry - close) / close * 100 if close > 0 else np.nan
     if not np.isfinite(trigger_distance_pct):
@@ -358,6 +384,7 @@ def score_ticker(df, bench_df, ticker, mode_key):
         score += 2
         notes.append("Slightly extended")
 
+    notes.append("Structure-aware stop")
     risk_per_share = abs(entry - stop)
     max_risk_rupees = CAPITAL_INR * RISK_PER_TRADE
     qty_by_risk = math.floor(max_risk_rupees / risk_per_share) if risk_per_share > 0 else 0
@@ -547,6 +574,40 @@ def safe_float(value, default=np.nan):
         return default
 
 
+
+
+def format_distance(value):
+    """Format a price distance as rupees and percent, e.g. ₹12.35 / 2.41%."""
+    rupees, pct = value
+    if not np.isfinite(rupees) or not np.isfinite(pct):
+        return ""
+    sign = "+" if rupees >= 0 else "-"
+    return f"{sign}₹{abs(rupees):.2f} / {sign}{abs(pct):.2f}%"
+
+
+def stop_target_distance(signal, current_price, stop, target):
+    """Return formatted distance from current price to stop and target.
+
+    Values are positive while the stop/target is still away from current price.
+    Negative values mean price has already moved beyond that level.
+    """
+    if not all(np.isfinite(x) for x in [current_price, stop, target]) or current_price <= 0:
+        return "", ""
+
+    signal = str(signal).upper().strip()
+    if signal == "BUY":
+        stop_rupees = current_price - stop
+        target_rupees = target - current_price
+    elif signal == "SELL":
+        stop_rupees = stop - current_price
+        target_rupees = current_price - target
+    else:
+        return "", ""
+
+    stop_pct = (stop_rupees / current_price) * 100
+    target_pct = (target_rupees / current_price) * 100
+    return format_distance((stop_rupees, stop_pct)), format_distance((target_rupees, target_pct))
+
 def symbol_to_yahoo(stock):
     stock = str(stock).strip()
     if stock.endswith('.NS') or stock.startswith('^'):
@@ -608,6 +669,8 @@ def evaluate_trade_path(row, hist):
 
     result = {
         'Current Price': row.get('Current Price', ''),
+        'Stop Away': row.get('Stop Away', ''),
+        'Target Away': row.get('Target Away', ''),
         'Status': row.get('Status', 'Pending Trigger'),
         'Result': row.get('Result', ''),
         'R': row.get('R', ''),
@@ -645,6 +708,11 @@ def evaluate_trade_path(row, hist):
     if signal not in {'BUY', 'SELL'} or not all(np.isfinite(x) for x in [entry, stop, target]):
         return result
 
+    if np.isfinite(current_price):
+        stop_away, target_away = stop_target_distance(signal, current_price, stop, target)
+        result['Stop Away'] = stop_away
+        result['Target Away'] = target_away
+
     triggered = False
 
     for ts, candle in h.iterrows():
@@ -658,10 +726,13 @@ def evaluate_trade_path(row, hist):
         except Exception:
             hit_date = str(ts)
 
+        triggered_this_candle = False
+
         if signal == 'BUY':
             if not triggered:
                 if high >= entry:
                     triggered = True
+                    triggered_this_candle = True
                 else:
                     continue
 
@@ -672,11 +743,25 @@ def evaluate_trade_path(row, hist):
             if not triggered:
                 if low <= entry:
                     triggered = True
+                    triggered_this_candle = True
                 else:
                     continue
 
             target_hit = low <= target
             stop_hit = high >= stop
+
+        # If entry and exit level are both touched inside the same candle,
+        # the OHLC data cannot prove which happened first. Mark it ambiguous
+        # instead of recording a false win/loss.
+        if triggered_this_candle and (target_hit or stop_hit):
+            result.update({
+                'Status': 'Ambiguous Entry Candle',
+                'Result': 'Ambiguous',
+                'R': '',
+                'First Hit': 'Entry/exit same candle',
+                'Hit Date': hit_date,
+            })
+            return result
 
         if target_hit and stop_hit:
             result.update({
@@ -767,7 +852,7 @@ def update_performance_log(all_rows_by_mode):
 
     columns = [
         "Date", "Mode", "Rank", "Stock", "Signal", "Conviction", "Entry", "Stop",
-        "Target", "RR", "Current Price", "Status", "First Hit", "Hit Date",
+        "Target", "RR", "Current Price", "Stop Away", "Target Away", "Status", "First Hit", "Hit Date",
         "Result", "R", "Days", "Notes"
     ]
 
@@ -809,6 +894,8 @@ def update_performance_log(all_rows_by_mode):
                     "Target": row["Target"],
                     "RR": row["RR"],
                     "Current Price": row["Close"],
+                    "Stop Away": "",
+                    "Target Away": "",
                     "Status": "Pending Trigger",
                     "First Hit": "",
                     "Hit Date": "",
@@ -916,7 +1003,7 @@ def render_mode_block(mode_key, rows, market, perf_log, active=False):
           <b>90–94</b> Highest Priority candidate range, but only the top 5 ranked ideas per mode can receive that label ·
           <b>84–89</b> Medium Priority ·
           <b>78–83</b> Low Priority.
-          Score is setup quality, not probability of profit. No trade is assumed loss-proof, so the model intentionally avoids 100 scores. Expert filter requires trend alignment, NIFTY relative strength, volume confirmation, controlled volatility, and a nearby trigger. Entry should only be considered if the trigger level breaks with confirmation.
+          Score is setup quality, not probability of profit. No trade is assumed loss-proof, so the model intentionally avoids 100 scores. Stops use structure-aware ATR placement and targets use a more realistic 2R objective. Expert filter requires trend alignment, NIFTY relative strength, volume confirmation, controlled volatility, and a nearby trigger. Entry should only be considered if the trigger level breaks with confirmation.
         </p>
       </div>
 
@@ -927,7 +1014,7 @@ def render_mode_block(mode_key, rows, market, perf_log, active=False):
 
       <div class="section">
         <h2>{mode_label} Top 3 Performance Log</h2>
-        <p>Latest 60 ideas for this mode are shown first. Current Price, First Hit, and Hit Date update on each scanner run to help track whether target or stop-loss was touched first.</p>
+        <p>Latest 60 ideas for this mode are shown first. Current Price, Stop Away, Target Away, First Hit, and Hit Date update on each scanner run to help track whether target or stop-loss was touched first.</p>
         {perf_to_html(perf_log, mode_label)}
       </div>
     </section>
