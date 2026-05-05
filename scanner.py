@@ -9,7 +9,7 @@ import yfinance as yf
 
 # =========================
 # Indian Market Scanner
-# Swing vs Intraday Toggle
+# Swing vs Intraday Toggle - Stabilised Parameters
 # =========================
 
 CAPITAL_INR = 1_000_000
@@ -221,21 +221,24 @@ def score_ticker(df, bench_df, ticker, mode_key):
     last_low = float(d["Low"].iloc[-1])
 
     if mode_key == "swing":
-        min_atr, max_atr = 0.8, 6.2
-        max_trigger_distance = 2.0
-        min_vol_ratio = 0.85
+        # Stabilised swing settings: selective enough to avoid flooding,
+        # but not so strict that the scanner goes empty too often.
+        min_atr, max_atr = 1.2, 5.5
+        max_trigger_distance = 1.25
+        min_vol_ratio = 1.15
         min_rs = 1.5
-        rsi_buy_min, rsi_buy_max = 50, 70
-        rsi_sell_min, rsi_sell_max = 30, 50
-        max_extension = 7.0
-    else:
-        min_atr, max_atr = 0.20, 4.2
-        max_trigger_distance = 1.4
-        min_vol_ratio = 0.75
-        min_rs = 0.8
-        rsi_buy_min, rsi_buy_max = 48, 72
-        rsi_sell_min, rsi_sell_max = 28, 52
+        rsi_buy_min, rsi_buy_max = 52, 68
+        rsi_sell_min, rsi_sell_max = 32, 48
         max_extension = 5.5
+    else:
+        # Intraday setups need tighter trigger proximity and better volume.
+        min_atr, max_atr = 0.35, 3.0
+        max_trigger_distance = 0.75
+        min_vol_ratio = 1.25
+        min_rs = 0.75
+        rsi_buy_min, rsi_buy_max = 54, 68
+        rsi_sell_min, rsi_sell_max = 32, 46
+        max_extension = 3.8
 
     buy_trend = close > ema20 > ema50 and ema20 > ema20_prev
     sell_trend = close < ema20 < ema50 and ema20 < ema20_prev
@@ -365,14 +368,19 @@ def score_ticker(df, bench_df, ticker, mode_key):
     if qty <= 0 or trade_value <= 0:
         return None
 
-    if score >= 90:
-        priority = "Highest Priority"
+    # Normalize conviction to a clean 0–100 scale.
+    # Final priority labels are assigned after ranking so that only the top
+    # 1–5 ideas can become Highest Priority.
+    score = max(0, min(int(round(score)), 100))
+
+    if score >= 88:
+        priority = "Qualified Candidate"
         grade = "A"
-    elif score >= 84:
-        priority = "Medium Priority"
+    elif score >= 82:
+        priority = "Qualified Candidate"
         grade = "B+"
-    elif score >= 78:
-        priority = "Low Priority"
+    elif score >= 76:
+        priority = "Qualified Candidate"
         grade = "B"
     else:
         return None
@@ -400,6 +408,36 @@ def score_ticker(df, bench_df, ticker, mode_key):
         "Entry Rule": entry_rule,
         "Notes": " · ".join(notes),
     }
+
+
+def calibrate_priorities(rows, highest_cap=5):
+    """
+    Assign final priority after all candidates are ranked.
+
+    This prevents the dashboard from flooding with Highest Priority labels.
+    A stock still needs a strong conviction score, but only the best-ranked
+    five ideas in each mode can receive the top label.
+    """
+    calibrated = []
+
+    for rank, row in enumerate(sorted(rows, key=lambda x: x["Conviction"], reverse=True), start=1):
+        score = int(row["Conviction"])
+
+        if rank <= highest_cap and score >= 88:
+            row["Priority"] = "Highest Priority"
+            row["Grade"] = "A"
+        elif score >= 82:
+            row["Priority"] = "Medium Priority"
+            row["Grade"] = "B+"
+        elif score >= 76:
+            row["Priority"] = "Low Priority"
+            row["Grade"] = "B"
+        else:
+            continue
+
+        calibrated.append(row)
+
+    return calibrated
 
 def download_data(tickers, mode):
     """Download market data safely. Yahoo can intermittently fail for a few NSE symbols."""
@@ -479,12 +517,12 @@ def scan_mode(mode_key):
         if market["bias"] == "Bearish" and result["Signal"] != "SELL":
             continue
 
-        if market["bias"] == "Mixed" and result["Conviction"] < 84:
+        if market["bias"] == "Mixed" and result["Conviction"] < 82:
             continue
 
         rows.append(result)
 
-    rows = sorted(rows, key=lambda x: x["Conviction"], reverse=True)
+    rows = calibrate_priorities(rows, highest_cap=5)
     rows = rows[:20]
     return rows, market
 
@@ -633,10 +671,10 @@ def render_mode_block(mode_key, rows, market, perf_log, active=False):
       <div class="section">
         <h2>Suggested Investment Criteria</h2>
         <p>
-          <b>90+</b> Highest Priority ·
-          <b>84–89</b> Medium Priority ·
-          <b>78–83</b> Low Priority.
-          Expert filter requires trend alignment, NIFTY relative strength, acceptable volume, controlled volatility, and a nearby trigger. Entry should only be considered if the trigger level breaks with confirmation.
+          <b>88+</b> can qualify for Highest Priority, but only the top 5 ranked ideas per mode receive that label ·
+          <b>82–87</b> Medium Priority ·
+          <b>76–81</b> Low Priority.
+          Stabilised filter requires trend alignment, NIFTY relative strength, volume confirmation, controlled volatility, and a nearby trigger. Entry should only be considered if the trigger level breaks with confirmation.
         </p>
       </div>
 
