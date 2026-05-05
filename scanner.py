@@ -912,6 +912,36 @@ h2 {{
   margin-top: 24px;
 }}
 
+.refresh-panel {{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 14px 0 18px 0;
+  color: #94a3b8;
+  font-size: 13px;
+  flex-wrap: wrap;
+}}
+
+.refresh-panel button {{
+  background: #111827;
+  border: 1px solid #243041;
+  color: #e5e7eb;
+  border-radius: 999px;
+  padding: 9px 15px;
+  cursor: pointer;
+  font-weight: 700;
+}}
+
+.refresh-panel button.active {{
+  background: #38bdf8;
+  color: #020617;
+  border-color: #38bdf8;
+}}
+
+.refresh-note {{
+  color: #64748b;
+}}
+
 @media (max-width: 800px) {{
   h1 {{
     font-size: 26px;
@@ -936,6 +966,12 @@ h2 {{
   <h1>Indian Market Scanner</h1>
   <div class="subtitle">
     Generated on {generated_time} · Build {build_id} · NIFTY benchmark · Swing vs Intraday scanner
+  </div>
+
+  <div class="refresh-panel">
+    <button id="autoRefreshBtn" type="button">Auto-refresh OFF</button>
+    <span id="refreshCountdown">Manual refresh mode</span>
+    <span class="refresh-note">Reloads this page every 5 minutes when enabled.</span>
   </div>
 
   <div class="toggle-wrap">
@@ -967,6 +1003,67 @@ function showMode(mode, button) {{
   document.getElementById(mode).classList.add('active');
   button.classList.add('active');
 }}
+
+(function () {{
+  const REFRESH_SECONDS = 300;
+  const STORAGE_KEY = "indian_scanner_auto_refresh_enabled";
+
+  const btn = document.getElementById("autoRefreshBtn");
+  const countdown = document.getElementById("refreshCountdown");
+
+  if (!btn || !countdown) return;
+
+  let enabled = localStorage.getItem(STORAGE_KEY) === "true";
+  let remaining = REFRESH_SECONDS;
+  let timer = null;
+
+  function formatTime(seconds) {{
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${{mins}}:${{String(secs).padStart(2, "0")}}`;
+  }}
+
+  function updateUi() {{
+    if (enabled) {{
+      btn.textContent = "Auto-refresh ON";
+      btn.classList.add("active");
+      countdown.textContent = `Next refresh in ${{formatTime(remaining)}}`;
+    }} else {{
+      btn.textContent = "Auto-refresh OFF";
+      btn.classList.remove("active");
+      countdown.textContent = "Manual refresh mode";
+    }}
+  }}
+
+  function startTimer() {{
+    if (timer) clearInterval(timer);
+
+    timer = setInterval(function () {{
+      if (!enabled) return;
+
+      remaining -= 1;
+      if (remaining <= 0) {{
+        const url = new URL(window.location.href);
+        url.searchParams.set("v", Date.now().toString());
+        window.location.href = url.toString();
+        return;
+      }}
+
+      updateUi();
+    }}, 1000);
+  }}
+
+  btn.addEventListener("click", function () {{
+    enabled = !enabled;
+    remaining = REFRESH_SECONDS;
+    localStorage.setItem(STORAGE_KEY, enabled ? "true" : "false");
+    updateUi();
+    startTimer();
+  }});
+
+  updateUi();
+  startTimer();
+}})();
 </script>
 </body>
 </html>"""
