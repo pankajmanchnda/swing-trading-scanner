@@ -538,13 +538,230 @@ def scan_mode(mode_key):
     return rows, market
 
 
+def safe_float(value, default=np.nan):
+    try:
+        if pd.isna(value):
+            return default
+        return float(value)
+    except Exception:
+        return default
+
+
+def symbol_to_yahoo(stock):
+    stock = str(stock).strip()
+    if stock.endswith('.NS') or stock.startswith('^'):
+        return stock
+    return f"{stock}.NS"
+
+
+def get_log_history(stock, mode_label):
+    """
+    Fetch price history for performance-log tracking.
+
+    Swing rows are checked on daily candles.
+    Intraday rows are checked on 15-minute candles.
+    """
+    symbol = symbol_to_yahoo(stock)
+
+    if str(mode_label).lower() == 'intraday':
+        period = '15d'
+        interval = '15m'
+    else:
+        period = '3mo'
+        interval = '1d'
+
+    try:
+        data = yf.download(
+            tickers=[symbol],
+            period=period,
+            interval=interval,
+            auto_adjust=False,
+            group_by='ticker',
+            threads=False,
+            progress=False,
+        )
+        return get_single_df(data, symbol)
+    except Exception as exc:
+        print(f"Performance-log price fetch failed for {symbol}: {exc}")
+        return pd.DataFrame()
+
+
+def evaluate_trade_path(row, hist):
+    """
+    Update one logged idea with current price and first-hit status.
+
+    Logic is conservative and path-aware:
+    - First wait for the entry trigger.
+    - After the trigger, mark whether target or stop was touched first.
+    - If both stop and target are touched inside the same candle, mark it ambiguous
+      instead of pretending certainty.
+    """
+    today = now_ist().date()
+
+    date_value = str(row.get('Date', '')).strip()
+    try:
+        start_date = pd.to_datetime(date_value).date()
+    except Exception:
+        start_date = today
+
+    days = max(0, (today - start_date).days)
+
+    result = {
+        'Current Price': row.get('Current Price', ''),
+        'Status': row.get('Status', 'Pending Trigger'),
+        'Result': row.get('Result', ''),
+        'R': row.get('R', ''),
+        'Days': days,
+        'First Hit': row.get('First Hit', ''),
+        'Hit Date': row.get('Hit Date', ''),
+    }
+
+    if hist.empty:
+        return result
+
+    h = hist.copy()
+    h = h.dropna(subset=['High', 'Low', 'Close'], how='any')
+    if h.empty:
+        return result
+
+    try:
+        h = h[h.index.date >= start_date]
+    except Exception:
+        pass
+
+    if h.empty:
+        return result
+
+    current_price = safe_float(h['Close'].iloc[-1], np.nan)
+    if np.isfinite(current_price):
+        result['Current Price'] = round(current_price, 2)
+
+    signal = str(row.get('Signal', '')).upper().strip()
+    entry = safe_float(row.get('Entry'))
+    stop = safe_float(row.get('Stop'))
+    target = safe_float(row.get('Target'))
+    rr_value = safe_float(row.get('RR'), RR_TARGET)
+
+    if signal not in {'BUY', 'SELL'} or not all(np.isfinite(x) for x in [entry, stop, target]):
+        return result
+
+    triggered = False
+
+    for ts, candle in h.iterrows():
+        high = safe_float(candle.get('High'))
+        low = safe_float(candle.get('Low'))
+        if not np.isfinite(high) or not np.isfinite(low):
+            continue
+
+        try:
+            hit_date = ts.date().isoformat()
+        except Exception:
+            hit_date = str(ts)
+
+        if signal == 'BUY':
+            if not triggered:
+                if high >= entry:
+                    triggered = True
+                else:
+                    continue
+
+            target_hit = high >= target
+            stop_hit = low <= stop
+
+        else:  # SELL
+            if not triggered:
+                if low <= entry:
+                    triggered = True
+                else:
+                    continue
+
+            target_hit = low <= target
+            stop_hit = high >= stop
+
+        if target_hit and stop_hit:
+            result.update({
+                'Status': 'Ambiguous Same Candle',
+                'Result': 'Ambiguous',
+                'R': '',
+                'First Hit': 'Target and Stop same candle',
+                'Hit Date': hit_date,
+            })
+            return result
+
+        if target_hit:
+            result.update({
+                'Status': 'Target Hit First',
+                'Result': 'Win',
+                'R': round(rr_value, 2),
+                'First Hit': 'Target',
+                'Hit Date': hit_date,
+            })
+            return result
+
+        if stop_hit:
+            result.update({
+                'Status': 'Stop Hit First',
+                'Result': 'Loss',
+                'R': -1,
+                'First Hit': 'Stop',
+                'Hit Date': hit_date,
+            })
+            return result
+
+    if triggered:
+        result.update({
+            'Status': 'Active After Trigger',
+            'Result': '',
+            'R': '',
+            'First Hit': '',
+            'Hit Date': '',
+        })
+    else:
+        result.update({
+            'Status': 'Pending Trigger',
+            'Result': '',
+            'R': '',
+            'First Hit': '',
+            'Hit Date': '',
+        })
+
+    return result
+
+
+def refresh_performance_status(log):
+    """Add current price and first-hit outcome markers to the performance log."""
+    if log.empty:
+        return log
+
+    # Keep the runtime manageable on GitHub Actions by updating the latest 120 rows.
+    rows_to_update = log.head(120).copy()
+    history_cache = {}
+
+    for idx, row in rows_to_update.iterrows():
+        stock = str(row.get('Stock', '')).strip()
+        mode_label = str(row.get('Mode', 'Swing')).strip() or 'Swing'
+        if not stock:
+            continue
+
+        cache_key = (stock, mode_label)
+        if cache_key not in history_cache:
+            history_cache[cache_key] = get_log_history(stock, mode_label)
+
+        updates = evaluate_trade_path(row, history_cache[cache_key])
+        for col, value in updates.items():
+            log.at[idx, col] = value
+
+    return log
+
+
 def update_performance_log(all_rows_by_mode):
     log_path = Path(PERFORMANCE_LOG)
     today = now_ist().date().isoformat()
 
     columns = [
         "Date", "Mode", "Rank", "Stock", "Signal", "Conviction", "Entry", "Stop",
-        "Target", "RR", "Status", "Result", "R", "Days", "Notes"
+        "Target", "RR", "Current Price", "Status", "First Hit", "Hit Date",
+        "Result", "R", "Days", "Notes"
     ]
 
     if log_path.exists():
@@ -584,7 +801,10 @@ def update_performance_log(all_rows_by_mode):
                     "Stop": row["Stop"],
                     "Target": row["Target"],
                     "RR": row["RR"],
+                    "Current Price": row["Close"],
                     "Status": "Pending Trigger",
+                    "First Hit": "",
+                    "Hit Date": "",
                     "Result": "",
                     "R": "",
                     "Days": 0,
@@ -594,9 +814,9 @@ def update_performance_log(all_rows_by_mode):
     if new_rows:
         log = pd.concat([pd.DataFrame(new_rows), log], ignore_index=True)
 
+    log = refresh_performance_status(log)
     log.to_csv(log_path, index=False)
     return log.head(120)
-
 
 def df_to_html(rows):
     if not rows:
@@ -698,7 +918,7 @@ def render_mode_block(mode_key, rows, market, perf_log, active=False):
 
       <div class="section">
         <h2>{mode_label} Top 3 Performance Log</h2>
-        <p>Latest 60 ideas for this mode are shown first.</p>
+        <p>Latest 60 ideas for this mode are shown first. Current Price, First Hit, and Hit Date update on each scanner run to help track whether target or stop-loss was touched first.</p>
         {perf_to_html(perf_log, mode_label)}
       </div>
     </section>
