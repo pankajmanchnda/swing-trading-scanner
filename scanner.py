@@ -147,7 +147,7 @@ def benchmark_bias(bench_df):
         message = "NIFTY trend is weak. Scanner will only show SELL setups."
     else:
         bias = "Mixed"
-        message = "NIFTY is mixed. Scanner will only show very high-conviction setups."
+message = "NIFTY is mixed/constructive. Scanner will show qualified setups, but entries need stricter confirmation."
 
     return {
         "bias": bias,
@@ -403,13 +403,15 @@ def scan_mode(mode_key):
 
         # Do not allow trades against the broad NIFTY trend.
         if market["bias"] == "Bullish" and result["Signal"] != "BUY":
-            continue
+    continue
 
-        if market["bias"] == "Bearish" and result["Signal"] != "SELL":
-            continue
+if market["bias"] == "Bearish" and result["Signal"] != "SELL":
+    continue
 
-        if market["bias"] == "Mixed" and result["Conviction"] < 90:
-            continue
+# In mixed/constructive markets, allow only qualified setups,
+# but do not block everything below 90.
+if market["bias"] == "Mixed" and result["Conviction"] < 78:
+    continue
 
         rows.append(result)
 
