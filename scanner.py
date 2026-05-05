@@ -216,76 +216,144 @@ def score_ticker(df, bench_df, ticker, mode_key):
     if not np.isfinite(rs_vs_nifty):
         return None
 
-    # Indian-market trend logic: slightly broader than the US scanner.
-    # This keeps the scanner useful in constructive/mixed NIFTY conditions while still
-    # requiring the stock to be on the right side of its short-term trend.
-    uptrend = close > ema20 and ema20 >= ema50 * 0.995
-    downtrend = close < ema20 and ema20 <= ema50 * 1.005
+    ema20_prev = float(d["EMA20"].iloc[-6]) if len(d) >= 26 and np.isfinite(d["EMA20"].iloc[-6]) else ema20
+    last_high = float(d["High"].iloc[-1])
+    last_low = float(d["Low"].iloc[-1])
+
+    if mode_key == "swing":
+        min_atr, max_atr = 0.8, 6.2
+        max_trigger_distance = 2.0
+        min_vol_ratio = 0.85
+        min_rs = 1.5
+        rsi_buy_min, rsi_buy_max = 50, 70
+        rsi_sell_min, rsi_sell_max = 30, 50
+        max_extension = 7.0
+    else:
+        min_atr, max_atr = 0.20, 4.2
+        max_trigger_distance = 1.4
+        min_vol_ratio = 0.75
+        min_rs = 0.8
+        rsi_buy_min, rsi_buy_max = 48, 72
+        rsi_sell_min, rsi_sell_max = 28, 52
+        max_extension = 5.5
+
+    buy_trend = close > ema20 > ema50 and ema20 > ema20_prev
+    sell_trend = close < ema20 < ema50 and ema20 < ema20_prev
 
     signal = None
     score = 50
     notes = []
 
-    if uptrend and 45 <= rsi14 <= 76:
+    if buy_trend and rsi_buy_min <= rsi14 <= rsi_buy_max and rs_vs_nifty >= min_rs:
         signal = "BUY"
-        score += 18
-        notes.append("Uptrend")
-    elif downtrend and 24 <= rsi14 <= 55:
+        score += 16
+        notes.append("Confirmed uptrend")
+    elif sell_trend and rsi_sell_min <= rsi14 <= rsi_sell_max and rs_vs_nifty <= -min_rs:
         signal = "SELL"
-        score += 18
-        notes.append("Downtrend")
+        score += 16
+        notes.append("Confirmed downtrend")
     else:
         return None
 
-    if signal == "BUY" and rs_vs_nifty > 2.0:
-        score += 12
-        notes.append("Strong relative strength")
-    elif signal == "SELL" and rs_vs_nifty < -2.0:
-        score += 12
-        notes.append("Weak relative strength")
-    else:
-        score += 5
-        notes.append("Acceptable relative strength")
-
-    if mode_key == "swing":
-        min_atr, max_atr = 0.6, 8.5
-        max_trigger_distance = 3.5
-        min_vol_ratio = 0.60
-    else:
-        min_atr, max_atr = 0.15, 6.0
-        max_trigger_distance = 2.2
-        min_vol_ratio = 0.50
-
-    if min_atr <= atr_pct <= max_atr:
-        score += 8
-        notes.append("Tradable volatility")
-    elif atr_pct > max_atr:
-        score -= 8
-        notes.append("High volatility")
-    else:
-        score -= 4
-        notes.append("Low volatility")
-
-    if vol_ratio >= 1.25:
-        score += 7
-        notes.append("Strong volume")
-    elif vol_ratio >= min_vol_ratio:
-        score += 3
-        notes.append("Normal volume")
-    else:
-        score -= 2
-        notes.append("Light volume")
-
     if signal == "BUY":
-        entry = max(close, float(d["High"].iloc[-1]) * 1.002)
+        extension_pct = ((close / ema20) - 1) * 100 if ema20 > 0 else np.nan
+        if not np.isfinite(extension_pct) or extension_pct > max_extension:
+            return None
+        entry = max(close, last_high * 1.002)
         stop = entry - 1.35 * atr14
         target = entry + RR_TARGET * (entry - stop)
         entry_rule = "Enter only above trigger"
     else:
-        entry = min(close, float(d["Low"].iloc[-1]) * 0.998)
+        extension_pct = ((ema20 / close) - 1) * 100 if close > 0 else np.nan
+        if not np.isfinite(extension_pct) or extension_pct > max_extension:
+            return None
+        entry = min(close, last_low * 0.998)
         stop = entry + 1.35 * atr14
         target = entry - RR_TARGET * (stop - entry)
         entry_rule = "Enter only below trigger"
+
+    trigger_distance_pct = abs(entry - close) / close * 100 if close > 0 else np.nan
+    if not np.isfinite(trigger_distance_pct):
+        return None
+
+    # Expert quality gates: reject ideas that are too far away, too illiquid today,
+    # too quiet, too volatile, or only weakly outperforming/underperforming NIFTY.
+    if trigger_distance_pct > max_trigger_distance:
+        return None
+    if vol_ratio < min_vol_ratio:
+        return None
+    if not (min_atr <= atr_pct <= max_atr):
+        return None
+
+    # Incremental expert scoring. This prevents almost every passing trade from
+    # becoming Highest Priority and reserves A-grade status for cleaner setups.
+    if signal == "BUY":
+        if rs_vs_nifty >= min_rs * 2:
+            score += 12
+            notes.append("Strong relative strength")
+        else:
+            score += 7
+            notes.append("Positive relative strength")
+
+        if 54 <= rsi14 <= 66:
+            score += 7
+            notes.append("RSI sweet spot")
+        elif 50 <= rsi14 <= 70:
+            score += 4
+            notes.append("Healthy RSI")
+    else:
+        if rs_vs_nifty <= -min_rs * 2:
+            score += 12
+            notes.append("Weak relative strength")
+        else:
+            score += 7
+            notes.append("Negative relative strength")
+
+        if 34 <= rsi14 <= 46:
+            score += 7
+            notes.append("RSI sweet spot")
+        elif 30 <= rsi14 <= 50:
+            score += 4
+            notes.append("Healthy RSI")
+
+    if vol_ratio >= 1.35:
+        score += 8
+        notes.append("Institutional volume")
+    elif vol_ratio >= 1.05:
+        score += 5
+        notes.append("Good volume")
+    else:
+        score += 2
+        notes.append("Acceptable volume")
+
+    if mode_key == "swing":
+        if 1.2 <= atr_pct <= 4.5:
+            score += 6
+            notes.append("Clean swing volatility")
+        else:
+            score += 3
+            notes.append("Acceptable volatility")
+    else:
+        if 0.35 <= atr_pct <= 2.8:
+            score += 6
+            notes.append("Clean intraday volatility")
+        else:
+            score += 3
+            notes.append("Acceptable volatility")
+
+    if trigger_distance_pct <= max_trigger_distance * 0.55:
+        score += 5
+        notes.append("Close to trigger")
+    else:
+        score += 2
+        notes.append("Trigger needs confirmation")
+
+    if extension_pct <= max_extension * 0.55:
+        score += 5
+        notes.append("Not extended")
+    else:
+        score += 2
+        notes.append("Slightly extended")
 
     risk_per_share = abs(entry - stop)
     max_risk_rupees = CAPITAL_INR * RISK_PER_TRADE
@@ -294,28 +362,16 @@ def score_ticker(df, bench_df, ticker, mode_key):
     qty = max(0, min(qty_by_risk, qty_by_allocation))
     trade_value = qty * entry
 
-    trigger_distance_pct = abs(entry - close) / close * 100 if close > 0 else np.nan
-
-    if not np.isfinite(trigger_distance_pct):
+    if qty <= 0 or trade_value <= 0:
         return None
 
-    # Quality filters. Keep only trades with a realistic trigger, but do not
-    # over-filter relative strength in mixed markets. RS still affects conviction.
-    if trigger_distance_pct > max_trigger_distance:
-        return None
-
-    if atr_pct > max_atr:
-        return None
-
-    # More practical Indian-market thresholds. The earlier build surfaced useful
-    # candidates around this range, so we keep low-priority watchlist ideas visible.
-    if score >= 85:
+    if score >= 90:
         priority = "Highest Priority"
         grade = "A"
-    elif score >= 78:
+    elif score >= 84:
         priority = "Medium Priority"
         grade = "B+"
-    elif score >= 70:
+    elif score >= 78:
         priority = "Low Priority"
         grade = "B"
     else:
@@ -338,12 +394,12 @@ def score_ticker(df, bench_df, ticker, mode_key):
         "Vol Ratio": round(vol_ratio, 2),
         "RS vs NIFTY": round(rs_vs_nifty, 2),
         "Trigger Distance": f"{round(trigger_distance_pct, 2)}%",
+        "Extension": f"{round(extension_pct, 2)}%",
         "Qty": qty,
         "Trade Value": fmt_inr(trade_value),
         "Entry Rule": entry_rule,
         "Notes": " · ".join(notes),
     }
-
 
 def download_data(tickers, mode):
     """Download market data safely. Yahoo can intermittently fail for a few NSE symbols."""
@@ -423,12 +479,13 @@ def scan_mode(mode_key):
         if market["bias"] == "Bearish" and result["Signal"] != "SELL":
             continue
 
-        if market["bias"] == "Mixed" and result["Conviction"] < 70:
+        if market["bias"] == "Mixed" and result["Conviction"] < 84:
             continue
 
         rows.append(result)
 
     rows = sorted(rows, key=lambda x: x["Conviction"], reverse=True)
+    rows = rows[:20]
     return rows, market
 
 
@@ -576,10 +633,10 @@ def render_mode_block(mode_key, rows, market, perf_log, active=False):
       <div class="section">
         <h2>Suggested Investment Criteria</h2>
         <p>
-          <b>88+</b> Highest Priority ·
-          <b>83–87</b> Medium Priority ·
-          <b>78–82</b> Low Priority.
-          Entry should only be considered if the trigger level breaks with confirmation.
+          <b>90+</b> Highest Priority ·
+          <b>84–89</b> Medium Priority ·
+          <b>78–83</b> Low Priority.
+          Expert filter requires trend alignment, NIFTY relative strength, acceptable volume, controlled volatility, and a nearby trigger. Entry should only be considered if the trigger level breaks with confirmation.
         </p>
       </div>
 
