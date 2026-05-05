@@ -1,9 +1,9 @@
 name: Run Nifty Scanner
 
 on:
-  schedule:
-    - cron: "50 9 * * 1-5"   # 3:20 PM IST, Monday-Friday
   workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
 
 permissions:
   contents: write
@@ -29,14 +29,11 @@ jobs:
       - name: Run Nifty scanner
         run: |
           python scanner.py
-          python generate_report.py
 
       - name: Commit and push updated results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add scanner_output.csv scanner_status.txt index.html trade_log.csv || true
-
+          git add index.html performance_log.csv scanner_output.csv scanner_status.txt trade_log.csv || true
           git commit -m "Update Nifty scanner results" || echo "No changes to commit"
           git push
