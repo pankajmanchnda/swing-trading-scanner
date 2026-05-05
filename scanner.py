@@ -41,7 +41,24 @@ UNIVERSE = [
     "BPCL.NS", "IOC.NS", "HDFCAMC.NS", "DMART.NS", "PIDILITIND.NS",
     "TRENT.NS", "ABB.NS", "SIEMENS.NS", "BEL.NS", "HAL.NS",
     "DLF.NS", "IRCTC.NS", "VBL.NS", "ZOMATO.NS", "PAYTM.NS",
+
+    # Additional liquid F&O / high-volume names to preserve the wider opportunity set
+    # used by the earlier Indian scanner.
+    "ABCAPITAL.NS", "APLAPOLLO.NS", "ABBOTINDIA.NS", "CUMMINSIND.NS",
+    "DIXON.NS", "POLYCAB.NS", "PERSISTENT.NS", "COFORGE.NS",
+    "OFSS.NS", "MPHASIS.NS", "INDIGO.NS", "NAUKRI.NS",
+    "AMBUJACEM.NS", "SHREECEM.NS", "GAIL.NS", "VEDL.NS",
+    "BANKBARODA.NS", "PNB.NS", "CANBK.NS", "IDFCFIRSTB.NS",
+    "FEDERALBNK.NS", "AUBANK.NS", "CHOLAFIN.NS", "MUTHOOTFIN.NS",
+    "LICHSGFIN.NS", "RECLTD.NS", "PFC.NS", "IRFC.NS",
+    "BHEL.NS", "SAIL.NS", "NMDC.NS", "JINDALSTEL.NS",
+    "TVSMOTOR.NS", "ASHOKLEY.NS", "BOSCHLTD.NS", "MOTHERSON.NS",
+    "PAGEIND.NS", "COLPAL.NS", "MARICO.NS", "GODREJCP.NS",
+    "BIOCON.NS", "LUPIN.NS", "AUROPHARMA.NS", "TORNTPHARM.NS",
 ]
+
+# De-duplicate while preserving order.
+UNIVERSE = list(dict.fromkeys(UNIVERSE))
 
 SCAN_MODES = {
     "swing": {
@@ -162,7 +179,7 @@ def benchmark_bias(bench_df):
 def score_ticker(df, bench_df, ticker, mode_key):
     mode = SCAN_MODES[mode_key]
 
-    if len(df) < mode["min_rows"] or len(bench_df) < 80:
+    if len(df) < mode["min_rows"] or len(bench_df) < min(22, mode["min_rows"]):
         return None
 
     d = df.copy()
@@ -199,18 +216,21 @@ def score_ticker(df, bench_df, ticker, mode_key):
     if not np.isfinite(rs_vs_nifty):
         return None
 
-    uptrend = close > ema20 > ema50
-    downtrend = close < ema20 < ema50
+    # Indian-market trend logic: slightly broader than the US scanner.
+    # This keeps the scanner useful in constructive/mixed NIFTY conditions while still
+    # requiring the stock to be on the right side of its short-term trend.
+    uptrend = close > ema20 and ema20 >= ema50 * 0.995
+    downtrend = close < ema20 and ema20 <= ema50 * 1.005
 
     signal = None
     score = 50
     notes = []
 
-    if uptrend and 50 <= rsi14 <= 72:
+    if uptrend and 45 <= rsi14 <= 76:
         signal = "BUY"
         score += 18
         notes.append("Uptrend")
-    elif downtrend and 28 <= rsi14 <= 50:
+    elif downtrend and 24 <= rsi14 <= 55:
         signal = "SELL"
         score += 18
         notes.append("Downtrend")
@@ -228,15 +248,13 @@ def score_ticker(df, bench_df, ticker, mode_key):
         notes.append("Acceptable relative strength")
 
     if mode_key == "swing":
-        min_atr, max_atr = 1.2, 6.5
-        max_trigger_distance = 2.0
-        min_vol_ratio = 0.85
-        rs_filter = 0.25
+        min_atr, max_atr = 0.6, 8.5
+        max_trigger_distance = 3.5
+        min_vol_ratio = 0.60
     else:
-        min_atr, max_atr = 0.25, 4.5
-        max_trigger_distance = 1.2
-        min_vol_ratio = 0.75
-        rs_filter = 0.10
+        min_atr, max_atr = 0.15, 6.0
+        max_trigger_distance = 2.2
+        min_vol_ratio = 0.50
 
     if min_atr <= atr_pct <= max_atr:
         score += 8
@@ -255,7 +273,8 @@ def score_ticker(df, bench_df, ticker, mode_key):
         score += 3
         notes.append("Normal volume")
     else:
-        return None
+        score -= 2
+        notes.append("Light volume")
 
     if signal == "BUY":
         entry = max(close, float(d["High"].iloc[-1]) * 1.002)
@@ -280,27 +299,23 @@ def score_ticker(df, bench_df, ticker, mode_key):
     if not np.isfinite(trigger_distance_pct):
         return None
 
-    # Quality filters
+    # Quality filters. Keep only trades with a realistic trigger, but do not
+    # over-filter relative strength in mixed markets. RS still affects conviction.
     if trigger_distance_pct > max_trigger_distance:
-        return None
-
-    if signal == "BUY" and rs_vs_nifty < rs_filter:
-        return None
-
-    if signal == "SELL" and rs_vs_nifty > -rs_filter:
         return None
 
     if atr_pct > max_atr:
         return None
 
-    # Thresholds calibrated to avoid excessive low-quality ideas.
-    if score >= 88:
+    # More practical Indian-market thresholds. The earlier build surfaced useful
+    # candidates around this range, so we keep low-priority watchlist ideas visible.
+    if score >= 85:
         priority = "Highest Priority"
         grade = "A"
-    elif score >= 83:
+    elif score >= 78:
         priority = "Medium Priority"
         grade = "B+"
-    elif score >= 78:
+    elif score >= 70:
         priority = "Low Priority"
         grade = "B"
     else:
@@ -408,7 +423,7 @@ def scan_mode(mode_key):
         if market["bias"] == "Bearish" and result["Signal"] != "SELL":
             continue
 
-        if market["bias"] == "Mixed" and result["Conviction"] < 78:
+        if market["bias"] == "Mixed" and result["Conviction"] < 70:
             continue
 
         rows.append(result)
