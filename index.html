@@ -1,765 +1,498 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>High-Conviction Swing Trading Scanner</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Indian Market Scanner</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
 
-    <style>
-        :root {
-            --bg: #f4f7fb;
-            --card: #ffffff;
-            --text: #0f172a;
-            --muted: #64748b;
-            --border: #e2e8f0;
-            --blue: #2563eb;
-            --green-bg: #dcfce7;
-            --green-text: #166534;
-            --blue-bg: #dbeafe;
-            --blue-text: #1d4ed8;
-            --yellow-bg: #fef3c7;
-            --yellow-text: #92400e;
-            --gray-bg: #f1f5f9;
-            --gray-text: #475569;
-            --shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
-        }
+.topbar {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 18px 18px 0;
+}
 
-        * {
-            box-sizing: border-box;
-        }
+.back-link {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+}
 
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-            background:
-                radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 30%),
-                var(--bg);
-            color: var(--text);
-        }
+.back-link:hover {
+  color: #7dd3fc;
+}
 
-        .page {
-            max-width: 1180px;
-            margin: 0 auto;
-            padding: 30px 20px 60px;
-        }
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 24px 18px 60px;
+}
 
-        .topbar {
-            margin-bottom: 28px;
-        }
+h1 {
+  font-size: 32px;
+  margin: 0 0 6px;
+}
 
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 13px 20px;
-            border-radius: 999px;
-            background: var(--card);
-            color: var(--blue);
-            text-decoration: none;
-            font-weight: 800;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-        }
+h2 {
+  font-size: 20px;
+}
 
-        .hero {
-            margin-bottom: 26px;
-        }
+.subtitle {
+  color: #94a3b8;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
 
-        .hero h1 {
-            margin: 0 0 14px;
-            font-size: clamp(30px, 4.2vw, 48px);
-            line-height: 0.98;
-            letter-spacing: -0.06em;
-            font-weight: 900;
-        }
+.toggle-wrap {
+  display: flex;
+  gap: 10px;
+  margin: 18px 0 24px;
+  flex-wrap: wrap;
+}
 
-        .subtitle {
-            color: var(--muted);
-            font-size: 18px;
-            font-weight: 750;
-            line-height: 1.5;
-        }
+.toggle-btn {
+  background: #111827;
+  color: #e5e7eb;
+  border: 1px solid #243041;
+  border-radius: 999px;
+  padding: 11px 18px;
+  cursor: pointer;
+  font-weight: 700;
+}
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-            margin: 28px 0;
-        }
+.toggle-btn.active {
+  background: #38bdf8;
+  color: #07111f;
+  border-color: #38bdf8;
+}
 
-        .stat-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 22px;
-            padding: 22px;
-            box-shadow: var(--shadow);
-        }
+.mode-panel {
+  display: none;
+}
 
-        .stat-label {
-            color: var(--muted);
-            font-size: 15px;
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
+.mode-panel.active {
+  display: block;
+}
 
-        .stat-value {
-            font-size: 40px;
-            line-height: 1;
-            font-weight: 900;
-            letter-spacing: -0.05em;
-        }
+.mode-heading {
+  background: #111827;
+  border: 1px solid #243041;
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
 
-        .bias-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 28px;
-            box-shadow: var(--shadow);
-            margin-bottom: 30px;
-        }
+.mode-heading p {
+  color: #94a3b8;
+  margin-bottom: 0;
+}
 
-        .bias-pill {
-            display: inline-flex;
-            padding: 10px 18px;
-            border-radius: 999px;
-            background: var(--yellow-bg);
-            color: var(--yellow-text);
-            font-weight: 900;
-            letter-spacing: 0.04em;
-            margin-bottom: 18px;
-        }
+.stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
 
-        .bias-text {
-            margin: 0;
-            font-size: 24px;
-            line-height: 1.35;
-            font-weight: 800;
-        }
+.stat, .market, .setup, .section {
+  background: #111827;
+  border: 1px solid #243041;
+  border-radius: 18px;
+  padding: 18px;
+}
 
-        .section-title {
-            margin: 34px 0 16px;
-            font-size: 28px;
-            font-weight: 900;
-            letter-spacing: -0.03em;
-        }
+.stat span {
+  display: block;
+  color: #94a3b8;
+  font-size: 13px;
+}
 
-        .setup-list {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-            margin-bottom: 30px;
-        }
+.stat b {
+  font-size: 24px;
+}
 
-        .setup-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 20px;
-            box-shadow: var(--shadow);
-        }
+.market {
+  margin-bottom: 22px;
+}
 
-        .setup-card h3 {
-            margin: 0 0 10px;
-            font-size: 20px;
-            letter-spacing: -0.03em;
-        }
+.market-grid, .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
 
-        .setup-meta {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 8px;
-            color: var(--muted);
-            font-weight: 800;
-            margin-bottom: 18px;
-        }
+.grid {
+  grid-template-columns: repeat(3, 1fr);
+}
 
-        .pill {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 7px 11px;
-            border-radius: 999px;
-            font-size: 12px;
-            font-weight: 900;
-            white-space: nowrap;
-        }
+.market-grid div, .grid div {
+  background: #0b1220;
+  border: 1px solid #243041;
+  border-radius: 12px;
+  padding: 10px;
+  color: #94a3b8;
+}
 
-        .priority-highest {
-            background: var(--green-bg);
-            color: var(--green-text);
-        }
+.market-grid b, .grid b {
+  color: #e5e7eb;
+}
 
-        .priority-medium {
-            background: var(--blue-bg);
-            color: var(--blue-text);
-        }
+.setup-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
 
-        .priority-low {
-            background: var(--yellow-bg);
-            color: var(--yellow-text);
-        }
+.section {
+  margin-top: 18px;
+  overflow-x: auto;
+}
 
-        .priority-watchlist {
-            background: var(--gray-bg);
-            color: var(--gray-text);
-        }
+.data-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 1250px;
+  font-size: 13px;
+}
 
-        .setup-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
+.data-table th, .data-table td {
+  border-bottom: 1px solid #243041;
+  padding: 9px;
+  text-align: left;
+  white-space: nowrap;
+}
 
-        .setup-grid div {
-            border: 1px solid var(--border);
-            background: #f8fafc;
-            border-radius: 14px;
-            padding: 11px;
-        }
+.data-table th {
+  background: #0b1220;
+}
 
-        .setup-grid span {
-            display: block;
-            color: var(--muted);
-            font-size: 13px;
-            font-weight: 750;
-            margin-bottom: 5px;
-        }
+.disclaimer {
+  color: #94a3b8;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-top: 24px;
+}
 
-        .setup-grid strong {
-            font-size: 17px;
-            font-weight: 900;
-        }
+@media (max-width: 800px) {
+  h1 {
+    font-size: 26px;
+  }
 
-        .action-line {
-            margin: 16px 0 8px;
-            font-weight: 850;
-        }
-
-        .setup-explanation {
-            color: var(--muted);
-            line-height: 1.45;
-            margin: 0;
-            font-weight: 600;
-        }
-
-        .table-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            box-shadow: var(--shadow);
-            overflow: hidden;
-        }
-
-        .table-heading {
-            padding: 22px 24px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .table-heading h2 {
-            margin: 0;
-            font-size: 25px;
-            font-weight: 900;
-            letter-spacing: -0.03em;
-        }
-
-        .table-wrap {
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 1120px;
-        }
-
-        th {
-            background: #f8fafc;
-            color: #475569;
-            text-align: left;
-            padding: 15px 18px;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            font-weight: 900;
-            border-bottom: 1px solid var(--border);
-        }
-
-        td {
-            padding: 16px 18px;
-            border-bottom: 1px solid #edf2f7;
-            vertical-align: top;
-            font-weight: 700;
-        }
-
-        tr:hover td {
-            background: #f8fafc;
-        }
-
-        .symbol-cell {
-            font-weight: 950;
-            color: #0f172a;
-        }
-
-        .explanation-cell {
-            min-width: 320px;
-            color: var(--muted);
-            line-height: 1.45;
-            font-weight: 600;
-        }
-
-        .empty-panel {
-            grid-column: 1 / -1;
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 28px;
-            box-shadow: var(--shadow);
-        }
-
-        .empty-panel h3 {
-            margin: 0 0 8px;
-            font-size: 22px;
-        }
-
-        .empty-panel p {
-            margin: 0;
-            color: var(--muted);
-            font-weight: 650;
-        }
-
-        .empty-table {
-            text-align: center;
-            padding: 36px;
-            color: var(--muted);
-        }
-
-        .footer {
-            margin-top: 24px;
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.55;
-            font-weight: 600;
-        }
-
-        @media (max-width: 950px) {
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .setup-list {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .page {
-                padding: 24px 14px 44px;
-            }
-
-            .hero h1 {
-                font-size: 42px;
-            }
-
-            .subtitle {
-                font-size: 16px;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-            }
-
-            .stat-card {
-                padding: 17px;
-                border-radius: 18px;
-            }
-
-            .stat-value {
-                font-size: 34px;
-            }
-
-            .bias-card {
-                padding: 22px;
-            }
-
-            .bias-text {
-                font-size: 21px;
-            }
-
-            .setup-card {
-                padding: 18px;
-            }
-        }
-    </style>
+  .stats,
+  .setup-wrap,
+  .market-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
-
 <body>
-    <main class="page">
-        <div class="topbar">
-            <a class="back-link" href="https://pankajmanchnda.github.io/trading-agents/">
-                ← Back to Trading Agents Dashboard
-            </a>
+<div class="topbar">
+  <a class="back-link" href="https://pankajmanchnda.github.io/trading-agents/">
+    ← Back to Trading Agents Dashboard
+  </a>
+</div>
+
+<div class="container">
+  <h1>Indian Market Scanner</h1>
+  <div class="subtitle">
+    Generated on 05 May 2026, 11:25:35 AM IST · Build 20260505112535 · NIFTY benchmark · Swing vs Intraday scanner
+  </div>
+
+  <div class="toggle-wrap">
+    <button class="toggle-btn active" onclick="showMode('swing', this)">Swing Daily Candle</button>
+    <button class="toggle-btn" onclick="showMode('intraday', this)">Intraday 15-Min Candle</button>
+  </div>
+
+  
+    <section id="swing" class="mode-panel active">
+      <div class="mode-heading">
+        <h2>Swing Scanner</h2>
+        <p>Daily Candle · Period 6mo · Interval 1d</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><span>Total Candidates</span><b>0</b></div>
+        <div class="stat"><span>Highest Priority</span><b>0</b></div>
+        <div class="stat"><span>Medium Priority</span><b>0</b></div>
+        <div class="stat"><span>Low Priority</span><b>0</b></div>
+        <div class="stat"><span>Best Conviction</span><b>0</b></div>
+      </div>
+
+      <div class="market">
+        <h2>NIFTY Bias: Mixed</h2>
+        <p>NIFTY is mixed. Scanner will only show very high-conviction setups.</p>
+        <div class="market-grid">
+          <div>NIFTY Close<br><b>24119.3</b></div>
+          <div>EMA 20<br><b>23992.51</b></div>
+          <div>EMA 50<br><b>24189.89</b></div>
+          <div>5-Candle Change<br><b>0.93%</b></div>
+        </div>
+      </div>
+
+      <h2>Top 3 Setups</h2>
+      <div class="setup-wrap"><p>No top setups in this mode right now.</p></div>
+
+      <div class="section">
+        <h2>Suggested Investment Criteria</h2>
+        <p>
+          <b>88+</b> Highest Priority ·
+          <b>83–87</b> Medium Priority ·
+          <b>78–82</b> Low Priority.
+          Entry should only be considered if the trigger level breaks with confirmation.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Scanner Table</h2>
+        <p>No qualifying setups in this mode right now.</p>
+      </div>
+
+      <div class="section">
+        <h2>Swing Top 3 Performance Log</h2>
+        <p>Latest 60 ideas for this mode are shown first.</p>
+        <p>No records yet for this mode.</p>
+      </div>
+    </section>
+    
+  
+    <section id="intraday" class="mode-panel ">
+      <div class="mode-heading">
+        <h2>Intraday Scanner</h2>
+        <p>15-Min Candle · Period 5d · Interval 15m</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><span>Total Candidates</span><b>2</b></div>
+        <div class="stat"><span>Highest Priority</span><b>0</b></div>
+        <div class="stat"><span>Medium Priority</span><b>2</b></div>
+        <div class="stat"><span>Low Priority</span><b>0</b></div>
+        <div class="stat"><span>Best Conviction</span><b>84</b></div>
+      </div>
+
+      <div class="market">
+        <h2>NIFTY Bias: Bearish</h2>
+        <p>NIFTY trend is weak. Scanner will only show SELL setups. Benchmark proxy used: NIFTYBEES.</p>
+        <div class="market-grid">
+          <div>NIFTY Close<br><b>271.08</b></div>
+          <div>EMA 20<br><b>272.06</b></div>
+          <div>EMA 50<br><b>272.44</b></div>
+          <div>5-Candle Change<br><b>-0.17%</b></div>
+        </div>
+      </div>
+
+      <h2>Top 3 Setups</h2>
+      <div class="setup-wrap">
+        <div class="setup">
+          <h3>JSWSTEEL — SELL</h3>
+          <p><b>Medium Priority</b> · Score 84</p>
+          <div class="grid">
+            <div>Entry<br><b>1251.19</b></div>
+            <div>Stop<br><b>1258.24</b></div>
+            <div>Target<br><b>1233.57</b></div>
+            <div>Qty<br><b>159</b></div>
+            <div>Value<br><b>₹198,940</b></div>
+            <div>RR<br><b>2.5</b></div>
+          </div>
+          <p>Enter only below trigger · Downtrend · Acceptable relative strength · Tradable volatility · Normal volume</p>
+        </div>
+        
+        <div class="setup">
+          <h3>M&M — SELL</h3>
+          <p><b>Medium Priority</b> · Score 84</p>
+          <div class="grid">
+            <div>Entry<br><b>3071.34</b></div>
+            <div>Stop<br><b>3090.84</b></div>
+            <div>Target<br><b>3022.6</b></div>
+            <div>Qty<br><b>65</b></div>
+            <div>Value<br><b>₹199,637</b></div>
+            <div>RR<br><b>2.5</b></div>
+          </div>
+          <p>Enter only below trigger · Downtrend · Acceptable relative strength · Tradable volatility · Normal volume</p>
+        </div>
         </div>
 
-        <section class="hero">
-            <h1>📈 High-Conviction Swing Trading Scanner</h1>
-            <div class="subtitle">
-                Generated on 05 May 2026, 05:46 AM · NIFTY 500 watchlist · Educational research dashboard
-            </div>
-        </section>
-
-        <section class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-label">Total Candidates</div>
-                <div class="stat-value">9</div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-label">Highest Priority</div>
-                <div class="stat-value">2</div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-label">Medium Priority</div>
-                <div class="stat-value">2</div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-label">Low Priority</div>
-                <div class="stat-value">5</div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-label">Best Conviction</div>
-                <div class="stat-value">93</div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-label">Avg Risk/Reward</div>
-                <div class="stat-value">2.50</div>
-            </div>
-        </section>
-
-        <section class="bias-card">
-            <div class="bias-pill">NIFTY Bias: Constructive</div>
-            <p class="bias-text">Market has multiple high-quality setups. Focus on the cleanest triggers and strict position sizing.</p>
-        </section>
-
-        <h2 class="section-title">Top 3 Setups</h2>
-
-        <section class="setup-list">
-            
-        <article class="setup-card">
-            <div class="setup-top">
-                <div>
-                    <h3>ABCAPITAL.NS — BUY</h3>
-                    <div class="setup-meta">
-                        <span class="pill priority-highest">Highest Priority</span>
-                        <span>Score 93</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="setup-grid">
-                <div>
-                    <span>Close</span>
-                    <strong>345.85</strong>
-                </div>
-                <div>
-                    <span>Entry</span>
-                    <strong>345.50</strong>
-                </div>
-                <div>
-                    <span>Stop</span>
-                    <strong>328.31</strong>
-                </div>
-                <div>
-                    <span>Target</span>
-                    <strong>388.48</strong>
-                </div>
-                <div>
-                    <span>RR</span>
-                    <strong>2.50</strong>
-                </div>
-                <div>
-                    <span>RSI</span>
-                    <strong>56.6</strong>
-                </div>
-                <div>
-                    <span>Volume</span>
-                    <strong>2.54x</strong>
-                </div>
-            </div>
-
-            <p class="action-line">ENTER ONLY IF TRIGGER BREAKS</p>
-            <p class="setup-explanation">High-conviction bullish setup: uptrend, relative strength versus NIFTY, acceptable volume, controlled volatility, and close to breakout trigger.</p>
-        </article>
-        
-
-        <article class="setup-card">
-            <div class="setup-top">
-                <div>
-                    <h3>APLAPOLLO.NS — SELL</h3>
-                    <div class="setup-meta">
-                        <span class="pill priority-highest">Highest Priority</span>
-                        <span>Score 87</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="setup-grid">
-                <div>
-                    <span>Close</span>
-                    <strong>1873.00</strong>
-                </div>
-                <div>
-                    <span>Entry</span>
-                    <strong>1895.50</strong>
-                </div>
-                <div>
-                    <span>Stop</span>
-                    <strong>2001.54</strong>
-                </div>
-                <div>
-                    <span>Target</span>
-                    <strong>1630.41</strong>
-                </div>
-                <div>
-                    <span>RR</span>
-                    <strong>2.50</strong>
-                </div>
-                <div>
-                    <span>RSI</span>
-                    <strong>36.6</strong>
-                </div>
-                <div>
-                    <span>Volume</span>
-                    <strong>3.18x</strong>
-                </div>
-            </div>
-
-            <p class="action-line">ENTER ONLY IF TRIGGER BREAKS</p>
-            <p class="setup-explanation">High-conviction bearish setup: downtrend, weak relative strength versus NIFTY, acceptable volume, controlled volatility, and close to breakdown trigger.</p>
-        </article>
-        
-
-        <article class="setup-card">
-            <div class="setup-top">
-                <div>
-                    <h3>ABBOTINDIA.NS — SELL</h3>
-                    <div class="setup-meta">
-                        <span class="pill priority-medium">Medium Priority</span>
-                        <span>Score 82</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="setup-grid">
-                <div>
-                    <span>Close</span>
-                    <strong>25415.00</strong>
-                </div>
-                <div>
-                    <span>Entry</span>
-                    <strong>25250.00</strong>
-                </div>
-                <div>
-                    <span>Stop</span>
-                    <strong>25959.36</strong>
-                </div>
-                <div>
-                    <span>Target</span>
-                    <strong>23476.60</strong>
-                </div>
-                <div>
-                    <span>RR</span>
-                    <strong>2.50</strong>
-                </div>
-                <div>
-                    <span>RSI</span>
-                    <strong>42.0</strong>
-                </div>
-                <div>
-                    <span>Volume</span>
-                    <strong>1.04x</strong>
-                </div>
-            </div>
-
-            <p class="action-line">ENTER ONLY IF TRIGGER BREAKS</p>
-            <p class="setup-explanation">High-conviction bearish setup: downtrend, weak relative strength versus NIFTY, acceptable volume, controlled volatility, and close to breakdown trigger.</p>
-        </article>
-        
-        </section>
-
-        <section class="table-card">
-            <div class="table-heading">
-                <h2>Latest Scanner Candidates</h2>
-            </div>
-
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Symbol</th>
-                            <th>Signal</th>
-                            <th>Priority</th>
-                            <th>Score</th>
-                            <th>Grade</th>
-                            <th>Close</th>
-                            <th>Entry</th>
-                            <th>Target</th>
-                            <th>Stop Loss</th>
-                            <th>RR</th>
-                            <th>Explanation</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        
-        <tr>
-            <td class="symbol-cell">ABCAPITAL.NS</td>
-            <td>BUY</td>
-            <td><span class="pill priority-highest">Highest Priority</span></td>
-            <td>93</td>
-            <td>A</td>
-            <td>345.85</td>
-            <td>345.50</td>
-            <td>388.48</td>
-            <td>328.31</td>
-            <td>2.50</td>
-            <td class="explanation-cell">High-conviction bullish setup: uptrend, relative strength versus NIFTY, acceptable volume, controlled volatility, and close to breakout trigger.</td>
-        </tr>
-        
-
-        <tr>
-            <td class="symbol-cell">APLAPOLLO.NS</td>
-            <td>SELL</td>
-            <td><span class="pill priority-highest">Highest Priority</span></td>
-            <td>87</td>
-            <td>A</td>
-            <td>1873.00</td>
-            <td>1895.50</td>
-            <td>1630.41</td>
-            <td>2001.54</td>
-            <td>2.50</td>
-            <td class="explanation-cell">High-conviction bearish setup: downtrend, weak relative strength versus NIFTY, acceptable volume, controlled volatility, and close to breakdown trigger.</td>
-        </tr>
-        
-
-        <tr>
-            <td class="symbol-cell">ABBOTINDIA.NS</td>
-            <td>SELL</td>
-            <td><span class="pill priority-medium">Medium Priority</span></td>
-            <td>82</td>
-            <td>B+</td>
-            <td>25415.00</td>
-            <td>25250.00</td>
-            <td>23476.60</td>
-            <td>25959.36</td>
-            <td>2.50</td>
-            <td class="explanation-cell">High-conviction bearish setup: downtrend, weak relative strength versus NIFTY, acceptable volume, controlled volatility, and close to breakdown trigger.</td>
-        </tr>
-        
-
-        <tr>
-            <td class="symbol-cell">BELRISE.NS</td>
-            <td>BUY</td>
-            <td><span class="pill priority-medium">Medium Priority</span></td>
-            <td>82</td>
-            <td>B+</td>
-            <td>215.74</td>
-            <td>212.72</td>
-            <td>239.00</td>
-            <td>202.21</td>
-            <td>2.50</td>
-            <td class="explanation-cell">High-conviction bullish setup: uptrend, relative strength versus NIFTY, acceptable volume, controlled volatility, and close to breakout trigger.</td>
-        </tr>
-        
-
-        <tr>
-            <td class="symbol-cell">FORCEMOT.NS</td>
-            <td>SELL</td>
-            <td><span class="pill priority-low">Low Priority</span></td>
-            <td>78</td>
-            <td>B</td>
-            <td>19331.00</td>
-            <td>19512.00</td>
-            <td>15556.23</td>
-            <td>21094.31</td>
-            <td>2.50</td>
-            <td class="explanation-cell">High-conviction bearish setup: downtrend, weak relative strength versus NIFTY, acceptable volume, controlled volatility, and close to breakdown trigger.</td>
-        </tr>
-        
-
-        <tr>
-            <td class="symbol-cell">ACUTAAS.NS</td>
-            <td>BUY</td>
-            <td><span class="pill priority-low">Low Priority</span></td>
-            <td>77</td>
-            <td>B</td>
-            <td>2676.40</td>
-            <td>2710.00</td>
-            <td>3160.32</td>
-            <td>2529.87</td>
-            <td>2.50</td>
-            <td class="explanation-cell">High-conviction bullish setup: uptrend, relative strength versus NIFTY, acceptable volume, controlled volatility, and close to breakout trigger.</td>
-        </tr>
-        
-
-        <tr>
-            <td class="symbol-cell">NATCOPHARM.NS</td>
-            <td>BUY</td>
-            <td><span class="pill priority-low">Low Priority</span></td>
-            <td>76</td>
-            <td>B</td>
-            <td>1114.60</td>
-            <td>1106.95</td>
-            <td>1243.66</td>
-            <td>1052.27</td>
-            <td>2.50</td>
-            <td class="explanation-cell">High-conviction bullish setup: uptrend, relative strength versus NIFTY, acceptable volume, controlled volatility, and close to breakout trigger.</td>
-        </tr>
-        
-
-        <tr>
-            <td class="symbol-cell">TVSMOTOR.NS</td>
-            <td>SELL</td>
-            <td><span class="pill priority-low">Low Priority</span></td>
-            <td>76</td>
-            <td>B</td>
-            <td>3495.50</td>
-            <td>3492.90</td>
-            <td>3093.01</td>
-            <td>3652.86</td>
-            <td>2.50</td>
-            <td class="explanation-cell">High-conviction bearish setup: downtrend, weak relative strength versus NIFTY, acceptable volume, controlled volatility, and close to breakdown trigger.</td>
-        </tr>
-        
-
-        <tr>
-            <td class="symbol-cell">SAILIFE.NS</td>
-            <td>BUY</td>
-            <td><span class="pill priority-low">Low Priority</span></td>
-            <td>75</td>
-            <td>B</td>
-            <td>1081.70</td>
-            <td>1089.90</td>
-            <td>1229.87</td>
-            <td>1033.91</td>
-            <td>2.50</td>
-            <td class="explanation-cell">High-conviction bullish setup: uptrend, relative strength versus NIFTY, acceptable volume, controlled volatility, and close to breakout trigger.</td>
-        </tr>
-        
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <p class="footer">
-            Disclaimer: This dashboard is for educational and research purposes only. It is not financial advice or a recommendation.
-            Always verify chart structure, market trend, liquidity, volume quality, event risk, and your own risk limits before trading.
+      <div class="section">
+        <h2>Suggested Investment Criteria</h2>
+        <p>
+          <b>88+</b> Highest Priority ·
+          <b>83–87</b> Medium Priority ·
+          <b>78–82</b> Low Priority.
+          Entry should only be considered if the trigger level breaks with confirmation.
         </p>
-    </main>
+      </div>
+
+      <div class="section">
+        <h2>Scanner Table</h2>
+        <table border="1" class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Mode</th>
+      <th>Priority</th>
+      <th>Stock</th>
+      <th>Signal</th>
+      <th>Conviction</th>
+      <th>Grade</th>
+      <th>Close</th>
+      <th>Entry</th>
+      <th>Stop</th>
+      <th>Target</th>
+      <th>RR</th>
+      <th>RSI</th>
+      <th>ATR%</th>
+      <th>Vol Ratio</th>
+      <th>RS vs NIFTY</th>
+      <th>Trigger Distance</th>
+      <th>Qty</th>
+      <th>Trade Value</th>
+      <th>Entry Rule</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Intraday</td>
+      <td>Medium Priority</td>
+      <td>JSWSTEEL</td>
+      <td>SELL</td>
+      <td>84</td>
+      <td>B+</td>
+      <td>1253.7</td>
+      <td>1251.19</td>
+      <td>1258.24</td>
+      <td>1233.57</td>
+      <td>2.5</td>
+      <td>36.1</td>
+      <td>0.42%</td>
+      <td>1.05</td>
+      <td>-0.67</td>
+      <td>0.2%</td>
+      <td>159</td>
+      <td>₹198,940</td>
+      <td>Enter only below trigger</td>
+      <td>Downtrend · Acceptable relative strength · Tradable volatility · Normal volume</td>
+    </tr>
+    <tr>
+      <td>Intraday</td>
+      <td>Medium Priority</td>
+      <td>M&M</td>
+      <td>SELL</td>
+      <td>84</td>
+      <td>B+</td>
+      <td>3081.6</td>
+      <td>3071.34</td>
+      <td>3090.84</td>
+      <td>3022.60</td>
+      <td>2.5</td>
+      <td>37.3</td>
+      <td>0.47%</td>
+      <td>1.09</td>
+      <td>-0.15</td>
+      <td>0.33%</td>
+      <td>65</td>
+      <td>₹199,637</td>
+      <td>Enter only below trigger</td>
+      <td>Downtrend · Acceptable relative strength · Tradable volatility · Normal volume</td>
+    </tr>
+  </tbody>
+</table>
+      </div>
+
+      <div class="section">
+        <h2>Intraday Top 3 Performance Log</h2>
+        <p>Latest 60 ideas for this mode are shown first.</p>
+        <table border="1" class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Date</th>
+      <th>Mode</th>
+      <th>Rank</th>
+      <th>Stock</th>
+      <th>Signal</th>
+      <th>Conviction</th>
+      <th>Entry</th>
+      <th>Stop</th>
+      <th>Target</th>
+      <th>RR</th>
+      <th>Status</th>
+      <th>Result</th>
+      <th>R</th>
+      <th>Days</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2026-05-05</td>
+      <td>Intraday</td>
+      <td>1</td>
+      <td>JSWSTEEL</td>
+      <td>SELL</td>
+      <td>84</td>
+      <td>1251.19</td>
+      <td>1258.24</td>
+      <td>1233.57</td>
+      <td>2.5</td>
+      <td>Pending Trigger</td>
+      <td></td>
+      <td></td>
+      <td>0</td>
+      <td>Top 3 Intraday scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-05-05</td>
+      <td>Intraday</td>
+      <td>2</td>
+      <td>M&M</td>
+      <td>SELL</td>
+      <td>84</td>
+      <td>3071.34</td>
+      <td>3090.84</td>
+      <td>3022.6</td>
+      <td>2.5</td>
+      <td>Pending Trigger</td>
+      <td></td>
+      <td></td>
+      <td>0</td>
+      <td>Top 3 Intraday scanner pick</td>
+    </tr>
+  </tbody>
+</table>
+      </div>
+    </section>
+    
+
+  <p class="disclaimer">
+    Disclaimer: This dashboard is for educational and research purposes only.
+    It is not financial advice or a trade recommendation.
+    Intraday prices from Yahoo Finance may be delayed depending on exchange/feed availability.
+  </p>
+</div>
+
+<script>
+function showMode(mode, button) {
+  document.querySelectorAll('.mode-panel').forEach(function(panel) {
+    panel.classList.remove('active');
+  });
+
+  document.querySelectorAll('.toggle-btn').forEach(function(btn) {
+    btn.classList.remove('active');
+  });
+
+  document.getElementById(mode).classList.add('active');
+  button.classList.add('active');
+}
+</script>
 </body>
 </html>
