@@ -1,4 +1,8 @@
 Date,Mode,Rank,Stock,Signal,Conviction,Entry,Stop,Target,RR,Status,Result,R,Days,Notes
+2026-05-05,Swing,1,AMBUJACEM,SELL,109,430.64,448.08,387.03,2.5,Pending Trigger,,,0,Top 3 Swing scanner pick
+2026-05-05,Swing,2,ABCAPITAL,BUY,103,363.48,348.35,401.3,2.5,Pending Trigger,,,0,Top 3 Swing scanner pick
+2026-05-05,Intraday,2,BHARTIARTL,SELL,98,1799.89,1812.11,1769.35,2.5,Pending Trigger,,,0,Top 3 Intraday scanner pick
+2026-05-05,Intraday,3,VBL,SELL,91,498.9,502.18,490.7,2.5,Pending Trigger,,,0,Top 3 Intraday scanner pick
 2026-05-05,Swing,1,ABCAPITAL,BUY,95,363.48,348.35,401.3,2.5,Pending Trigger,,,0,Top 3 Swing scanner pick
 2026-05-05,Swing,2,AMBUJACEM,SELL,95,430.64,448.08,387.03,2.5,Pending Trigger,,,0,Top 3 Swing scanner pick
 2026-05-05,Swing,3,JINDALSTEL,BUY,91,1285.87,1234.57,1414.12,2.5,Pending Trigger,,,0,Top 3 Swing scanner pick
