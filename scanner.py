@@ -408,11 +408,8 @@ def scan_mode(mode_key):
 if market["bias"] == "Bearish" and result["Signal"] != "SELL":
     continue
 
-# In mixed/constructive markets, allow only qualified setups,
-# but do not block everything below 90.
 if market["bias"] == "Mixed" and result["Conviction"] < 78:
     continue
-
         rows.append(result)
 
     rows = sorted(rows, key=lambda x: x["Conviction"], reverse=True)
