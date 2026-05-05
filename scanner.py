@@ -403,13 +403,14 @@ def scan_mode(mode_key):
 
         # Do not allow trades against the broad NIFTY trend.
         if market["bias"] == "Bullish" and result["Signal"] != "BUY":
-    continue
+            continue
 
-if market["bias"] == "Bearish" and result["Signal"] != "SELL":
-    continue
+        if market["bias"] == "Bearish" and result["Signal"] != "SELL":
+            continue
 
-if market["bias"] == "Mixed" and result["Conviction"] < 78:
-    continue
+        if market["bias"] == "Mixed" and result["Conviction"] < 78:
+            continue
+
         rows.append(result)
 
     rows = sorted(rows, key=lambda x: x["Conviction"], reverse=True)
