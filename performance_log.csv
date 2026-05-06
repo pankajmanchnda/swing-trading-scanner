@@ -1,4 +1,6 @@
 Date,Mode,Rank,Stock,Signal,Conviction,Entry,Stop,Target,RR,Current Price,Stop Away,Target Away,Status,First Hit,Hit Date,Result,R,Days,Notes
+2026-05-06,Swing,1,BHARTIARTL,SELL,94,1806.1,1911.61,1595.07,2.0,1806.1,+₹105.51 / +5.84%,+₹211.03 / +11.68%,Pending Trigger,,,,,0,Top 3 Swing scanner pick
+2026-05-06,Swing,2,JINDALSTEL,BUY,94,1274.54,1195.68,1432.27,2.0,1261.2,+₹65.52 / +5.20%,+₹171.07 / +13.56%,Pending Trigger,,,,,0,Top 3 Swing scanner pick
 2026-05-06,Intraday,1,CHOLAFIN,BUY,94,1664.32,1648.85,1695.26,2.0,1657.4,,,Pending Trigger,,,,,0,Top 3 Intraday scanner pick
 2026-05-06,Intraday,2,HDFCAMC,BUY,94,2820.13,2799.99,2860.4,2.0,2812.0,,,Pending Trigger,,,,,0,Top 3 Intraday scanner pick
 2026-05-06,Intraday,3,MPHASIS,SELL,94,2204.48,2225.05,2163.34,2.0,2211.5,,,Pending Trigger,,,,,0,Top 3 Intraday scanner pick

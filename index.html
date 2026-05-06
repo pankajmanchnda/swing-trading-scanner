@@ -237,7 +237,7 @@ h2 {
 <div class="container">
   <h1>Indian Market Scanner</h1>
   <div class="subtitle">
-    Generated on 06 May 2026, 05:24:29 AM IST · Build 20260506052429 · NIFTY benchmark · Swing vs Intraday scanner
+    Generated on 06 May 2026, 09:08:43 AM IST · Build 20260506090843 · NIFTY benchmark · Swing vs Intraday scanner
   </div>
 
   <div class="refresh-panel">
@@ -259,26 +259,54 @@ h2 {
       </div>
 
       <div class="stats">
-        <div class="stat"><span>Total Candidates</span><b>0</b></div>
-        <div class="stat"><span>Highest Priority</span><b>0</b></div>
+        <div class="stat"><span>Total Candidates</span><b>2</b></div>
+        <div class="stat"><span>Highest Priority</span><b>2</b></div>
         <div class="stat"><span>Medium Priority</span><b>0</b></div>
         <div class="stat"><span>Low Priority</span><b>0</b></div>
-        <div class="stat"><span>Best Conviction</span><b>0</b></div>
+        <div class="stat"><span>Best Conviction</span><b>94</b></div>
       </div>
 
       <div class="market">
         <h2>NIFTY Bias: Mixed</h2>
         <p>NIFTY is mixed/constructive. Scanner will show qualified setups, but entries need stricter confirmation.</p>
         <div class="market-grid">
-          <div>NIFTY Close<br><b>24119.3</b></div>
-          <div>EMA 20<br><b>23992.51</b></div>
-          <div>EMA 50<br><b>24189.89</b></div>
-          <div>5-Candle Change<br><b>0.93%</b></div>
+          <div>NIFTY Close<br><b>24032.8</b></div>
+          <div>EMA 20<br><b>23996.34</b></div>
+          <div>EMA 50<br><b>24183.73</b></div>
+          <div>5-Candle Change<br><b>-0.25%</b></div>
         </div>
       </div>
 
       <h2>Top 3 Setups</h2>
-      <div class="setup-wrap"><p>No top setups in this mode right now.</p></div>
+      <div class="setup-wrap">
+        <div class="setup">
+          <h3>BHARTIARTL — SELL</h3>
+          <p><b>Highest Priority</b> · Score 94</p>
+          <div class="grid">
+            <div>Entry<br><b>1806.1</b></div>
+            <div>Stop<br><b>1911.61</b></div>
+            <div>Target<br><b>1595.07</b></div>
+            <div>Qty<br><b>94</b></div>
+            <div>Value<br><b>₹169,773</b></div>
+            <div>RR<br><b>2.0</b></div>
+          </div>
+          <p>Enter only below trigger; prefer candle close confirmation · Confirmed downtrend · Weak relative strength · RSI sweet spot · Good volume · Clean swing volatility · Close to trigger · Not extended · Structure-aware stop</p>
+        </div>
+        
+        <div class="setup">
+          <h3>JINDALSTEL — BUY</h3>
+          <p><b>Highest Priority</b> · Score 94</p>
+          <div class="grid">
+            <div>Entry<br><b>1274.54</b></div>
+            <div>Stop<br><b>1195.68</b></div>
+            <div>Target<br><b>1432.27</b></div>
+            <div>Qty<br><b>126</b></div>
+            <div>Value<br><b>₹160,593</b></div>
+            <div>RR<br><b>2.0</b></div>
+          </div>
+          <p>Enter only above trigger; prefer candle close confirmation · Confirmed uptrend · Strong relative strength · RSI sweet spot · Institutional volume · Clean swing volatility · Trigger needs confirmation · Not extended · Structure-aware stop</p>
+        </div>
+        </div>
 
       <div class="section">
         <h2>Suggested Investment Criteria</h2>
@@ -292,7 +320,81 @@ h2 {
 
       <div class="section">
         <h2>Scanner Table</h2>
-        <p>No qualifying setups in this mode right now.</p>
+        <table border="1" class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Mode</th>
+      <th>Priority</th>
+      <th>Stock</th>
+      <th>Signal</th>
+      <th>Conviction</th>
+      <th>Grade</th>
+      <th>Close</th>
+      <th>Entry</th>
+      <th>Stop</th>
+      <th>Target</th>
+      <th>RR</th>
+      <th>RSI</th>
+      <th>ATR%</th>
+      <th>Vol Ratio</th>
+      <th>RS vs NIFTY</th>
+      <th>Trigger Distance</th>
+      <th>Extension</th>
+      <th>Qty</th>
+      <th>Trade Value</th>
+      <th>Entry Rule</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Swing</td>
+      <td>Highest Priority</td>
+      <td>BHARTIARTL</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>A</td>
+      <td>1806.1</td>
+      <td>1806.10</td>
+      <td>1911.61</td>
+      <td>1595.07</td>
+      <td>2.0</td>
+      <td>40.1</td>
+      <td>2.07%</td>
+      <td>1.20</td>
+      <td>-5.05</td>
+      <td>0.0%</td>
+      <td>1.82%</td>
+      <td>94</td>
+      <td>₹169,773</td>
+      <td>Enter only below trigger; prefer candle close confirmation</td>
+      <td>Confirmed downtrend · Weak relative strength · RSI sweet spot · Good volume · Clean swing volatility · Close to trigger · Not extended · Structure-aware stop</td>
+    </tr>
+    <tr>
+      <td>Swing</td>
+      <td>Highest Priority</td>
+      <td>JINDALSTEL</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>A</td>
+      <td>1261.2</td>
+      <td>1274.54</td>
+      <td>1195.68</td>
+      <td>1432.27</td>
+      <td>2.0</td>
+      <td>59.1</td>
+      <td>2.86%</td>
+      <td>1.35</td>
+      <td>4.87</td>
+      <td>1.06%</td>
+      <td>1.85%</td>
+      <td>126</td>
+      <td>₹160,593</td>
+      <td>Enter only above trigger; prefer candle close confirmation</td>
+      <td>Confirmed uptrend · Strong relative strength · RSI sweet spot · Institutional volume · Clean swing volatility · Trigger needs confirmation · Not extended · Structure-aware stop</td>
+    </tr>
+  </tbody>
+</table>
       </div>
 
       <div class="section">
@@ -325,6 +427,50 @@ h2 {
   </thead>
   <tbody>
     <tr>
+      <td>2026-05-06</td>
+      <td>Swing</td>
+      <td>1</td>
+      <td>BHARTIARTL</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>1806.1</td>
+      <td>1911.61</td>
+      <td>1595.07</td>
+      <td>2.0</td>
+      <td>1806.1</td>
+      <td>+₹105.51 / +5.84%</td>
+      <td>+₹211.03 / +11.68%</td>
+      <td>Pending Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-05-06</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>JINDALSTEL</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>1274.54</td>
+      <td>1195.68</td>
+      <td>1432.27</td>
+      <td>2.0</td>
+      <td>1261.2</td>
+      <td>+₹65.52 / +5.20%</td>
+      <td>+₹171.07 / +13.56%</td>
+      <td>Pending Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
       <td>2026-05-05</td>
       <td>Swing</td>
       <td>1</td>
@@ -339,10 +485,10 @@ h2 {
       <td>+₹99.51 / +2.45%</td>
       <td>+₹330.06 / +8.14%</td>
       <td>Pending Trigger</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td>1</td>
       <td>Top 3 Swing scanner pick</td>
     </tr>
@@ -361,10 +507,10 @@ h2 {
       <td>+₹14.98 / +3.46%</td>
       <td>+₹46.07 / +10.64%</td>
       <td>Pending Trigger</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td>1</td>
       <td>Top 3 Swing scanner pick</td>
     </tr>
@@ -386,7 +532,7 @@ h2 {
       <td>Entry/exit same candle</td>
       <td>2026-05-05</td>
       <td>Ambiguous</td>
-      <td>NaN</td>
+      <td></td>
       <td>1</td>
       <td>Top 3 Swing scanner pick</td>
     </tr>
@@ -408,7 +554,7 @@ h2 {
       <td>Entry/exit same candle</td>
       <td>2026-05-05</td>
       <td>Ambiguous</td>
-      <td>NaN</td>
+      <td></td>
       <td>1</td>
       <td>Top 3 Swing scanner pick</td>
     </tr>
@@ -427,10 +573,10 @@ h2 {
       <td>+₹14.98 / +3.46%</td>
       <td>+₹46.07 / +10.64%</td>
       <td>Pending Trigger</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td>1</td>
       <td>Top 3 Swing scanner pick</td>
     </tr>
@@ -449,10 +595,10 @@ h2 {
       <td>+₹26.63 / +2.11%</td>
       <td>+₹152.92 / +12.12%</td>
       <td>Pending Trigger</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td>1</td>
       <td>Top 3 Swing scanner pick</td>
     </tr>
