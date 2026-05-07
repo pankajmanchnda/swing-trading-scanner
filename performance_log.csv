@@ -14,19 +14,19 @@ Date,Mode,Rank,Stock,Signal,Conviction,Entry,Stop,Target,RR,Current Price,Stop A
 2026-05-05,Intraday,1,CHOLAFIN,BUY,94,1664.32,1648.85,1695.26,2.0,1720.0,+₹71.15 / +4.14%,-₹24.74 / -1.44%,Target Hit First,Target,2026-05-06,Win,2.0,2,Top 3 Intraday scanner pick
 2026-05-05,Intraday,2,HDFCAMC,BUY,94,2820.13,2799.99,2860.4,2.0,2813.0,+₹13.01 / +0.46%,+₹47.40 / +1.69%,Stop Hit First,Stop,2026-05-05,Loss,-1,2,Top 3 Intraday scanner pick
 2026-05-05,Intraday,3,MPHASIS,SELL,94,2204.48,2225.05,2163.34,2.0,2220.0,+₹5.05 / +0.23%,+₹56.66 / +2.55%,Stop Hit First,Stop,2026-05-06,Loss,-1,2,Top 3 Intraday scanner pick
-2026-05-05,Swing,1,LT,BUY,94,4098.18,3954.99,4384.56,2.0,4054.5,+₹99.51 / +2.45%,+₹330.06 / +8.14%,Pending Trigger,,,,,2,Top 3 Swing scanner pick
+2026-05-05,Swing,1,LT,BUY,94,4098.18,3954.99,4384.56,2.0,4008.5,+₹53.51 / +1.33%,+₹376.06 / +9.38%,Pending Trigger,,,,,2,Top 3 Swing scanner pick
 2026-05-05,Intraday,1,HDFCAMC,BUY,94,2820.13,2799.99,2860.4,2.0,2813.0,+₹13.01 / +0.46%,+₹47.40 / +1.69%,Stop Hit First,Stop,2026-05-05,Loss,-1,2,Top 3 Intraday scanner pick
 2026-05-05,Intraday,2,MPHASIS,SELL,94,2204.48,2225.05,2163.34,2.0,2220.0,+₹5.05 / +0.23%,+₹56.66 / +2.55%,Stop Hit First,Stop,2026-05-06,Loss,-1,2,Top 3 Intraday scanner pick
 2026-05-05,Intraday,1,SBILIFE,BUY,94,1837.87,1826.75,1865.66,2.5,1865.0,+₹38.25 / +2.05%,+₹0.66 / +0.04%,Target Hit First,Target,2026-05-06,Win,2.5,2,Top 3 Intraday scanner pick
 2026-05-05,Intraday,1,AUROPHARMA,BUY,94,1402.8,1393.38,1426.35,2.5,1485.0,+₹91.62 / +6.17%,-₹58.65 / -3.95%,Target Hit First,Target,2026-05-05,Win,2.5,2,Top 3 Intraday scanner pick
 2026-05-05,Intraday,2,CHOLAFIN,BUY,94,1654.0,1642.75,1682.13,2.5,1720.0,+₹77.25 / +4.49%,-₹37.87 / -2.20%,Target Hit First,Target,2026-05-06,Win,2.5,2,Top 3 Intraday scanner pick
-2026-05-05,Swing,1,AMBUJACEM,SELL,94,430.64,448.08,387.03,2.5,433.1,+₹14.98 / +3.46%,+₹46.07 / +10.64%,Pending Trigger,,,,,2,Top 3 Swing scanner pick
-2026-05-05,Swing,2,ABCAPITAL,BUY,94,363.48,348.35,401.3,2.5,360.85,+₹12.50 / +3.46%,+₹40.45 / +11.21%,Ambiguous Entry Candle,Entry/exit same candle,2026-05-05,Ambiguous,,2,Top 3 Swing scanner pick
+2026-05-05,Swing,1,AMBUJACEM,SELL,94,430.64,448.08,387.03,2.5,446.9,+₹1.18 / +0.26%,+₹59.87 / +13.40%,Pending Trigger,,,,,2,Top 3 Swing scanner pick
+2026-05-05,Swing,2,ABCAPITAL,BUY,94,363.48,348.35,401.3,2.5,369.3,+₹20.95 / +5.67%,+₹32.00 / +8.67%,Ambiguous Entry Candle,Entry/exit same candle,2026-05-05,Ambiguous,,2,Top 3 Swing scanner pick
 2026-05-05,Intraday,2,BHARTIARTL,SELL,94,1799.89,1812.11,1769.35,2.5,1833.8,-₹21.69 / -1.18%,+₹64.45 / +3.51%,Pending Trigger,,,,,2,Top 3 Intraday scanner pick
 2026-05-05,Intraday,3,VBL,SELL,91,498.9,502.18,490.7,2.5,509.05,-₹6.87 / -1.35%,+₹18.35 / +3.60%,Pending Trigger,,,,,2,Top 3 Intraday scanner pick
-2026-05-05,Swing,1,ABCAPITAL,BUY,94,363.48,348.35,401.3,2.5,360.85,+₹12.50 / +3.46%,+₹40.45 / +11.21%,Ambiguous Entry Candle,Entry/exit same candle,2026-05-05,Ambiguous,,2,Top 3 Swing scanner pick
-2026-05-05,Swing,2,AMBUJACEM,SELL,94,430.64,448.08,387.03,2.5,433.1,+₹14.98 / +3.46%,+₹46.07 / +10.64%,Pending Trigger,,,,,2,Top 3 Swing scanner pick
-2026-05-05,Swing,3,JINDALSTEL,BUY,91,1285.87,1234.57,1414.12,2.5,1261.2,+₹26.63 / +2.11%,+₹152.92 / +12.12%,Pending Trigger,,,,,2,Top 3 Swing scanner pick
+2026-05-05,Swing,1,ABCAPITAL,BUY,94,363.48,348.35,401.3,2.5,369.3,+₹20.95 / +5.67%,+₹32.00 / +8.67%,Ambiguous Entry Candle,Entry/exit same candle,2026-05-05,Ambiguous,,2,Top 3 Swing scanner pick
+2026-05-05,Swing,2,AMBUJACEM,SELL,94,430.64,448.08,387.03,2.5,446.9,+₹1.18 / +0.26%,+₹59.87 / +13.40%,Pending Trigger,,,,,2,Top 3 Swing scanner pick
+2026-05-05,Swing,3,JINDALSTEL,BUY,91,1285.87,1234.57,1414.12,2.5,1264.3,+₹29.73 / +2.35%,+₹149.82 / +11.85%,Pending Trigger,,,,,2,Top 3 Swing scanner pick
 2026-05-05,Intraday,1,ABBOTINDIA,SELL,88,25294.31,25416.29,24989.35,2.5,26395.0,-₹978.71 / -3.71%,+₹1405.65 / +5.33%,Stop Hit First,Stop,2026-05-05,Loss,-1,2,Top 3 Intraday scanner pick
 2026-05-05,Intraday,2,PAYTM,SELL,88,1076.94,1087.7,1050.04,2.5,1115.5,-₹27.80 / -2.49%,+₹65.46 / +5.87%,Ambiguous Entry Candle,Entry/exit same candle,2026-05-05,Ambiguous,,2,Top 3 Intraday scanner pick
 2026-05-05,Intraday,3,RECLTD,SELL,88,351.5,353.66,346.08,2.5,359.0,-₹5.34 / -1.49%,+₹12.92 / +3.60%,Ambiguous Entry Candle,Entry/exit same candle,2026-05-05,Ambiguous,,2,Top 3 Intraday scanner pick
