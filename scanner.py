@@ -914,7 +914,7 @@ def update_performance_log(all_rows_by_mode):
     today = now_ist().date().isoformat()
 
     columns = [
-        "Date", "Mode", "Rank", "Stock", "Signal", "Conviction", "Entry", "Stop",
+        "Date", "Mode", "Rank", "Priority", "Stock", "Signal", "Conviction", "Entry", "Stop",
         "Target", "RR", "Current Price", "Stop Away", "Target Away", "Status", "First Hit", "Hit Date",
         "Result", "R", "Days", "Notes"
     ]
@@ -924,6 +924,27 @@ def update_performance_log(all_rows_by_mode):
         for col in columns:
             if col not in log.columns:
                 log[col] = ""
+
+        # Backfill Priority for older rows that were logged before this column existed.
+        # Swing uses the newer looser thresholds; Intraday remains stricter.
+        if "Priority" in log.columns:
+            missing_priority = log["Priority"].isna() | (log["Priority"].astype(str).str.strip() == "")
+            conviction_num = pd.to_numeric(log["Conviction"], errors="coerce")
+            mode_text = log["Mode"].astype(str).str.lower()
+
+            swing_mask = mode_text.eq("swing")
+            intraday_mask = mode_text.eq("intraday")
+
+            log.loc[missing_priority & swing_mask & (conviction_num >= 88), "Priority"] = "Highest Priority"
+            log.loc[missing_priority & swing_mask & (conviction_num >= 82) & (conviction_num < 88), "Priority"] = "Medium Priority"
+            log.loc[missing_priority & swing_mask & (conviction_num >= 74) & (conviction_num < 82), "Priority"] = "Low Priority"
+
+            log.loc[missing_priority & intraday_mask & (conviction_num >= 90), "Priority"] = "Highest Priority"
+            log.loc[missing_priority & intraday_mask & (conviction_num >= 84) & (conviction_num < 90), "Priority"] = "Medium Priority"
+            log.loc[missing_priority & intraday_mask & (conviction_num >= 78) & (conviction_num < 84), "Priority"] = "Low Priority"
+
+            log.loc[missing_priority & (log["Priority"].astype(str).str.strip() == ""), "Priority"] = "Unclassified"
+
         log = log[columns].astype(object)
         # Clean older over-inflated scores from previous experimental builds.
         log["Conviction"] = pd.to_numeric(log["Conviction"], errors="coerce").clip(upper=94)
@@ -949,6 +970,7 @@ def update_performance_log(all_rows_by_mode):
                     "Date": today,
                     "Mode": mode_label,
                     "Rank": rank,
+                    "Priority": row.get("Priority", ""),
                     "Stock": row["Stock"],
                     "Signal": row["Signal"],
                     "Conviction": row["Conviction"],
@@ -988,15 +1010,105 @@ def df_to_html(rows):
     )
 
 
+def performance_summary_html(df, title):
+    """
+    Summary block for a priority bucket.
+    Closed win rate counts only rows with Result = Win/Loss.
+    Open, pending, review, and ambiguous rows are excluded from win-rate math.
+    """
+    if df.empty:
+        return f"""
+        <div class="perf-summary">
+          <h3>{title}</h3>
+          <p>No records in this bucket yet.</p>
+        </div>
+        """
+
+    closed = df[df["Result"].isin(["Win", "Loss"])]
+    wins = int((closed["Result"] == "Win").sum())
+    losses = int((closed["Result"] == "Loss").sum())
+    closed_count = wins + losses
+    win_rate = round((wins / closed_count) * 100, 1) if closed_count > 0 else 0
+
+    r_values = pd.to_numeric(closed["R"], errors="coerce")
+    avg_r = round(float(r_values.mean()), 2) if not r_values.dropna().empty else 0
+    total_r = round(float(r_values.sum()), 2) if not r_values.dropna().empty else 0
+
+    return f"""
+    <div class="perf-summary">
+      <h3>{title}</h3>
+      <div class="perf-grid">
+        <div>Total Ideas<br><b>{len(df)}</b></div>
+        <div>Closed Trades<br><b>{closed_count}</b></div>
+        <div>Wins<br><b>{wins}</b></div>
+        <div>Losses<br><b>{losses}</b></div>
+        <div>Win Rate<br><b>{win_rate}%</b></div>
+        <div>Total R<br><b>{total_r}</b></div>
+        <div>Avg R<br><b>{avg_r}</b></div>
+      </div>
+    </div>
+    """
+
+
 def perf_to_html(perf_log, mode_label):
     if perf_log.empty:
         return "<p>No records yet.</p>"
 
-    df = perf_log[perf_log["Mode"] == mode_label].head(60)
+    df = perf_log[perf_log["Mode"] == mode_label].copy().head(60)
     if df.empty:
         return "<p>No records yet for this mode.</p>"
 
-    return df.to_html(index=False, classes="data-table", escape=False)
+    if "Priority" not in df.columns:
+        df["Priority"] = ""
+
+    # Keep priority readable for older log rows.
+    missing_priority = df["Priority"].isna() | (df["Priority"].astype(str).str.strip() == "")
+    conviction_num = pd.to_numeric(df["Conviction"], errors="coerce")
+    mode_text = df["Mode"].astype(str).str.lower()
+
+    swing_mask = mode_text.eq("swing")
+    intraday_mask = mode_text.eq("intraday")
+
+    df.loc[missing_priority & swing_mask & (conviction_num >= 88), "Priority"] = "Highest Priority"
+    df.loc[missing_priority & swing_mask & (conviction_num >= 82) & (conviction_num < 88), "Priority"] = "Medium Priority"
+    df.loc[missing_priority & swing_mask & (conviction_num >= 74) & (conviction_num < 82), "Priority"] = "Low Priority"
+
+    df.loc[missing_priority & intraday_mask & (conviction_num >= 90), "Priority"] = "Highest Priority"
+    df.loc[missing_priority & intraday_mask & (conviction_num >= 84) & (conviction_num < 90), "Priority"] = "Medium Priority"
+    df.loc[missing_priority & intraday_mask & (conviction_num >= 78) & (conviction_num < 84), "Priority"] = "Low Priority"
+
+    highest_df = df[df["Priority"] == "Highest Priority"].copy()
+    medium_low_df = df[df["Priority"].isin(["Medium Priority", "Low Priority"])].copy()
+    other_df = df[~df["Priority"].isin(["Highest Priority", "Medium Priority", "Low Priority"])].copy()
+
+    highest_table = (
+        highest_df.to_html(index=False, classes="data-table", escape=False)
+        if not highest_df.empty
+        else "<p>No Highest Priority records yet for this mode.</p>"
+    )
+
+    medium_low_table = (
+        medium_low_df.to_html(index=False, classes="data-table", escape=False)
+        if not medium_low_df.empty
+        else "<p>No Medium/Low Priority records yet for this mode.</p>"
+    )
+
+    other_block = ""
+    if not other_df.empty:
+        other_block = f"""
+        <h3>Other / Legacy Records</h3>
+        {other_df.to_html(index=False, classes="data-table", escape=False)}
+        """
+
+    return f"""
+    {performance_summary_html(highest_df, "Highest Priority Performance")}
+    {highest_table}
+
+    {performance_summary_html(medium_low_df, "Medium + Low Priority Performance")}
+    {medium_low_table}
+
+    {other_block}
+    """
 
 
 def render_cards(rows):
@@ -1082,7 +1194,7 @@ def render_mode_block(mode_key, rows, market, perf_log, active=False):
 
       <div class="section">
         <h2>{mode_label} Top 3 Performance Log</h2>
-        <p>Latest 60 ideas for this mode are shown first. Current Price, Stop Away, Target Away, First Hit, and Hit Date update on each scanner run to help track whether target or stop-loss was touched first.</p>
+        <p>Latest 60 ideas for this mode are shown first, now separated into Highest Priority versus Medium/Low Priority buckets. Current Price, Stop Away, Target Away, First Hit, and Hit Date update on each scanner run to help track whether target or stop-loss was touched first.</p>
         {perf_to_html(perf_log, mode_label)}
       </div>
     </section>
@@ -1289,6 +1401,39 @@ h2 {{
   background: #0b1220;
 }}
 
+.perf-summary {{
+  background: #0b1220;
+  border: 1px solid #243041;
+  border-radius: 14px;
+  padding: 14px;
+  margin: 14px 0;
+}}
+
+.perf-summary h3 {{
+  margin: 0 0 12px;
+  font-size: 16px;
+}}
+
+.perf-grid {{
+  display: grid;
+  grid-template-columns: repeat(7, minmax(110px, 1fr));
+  gap: 10px;
+}}
+
+.perf-grid div {{
+  background: #111827;
+  border: 1px solid #243041;
+  border-radius: 10px;
+  padding: 10px;
+  color: #94a3b8;
+  font-size: 12px;
+}}
+
+.perf-grid b {{
+  color: #e5e7eb;
+  font-size: 18px;
+}}
+
 .disclaimer {{
   color: #94a3b8;
   font-size: 13px;
@@ -1333,7 +1478,8 @@ h2 {{
 
   .stats,
   .setup-wrap,
-  .market-grid {{
+  .market-grid,
+  .perf-grid {{
     grid-template-columns: 1fr;
   }}
 }}
