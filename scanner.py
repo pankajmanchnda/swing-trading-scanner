@@ -221,15 +221,16 @@ def score_ticker(df, bench_df, ticker, mode_key):
     last_low = float(d["Low"].iloc[-1])
 
     if mode_key == "swing":
-        # Stabilised swing settings: selective enough to avoid flooding,
-        # but not so strict that the scanner goes empty too often.
-        min_atr, max_atr = 1.2, 5.5
-        max_trigger_distance = 1.25
-        min_vol_ratio = 1.15
-        min_rs = 1.5
-        rsi_buy_min, rsi_buy_max = 52, 68
-        rsi_sell_min, rsi_sell_max = 32, 48
-        max_extension = 5.5
+        # Loosened swing settings.
+        # Purpose: restore a small number of daily swing candidates while keeping
+        # the strict NIFTY-direction filter intact. Intraday settings are unchanged.
+        min_atr, max_atr = 0.8, 6.5
+        max_trigger_distance = 2.0
+        min_vol_ratio = 0.90
+        min_rs = 0.75
+        rsi_buy_min, rsi_buy_max = 50, 70
+        rsi_sell_min, rsi_sell_max = 30, 52
+        max_extension = 6.5
     else:
         # Intraday setups need tighter trigger proximity and better volume.
         min_atr, max_atr = 0.35, 3.0
@@ -266,7 +267,7 @@ def score_ticker(df, bench_df, ticker, mode_key):
         stop_atr_mult = 1.60
         structure_lookback = 10
         stop_buffer_mult = 0.15
-        max_risk_pct = 6.5
+        max_risk_pct = 7.5
     else:
         stop_atr_mult = 1.25
         structure_lookback = 12
@@ -409,13 +410,22 @@ def score_ticker(df, bench_df, ticker, mode_key):
     else:
         score = max(0, min(raw_score, 89))
 
-    if score >= 90:
+    if mode_key == "swing":
+        high_threshold = 88
+        medium_threshold = 82
+        low_threshold = 76
+    else:
+        high_threshold = 90
+        medium_threshold = 84
+        low_threshold = 78
+
+    if score >= high_threshold:
         priority = "Qualified Candidate"
         grade = "A"
-    elif score >= 84:
+    elif score >= medium_threshold:
         priority = "Qualified Candidate"
         grade = "B+"
-    elif score >= 78:
+    elif score >= low_threshold:
         priority = "Qualified Candidate"
         grade = "B"
     else:
@@ -451,21 +461,32 @@ def calibrate_priorities(rows, highest_cap=5):
     Assign final priority after all candidates are ranked.
 
     This prevents the dashboard from flooding with Highest Priority labels.
-    A stock still needs a strong conviction score, but only the best-ranked
-    five ideas in each mode can receive the top label.
+    Swing is intentionally a little looser than Intraday, because daily swing
+    setups otherwise stayed empty for several sessions while Intraday still
+    produced daily picks.
     """
     calibrated = []
 
     for rank, row in enumerate(sorted(rows, key=lambda x: x["Conviction"], reverse=True), start=1):
         score = int(row["Conviction"])
+        mode_label = str(row.get("Mode", "Swing")).lower()
 
-        if rank <= highest_cap and score >= 90:
+        if mode_label == "swing":
+            high_threshold = 88
+            medium_threshold = 82
+            low_threshold = 76
+        else:
+            high_threshold = 90
+            medium_threshold = 84
+            low_threshold = 78
+
+        if rank <= highest_cap and score >= high_threshold:
             row["Priority"] = "Highest Priority"
             row["Grade"] = "A"
-        elif score >= 84:
+        elif score >= medium_threshold:
             row["Priority"] = "Medium Priority"
             row["Grade"] = "B+"
-        elif score >= 78:
+        elif score >= low_threshold:
             row["Priority"] = "Low Priority"
             row["Grade"] = "B"
         else:
@@ -1000,10 +1021,8 @@ def render_mode_block(mode_key, rows, market, perf_log, active=False):
       <div class="section">
         <h2>Suggested Investment Criteria</h2>
         <p>
-          <b>90–94</b> Highest Priority candidate range, but only the top 5 ranked ideas per mode can receive that label ·
-          <b>84–89</b> Medium Priority ·
-          <b>78–83</b> Low Priority.
-          Score is setup quality, not probability of profit. No trade is assumed loss-proof, so the model intentionally avoids 100 scores. Stops use structure-aware ATR placement and targets use a more realistic 2R objective. Expert filter requires trend alignment, NIFTY relative strength, volume confirmation, controlled volatility, and a nearby trigger. Entry should only be considered if the trigger level breaks with confirmation.
+          Swing thresholds are now slightly looser to avoid empty daily swing output: <b>88–94</b> Highest Priority candidate range, <b>82–87</b> Medium Priority, <b>76–81</b> Low Priority. Intraday remains stricter: <b>90–94</b> Highest Priority, <b>84–89</b> Medium Priority, <b>78–83</b> Low Priority. Only the top 5 ranked ideas per mode can receive the Highest Priority label.
+          Score is setup quality, not probability of profit. No trade is assumed loss-proof, so the model intentionally avoids 100 scores. Stops use structure-aware ATR placement and targets use a more realistic 2R objective. Expert filter still requires trend alignment, NIFTY-direction alignment, NIFTY relative strength/weakness, volume confirmation, controlled volatility, and a nearby trigger. Entry should only be considered if the trigger level breaks with confirmation.
         </p>
       </div>
 
