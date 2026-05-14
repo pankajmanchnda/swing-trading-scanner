@@ -237,7 +237,7 @@ h2 {
 <div class="container">
   <h1>Indian Market Scanner</h1>
   <div class="subtitle">
-    Generated on 14 May 2026, 03:57:29 PM IST · Build 20260514155729 · NIFTY benchmark · Swing vs Intraday scanner
+    Generated on 14 May 2026, 04:04:32 PM IST · Build 20260514160432 · NIFTY benchmark · Swing vs Intraday scanner
   </div>
 
   <div class="refresh-panel">
@@ -259,16 +259,16 @@ h2 {
       </div>
 
       <div class="stats">
-        <div class="stat"><span>Total Candidates</span><b>0</b></div>
-        <div class="stat"><span>Highest Priority</span><b>0</b></div>
+        <div class="stat"><span>Total Candidates</span><b>2</b></div>
+        <div class="stat"><span>Highest Priority</span><b>2</b></div>
         <div class="stat"><span>Medium Priority</span><b>0</b></div>
         <div class="stat"><span>Low Priority</span><b>0</b></div>
-        <div class="stat"><span>Best Conviction</span><b>0</b></div>
+        <div class="stat"><span>Best Conviction</span><b>94</b></div>
       </div>
 
       <div class="market">
         <h2>NIFTY Bias: Bearish</h2>
-        <p>NIFTY trend is weak. Scanner will only show SELL setups.</p>
+        <p>NIFTY trend is weak. Scanner will only show SELL setups. Normal swing scan had no candidates, so a relaxed swing fallback was used.</p>
         <div class="market-grid">
           <div>NIFTY Close<br><b>23412.6</b></div>
           <div>EMA 20<br><b>23926.62</b></div>
@@ -278,19 +278,131 @@ h2 {
       </div>
 
       <h2>Top 3 Setups</h2>
-      <div class="setup-wrap"><p>No top setups in this mode right now.</p></div>
+      <div class="setup-wrap">
+        <div class="setup">
+          <h3>BANKBARODA — SELL</h3>
+          <p><b>Highest Priority</b> · Score 94</p>
+          <div class="grid">
+            <div>Entry<br><b>262.12</b></div>
+            <div>Stop<br><b>272.61</b></div>
+            <div>Target<br><b>241.15</b></div>
+            <div>Qty<br><b>762</b></div>
+            <div>Value<br><b>₹199,739</b></div>
+            <div>RR<br><b>2.0</b></div>
+          </div>
+          <p>Enter only below trigger; prefer candle close confirmation · Relaxed swing downtrend · Weak relative strength · RSI sweet spot · Good volume · Clean swing volatility · Trigger needs confirmation · Not extended · Swing fallback candidate · Structure-aware stop</p>
+        </div>
+        
+        <div class="setup">
+          <h3>BEL — SELL</h3>
+          <p><b>Highest Priority</b> · Score 94</p>
+          <div class="grid">
+            <div>Entry<br><b>423.6</b></div>
+            <div>Stop<br><b>444.84</b></div>
+            <div>Target<br><b>381.12</b></div>
+            <div>Qty<br><b>470</b></div>
+            <div>Value<br><b>₹199,093</b></div>
+            <div>RR<br><b>2.0</b></div>
+          </div>
+          <p>Enter only below trigger; prefer candle close confirmation · Relaxed swing downtrend · Weak relative strength · RSI sweet spot · Acceptable volume · Clean swing volatility · Close to trigger · Not extended · Swing fallback candidate · Structure-aware stop</p>
+        </div>
+        </div>
 
       <div class="section">
         <h2>Suggested Investment Criteria</h2>
         <p>
-          Swing thresholds are now slightly looser to avoid empty daily swing output: <b>88–94</b> Highest Priority candidate range, <b>82–87</b> Medium Priority, <b>76–81</b> Low Priority. Intraday remains stricter: <b>90–94</b> Highest Priority, <b>84–89</b> Medium Priority, <b>78–83</b> Low Priority. Only the top 5 ranked ideas per mode can receive the Highest Priority label.
-          Score is setup quality, not probability of profit. No trade is assumed loss-proof, so the model intentionally avoids 100 scores. Stops use structure-aware ATR placement and targets use a more realistic 2R objective. Expert filter still requires trend alignment, NIFTY-direction alignment, NIFTY relative strength/weakness, volume confirmation, controlled volatility, and a nearby trigger. Entry should only be considered if the trigger level breaks with confirmation.
+          Swing is calibrated slightly looser to avoid empty daily output:
+          <b>88–94</b> Highest Priority candidate range ·
+          <b>82–87</b> Medium Priority ·
+          <b>74–81</b> Low Priority.
+          Intraday remains stricter:
+          <b>90–94</b> Highest Priority ·
+          <b>84–89</b> Medium Priority ·
+          <b>78–83</b> Low Priority.
+          Only the top 5 ranked ideas per mode can receive the Highest Priority label. Score is setup quality, not probability of profit. No trade is assumed loss-proof, so the model intentionally avoids 100 scores. Stops use structure-aware ATR placement and targets use a more realistic 2R objective. Expert filter still requires NIFTY-direction alignment, relative strength/weakness, volume confirmation, controlled volatility, and a nearby trigger. Entry should only be considered if the trigger level breaks with confirmation.
         </p>
       </div>
 
       <div class="section">
         <h2>Scanner Table</h2>
-        <p>No qualifying setups in this mode right now.</p>
+        <table border="1" class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Mode</th>
+      <th>Scan Type</th>
+      <th>Priority</th>
+      <th>Stock</th>
+      <th>Signal</th>
+      <th>Conviction</th>
+      <th>Grade</th>
+      <th>Close</th>
+      <th>Entry</th>
+      <th>Stop</th>
+      <th>Target</th>
+      <th>RR</th>
+      <th>RSI</th>
+      <th>ATR%</th>
+      <th>Vol Ratio</th>
+      <th>RS vs NIFTY</th>
+      <th>Trigger Distance</th>
+      <th>Extension</th>
+      <th>Qty</th>
+      <th>Trade Value</th>
+      <th>Entry Rule</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Swing</td>
+      <td>Fallback</td>
+      <td>Highest Priority</td>
+      <td>BANKBARODA</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>A</td>
+      <td>267.80</td>
+      <td>262.12</td>
+      <td>272.61</td>
+      <td>241.15</td>
+      <td>2.0</td>
+      <td>40.8</td>
+      <td>2.67%</td>
+      <td>1.06</td>
+      <td>-0.22</td>
+      <td>2.12%</td>
+      <td>0.3%</td>
+      <td>762</td>
+      <td>₹199,739</td>
+      <td>Enter only below trigger; prefer candle close confirmation</td>
+      <td>Relaxed swing downtrend · Weak relative strength · RSI sweet spot · Good volume · Clean swing volatility · Trigger needs confirmation · Not extended · Swing fallback candidate · Structure-aware stop</td>
+    </tr>
+    <tr>
+      <td>Swing</td>
+      <td>Fallback</td>
+      <td>Highest Priority</td>
+      <td>BEL</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>A</td>
+      <td>428.85</td>
+      <td>423.60</td>
+      <td>444.84</td>
+      <td>381.12</td>
+      <td>2.0</td>
+      <td>34.2</td>
+      <td>2.42%</td>
+      <td>0.79</td>
+      <td>-0.22</td>
+      <td>1.22%</td>
+      <td>1.38%</td>
+      <td>470</td>
+      <td>₹199,093</td>
+      <td>Enter only below trigger; prefer candle close confirmation</td>
+      <td>Relaxed swing downtrend · Weak relative strength · RSI sweet spot · Acceptable volume · Clean swing volatility · Close to trigger · Not extended · Swing fallback candidate · Structure-aware stop</td>
+    </tr>
+  </tbody>
+</table>
       </div>
 
       <div class="section">
@@ -322,6 +434,50 @@ h2 {
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>2026-05-14</td>
+      <td>Swing</td>
+      <td>1</td>
+      <td>BANKBARODA</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>262.12</td>
+      <td>272.61</td>
+      <td>241.15</td>
+      <td>2.0</td>
+      <td>267.8</td>
+      <td>+₹4.81 / +1.80%</td>
+      <td>+₹26.65 / +9.95%</td>
+      <td>Pending Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-05-14</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>BEL</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>423.6</td>
+      <td>444.84</td>
+      <td>381.12</td>
+      <td>2.0</td>
+      <td>428.85</td>
+      <td>+₹15.99 / +3.73%</td>
+      <td>+₹47.73 / +11.13%</td>
+      <td>Pending Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
     <tr>
       <td>2026-05-09</td>
       <td>Swing</td>
@@ -599,21 +755,21 @@ h2 {
       </div>
 
       <div class="stats">
-        <div class="stat"><span>Total Candidates</span><b>4</b></div>
-        <div class="stat"><span>Highest Priority</span><b>4</b></div>
-        <div class="stat"><span>Medium Priority</span><b>0</b></div>
+        <div class="stat"><span>Total Candidates</span><b>6</b></div>
+        <div class="stat"><span>Highest Priority</span><b>5</b></div>
+        <div class="stat"><span>Medium Priority</span><b>1</b></div>
         <div class="stat"><span>Low Priority</span><b>0</b></div>
         <div class="stat"><span>Best Conviction</span><b>94</b></div>
       </div>
 
       <div class="market">
-        <h2>NIFTY Bias: Bullish</h2>
-        <p>NIFTY trend is supportive. Scanner will only show BUY setups. Benchmark proxy used: NIFTYBEES.</p>
+        <h2>NIFTY Bias: Mixed</h2>
+        <p>NIFTY is mixed/constructive. Scanner will show qualified setups, but entries need stricter confirmation. Benchmark proxy used: NIFTYBEES.</p>
         <div class="market-grid">
-          <div>NIFTY Close<br><b>268.47</b></div>
-          <div>EMA 20<br><b>267.76</b></div>
-          <div>EMA 50<br><b>267.37</b></div>
-          <div>5-Candle Change<br><b>0.02%</b></div>
+          <div>NIFTY Close<br><b>268.09</b></div>
+          <div>EMA 20<br><b>267.72</b></div>
+          <div>EMA 50<br><b>267.35</b></div>
+          <div>5-Candle Change<br><b>-0.12%</b></div>
         </div>
       </div>
 
@@ -665,8 +821,15 @@ h2 {
       <div class="section">
         <h2>Suggested Investment Criteria</h2>
         <p>
-          Swing thresholds are now slightly looser to avoid empty daily swing output: <b>88–94</b> Highest Priority candidate range, <b>82–87</b> Medium Priority, <b>76–81</b> Low Priority. Intraday remains stricter: <b>90–94</b> Highest Priority, <b>84–89</b> Medium Priority, <b>78–83</b> Low Priority. Only the top 5 ranked ideas per mode can receive the Highest Priority label.
-          Score is setup quality, not probability of profit. No trade is assumed loss-proof, so the model intentionally avoids 100 scores. Stops use structure-aware ATR placement and targets use a more realistic 2R objective. Expert filter still requires trend alignment, NIFTY-direction alignment, NIFTY relative strength/weakness, volume confirmation, controlled volatility, and a nearby trigger. Entry should only be considered if the trigger level breaks with confirmation.
+          Swing is calibrated slightly looser to avoid empty daily output:
+          <b>88–94</b> Highest Priority candidate range ·
+          <b>82–87</b> Medium Priority ·
+          <b>74–81</b> Low Priority.
+          Intraday remains stricter:
+          <b>90–94</b> Highest Priority ·
+          <b>84–89</b> Medium Priority ·
+          <b>78–83</b> Low Priority.
+          Only the top 5 ranked ideas per mode can receive the Highest Priority label. Score is setup quality, not probability of profit. No trade is assumed loss-proof, so the model intentionally avoids 100 scores. Stops use structure-aware ATR placement and targets use a more realistic 2R objective. Expert filter still requires NIFTY-direction alignment, relative strength/weakness, volume confirmation, controlled volatility, and a nearby trigger. Entry should only be considered if the trigger level breaks with confirmation.
         </p>
       </div>
 
@@ -676,6 +839,7 @@ h2 {
   <thead>
     <tr style="text-align: right;">
       <th>Mode</th>
+      <th>Scan Type</th>
       <th>Priority</th>
       <th>Stock</th>
       <th>Signal</th>
@@ -701,6 +865,7 @@ h2 {
   <tbody>
     <tr>
       <td>Intraday</td>
+      <td>Normal</td>
       <td>Highest Priority</td>
       <td>ADANIENT</td>
       <td>BUY</td>
@@ -714,7 +879,7 @@ h2 {
       <td>65.6</td>
       <td>0.63%</td>
       <td>1.71</td>
-      <td>1.92</td>
+      <td>2.06</td>
       <td>0.38%</td>
       <td>1.91%</td>
       <td>73</td>
@@ -724,6 +889,7 @@ h2 {
     </tr>
     <tr>
       <td>Intraday</td>
+      <td>Normal</td>
       <td>Highest Priority</td>
       <td>AMBUJACEM</td>
       <td>BUY</td>
@@ -737,7 +903,7 @@ h2 {
       <td>57.3</td>
       <td>0.4%</td>
       <td>1.50</td>
-      <td>0.81</td>
+      <td>0.95</td>
       <td>0.31%</td>
       <td>0.44%</td>
       <td>448</td>
@@ -747,6 +913,7 @@ h2 {
     </tr>
     <tr>
       <td>Intraday</td>
+      <td>Normal</td>
       <td>Highest Priority</td>
       <td>BANKBARODA</td>
       <td>BUY</td>
@@ -760,7 +927,7 @@ h2 {
       <td>67.1</td>
       <td>0.36%</td>
       <td>1.68</td>
-      <td>0.82</td>
+      <td>0.96</td>
       <td>0.22%</td>
       <td>0.48%</td>
       <td>742</td>
@@ -770,6 +937,7 @@ h2 {
     </tr>
     <tr>
       <td>Intraday</td>
+      <td>Normal</td>
       <td>Highest Priority</td>
       <td>DLF</td>
       <td>BUY</td>
@@ -783,13 +951,61 @@ h2 {
       <td>60.5</td>
       <td>0.47%</td>
       <td>2.25</td>
-      <td>3.74</td>
+      <td>3.89</td>
       <td>0.21%</td>
       <td>0.52%</td>
       <td>341</td>
       <td>₹199,542</td>
       <td>Enter only above trigger; prefer candle close confirmation</td>
       <td>Confirmed uptrend · Strong relative strength · RSI sweet spot · Institutional volume · Clean intraday volatility · Close to trigger · Not extended · Structure-aware stop</td>
+    </tr>
+    <tr>
+      <td>Intraday</td>
+      <td>Normal</td>
+      <td>Highest Priority</td>
+      <td>INDIGO</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>A</td>
+      <td>4282.00</td>
+      <td>4306.60</td>
+      <td>4268.84</td>
+      <td>4382.11</td>
+      <td>2.0</td>
+      <td>61.2</td>
+      <td>0.41%</td>
+      <td>1.77</td>
+      <td>0.79</td>
+      <td>0.57%</td>
+      <td>0.06%</td>
+      <td>46</td>
+      <td>₹198,103</td>
+      <td>Enter only above trigger; prefer candle close confirmation</td>
+      <td>Confirmed uptrend · Positive relative strength · RSI sweet spot · Institutional volume · Clean intraday volatility · Trigger needs confirmation · Not extended · Structure-aware stop</td>
+    </tr>
+    <tr>
+      <td>Intraday</td>
+      <td>Normal</td>
+      <td>Medium Priority</td>
+      <td>IRFC</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>B+</td>
+      <td>100.24</td>
+      <td>99.85</td>
+      <td>102.65</td>
+      <td>94.25</td>
+      <td>2.0</td>
+      <td>32.5</td>
+      <td>0.59%</td>
+      <td>2.35</td>
+      <td>-1.73</td>
+      <td>0.39%</td>
+      <td>1.0%</td>
+      <td>2003</td>
+      <td>₹199,999</td>
+      <td>Enter only below trigger; prefer candle close confirmation</td>
+      <td>Confirmed downtrend · Weak relative strength · Healthy RSI · Institutional volume · Clean intraday volatility · Close to trigger · Not extended · Structure-aware stop</td>
     </tr>
   </tbody>
 </table>
@@ -1385,9 +1601,9 @@ h2 {
       <td>365.53</td>
       <td>352.16</td>
       <td>2.0</td>
-      <td>351.5</td>
-      <td>+₹14.03 / +3.99%</td>
-      <td>-₹0.66 / -0.19%</td>
+      <td>349.65</td>
+      <td>+₹15.88 / +4.54%</td>
+      <td>-₹2.51 / -0.72%</td>
       <td>Target Hit First</td>
       <td>Target</td>
       <td>2026-05-11</td>
@@ -1451,9 +1667,9 @@ h2 {
       <td>365.53</td>
       <td>352.16</td>
       <td>2.0</td>
-      <td>351.5</td>
-      <td>+₹14.03 / +3.99%</td>
-      <td>-₹0.66 / -0.19%</td>
+      <td>349.65</td>
+      <td>+₹15.88 / +4.54%</td>
+      <td>-₹2.51 / -0.72%</td>
       <td>Target Hit First</td>
       <td>Target</td>
       <td>2026-05-11</td>
@@ -1517,9 +1733,9 @@ h2 {
       <td>365.53</td>
       <td>352.16</td>
       <td>2.0</td>
-      <td>351.5</td>
-      <td>+₹14.03 / +3.99%</td>
-      <td>-₹0.66 / -0.19%</td>
+      <td>349.65</td>
+      <td>+₹15.88 / +4.54%</td>
+      <td>-₹2.51 / -0.72%</td>
       <td>Target Hit First</td>
       <td>Target</td>
       <td>2026-05-11</td>
@@ -1583,9 +1799,9 @@ h2 {
       <td>365.53</td>
       <td>352.16</td>
       <td>2.0</td>
-      <td>351.5</td>
-      <td>+₹14.03 / +3.99%</td>
-      <td>-₹0.66 / -0.19%</td>
+      <td>349.65</td>
+      <td>+₹15.88 / +4.54%</td>
+      <td>-₹2.51 / -0.72%</td>
       <td>Target Hit First</td>
       <td>Target</td>
       <td>2026-05-11</td>
@@ -1781,9 +1997,9 @@ h2 {
       <td>2419.03</td>
       <td>2514.02</td>
       <td>2.0</td>
-      <td>2257.1</td>
-      <td>-₹161.93 / -7.17%</td>
-      <td>+₹256.92 / +11.38%</td>
+      <td>2258.2</td>
+      <td>-₹160.83 / -7.12%</td>
+      <td>+₹255.82 / +11.33%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-05-08</td>
@@ -1825,9 +2041,9 @@ h2 {
       <td>2419.03</td>
       <td>2514.02</td>
       <td>2.0</td>
-      <td>2257.1</td>
-      <td>-₹161.93 / -7.17%</td>
-      <td>+₹256.92 / +11.38%</td>
+      <td>2258.2</td>
+      <td>-₹160.83 / -7.12%</td>
+      <td>+₹255.82 / +11.33%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-05-08</td>
@@ -1913,9 +2129,9 @@ h2 {
       <td>1648.85</td>
       <td>1695.26</td>
       <td>2.0</td>
-      <td>1563.4</td>
-      <td>-₹85.45 / -5.47%</td>
-      <td>+₹131.86 / +8.43%</td>
+      <td>1567.1</td>
+      <td>-₹81.75 / -5.22%</td>
+      <td>+₹128.16 / +8.18%</td>
       <td>Ambiguous Entry Candle</td>
       <td>Entry/exit same candle</td>
       <td>2026-05-06</td>
@@ -1935,9 +2151,9 @@ h2 {
       <td>2799.99</td>
       <td>2860.4</td>
       <td>2.0</td>
-      <td>2702.2</td>
-      <td>-₹97.79 / -3.62%</td>
-      <td>+₹158.20 / +5.85%</td>
+      <td>2691.6</td>
+      <td>-₹108.39 / -4.03%</td>
+      <td>+₹168.80 / +6.27%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-05-07</td>
@@ -1979,9 +2195,9 @@ h2 {
       <td>1648.85</td>
       <td>1695.26</td>
       <td>2.0</td>
-      <td>1563.4</td>
-      <td>-₹85.45 / -5.47%</td>
-      <td>+₹131.86 / +8.43%</td>
+      <td>1567.1</td>
+      <td>-₹81.75 / -5.22%</td>
+      <td>+₹128.16 / +8.18%</td>
       <td>Target Hit First</td>
       <td>Target</td>
       <td>2026-05-06</td>
@@ -2001,9 +2217,9 @@ h2 {
       <td>2799.99</td>
       <td>2860.4</td>
       <td>2.0</td>
-      <td>2702.2</td>
-      <td>-₹97.79 / -3.62%</td>
-      <td>+₹158.20 / +5.85%</td>
+      <td>2691.6</td>
+      <td>-₹108.39 / -4.03%</td>
+      <td>+₹168.80 / +6.27%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-05-05</td>
@@ -2045,9 +2261,9 @@ h2 {
       <td>2799.99</td>
       <td>2860.4</td>
       <td>2.0</td>
-      <td>2702.2</td>
-      <td>-₹97.79 / -3.62%</td>
-      <td>+₹158.20 / +5.85%</td>
+      <td>2691.6</td>
+      <td>-₹108.39 / -4.03%</td>
+      <td>+₹168.80 / +6.27%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-05-05</td>
@@ -2133,9 +2349,9 @@ h2 {
       <td>1642.75</td>
       <td>1682.13</td>
       <td>2.5</td>
-      <td>1563.4</td>
-      <td>-₹79.35 / -5.08%</td>
-      <td>+₹118.73 / +7.59%</td>
+      <td>1567.1</td>
+      <td>-₹75.65 / -4.83%</td>
+      <td>+₹115.03 / +7.34%</td>
       <td>Target Hit First</td>
       <td>Target</td>
       <td>2026-05-06</td>
