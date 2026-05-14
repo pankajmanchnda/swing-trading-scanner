@@ -177,6 +177,39 @@ h2 {
   background: #0b1220;
 }
 
+.perf-summary {
+  background: #0b1220;
+  border: 1px solid #243041;
+  border-radius: 14px;
+  padding: 14px;
+  margin: 14px 0;
+}
+
+.perf-summary h3 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.perf-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(110px, 1fr));
+  gap: 10px;
+}
+
+.perf-grid div {
+  background: #111827;
+  border: 1px solid #243041;
+  border-radius: 10px;
+  padding: 10px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.perf-grid b {
+  color: #e5e7eb;
+  font-size: 18px;
+}
+
 .disclaimer {
   color: #94a3b8;
   font-size: 13px;
@@ -221,7 +254,8 @@ h2 {
 
   .stats,
   .setup-wrap,
-  .market-grid {
+  .market-grid,
+  .perf-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -237,7 +271,7 @@ h2 {
 <div class="container">
   <h1>Indian Market Scanner</h1>
   <div class="subtitle">
-    Generated on 14 May 2026, 04:28:47 PM IST · Build 20260514162847 · NIFTY benchmark · Swing vs Intraday scanner
+    Generated on 14 May 2026, 04:40:06 PM IST · Build 20260514164006 · NIFTY benchmark · Swing vs Intraday scanner
   </div>
 
   <div class="refresh-panel">
@@ -407,13 +441,29 @@ h2 {
 
       <div class="section">
         <h2>Swing Top 3 Performance Log</h2>
-        <p>Latest 60 ideas for this mode are shown first. Current Price, Stop Away, Target Away, First Hit, and Hit Date update on each scanner run to help track whether target or stop-loss was touched first.</p>
-        <table border="1" class="dataframe data-table">
+        <p>Latest 60 ideas for this mode are shown first, now separated into Highest Priority versus Medium/Low Priority buckets. Current Price, Stop Away, Target Away, First Hit, and Hit Date update on each scanner run to help track whether target or stop-loss was touched first.</p>
+        
+    
+    <div class="perf-summary">
+      <h3>Highest Priority Performance</h3>
+      <div class="perf-grid">
+        <div>Total Ideas<br><b>14</b></div>
+        <div>Closed Trades<br><b>0</b></div>
+        <div>Wins<br><b>0</b></div>
+        <div>Losses<br><b>0</b></div>
+        <div>Win Rate<br><b>0%</b></div>
+        <div>Total R<br><b>0</b></div>
+        <div>Avg R<br><b>0</b></div>
+      </div>
+    </div>
+    
+    <table border="1" class="dataframe data-table">
   <thead>
     <tr style="text-align: right;">
       <th>Date</th>
       <th>Mode</th>
       <th>Rank</th>
+      <th>Priority</th>
       <th>Stock</th>
       <th>Signal</th>
       <th>Conviction</th>
@@ -438,6 +488,7 @@ h2 {
       <td>2026-05-14</td>
       <td>Swing</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>BANKBARODA</td>
       <td>SELL</td>
       <td>94</td>
@@ -460,6 +511,7 @@ h2 {
       <td>2026-05-14</td>
       <td>Swing</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>BEL</td>
       <td>SELL</td>
       <td>94</td>
@@ -482,6 +534,7 @@ h2 {
       <td>2026-05-09</td>
       <td>Swing</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>PNB</td>
       <td>SELL</td>
       <td>94</td>
@@ -504,6 +557,7 @@ h2 {
       <td>2026-05-08</td>
       <td>Swing</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>PNB</td>
       <td>SELL</td>
       <td>94</td>
@@ -526,6 +580,7 @@ h2 {
       <td>2026-05-07</td>
       <td>Swing</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>PNB</td>
       <td>SELL</td>
       <td>94</td>
@@ -548,6 +603,7 @@ h2 {
       <td>2026-05-07</td>
       <td>Swing</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>LT</td>
       <td>BUY</td>
       <td>94</td>
@@ -570,6 +626,7 @@ h2 {
       <td>2026-05-06</td>
       <td>Swing</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>BHARTIARTL</td>
       <td>SELL</td>
       <td>94</td>
@@ -592,6 +649,7 @@ h2 {
       <td>2026-05-06</td>
       <td>Swing</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>JINDALSTEL</td>
       <td>BUY</td>
       <td>94</td>
@@ -614,6 +672,7 @@ h2 {
       <td>2026-05-05</td>
       <td>Swing</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>LT</td>
       <td>BUY</td>
       <td>94</td>
@@ -636,6 +695,7 @@ h2 {
       <td>2026-05-05</td>
       <td>Swing</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>AMBUJACEM</td>
       <td>SELL</td>
       <td>94</td>
@@ -658,6 +718,7 @@ h2 {
       <td>2026-05-05</td>
       <td>Swing</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>ABCAPITAL</td>
       <td>BUY</td>
       <td>94</td>
@@ -680,6 +741,7 @@ h2 {
       <td>2026-05-05</td>
       <td>Swing</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>ABCAPITAL</td>
       <td>BUY</td>
       <td>94</td>
@@ -702,6 +764,7 @@ h2 {
       <td>2026-05-05</td>
       <td>Swing</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>AMBUJACEM</td>
       <td>SELL</td>
       <td>94</td>
@@ -724,6 +787,7 @@ h2 {
       <td>2026-05-05</td>
       <td>Swing</td>
       <td>3</td>
+      <td>Highest Priority</td>
       <td>JINDALSTEL</td>
       <td>BUY</td>
       <td>91</td>
@@ -744,6 +808,17 @@ h2 {
     </tr>
   </tbody>
 </table>
+
+    
+        <div class="perf-summary">
+          <h3>Medium + Low Priority Performance</h3>
+          <p>No records in this bucket yet.</p>
+        </div>
+        
+    <p>No Medium/Low Priority records yet for this mode.</p>
+
+    
+    
       </div>
     </section>
     
@@ -1013,13 +1088,29 @@ h2 {
 
       <div class="section">
         <h2>Intraday Top 3 Performance Log</h2>
-        <p>Latest 60 ideas for this mode are shown first. Current Price, Stop Away, Target Away, First Hit, and Hit Date update on each scanner run to help track whether target or stop-loss was touched first.</p>
-        <table border="1" class="dataframe data-table">
+        <p>Latest 60 ideas for this mode are shown first, now separated into Highest Priority versus Medium/Low Priority buckets. Current Price, Stop Away, Target Away, First Hit, and Hit Date update on each scanner run to help track whether target or stop-loss was touched first.</p>
+        
+    
+    <div class="perf-summary">
+      <h3>Highest Priority Performance</h3>
+      <div class="perf-grid">
+        <div>Total Ideas<br><b>60</b></div>
+        <div>Closed Trades<br><b>42</b></div>
+        <div>Wins<br><b>16</b></div>
+        <div>Losses<br><b>26</b></div>
+        <div>Win Rate<br><b>38.1%</b></div>
+        <div>Total R<br><b>7.5</b></div>
+        <div>Avg R<br><b>0.18</b></div>
+      </div>
+    </div>
+    
+    <table border="1" class="dataframe data-table">
   <thead>
     <tr style="text-align: right;">
       <th>Date</th>
       <th>Mode</th>
       <th>Rank</th>
+      <th>Priority</th>
       <th>Stock</th>
       <th>Signal</th>
       <th>Conviction</th>
@@ -1044,6 +1135,7 @@ h2 {
       <td>2026-05-14</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>ADANIENT</td>
       <td>BUY</td>
       <td>94</td>
@@ -1066,6 +1158,7 @@ h2 {
       <td>2026-05-14</td>
       <td>Intraday</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>AMBUJACEM</td>
       <td>BUY</td>
       <td>94</td>
@@ -1088,6 +1181,7 @@ h2 {
       <td>2026-05-14</td>
       <td>Intraday</td>
       <td>3</td>
+      <td>Highest Priority</td>
       <td>BANKBARODA</td>
       <td>BUY</td>
       <td>94</td>
@@ -1110,6 +1204,7 @@ h2 {
       <td>2026-05-14</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>INDUSINDBK</td>
       <td>SELL</td>
       <td>94</td>
@@ -1132,6 +1227,7 @@ h2 {
       <td>2026-05-14</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>ASHOKLEY</td>
       <td>SELL</td>
       <td>94</td>
@@ -1154,6 +1250,7 @@ h2 {
       <td>2026-05-14</td>
       <td>Intraday</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>AUBANK</td>
       <td>SELL</td>
       <td>94</td>
@@ -1176,6 +1273,7 @@ h2 {
       <td>2026-05-14</td>
       <td>Intraday</td>
       <td>3</td>
+      <td>Highest Priority</td>
       <td>COFORGE</td>
       <td>SELL</td>
       <td>94</td>
@@ -1198,6 +1296,7 @@ h2 {
       <td>2026-05-13</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>ASHOKLEY</td>
       <td>SELL</td>
       <td>94</td>
@@ -1220,6 +1319,7 @@ h2 {
       <td>2026-05-13</td>
       <td>Intraday</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>AUBANK</td>
       <td>SELL</td>
       <td>94</td>
@@ -1242,6 +1342,7 @@ h2 {
       <td>2026-05-13</td>
       <td>Intraday</td>
       <td>3</td>
+      <td>Highest Priority</td>
       <td>COFORGE</td>
       <td>SELL</td>
       <td>94</td>
@@ -1264,6 +1365,7 @@ h2 {
       <td>2026-05-13</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>AMBUJACEM</td>
       <td>SELL</td>
       <td>94</td>
@@ -1286,6 +1388,7 @@ h2 {
       <td>2026-05-13</td>
       <td>Intraday</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>DRREDDY</td>
       <td>SELL</td>
       <td>94</td>
@@ -1308,6 +1411,7 @@ h2 {
       <td>2026-05-13</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>BANKBARODA</td>
       <td>SELL</td>
       <td>94</td>
@@ -1330,6 +1434,7 @@ h2 {
       <td>2026-05-13</td>
       <td>Intraday</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>FEDERALBNK</td>
       <td>SELL</td>
       <td>94</td>
@@ -1352,6 +1457,7 @@ h2 {
       <td>2026-05-13</td>
       <td>Intraday</td>
       <td>3</td>
+      <td>Highest Priority</td>
       <td>RECLTD</td>
       <td>SELL</td>
       <td>94</td>
@@ -1374,6 +1480,7 @@ h2 {
       <td>2026-05-12</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>BANKBARODA</td>
       <td>SELL</td>
       <td>94</td>
@@ -1396,6 +1503,7 @@ h2 {
       <td>2026-05-12</td>
       <td>Intraday</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>FEDERALBNK</td>
       <td>SELL</td>
       <td>94</td>
@@ -1418,6 +1526,7 @@ h2 {
       <td>2026-05-12</td>
       <td>Intraday</td>
       <td>3</td>
+      <td>Highest Priority</td>
       <td>RECLTD</td>
       <td>SELL</td>
       <td>94</td>
@@ -1440,6 +1549,7 @@ h2 {
       <td>2026-05-12</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>CUMMINSIND</td>
       <td>SELL</td>
       <td>94</td>
@@ -1462,6 +1572,7 @@ h2 {
       <td>2026-05-12</td>
       <td>Intraday</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>DIXON</td>
       <td>SELL</td>
       <td>94</td>
@@ -1484,6 +1595,7 @@ h2 {
       <td>2026-05-12</td>
       <td>Intraday</td>
       <td>3</td>
+      <td>Highest Priority</td>
       <td>GODREJCP</td>
       <td>SELL</td>
       <td>94</td>
@@ -1506,6 +1618,7 @@ h2 {
       <td>2026-05-11</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>CUMMINSIND</td>
       <td>SELL</td>
       <td>94</td>
@@ -1528,6 +1641,7 @@ h2 {
       <td>2026-05-11</td>
       <td>Intraday</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>DIXON</td>
       <td>SELL</td>
       <td>94</td>
@@ -1550,6 +1664,7 @@ h2 {
       <td>2026-05-11</td>
       <td>Intraday</td>
       <td>3</td>
+      <td>Highest Priority</td>
       <td>GODREJCP</td>
       <td>SELL</td>
       <td>94</td>
@@ -1572,6 +1687,7 @@ h2 {
       <td>2026-05-11</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>ABB</td>
       <td>SELL</td>
       <td>94</td>
@@ -1594,6 +1710,7 @@ h2 {
       <td>2026-05-11</td>
       <td>Intraday</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>ABCAPITAL</td>
       <td>SELL</td>
       <td>94</td>
@@ -1616,6 +1733,7 @@ h2 {
       <td>2026-05-11</td>
       <td>Intraday</td>
       <td>3</td>
+      <td>Highest Priority</td>
       <td>ADANIENT</td>
       <td>SELL</td>
       <td>94</td>
@@ -1638,6 +1756,7 @@ h2 {
       <td>2026-05-10</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>ABB</td>
       <td>SELL</td>
       <td>94</td>
@@ -1660,6 +1779,7 @@ h2 {
       <td>2026-05-10</td>
       <td>Intraday</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>ABCAPITAL</td>
       <td>SELL</td>
       <td>94</td>
@@ -1682,6 +1802,7 @@ h2 {
       <td>2026-05-10</td>
       <td>Intraday</td>
       <td>3</td>
+      <td>Highest Priority</td>
       <td>ADANIENT</td>
       <td>SELL</td>
       <td>94</td>
@@ -1704,6 +1825,7 @@ h2 {
       <td>2026-05-09</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>ABB</td>
       <td>SELL</td>
       <td>94</td>
@@ -1726,6 +1848,7 @@ h2 {
       <td>2026-05-09</td>
       <td>Intraday</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>ABCAPITAL</td>
       <td>SELL</td>
       <td>94</td>
@@ -1748,6 +1871,7 @@ h2 {
       <td>2026-05-09</td>
       <td>Intraday</td>
       <td>3</td>
+      <td>Highest Priority</td>
       <td>ADANIENT</td>
       <td>SELL</td>
       <td>94</td>
@@ -1770,6 +1894,7 @@ h2 {
       <td>2026-05-08</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>ABB</td>
       <td>SELL</td>
       <td>94</td>
@@ -1792,6 +1917,7 @@ h2 {
       <td>2026-05-08</td>
       <td>Intraday</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>ABCAPITAL</td>
       <td>SELL</td>
       <td>94</td>
@@ -1814,6 +1940,7 @@ h2 {
       <td>2026-05-08</td>
       <td>Intraday</td>
       <td>3</td>
+      <td>Highest Priority</td>
       <td>ADANIENT</td>
       <td>SELL</td>
       <td>94</td>
@@ -1836,6 +1963,7 @@ h2 {
       <td>2026-05-08</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>AUROPHARMA</td>
       <td>BUY</td>
       <td>94</td>
@@ -1858,6 +1986,7 @@ h2 {
       <td>2026-05-08</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>ASHOKLEY</td>
       <td>BUY</td>
       <td>94</td>
@@ -1880,6 +2009,7 @@ h2 {
       <td>2026-05-08</td>
       <td>Intraday</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>AUBANK</td>
       <td>BUY</td>
       <td>94</td>
@@ -1902,6 +2032,7 @@ h2 {
       <td>2026-05-08</td>
       <td>Intraday</td>
       <td>3</td>
+      <td>Highest Priority</td>
       <td>BHEL</td>
       <td>BUY</td>
       <td>94</td>
@@ -1924,6 +2055,7 @@ h2 {
       <td>2026-05-07</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>ASHOKLEY</td>
       <td>BUY</td>
       <td>94</td>
@@ -1946,6 +2078,7 @@ h2 {
       <td>2026-05-07</td>
       <td>Intraday</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>AUBANK</td>
       <td>BUY</td>
       <td>94</td>
@@ -1968,6 +2101,7 @@ h2 {
       <td>2026-05-07</td>
       <td>Intraday</td>
       <td>3</td>
+      <td>Highest Priority</td>
       <td>BHEL</td>
       <td>BUY</td>
       <td>94</td>
@@ -1990,6 +2124,7 @@ h2 {
       <td>2026-05-07</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>LUPIN</td>
       <td>BUY</td>
       <td>94</td>
@@ -2012,6 +2147,7 @@ h2 {
       <td>2026-05-07</td>
       <td>Intraday</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>PIDILITIND</td>
       <td>BUY</td>
       <td>94</td>
@@ -2034,6 +2170,7 @@ h2 {
       <td>2026-05-06</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>LUPIN</td>
       <td>BUY</td>
       <td>94</td>
@@ -2056,6 +2193,7 @@ h2 {
       <td>2026-05-06</td>
       <td>Intraday</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>PIDILITIND</td>
       <td>BUY</td>
       <td>94</td>
@@ -2078,6 +2216,7 @@ h2 {
       <td>2026-05-06</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>TRENT</td>
       <td>BUY</td>
       <td>94</td>
@@ -2100,6 +2239,7 @@ h2 {
       <td>2026-05-06</td>
       <td>Intraday</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>ABBOTINDIA</td>
       <td>BUY</td>
       <td>92</td>
@@ -2122,6 +2262,7 @@ h2 {
       <td>2026-05-06</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>CHOLAFIN</td>
       <td>BUY</td>
       <td>94</td>
@@ -2144,6 +2285,7 @@ h2 {
       <td>2026-05-06</td>
       <td>Intraday</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>HDFCAMC</td>
       <td>BUY</td>
       <td>94</td>
@@ -2166,6 +2308,7 @@ h2 {
       <td>2026-05-06</td>
       <td>Intraday</td>
       <td>3</td>
+      <td>Highest Priority</td>
       <td>MPHASIS</td>
       <td>SELL</td>
       <td>94</td>
@@ -2188,6 +2331,7 @@ h2 {
       <td>2026-05-05</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>CHOLAFIN</td>
       <td>BUY</td>
       <td>94</td>
@@ -2210,6 +2354,7 @@ h2 {
       <td>2026-05-05</td>
       <td>Intraday</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>HDFCAMC</td>
       <td>BUY</td>
       <td>94</td>
@@ -2232,6 +2377,7 @@ h2 {
       <td>2026-05-05</td>
       <td>Intraday</td>
       <td>3</td>
+      <td>Highest Priority</td>
       <td>MPHASIS</td>
       <td>SELL</td>
       <td>94</td>
@@ -2254,6 +2400,7 @@ h2 {
       <td>2026-05-05</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>HDFCAMC</td>
       <td>BUY</td>
       <td>94</td>
@@ -2276,6 +2423,7 @@ h2 {
       <td>2026-05-05</td>
       <td>Intraday</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>MPHASIS</td>
       <td>SELL</td>
       <td>94</td>
@@ -2298,6 +2446,7 @@ h2 {
       <td>2026-05-05</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>SBILIFE</td>
       <td>BUY</td>
       <td>94</td>
@@ -2320,6 +2469,7 @@ h2 {
       <td>2026-05-05</td>
       <td>Intraday</td>
       <td>1</td>
+      <td>Highest Priority</td>
       <td>AUROPHARMA</td>
       <td>BUY</td>
       <td>94</td>
@@ -2342,6 +2492,7 @@ h2 {
       <td>2026-05-05</td>
       <td>Intraday</td>
       <td>2</td>
+      <td>Highest Priority</td>
       <td>CHOLAFIN</td>
       <td>BUY</td>
       <td>94</td>
@@ -2362,6 +2513,17 @@ h2 {
     </tr>
   </tbody>
 </table>
+
+    
+        <div class="perf-summary">
+          <h3>Medium + Low Priority Performance</h3>
+          <p>No records in this bucket yet.</p>
+        </div>
+        
+    <p>No Medium/Low Priority records yet for this mode.</p>
+
+    
+    
       </div>
     </section>
     
