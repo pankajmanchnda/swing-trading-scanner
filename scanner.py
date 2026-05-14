@@ -176,7 +176,7 @@ def benchmark_bias(bench_df):
     }
 
 
-def score_ticker(df, bench_df, ticker, mode_key):
+def score_ticker(df, bench_df, ticker, mode_key, relaxed=False):
     mode = SCAN_MODES[mode_key]
 
     if len(df) < mode["min_rows"] or len(bench_df) < min(22, mode["min_rows"]):
@@ -221,18 +221,28 @@ def score_ticker(df, bench_df, ticker, mode_key):
     last_low = float(d["Low"].iloc[-1])
 
     if mode_key == "swing":
-        # Loosened swing settings.
-        # Purpose: restore a small number of daily swing candidates while keeping
-        # the strict NIFTY-direction filter intact. Intraday settings are unchanged.
-        min_atr, max_atr = 0.8, 6.5
-        max_trigger_distance = 2.0
-        min_vol_ratio = 0.90
-        min_rs = 0.75
-        rsi_buy_min, rsi_buy_max = 50, 70
-        rsi_sell_min, rsi_sell_max = 30, 52
-        max_extension = 6.5
+        if relaxed:
+            # Swing fallback settings.
+            # Used only when the normal swing scan produces zero candidates.
+            # This keeps the dashboard useful without touching Intraday logic.
+            min_atr, max_atr = 0.70, 7.00
+            max_trigger_distance = 3.00
+            min_vol_ratio = 0.65
+            min_rs = 0.00
+            rsi_buy_min, rsi_buy_max = 48, 72
+            rsi_sell_min, rsi_sell_max = 28, 58
+            max_extension = 8.00
+        else:
+            # Normal swing settings: selective, but not overly restrictive.
+            min_atr, max_atr = 0.90, 6.50
+            max_trigger_distance = 2.25
+            min_vol_ratio = 0.80
+            min_rs = 0.50
+            rsi_buy_min, rsi_buy_max = 50, 70
+            rsi_sell_min, rsi_sell_max = 30, 54
+            max_extension = 6.50
     else:
-        # Intraday setups need tighter trigger proximity and better volume.
+        # Intraday setups remain strict and unchanged.
         min_atr, max_atr = 0.35, 3.0
         max_trigger_distance = 0.75
         min_vol_ratio = 1.25
@@ -241,8 +251,15 @@ def score_ticker(df, bench_df, ticker, mode_key):
         rsi_sell_min, rsi_sell_max = 32, 46
         max_extension = 3.8
 
-    buy_trend = close > ema20 > ema50 and ema20 > ema20_prev
-    sell_trend = close < ema20 < ema50 and ema20 < ema20_prev
+    if mode_key == "swing" and relaxed:
+        # In fallback mode, keep market-direction discipline but relax the
+        # EMA-stack requirement so weak/bearish phases can still surface
+        # reasonable SELL candidates.
+        buy_trend = close > ema20 and close > ema50
+        sell_trend = close < ema20 and close < ema50
+    else:
+        buy_trend = close > ema20 > ema50 and ema20 > ema20_prev
+        sell_trend = close < ema20 < ema50 and ema20 < ema20_prev
 
     signal = None
     score = 50
@@ -251,11 +268,11 @@ def score_ticker(df, bench_df, ticker, mode_key):
     if buy_trend and rsi_buy_min <= rsi14 <= rsi_buy_max and rs_vs_nifty >= min_rs:
         signal = "BUY"
         score += 16
-        notes.append("Confirmed uptrend")
+        notes.append("Confirmed uptrend" if not relaxed else "Relaxed swing uptrend")
     elif sell_trend and rsi_sell_min <= rsi14 <= rsi_sell_max and rs_vs_nifty <= -min_rs:
         signal = "SELL"
         score += 16
-        notes.append("Confirmed downtrend")
+        notes.append("Confirmed downtrend" if not relaxed else "Relaxed swing downtrend")
     else:
         return None
 
@@ -264,10 +281,16 @@ def score_ticker(df, bench_df, ticker, mode_key):
     # which is less vulnerable to ordinary noise/whipsaws. Position size then adjusts
     # downward automatically if the stop is wider.
     if mode_key == "swing":
-        stop_atr_mult = 1.60
-        structure_lookback = 10
-        stop_buffer_mult = 0.15
-        max_risk_pct = 7.5
+        if relaxed:
+            stop_atr_mult = 1.35
+            structure_lookback = 8
+            stop_buffer_mult = 0.10
+            max_risk_pct = 8.0
+        else:
+            stop_atr_mult = 1.45
+            structure_lookback = 10
+            stop_buffer_mult = 0.12
+            max_risk_pct = 7.5
     else:
         stop_atr_mult = 1.25
         structure_lookback = 12
@@ -385,6 +408,8 @@ def score_ticker(df, bench_df, ticker, mode_key):
         score += 2
         notes.append("Slightly extended")
 
+    if relaxed:
+        notes.append("Swing fallback candidate")
     notes.append("Structure-aware stop")
     risk_per_share = abs(entry - stop)
     max_risk_rupees = CAPITAL_INR * RISK_PER_TRADE
@@ -411,28 +436,33 @@ def score_ticker(df, bench_df, ticker, mode_key):
         score = max(0, min(raw_score, 89))
 
     if mode_key == "swing":
-        high_threshold = 88
-        medium_threshold = 82
-        low_threshold = 76
+        if score >= 88:
+            priority = "Qualified Candidate"
+            grade = "A"
+        elif score >= 82:
+            priority = "Qualified Candidate"
+            grade = "B+"
+        elif score >= 74:
+            priority = "Qualified Candidate"
+            grade = "B"
+        else:
+            return None
     else:
-        high_threshold = 90
-        medium_threshold = 84
-        low_threshold = 78
-
-    if score >= high_threshold:
-        priority = "Qualified Candidate"
-        grade = "A"
-    elif score >= medium_threshold:
-        priority = "Qualified Candidate"
-        grade = "B+"
-    elif score >= low_threshold:
-        priority = "Qualified Candidate"
-        grade = "B"
-    else:
-        return None
+        if score >= 90:
+            priority = "Qualified Candidate"
+            grade = "A"
+        elif score >= 84:
+            priority = "Qualified Candidate"
+            grade = "B+"
+        elif score >= 78:
+            priority = "Qualified Candidate"
+            grade = "B"
+        else:
+            return None
 
     return {
         "Mode": mode["label"],
+        "Scan Type": "Fallback" if relaxed else "Normal",
         "Priority": priority,
         "Stock": clean_symbol(ticker),
         "Signal": signal,
@@ -460,21 +490,20 @@ def calibrate_priorities(rows, highest_cap=5):
     """
     Assign final priority after all candidates are ranked.
 
-    This prevents the dashboard from flooding with Highest Priority labels.
-    Swing is intentionally a little looser than Intraday, because daily swing
-    setups otherwise stayed empty for several sessions while Intraday still
-    produced daily picks.
+    Swing and Intraday use different thresholds:
+    - Swing is intentionally a little looser so daily output does not go empty too often.
+    - Intraday remains stricter because it already produces daily picks.
     """
     calibrated = []
 
     for rank, row in enumerate(sorted(rows, key=lambda x: x["Conviction"], reverse=True), start=1):
         score = int(row["Conviction"])
-        mode_label = str(row.get("Mode", "Swing")).lower()
+        mode_label = str(row.get("Mode", "")).lower()
 
         if mode_label == "swing":
             high_threshold = 88
             medium_threshold = 82
-            low_threshold = 76
+            low_threshold = 74
         else:
             high_threshold = 90
             medium_threshold = 84
@@ -555,36 +584,49 @@ def scan_mode(mode_key):
     if bench_symbol != "^NSEI":
         market["message"] += f" Benchmark proxy used: {clean_symbol(bench_symbol)}."
 
-    rows = []
+    def collect_candidates(relaxed=False):
+        candidates = []
 
-    for ticker in sorted(set(UNIVERSE)):
-        df = get_single_df(data, ticker)
-        if df.empty:
-            continue
+        for ticker in sorted(set(UNIVERSE)):
+            df = get_single_df(data, ticker)
+            if df.empty:
+                continue
 
-        result = score_ticker(df, bench_df, ticker, mode_key)
+            result = score_ticker(df, bench_df, ticker, mode_key, relaxed=relaxed)
 
-        if not result:
-            continue
+            if not result:
+                continue
 
-        # Do not allow trades against the broad NIFTY trend.
-        if market["bias"] == "Bullish" and result["Signal"] != "BUY":
-            continue
+            # Do not allow trades against the broad NIFTY trend.
+            if market["bias"] == "Bullish" and result["Signal"] != "BUY":
+                continue
 
-        if market["bias"] == "Bearish" and result["Signal"] != "SELL":
-            continue
+            if market["bias"] == "Bearish" and result["Signal"] != "SELL":
+                continue
 
-        # In a mixed NIFTY tape, demand stronger setup quality.
-        # This avoids treating ordinary watchlist names as actionable trades.
-        if market["bias"] == "Mixed" and result["Conviction"] < 84:
-            continue
+            # In a mixed NIFTY tape, demand stronger setup quality.
+            if market["bias"] == "Mixed":
+                required_score = 82 if mode_key == "swing" else 84
+                if result["Conviction"] < required_score:
+                    continue
 
-        rows.append(result)
+            candidates.append(result)
+
+        return candidates
+
+    rows = collect_candidates(relaxed=False)
+
+    # Swing-only fallback: if normal swing filters return zero, use a looser
+    # second pass. Intraday is intentionally untouched because it already
+    # generates regular picks.
+    if mode_key == "swing" and len(rows) == 0:
+        rows = collect_candidates(relaxed=True)
+        if rows:
+            market["message"] += " Normal swing scan had no candidates, so a relaxed swing fallback was used."
 
     rows = calibrate_priorities(rows, highest_cap=5)
     rows = rows[:20]
     return rows, market
-
 
 def safe_float(value, default=np.nan):
     try:
@@ -1021,8 +1063,15 @@ def render_mode_block(mode_key, rows, market, perf_log, active=False):
       <div class="section">
         <h2>Suggested Investment Criteria</h2>
         <p>
-          Swing thresholds are now slightly looser to avoid empty daily swing output: <b>88–94</b> Highest Priority candidate range, <b>82–87</b> Medium Priority, <b>76–81</b> Low Priority. Intraday remains stricter: <b>90–94</b> Highest Priority, <b>84–89</b> Medium Priority, <b>78–83</b> Low Priority. Only the top 5 ranked ideas per mode can receive the Highest Priority label.
-          Score is setup quality, not probability of profit. No trade is assumed loss-proof, so the model intentionally avoids 100 scores. Stops use structure-aware ATR placement and targets use a more realistic 2R objective. Expert filter still requires trend alignment, NIFTY-direction alignment, NIFTY relative strength/weakness, volume confirmation, controlled volatility, and a nearby trigger. Entry should only be considered if the trigger level breaks with confirmation.
+          Swing is calibrated slightly looser to avoid empty daily output:
+          <b>88–94</b> Highest Priority candidate range ·
+          <b>82–87</b> Medium Priority ·
+          <b>74–81</b> Low Priority.
+          Intraday remains stricter:
+          <b>90–94</b> Highest Priority ·
+          <b>84–89</b> Medium Priority ·
+          <b>78–83</b> Low Priority.
+          Only the top 5 ranked ideas per mode can receive the Highest Priority label. Score is setup quality, not probability of profit. No trade is assumed loss-proof, so the model intentionally avoids 100 scores. Stops use structure-aware ATR placement and targets use a more realistic 2R objective. Expert filter still requires NIFTY-direction alignment, relative strength/weakness, volume confirmation, controlled volatility, and a nearby trigger. Entry should only be considered if the trigger level breaks with confirmation.
         </p>
       </div>
 
