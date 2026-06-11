@@ -271,7 +271,7 @@ h2 {
 <div class="container">
   <h1>Indian Market Scanner</h1>
   <div class="subtitle">
-    Generated on 11 Jun 2026, 10:41:21 AM IST · Build 20260611104121 · NIFTY benchmark · Swing vs Intraday scanner
+    Generated on 11 Jun 2026, 03:21:33 PM IST · Build 20260611152133 · NIFTY benchmark · Swing vs Intraday scanner
   </div>
 
   <div class="refresh-panel">
@@ -293,26 +293,40 @@ h2 {
       </div>
 
       <div class="stats">
-        <div class="stat"><span>Total Candidates</span><b>0</b></div>
-        <div class="stat"><span>Highest Priority</span><b>0</b></div>
+        <div class="stat"><span>Total Candidates</span><b>1</b></div>
+        <div class="stat"><span>Highest Priority</span><b>1</b></div>
         <div class="stat"><span>Medium Priority</span><b>0</b></div>
         <div class="stat"><span>Low Priority</span><b>0</b></div>
-        <div class="stat"><span>Best Conviction</span><b>0</b></div>
+        <div class="stat"><span>Best Conviction</span><b>94</b></div>
       </div>
 
       <div class="market">
         <h2>NIFTY Bias: Bearish</h2>
         <p>NIFTY trend is weak. Scanner will only show SELL setups.</p>
         <div class="market-grid">
-          <div>NIFTY Close<br><b>23242.1</b></div>
-          <div>EMA 20<br><b>23565.77</b></div>
-          <div>EMA 50<br><b>23826.72</b></div>
-          <div>5-Candle Change<br><b>-1.03%</b></div>
+          <div>NIFTY Close<br><b>23214.95</b></div>
+          <div>EMA 20<br><b>23532.36</b></div>
+          <div>EMA 50<br><b>23802.72</b></div>
+          <div>5-Candle Change<br><b>-0.81%</b></div>
         </div>
       </div>
 
       <h2>Top 3 Setups</h2>
-      <div class="setup-wrap"><p>No top setups in this mode right now.</p></div>
+      <div class="setup-wrap">
+        <div class="setup">
+          <h3>PFC — SELL</h3>
+          <p><b>Highest Priority</b> · Score 94</p>
+          <div class="grid">
+            <div>Entry<br><b>411.68</b></div>
+            <div>Stop<br><b>442.01</b></div>
+            <div>Target<br><b>351.0</b></div>
+            <div>Qty<br><b>329</b></div>
+            <div>Value<br><b>₹135,441</b></div>
+            <div>RR<br><b>2.0</b></div>
+          </div>
+          <p>Enter only below trigger; prefer candle close confirmation · Confirmed downtrend · Weak relative strength · RSI sweet spot · Institutional volume · Clean swing volatility · Close to trigger · Slightly extended · Structure-aware stop</p>
+        </div>
+        </div>
 
       <div class="section">
         <h2>Suggested Investment Criteria</h2>
@@ -331,7 +345,60 @@ h2 {
 
       <div class="section">
         <h2>Scanner Table</h2>
-        <p>No qualifying setups in this mode right now.</p>
+        <table border="1" class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Mode</th>
+      <th>Scan Type</th>
+      <th>Priority</th>
+      <th>Stock</th>
+      <th>Signal</th>
+      <th>Conviction</th>
+      <th>Grade</th>
+      <th>Close</th>
+      <th>Entry</th>
+      <th>Stop</th>
+      <th>Target</th>
+      <th>RR</th>
+      <th>RSI</th>
+      <th>ATR%</th>
+      <th>Vol Ratio</th>
+      <th>RS vs NIFTY</th>
+      <th>Trigger Distance</th>
+      <th>Extension</th>
+      <th>Qty</th>
+      <th>Trade Value</th>
+      <th>Entry Rule</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Swing</td>
+      <td>Normal</td>
+      <td>Highest Priority</td>
+      <td>PFC</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>A</td>
+      <td>413.95</td>
+      <td>411.68</td>
+      <td>442.01</td>
+      <td>351.0</td>
+      <td>2.0</td>
+      <td>40.0</td>
+      <td>2.74%</td>
+      <td>1.48</td>
+      <td>-3.55</td>
+      <td>0.55%</td>
+      <td>4.05%</td>
+      <td>329</td>
+      <td>₹135,441</td>
+      <td>Enter only below trigger; prefer candle close confirmation</td>
+      <td>Confirmed downtrend · Weak relative strength · RSI sweet spot · Institutional volume · Clean swing volatility · Close to trigger · Slightly extended · Structure-aware stop</td>
+    </tr>
+  </tbody>
+</table>
       </div>
 
       <div class="section">
@@ -384,6 +451,29 @@ h2 {
       <td>Swing</td>
       <td>1</td>
       <td>Highest Priority</td>
+      <td>PFC</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>411.68</td>
+      <td>442.01</td>
+      <td>351.0</td>
+      <td>2.0</td>
+      <td>413.95</td>
+      <td>+₹28.06 / +6.78%</td>
+      <td>+₹62.95 / +15.21%</td>
+      <td>Pending Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-11</td>
+      <td>Swing</td>
+      <td>1</td>
+      <td>Highest Priority</td>
       <td>DMART</td>
       <td>SELL</td>
       <td>94</td>
@@ -391,9 +481,9 @@ h2 {
       <td>4247.8</td>
       <td>3573.21</td>
       <td>2.0</td>
-      <td>4019.4</td>
-      <td>+₹228.40 / +5.68%</td>
-      <td>+₹446.19 / +11.10%</td>
+      <td>3988.6</td>
+      <td>+₹259.20 / +6.50%</td>
+      <td>+₹415.39 / +10.41%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -414,9 +504,9 @@ h2 {
       <td>5154.71</td>
       <td>4188.42</td>
       <td>2.0</td>
-      <td>4851.0</td>
-      <td>+₹303.71 / +6.26%</td>
-      <td>+₹662.58 / +13.66%</td>
+      <td>4830.0</td>
+      <td>+₹324.71 / +6.72%</td>
+      <td>+₹641.58 / +13.28%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -437,9 +527,9 @@ h2 {
       <td>100.39</td>
       <td>82.16</td>
       <td>2.0</td>
-      <td>93.79</td>
-      <td>+₹6.60 / +7.04%</td>
-      <td>+₹11.63 / +12.40%</td>
+      <td>93.53</td>
+      <td>+₹6.86 / +7.33%</td>
+      <td>+₹11.37 / +12.16%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -460,9 +550,9 @@ h2 {
       <td>426.62</td>
       <td>374.3</td>
       <td>2.0</td>
-      <td>405.7</td>
-      <td>+₹20.92 / +5.16%</td>
-      <td>+₹31.40 / +7.74%</td>
+      <td>402.4</td>
+      <td>+₹24.22 / +6.02%</td>
+      <td>+₹28.10 / +6.98%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -483,9 +573,9 @@ h2 {
       <td>3168.87</td>
       <td>2566.42</td>
       <td>2.0</td>
-      <td>2962.8</td>
-      <td>+₹206.07 / +6.96%</td>
-      <td>+₹396.38 / +13.38%</td>
+      <td>3005.6</td>
+      <td>+₹163.27 / +5.43%</td>
+      <td>+₹439.18 / +14.61%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -506,9 +596,9 @@ h2 {
       <td>4247.8</td>
       <td>3573.21</td>
       <td>2.0</td>
-      <td>4019.4</td>
-      <td>+₹228.40 / +5.68%</td>
-      <td>+₹446.19 / +11.10%</td>
+      <td>3988.6</td>
+      <td>+₹259.20 / +6.50%</td>
+      <td>+₹415.39 / +10.41%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -529,9 +619,9 @@ h2 {
       <td>5154.71</td>
       <td>4188.42</td>
       <td>2.0</td>
-      <td>4851.0</td>
-      <td>+₹303.71 / +6.26%</td>
-      <td>+₹662.58 / +13.66%</td>
+      <td>4830.0</td>
+      <td>+₹324.71 / +6.72%</td>
+      <td>+₹641.58 / +13.28%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -552,9 +642,9 @@ h2 {
       <td>100.39</td>
       <td>82.16</td>
       <td>2.0</td>
-      <td>93.79</td>
-      <td>+₹6.60 / +7.04%</td>
-      <td>+₹11.63 / +12.40%</td>
+      <td>93.53</td>
+      <td>+₹6.86 / +7.33%</td>
+      <td>+₹11.37 / +12.16%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -575,9 +665,9 @@ h2 {
       <td>100.37</td>
       <td>86.68</td>
       <td>2.0</td>
-      <td>93.79</td>
-      <td>+₹6.58 / +7.02%</td>
-      <td>+₹7.11 / +7.58%</td>
+      <td>93.53</td>
+      <td>+₹6.84 / +7.31%</td>
+      <td>+₹6.85 / +7.32%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -598,9 +688,9 @@ h2 {
       <td>426.62</td>
       <td>374.3</td>
       <td>2.0</td>
-      <td>405.7</td>
-      <td>+₹20.92 / +5.16%</td>
-      <td>+₹31.40 / +7.74%</td>
+      <td>402.4</td>
+      <td>+₹24.22 / +6.02%</td>
+      <td>+₹28.10 / +6.98%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -621,9 +711,9 @@ h2 {
       <td>3168.87</td>
       <td>2566.42</td>
       <td>2.0</td>
-      <td>2962.8</td>
-      <td>+₹206.07 / +6.96%</td>
-      <td>+₹396.38 / +13.38%</td>
+      <td>3005.6</td>
+      <td>+₹163.27 / +5.43%</td>
+      <td>+₹439.18 / +14.61%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -644,9 +734,9 @@ h2 {
       <td>13541.59</td>
       <td>11362.77</td>
       <td>2.0</td>
-      <td>13095.0</td>
-      <td>+₹446.59 / +3.41%</td>
-      <td>+₹1732.23 / +13.23%</td>
+      <td>13102.0</td>
+      <td>+₹439.59 / +3.36%</td>
+      <td>+₹1739.23 / +13.27%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -667,9 +757,9 @@ h2 {
       <td>3168.87</td>
       <td>2566.42</td>
       <td>2.0</td>
-      <td>2962.8</td>
-      <td>+₹206.07 / +6.96%</td>
-      <td>+₹396.38 / +13.38%</td>
+      <td>3005.6</td>
+      <td>+₹163.27 / +5.43%</td>
+      <td>+₹439.18 / +14.61%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -690,9 +780,9 @@ h2 {
       <td>13536.16</td>
       <td>11403.57</td>
       <td>2.0</td>
-      <td>13095.0</td>
-      <td>+₹441.16 / +3.37%</td>
-      <td>+₹1691.43 / +12.92%</td>
+      <td>13102.0</td>
+      <td>+₹434.16 / +3.31%</td>
+      <td>+₹1698.43 / +12.96%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -713,9 +803,9 @@ h2 {
       <td>4298.43</td>
       <td>3657.59</td>
       <td>2.0</td>
-      <td>4025.8</td>
-      <td>+₹272.63 / +6.77%</td>
-      <td>+₹368.21 / +9.15%</td>
+      <td>4031.2</td>
+      <td>+₹267.23 / +6.63%</td>
+      <td>+₹373.61 / +9.27%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -736,9 +826,9 @@ h2 {
       <td>426.63</td>
       <td>359.61</td>
       <td>2.0</td>
-      <td>405.7</td>
-      <td>+₹20.93 / +5.16%</td>
-      <td>+₹46.09 / +11.36%</td>
+      <td>402.4</td>
+      <td>+₹24.23 / +6.02%</td>
+      <td>+₹42.79 / +10.63%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -759,9 +849,9 @@ h2 {
       <td>101.32</td>
       <td>84.18</td>
       <td>2.0</td>
-      <td>93.79</td>
-      <td>+₹7.53 / +8.03%</td>
-      <td>+₹9.61 / +10.25%</td>
+      <td>93.53</td>
+      <td>+₹7.79 / +8.33%</td>
+      <td>+₹9.35 / +10.00%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -782,9 +872,9 @@ h2 {
       <td>1374.06</td>
       <td>1108.14</td>
       <td>2.0</td>
-      <td>1265.8</td>
-      <td>+₹108.26 / +8.55%</td>
-      <td>+₹157.66 / +12.46%</td>
+      <td>1262.4</td>
+      <td>+₹111.66 / +8.85%</td>
+      <td>+₹154.26 / +12.22%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -805,9 +895,9 @@ h2 {
       <td>13541.59</td>
       <td>11362.77</td>
       <td>2.0</td>
-      <td>13095.0</td>
-      <td>+₹446.59 / +3.41%</td>
-      <td>+₹1732.23 / +13.23%</td>
+      <td>13102.0</td>
+      <td>+₹439.59 / +3.36%</td>
+      <td>+₹1739.23 / +13.27%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -828,9 +918,9 @@ h2 {
       <td>426.63</td>
       <td>359.61</td>
       <td>2.0</td>
-      <td>405.7</td>
-      <td>+₹20.93 / +5.16%</td>
-      <td>+₹46.09 / +11.36%</td>
+      <td>402.4</td>
+      <td>+₹24.23 / +6.02%</td>
+      <td>+₹42.79 / +10.63%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -851,9 +941,9 @@ h2 {
       <td>101.32</td>
       <td>84.18</td>
       <td>2.0</td>
-      <td>93.79</td>
-      <td>+₹7.53 / +8.03%</td>
-      <td>+₹9.61 / +10.25%</td>
+      <td>93.53</td>
+      <td>+₹7.79 / +8.33%</td>
+      <td>+₹9.35 / +10.00%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -874,9 +964,9 @@ h2 {
       <td>1374.06</td>
       <td>1108.14</td>
       <td>2.0</td>
-      <td>1265.8</td>
-      <td>+₹108.26 / +8.55%</td>
-      <td>+₹157.66 / +12.46%</td>
+      <td>1262.4</td>
+      <td>+₹111.66 / +8.85%</td>
+      <td>+₹154.26 / +12.22%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -897,9 +987,9 @@ h2 {
       <td>426.63</td>
       <td>359.61</td>
       <td>2.0</td>
-      <td>405.7</td>
-      <td>+₹20.93 / +5.16%</td>
-      <td>+₹46.09 / +11.36%</td>
+      <td>402.4</td>
+      <td>+₹24.23 / +6.02%</td>
+      <td>+₹42.79 / +10.63%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -920,9 +1010,9 @@ h2 {
       <td>101.32</td>
       <td>84.18</td>
       <td>2.0</td>
-      <td>93.79</td>
-      <td>+₹7.53 / +8.03%</td>
-      <td>+₹9.61 / +10.25%</td>
+      <td>93.53</td>
+      <td>+₹7.79 / +8.33%</td>
+      <td>+₹9.35 / +10.00%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -943,9 +1033,9 @@ h2 {
       <td>1374.06</td>
       <td>1108.14</td>
       <td>2.0</td>
-      <td>1265.8</td>
-      <td>+₹108.26 / +8.55%</td>
-      <td>+₹157.66 / +12.46%</td>
+      <td>1262.4</td>
+      <td>+₹111.66 / +8.85%</td>
+      <td>+₹154.26 / +12.22%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -966,9 +1056,9 @@ h2 {
       <td>426.63</td>
       <td>359.61</td>
       <td>2.0</td>
-      <td>405.7</td>
-      <td>+₹20.93 / +5.16%</td>
-      <td>+₹46.09 / +11.36%</td>
+      <td>402.4</td>
+      <td>+₹24.23 / +6.02%</td>
+      <td>+₹42.79 / +10.63%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -989,9 +1079,9 @@ h2 {
       <td>101.32</td>
       <td>84.18</td>
       <td>2.0</td>
-      <td>93.79</td>
-      <td>+₹7.53 / +8.03%</td>
-      <td>+₹9.61 / +10.25%</td>
+      <td>93.53</td>
+      <td>+₹7.79 / +8.33%</td>
+      <td>+₹9.35 / +10.00%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1012,9 +1102,9 @@ h2 {
       <td>1374.06</td>
       <td>1108.14</td>
       <td>2.0</td>
-      <td>1265.8</td>
-      <td>+₹108.26 / +8.55%</td>
-      <td>+₹157.66 / +12.46%</td>
+      <td>1262.4</td>
+      <td>+₹111.66 / +8.85%</td>
+      <td>+₹154.26 / +12.22%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1035,9 +1125,9 @@ h2 {
       <td>1822.07</td>
       <td>1462.13</td>
       <td>2.0</td>
-      <td>1656.4</td>
-      <td>+₹165.67 / +10.00%</td>
-      <td>+₹194.27 / +11.73%</td>
+      <td>1648.0</td>
+      <td>+₹174.07 / +10.56%</td>
+      <td>+₹185.87 / +11.28%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1058,9 +1148,9 @@ h2 {
       <td>609.81</td>
       <td>496.38</td>
       <td>2.0</td>
-      <td>565.0</td>
-      <td>+₹44.81 / +7.93%</td>
-      <td>+₹68.62 / +12.15%</td>
+      <td>564.65</td>
+      <td>+₹45.16 / +8.00%</td>
+      <td>+₹68.27 / +12.09%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1081,9 +1171,9 @@ h2 {
       <td>4264.58</td>
       <td>3830.06</td>
       <td>2.0</td>
-      <td>4019.4</td>
-      <td>+₹245.18 / +6.10%</td>
-      <td>+₹189.34 / +4.71%</td>
+      <td>3988.6</td>
+      <td>+₹275.98 / +6.92%</td>
+      <td>+₹158.54 / +3.97%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1104,9 +1194,9 @@ h2 {
       <td>426.63</td>
       <td>359.61</td>
       <td>2.0</td>
-      <td>405.7</td>
-      <td>+₹20.93 / +5.16%</td>
-      <td>+₹46.09 / +11.36%</td>
+      <td>402.4</td>
+      <td>+₹24.23 / +6.02%</td>
+      <td>+₹42.79 / +10.63%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1127,9 +1217,9 @@ h2 {
       <td>101.32</td>
       <td>84.18</td>
       <td>2.0</td>
-      <td>93.79</td>
-      <td>+₹7.53 / +8.03%</td>
-      <td>+₹9.61 / +10.25%</td>
+      <td>93.53</td>
+      <td>+₹7.79 / +8.33%</td>
+      <td>+₹9.35 / +10.00%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1150,9 +1240,9 @@ h2 {
       <td>1374.06</td>
       <td>1108.14</td>
       <td>2.0</td>
-      <td>1265.8</td>
-      <td>+₹108.26 / +8.55%</td>
-      <td>+₹157.66 / +12.46%</td>
+      <td>1262.4</td>
+      <td>+₹111.66 / +8.85%</td>
+      <td>+₹154.26 / +12.22%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1173,9 +1263,9 @@ h2 {
       <td>1822.07</td>
       <td>1462.13</td>
       <td>2.0</td>
-      <td>1656.4</td>
-      <td>+₹165.67 / +10.00%</td>
-      <td>+₹194.27 / +11.73%</td>
+      <td>1648.0</td>
+      <td>+₹174.07 / +10.56%</td>
+      <td>+₹185.87 / +11.28%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1196,9 +1286,9 @@ h2 {
       <td>4264.58</td>
       <td>3830.06</td>
       <td>2.0</td>
-      <td>4019.4</td>
-      <td>+₹245.18 / +6.10%</td>
-      <td>+₹189.34 / +4.71%</td>
+      <td>3988.6</td>
+      <td>+₹275.98 / +6.92%</td>
+      <td>+₹158.54 / +3.97%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1219,9 +1309,9 @@ h2 {
       <td>5154.89</td>
       <td>4212.32</td>
       <td>2.0</td>
-      <td>4851.0</td>
-      <td>+₹303.89 / +6.26%</td>
-      <td>+₹638.68 / +13.17%</td>
+      <td>4830.0</td>
+      <td>+₹324.89 / +6.73%</td>
+      <td>+₹617.68 / +12.79%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1242,9 +1332,9 @@ h2 {
       <td>13542.83</td>
       <td>11569.87</td>
       <td>2.0</td>
-      <td>13095.0</td>
-      <td>+₹447.83 / +3.42%</td>
-      <td>+₹1525.13 / +11.65%</td>
+      <td>13102.0</td>
+      <td>+₹440.83 / +3.36%</td>
+      <td>+₹1532.13 / +11.69%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1265,9 +1355,9 @@ h2 {
       <td>1374.21</td>
       <td>1146.77</td>
       <td>2.0</td>
-      <td>1265.8</td>
-      <td>+₹108.41 / +8.56%</td>
-      <td>+₹119.03 / +9.40%</td>
+      <td>1262.4</td>
+      <td>+₹111.81 / +8.86%</td>
+      <td>+₹115.63 / +9.16%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1288,9 +1378,9 @@ h2 {
       <td>1822.07</td>
       <td>1462.13</td>
       <td>2.0</td>
-      <td>1656.4</td>
-      <td>+₹165.67 / +10.00%</td>
-      <td>+₹194.27 / +11.73%</td>
+      <td>1648.0</td>
+      <td>+₹174.07 / +10.56%</td>
+      <td>+₹185.87 / +11.28%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1311,9 +1401,9 @@ h2 {
       <td>4264.58</td>
       <td>3830.06</td>
       <td>2.0</td>
-      <td>4019.4</td>
-      <td>+₹245.18 / +6.10%</td>
-      <td>+₹189.34 / +4.71%</td>
+      <td>3988.6</td>
+      <td>+₹275.98 / +6.92%</td>
+      <td>+₹158.54 / +3.97%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1334,9 +1424,9 @@ h2 {
       <td>5154.89</td>
       <td>4212.32</td>
       <td>2.0</td>
-      <td>4851.0</td>
-      <td>+₹303.89 / +6.26%</td>
-      <td>+₹638.68 / +13.17%</td>
+      <td>4830.0</td>
+      <td>+₹324.89 / +6.73%</td>
+      <td>+₹617.68 / +12.79%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1357,9 +1447,9 @@ h2 {
       <td>609.5</td>
       <td>497.02</td>
       <td>2.0</td>
-      <td>565.0</td>
-      <td>+₹44.50 / +7.88%</td>
-      <td>+₹67.98 / +12.03%</td>
+      <td>564.65</td>
+      <td>+₹44.85 / +7.94%</td>
+      <td>+₹67.63 / +11.98%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1380,9 +1470,9 @@ h2 {
       <td>5152.41</td>
       <td>4217.28</td>
       <td>2.0</td>
-      <td>4851.0</td>
-      <td>+₹301.41 / +6.21%</td>
-      <td>+₹633.72 / +13.06%</td>
+      <td>4830.0</td>
+      <td>+₹322.41 / +6.68%</td>
+      <td>+₹612.72 / +12.69%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1403,9 +1493,9 @@ h2 {
       <td>345.76</td>
       <td>281.83</td>
       <td>2.0</td>
-      <td>341.7</td>
-      <td>+₹4.06 / +1.19%</td>
-      <td>+₹59.87 / +17.52%</td>
+      <td>337.6</td>
+      <td>+₹8.16 / +2.42%</td>
+      <td>+₹55.77 / +16.52%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -1426,9 +1516,9 @@ h2 {
       <td>13542.83</td>
       <td>11569.87</td>
       <td>2.0</td>
-      <td>13095.0</td>
-      <td>+₹447.83 / +3.42%</td>
-      <td>+₹1525.13 / +11.65%</td>
+      <td>13102.0</td>
+      <td>+₹440.83 / +3.36%</td>
+      <td>+₹1532.13 / +11.69%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1449,9 +1539,9 @@ h2 {
       <td>1304.66</td>
       <td>1045.45</td>
       <td>2.0</td>
-      <td>1320.6</td>
-      <td>-₹15.94 / -1.21%</td>
-      <td>+₹275.15 / +20.84%</td>
+      <td>1316.7</td>
+      <td>-₹12.04 / -0.91%</td>
+      <td>+₹271.25 / +20.60%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -1472,9 +1562,9 @@ h2 {
       <td>1374.19</td>
       <td>1144.73</td>
       <td>2.0</td>
-      <td>1265.8</td>
-      <td>+₹108.39 / +8.56%</td>
-      <td>+₹121.07 / +9.56%</td>
+      <td>1262.4</td>
+      <td>+₹111.79 / +8.86%</td>
+      <td>+₹117.67 / +9.32%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1495,9 +1585,9 @@ h2 {
       <td>981.05</td>
       <td>851.96</td>
       <td>2.0</td>
-      <td>1003.9</td>
-      <td>-₹22.85 / -2.28%</td>
-      <td>+₹151.94 / +15.13%</td>
+      <td>1000.3</td>
+      <td>-₹19.25 / -1.92%</td>
+      <td>+₹148.34 / +14.83%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -1518,9 +1608,9 @@ h2 {
       <td>13542.83</td>
       <td>11569.87</td>
       <td>2.0</td>
-      <td>13095.0</td>
-      <td>+₹447.83 / +3.42%</td>
-      <td>+₹1525.13 / +11.65%</td>
+      <td>13102.0</td>
+      <td>+₹440.83 / +3.36%</td>
+      <td>+₹1532.13 / +11.69%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1541,9 +1631,9 @@ h2 {
       <td>1304.66</td>
       <td>1045.45</td>
       <td>2.0</td>
-      <td>1320.6</td>
-      <td>-₹15.94 / -1.21%</td>
-      <td>+₹275.15 / +20.84%</td>
+      <td>1316.7</td>
+      <td>-₹12.04 / -0.91%</td>
+      <td>+₹271.25 / +20.60%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-10</td>
@@ -1564,9 +1654,9 @@ h2 {
       <td>1374.19</td>
       <td>1144.73</td>
       <td>2.0</td>
-      <td>1265.8</td>
-      <td>+₹108.39 / +8.56%</td>
-      <td>+₹121.07 / +9.56%</td>
+      <td>1262.4</td>
+      <td>+₹111.79 / +8.86%</td>
+      <td>+₹117.67 / +9.32%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1587,9 +1677,9 @@ h2 {
       <td>981.05</td>
       <td>851.96</td>
       <td>2.0</td>
-      <td>1003.9</td>
-      <td>-₹22.85 / -2.28%</td>
-      <td>+₹151.94 / +15.13%</td>
+      <td>1000.3</td>
+      <td>-₹19.25 / -1.92%</td>
+      <td>+₹148.34 / +14.83%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-04</td>
@@ -1610,9 +1700,9 @@ h2 {
       <td>432.16</td>
       <td>347.49</td>
       <td>2.0</td>
-      <td>405.7</td>
-      <td>+₹26.46 / +6.52%</td>
-      <td>+₹58.21 / +14.35%</td>
+      <td>402.4</td>
+      <td>+₹29.76 / +7.40%</td>
+      <td>+₹54.91 / +13.65%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1633,9 +1723,9 @@ h2 {
       <td>1056.76</td>
       <td>899.35</td>
       <td>2.0</td>
-      <td>1019.4</td>
-      <td>+₹37.36 / +3.66%</td>
-      <td>+₹120.05 / +11.78%</td>
+      <td>1009.7</td>
+      <td>+₹47.06 / +4.66%</td>
+      <td>+₹110.35 / +10.93%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1679,9 +1769,9 @@ h2 {
       <td>981.05</td>
       <td>851.96</td>
       <td>2.0</td>
-      <td>1003.9</td>
-      <td>-₹22.85 / -2.28%</td>
-      <td>+₹151.94 / +15.13%</td>
+      <td>1000.3</td>
+      <td>-₹19.25 / -1.92%</td>
+      <td>+₹148.34 / +14.83%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-04</td>
@@ -1702,9 +1792,9 @@ h2 {
       <td>1374.19</td>
       <td>1144.73</td>
       <td>2.0</td>
-      <td>1265.8</td>
-      <td>+₹108.39 / +8.56%</td>
-      <td>+₹121.07 / +9.56%</td>
+      <td>1262.4</td>
+      <td>+₹111.79 / +8.86%</td>
+      <td>+₹117.67 / +9.32%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1725,32 +1815,9 @@ h2 {
       <td>432.16</td>
       <td>362.92</td>
       <td>2.0</td>
-      <td>405.7</td>
-      <td>+₹26.46 / +6.52%</td>
-      <td>+₹42.78 / +10.54%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>9</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-02</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>GODREJCP</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>1022.05</td>
-      <td>1061.05</td>
-      <td>944.06</td>
-      <td>2.0</td>
-      <td>1019.4</td>
-      <td>+₹41.65 / +4.09%</td>
-      <td>+₹75.34 / +7.39%</td>
+      <td>402.4</td>
+      <td>+₹29.76 / +7.40%</td>
+      <td>+₹39.48 / +9.81%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -1783,26 +1850,40 @@ h2 {
       </div>
 
       <div class="stats">
-        <div class="stat"><span>Total Candidates</span><b>0</b></div>
-        <div class="stat"><span>Highest Priority</span><b>0</b></div>
+        <div class="stat"><span>Total Candidates</span><b>1</b></div>
+        <div class="stat"><span>Highest Priority</span><b>1</b></div>
         <div class="stat"><span>Medium Priority</span><b>0</b></div>
         <div class="stat"><span>Low Priority</span><b>0</b></div>
-        <div class="stat"><span>Best Conviction</span><b>0</b></div>
+        <div class="stat"><span>Best Conviction</span><b>94</b></div>
       </div>
 
       <div class="market">
-        <h2>NIFTY Bias: Mixed</h2>
-        <p>NIFTY is mixed/constructive. Scanner will show qualified setups, but entries need stricter confirmation. Benchmark proxy used: NIFTYBEES.</p>
+        <h2>NIFTY Bias: Bearish</h2>
+        <p>NIFTY trend is weak. Scanner will only show SELL setups. Benchmark proxy used: NIFTYBEES.</p>
         <div class="market-grid">
-          <div>NIFTY Close<br><b>262.94</b></div>
-          <div>EMA 20<br><b>263.4</b></div>
-          <div>EMA 50<br><b>263.77</b></div>
-          <div>5-Candle Change<br><b>0.28%</b></div>
+          <div>NIFTY Close<br><b>262.78</b></div>
+          <div>EMA 20<br><b>263.26</b></div>
+          <div>EMA 50<br><b>263.52</b></div>
+          <div>5-Candle Change<br><b>-0.16%</b></div>
         </div>
       </div>
 
       <h2>Top 3 Setups</h2>
-      <div class="setup-wrap"><p>No top setups in this mode right now.</p></div>
+      <div class="setup-wrap">
+        <div class="setup">
+          <h3>GODREJCP — SELL</h3>
+          <p><b>Highest Priority</b> · Score 94</p>
+          <div class="grid">
+            <div>Entry<br><b>1004.49</b></div>
+            <div>Stop<br><b>1022.0</b></div>
+            <div>Target<br><b>969.47</b></div>
+            <div>Qty<br><b>199</b></div>
+            <div>Value<br><b>₹199,893</b></div>
+            <div>RR<br><b>2.0</b></div>
+          </div>
+          <p>Enter only below trigger; prefer candle close confirmation · Confirmed downtrend · Negative relative strength · RSI sweet spot · Institutional volume · Clean intraday volatility · Trigger needs confirmation · Not extended · Structure-aware stop</p>
+        </div>
+        </div>
 
       <div class="section">
         <h2>Suggested Investment Criteria</h2>
@@ -1821,7 +1902,60 @@ h2 {
 
       <div class="section">
         <h2>Scanner Table</h2>
-        <p>No qualifying setups in this mode right now.</p>
+        <table border="1" class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Mode</th>
+      <th>Scan Type</th>
+      <th>Priority</th>
+      <th>Stock</th>
+      <th>Signal</th>
+      <th>Conviction</th>
+      <th>Grade</th>
+      <th>Close</th>
+      <th>Entry</th>
+      <th>Stop</th>
+      <th>Target</th>
+      <th>RR</th>
+      <th>RSI</th>
+      <th>ATR%</th>
+      <th>Vol Ratio</th>
+      <th>RS vs NIFTY</th>
+      <th>Trigger Distance</th>
+      <th>Extension</th>
+      <th>Qty</th>
+      <th>Trade Value</th>
+      <th>Entry Rule</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Intraday</td>
+      <td>Normal</td>
+      <td>Highest Priority</td>
+      <td>GODREJCP</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>A</td>
+      <td>1009.7</td>
+      <td>1004.49</td>
+      <td>1022.0</td>
+      <td>969.47</td>
+      <td>2.0</td>
+      <td>40.4</td>
+      <td>0.39%</td>
+      <td>1.51</td>
+      <td>-1.13</td>
+      <td>0.52%</td>
+      <td>0.4%</td>
+      <td>199</td>
+      <td>₹199,893</td>
+      <td>Enter only below trigger; prefer candle close confirmation</td>
+      <td>Confirmed downtrend · Negative relative strength · RSI sweet spot · Institutional volume · Clean intraday volatility · Trigger needs confirmation · Not extended · Structure-aware stop</td>
+    </tr>
+  </tbody>
+</table>
       </div>
 
       <div class="section">
@@ -1832,13 +1966,13 @@ h2 {
     <div class="perf-summary">
       <h3>Highest Priority Performance</h3>
       <div class="perf-grid">
-        <div>Total Ideas<br><b>58</b></div>
-        <div>Closed Trades<br><b>37</b></div>
+        <div>Total Ideas<br><b>57</b></div>
+        <div>Closed Trades<br><b>36</b></div>
         <div>Wins<br><b>11</b></div>
-        <div>Losses<br><b>26</b></div>
-        <div>Win Rate<br><b>29.7%</b></div>
-        <div>Total R<br><b>-4.0</b></div>
-        <div>Avg R<br><b>-0.11</b></div>
+        <div>Losses<br><b>25</b></div>
+        <div>Win Rate<br><b>30.6%</b></div>
+        <div>Total R<br><b>-3.0</b></div>
+        <div>Avg R<br><b>-0.08</b></div>
       </div>
     </div>
     
@@ -1874,6 +2008,29 @@ h2 {
       <td>Intraday</td>
       <td>1</td>
       <td>Highest Priority</td>
+      <td>GODREJCP</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>1004.49</td>
+      <td>1022.0</td>
+      <td>969.47</td>
+      <td>2.0</td>
+      <td>1009.7</td>
+      <td>+₹12.30 / +1.22%</td>
+      <td>+₹40.23 / +3.98%</td>
+      <td>Pending Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0</td>
+      <td>Top 3 Intraday scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-11</td>
+      <td>Intraday</td>
+      <td>1</td>
+      <td>Highest Priority</td>
       <td>TATACONSUM</td>
       <td>SELL</td>
       <td>94</td>
@@ -1881,9 +2038,9 @@ h2 {
       <td>1119.24</td>
       <td>1067.5</td>
       <td>2.0</td>
-      <td>1111.9</td>
-      <td>+₹7.34 / +0.66%</td>
-      <td>+₹44.40 / +3.99%</td>
+      <td>1109.7</td>
+      <td>+₹9.54 / +0.86%</td>
+      <td>+₹42.20 / +3.80%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -1904,9 +2061,9 @@ h2 {
       <td>1119.24</td>
       <td>1067.5</td>
       <td>2.0</td>
-      <td>1111.9</td>
-      <td>+₹7.34 / +0.66%</td>
-      <td>+₹44.40 / +3.99%</td>
+      <td>1109.7</td>
+      <td>+₹9.54 / +0.86%</td>
+      <td>+₹42.20 / +3.80%</td>
       <td>Ambiguous Entry Candle</td>
       <td>Entry/exit same candle</td>
       <td>2026-06-10</td>
@@ -1927,14 +2084,14 @@ h2 {
       <td>813.32</td>
       <td>855.71</td>
       <td>2.0</td>
-      <td>819.5</td>
-      <td>+₹6.18 / +0.75%</td>
-      <td>+₹36.21 / +4.42%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>811.85</td>
+      <td>-₹1.47 / -0.18%</td>
+      <td>+₹43.86 / +5.40%</td>
+      <td>Stop Hit First</td>
+      <td>Stop</td>
+      <td>2026-06-11</td>
+      <td>Loss</td>
+      <td>-1</td>
       <td>1</td>
       <td>Top 3 Intraday scanner pick</td>
     </tr>
@@ -1950,9 +2107,9 @@ h2 {
       <td>1064.03</td>
       <td>1147.29</td>
       <td>2.0</td>
-      <td>1040.0</td>
-      <td>-₹24.03 / -2.31%</td>
-      <td>+₹107.29 / +10.32%</td>
+      <td>1021.6</td>
+      <td>-₹42.43 / -4.15%</td>
+      <td>+₹125.69 / +12.30%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-10</td>
@@ -1973,9 +2130,9 @@ h2 {
       <td>136.1</td>
       <td>142.03</td>
       <td>2.0</td>
-      <td>132.23</td>
-      <td>-₹3.87 / -2.93%</td>
-      <td>+₹9.80 / +7.41%</td>
+      <td>131.49</td>
+      <td>-₹4.61 / -3.51%</td>
+      <td>+₹10.54 / +8.02%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-10</td>
@@ -1996,9 +2153,9 @@ h2 {
       <td>1427.13</td>
       <td>1365.18</td>
       <td>2.0</td>
-      <td>1391.8</td>
-      <td>+₹35.33 / +2.54%</td>
-      <td>+₹26.62 / +1.91%</td>
+      <td>1397.0</td>
+      <td>+₹30.13 / +2.16%</td>
+      <td>+₹31.82 / +2.28%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-10</td>
@@ -2019,9 +2176,9 @@ h2 {
       <td>1162.66</td>
       <td>1109.09</td>
       <td>2.0</td>
-      <td>1130.0</td>
-      <td>+₹32.66 / +2.89%</td>
-      <td>+₹20.91 / +1.85%</td>
+      <td>1120.8</td>
+      <td>+₹41.86 / +3.73%</td>
+      <td>+₹11.71 / +1.04%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -2042,9 +2199,9 @@ h2 {
       <td>136.1</td>
       <td>142.03</td>
       <td>2.0</td>
-      <td>132.23</td>
-      <td>-₹3.87 / -2.93%</td>
-      <td>+₹9.80 / +7.41%</td>
+      <td>131.49</td>
+      <td>-₹4.61 / -3.51%</td>
+      <td>+₹10.54 / +8.02%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-10</td>
@@ -2065,9 +2222,9 @@ h2 {
       <td>1427.13</td>
       <td>1365.18</td>
       <td>2.0</td>
-      <td>1391.8</td>
-      <td>+₹35.33 / +2.54%</td>
-      <td>+₹26.62 / +1.91%</td>
+      <td>1397.0</td>
+      <td>+₹30.13 / +2.16%</td>
+      <td>+₹31.82 / +2.28%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-10</td>
@@ -2088,9 +2245,9 @@ h2 {
       <td>1162.66</td>
       <td>1109.09</td>
       <td>2.0</td>
-      <td>1130.0</td>
-      <td>+₹32.66 / +2.89%</td>
-      <td>+₹20.91 / +1.85%</td>
+      <td>1120.8</td>
+      <td>+₹41.86 / +3.73%</td>
+      <td>+₹11.71 / +1.04%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -2111,9 +2268,9 @@ h2 {
       <td>1165.14</td>
       <td>1109.83</td>
       <td>2.0</td>
-      <td>1130.0</td>
-      <td>+₹35.14 / +3.11%</td>
-      <td>+₹20.17 / +1.78%</td>
+      <td>1120.8</td>
+      <td>+₹44.34 / +3.96%</td>
+      <td>+₹10.97 / +0.98%</td>
       <td>Target Hit First</td>
       <td>Target</td>
       <td>2026-06-11</td>
@@ -2134,9 +2291,9 @@ h2 {
       <td>5087.05</td>
       <td>4700.1</td>
       <td>2.0</td>
-      <td>4890.5</td>
-      <td>+₹196.55 / +4.02%</td>
-      <td>+₹190.40 / +3.89%</td>
+      <td>4893.0</td>
+      <td>+₹194.05 / +3.97%</td>
+      <td>+₹192.90 / +3.94%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -2157,9 +2314,9 @@ h2 {
       <td>289.81</td>
       <td>277.27</td>
       <td>2.0</td>
-      <td>282.9</td>
-      <td>+₹6.91 / +2.44%</td>
-      <td>+₹5.63 / +1.99%</td>
+      <td>286.65</td>
+      <td>+₹3.16 / +1.10%</td>
+      <td>+₹9.38 / +3.27%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -2180,9 +2337,9 @@ h2 {
       <td>1182.15</td>
       <td>1095.26</td>
       <td>2.0</td>
-      <td>1130.0</td>
-      <td>+₹52.15 / +4.62%</td>
-      <td>+₹34.74 / +3.07%</td>
+      <td>1120.8</td>
+      <td>+₹61.35 / +5.47%</td>
+      <td>+₹25.54 / +2.28%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -2203,9 +2360,9 @@ h2 {
       <td>978.29</td>
       <td>1019.36</td>
       <td>2.0</td>
-      <td>1003.95</td>
-      <td>+₹25.66 / +2.56%</td>
-      <td>+₹15.41 / +1.53%</td>
+      <td>1000.35</td>
+      <td>+₹22.06 / +2.21%</td>
+      <td>+₹19.01 / +1.90%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -2226,9 +2383,9 @@ h2 {
       <td>1468.6</td>
       <td>1404.1</td>
       <td>2.0</td>
-      <td>1467.5</td>
-      <td>+₹1.10 / +0.07%</td>
-      <td>+₹63.40 / +4.32%</td>
+      <td>1457.9</td>
+      <td>+₹10.70 / +0.73%</td>
+      <td>+₹53.80 / +3.69%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -2249,10 +2406,10 @@ h2 {
       <td>551.13</td>
       <td>507.01</td>
       <td>2.0</td>
-      <td>543.4</td>
-      <td>+₹7.73 / +1.42%</td>
-      <td>+₹36.39 / +6.70%</td>
-      <td>Pending Trigger</td>
+      <td>536.15</td>
+      <td>+₹14.98 / +2.79%</td>
+      <td>+₹29.14 / +5.44%</td>
+      <td>Active After Trigger</td>
       <td></td>
       <td></td>
       <td></td>
@@ -2272,9 +2429,9 @@ h2 {
       <td>1468.6</td>
       <td>1404.1</td>
       <td>2.0</td>
-      <td>1467.5</td>
-      <td>+₹1.10 / +0.07%</td>
-      <td>+₹63.40 / +4.32%</td>
+      <td>1457.9</td>
+      <td>+₹10.70 / +0.73%</td>
+      <td>+₹53.80 / +3.69%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -2295,10 +2452,10 @@ h2 {
       <td>551.13</td>
       <td>507.01</td>
       <td>2.0</td>
-      <td>543.4</td>
-      <td>+₹7.73 / +1.42%</td>
-      <td>+₹36.39 / +6.70%</td>
-      <td>Pending Trigger</td>
+      <td>536.15</td>
+      <td>+₹14.98 / +2.79%</td>
+      <td>+₹29.14 / +5.44%</td>
+      <td>Active After Trigger</td>
       <td></td>
       <td></td>
       <td></td>
@@ -2318,10 +2475,10 @@ h2 {
       <td>551.13</td>
       <td>507.01</td>
       <td>2.0</td>
-      <td>543.4</td>
-      <td>+₹7.73 / +1.42%</td>
-      <td>+₹36.39 / +6.70%</td>
-      <td>Pending Trigger</td>
+      <td>536.15</td>
+      <td>+₹14.98 / +2.79%</td>
+      <td>+₹29.14 / +5.44%</td>
+      <td>Active After Trigger</td>
       <td></td>
       <td></td>
       <td></td>
@@ -2341,9 +2498,9 @@ h2 {
       <td>2208.1</td>
       <td>2058.03</td>
       <td>2.0</td>
-      <td>2136.0</td>
-      <td>+₹72.10 / +3.38%</td>
-      <td>+₹77.97 / +3.65%</td>
+      <td>2139.4</td>
+      <td>+₹68.70 / +3.21%</td>
+      <td>+₹81.37 / +3.80%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -2364,9 +2521,9 @@ h2 {
       <td>2977.41</td>
       <td>3216.19</td>
       <td>2.0</td>
-      <td>2961.9</td>
-      <td>-₹15.51 / -0.52%</td>
-      <td>+₹254.29 / +8.59%</td>
+      <td>2914.2</td>
+      <td>-₹63.21 / -2.17%</td>
+      <td>+₹301.99 / +10.36%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -2387,9 +2544,9 @@ h2 {
       <td>1260.51</td>
       <td>1314.03</td>
       <td>2.0</td>
-      <td>1323.7</td>
-      <td>+₹63.19 / +4.77%</td>
-      <td>-₹9.67 / -0.73%</td>
+      <td>1318.6</td>
+      <td>+₹58.09 / +4.41%</td>
+      <td>-₹4.57 / -0.35%</td>
       <td>Target Hit First</td>
       <td>Target</td>
       <td>2026-06-10</td>
@@ -2410,9 +2567,9 @@ h2 {
       <td>392.45</td>
       <td>370.78</td>
       <td>2.0</td>
-      <td>371.65</td>
-      <td>+₹20.80 / +5.60%</td>
-      <td>+₹0.87 / +0.23%</td>
+      <td>370.55</td>
+      <td>+₹21.90 / +5.91%</td>
+      <td>-₹0.23 / -0.06%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-09</td>
@@ -2433,9 +2590,9 @@ h2 {
       <td>2977.41</td>
       <td>3216.19</td>
       <td>2.0</td>
-      <td>2961.9</td>
-      <td>-₹15.51 / -0.52%</td>
-      <td>+₹254.29 / +8.59%</td>
+      <td>2914.2</td>
+      <td>-₹63.21 / -2.17%</td>
+      <td>+₹301.99 / +10.36%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -2456,9 +2613,9 @@ h2 {
       <td>1260.51</td>
       <td>1314.03</td>
       <td>2.0</td>
-      <td>1323.7</td>
-      <td>+₹63.19 / +4.77%</td>
-      <td>-₹9.67 / -0.73%</td>
+      <td>1318.6</td>
+      <td>+₹58.09 / +4.41%</td>
+      <td>-₹4.57 / -0.35%</td>
       <td>Target Hit First</td>
       <td>Target</td>
       <td>2026-06-10</td>
@@ -2479,9 +2636,9 @@ h2 {
       <td>392.45</td>
       <td>370.78</td>
       <td>2.0</td>
-      <td>371.65</td>
-      <td>+₹20.80 / +5.60%</td>
-      <td>+₹0.87 / +0.23%</td>
+      <td>370.55</td>
+      <td>+₹21.90 / +5.91%</td>
+      <td>-₹0.23 / -0.06%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-09</td>
@@ -2502,9 +2659,9 @@ h2 {
       <td>2977.41</td>
       <td>3216.19</td>
       <td>2.0</td>
-      <td>2961.9</td>
-      <td>-₹15.51 / -0.52%</td>
-      <td>+₹254.29 / +8.59%</td>
+      <td>2914.2</td>
+      <td>-₹63.21 / -2.17%</td>
+      <td>+₹301.99 / +10.36%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -2525,9 +2682,9 @@ h2 {
       <td>1260.51</td>
       <td>1314.03</td>
       <td>2.0</td>
-      <td>1323.7</td>
-      <td>+₹63.19 / +4.77%</td>
-      <td>-₹9.67 / -0.73%</td>
+      <td>1318.6</td>
+      <td>+₹58.09 / +4.41%</td>
+      <td>-₹4.57 / -0.35%</td>
       <td>Target Hit First</td>
       <td>Target</td>
       <td>2026-06-10</td>
@@ -2548,9 +2705,9 @@ h2 {
       <td>392.45</td>
       <td>370.78</td>
       <td>2.0</td>
-      <td>371.65</td>
-      <td>+₹20.80 / +5.60%</td>
-      <td>+₹0.87 / +0.23%</td>
+      <td>370.55</td>
+      <td>+₹21.90 / +5.91%</td>
+      <td>-₹0.23 / -0.06%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-09</td>
@@ -2571,9 +2728,9 @@ h2 {
       <td>2977.41</td>
       <td>3216.19</td>
       <td>2.0</td>
-      <td>2961.9</td>
-      <td>-₹15.51 / -0.52%</td>
-      <td>+₹254.29 / +8.59%</td>
+      <td>2914.2</td>
+      <td>-₹63.21 / -2.17%</td>
+      <td>+₹301.99 / +10.36%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-08</td>
@@ -2594,9 +2751,9 @@ h2 {
       <td>1260.51</td>
       <td>1314.03</td>
       <td>2.0</td>
-      <td>1323.7</td>
-      <td>+₹63.19 / +4.77%</td>
-      <td>-₹9.67 / -0.73%</td>
+      <td>1318.6</td>
+      <td>+₹58.09 / +4.41%</td>
+      <td>-₹4.57 / -0.35%</td>
       <td>Target Hit First</td>
       <td>Target</td>
       <td>2026-06-10</td>
@@ -2617,9 +2774,9 @@ h2 {
       <td>392.45</td>
       <td>370.78</td>
       <td>2.0</td>
-      <td>371.65</td>
-      <td>+₹20.80 / +5.60%</td>
-      <td>+₹0.87 / +0.23%</td>
+      <td>370.55</td>
+      <td>+₹21.90 / +5.91%</td>
+      <td>-₹0.23 / -0.06%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-05</td>
@@ -2640,9 +2797,9 @@ h2 {
       <td>131.86</td>
       <td>136.74</td>
       <td>2.0</td>
-      <td>132.23</td>
-      <td>+₹0.37 / +0.28%</td>
-      <td>+₹4.51 / +3.41%</td>
+      <td>131.49</td>
+      <td>-₹0.37 / -0.28%</td>
+      <td>+₹5.25 / +3.99%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-08</td>
@@ -2663,9 +2820,9 @@ h2 {
       <td>1473.36</td>
       <td>1520.19</td>
       <td>2.0</td>
-      <td>1467.5</td>
-      <td>-₹5.86 / -0.40%</td>
-      <td>+₹52.69 / +3.59%</td>
+      <td>1457.9</td>
+      <td>-₹15.46 / -1.06%</td>
+      <td>+₹62.29 / +4.27%</td>
       <td>Target Hit First</td>
       <td>Target</td>
       <td>2026-06-05</td>
@@ -2686,9 +2843,9 @@ h2 {
       <td>11438.99</td>
       <td>11709.05</td>
       <td>2.0</td>
-      <td>11479.0</td>
-      <td>+₹40.01 / +0.35%</td>
-      <td>+₹230.05 / +2.00%</td>
+      <td>11424.0</td>
+      <td>-₹14.99 / -0.13%</td>
+      <td>+₹285.05 / +2.50%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-05</td>
@@ -2709,9 +2866,9 @@ h2 {
       <td>131.86</td>
       <td>136.74</td>
       <td>2.0</td>
-      <td>132.23</td>
-      <td>+₹0.37 / +0.28%</td>
-      <td>+₹4.51 / +3.41%</td>
+      <td>131.49</td>
+      <td>-₹0.37 / -0.28%</td>
+      <td>+₹5.25 / +3.99%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-08</td>
@@ -2732,9 +2889,9 @@ h2 {
       <td>1473.36</td>
       <td>1520.19</td>
       <td>2.0</td>
-      <td>1467.5</td>
-      <td>-₹5.86 / -0.40%</td>
-      <td>+₹52.69 / +3.59%</td>
+      <td>1457.9</td>
+      <td>-₹15.46 / -1.06%</td>
+      <td>+₹62.29 / +4.27%</td>
       <td>Target Hit First</td>
       <td>Target</td>
       <td>2026-06-05</td>
@@ -2755,9 +2912,9 @@ h2 {
       <td>11438.99</td>
       <td>11709.05</td>
       <td>2.0</td>
-      <td>11479.0</td>
-      <td>+₹40.01 / +0.35%</td>
-      <td>+₹230.05 / +2.00%</td>
+      <td>11424.0</td>
+      <td>-₹14.99 / -0.13%</td>
+      <td>+₹285.05 / +2.50%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-05</td>
@@ -2778,9 +2935,9 @@ h2 {
       <td>1797.01</td>
       <td>1870.89</td>
       <td>2.0</td>
-      <td>1757.2</td>
-      <td>-₹39.81 / -2.27%</td>
-      <td>+₹113.69 / +6.47%</td>
+      <td>1762.9</td>
+      <td>-₹34.11 / -1.93%</td>
+      <td>+₹107.99 / +6.13%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-08</td>
@@ -2801,9 +2958,9 @@ h2 {
       <td>538.06</td>
       <td>559.75</td>
       <td>2.0</td>
-      <td>543.4</td>
-      <td>+₹5.34 / +0.98%</td>
-      <td>+₹16.35 / +3.01%</td>
+      <td>536.15</td>
+      <td>-₹1.91 / -0.36%</td>
+      <td>+₹23.60 / +4.40%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-08</td>
@@ -2824,9 +2981,9 @@ h2 {
       <td>432.74</td>
       <td>410.42</td>
       <td>2.0</td>
-      <td>408.3</td>
-      <td>+₹24.44 / +5.99%</td>
-      <td>-₹2.12 / -0.52%</td>
+      <td>405.7</td>
+      <td>+₹27.04 / +6.67%</td>
+      <td>-₹4.72 / -1.16%</td>
       <td>Target Hit First</td>
       <td>Target</td>
       <td>2026-06-10</td>
@@ -2847,9 +3004,9 @@ h2 {
       <td>37289.25</td>
       <td>39078.36</td>
       <td>2.0</td>
-      <td>38055.0</td>
-      <td>+₹765.75 / +2.01%</td>
-      <td>+₹1023.36 / +2.69%</td>
+      <td>37560.0</td>
+      <td>+₹270.75 / +0.72%</td>
+      <td>+₹1518.36 / +4.04%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-04</td>
@@ -2870,9 +3027,9 @@ h2 {
       <td>1437.21</td>
       <td>1368.08</td>
       <td>2.0</td>
-      <td>1391.8</td>
-      <td>+₹45.41 / +3.26%</td>
-      <td>+₹23.72 / +1.70%</td>
+      <td>1397.0</td>
+      <td>+₹40.21 / +2.88%</td>
+      <td>+₹28.92 / +2.07%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-04</td>
@@ -2893,9 +3050,9 @@ h2 {
       <td>432.74</td>
       <td>410.42</td>
       <td>2.0</td>
-      <td>408.3</td>
-      <td>+₹24.44 / +5.99%</td>
-      <td>-₹2.12 / -0.52%</td>
+      <td>405.7</td>
+      <td>+₹27.04 / +6.67%</td>
+      <td>-₹4.72 / -1.16%</td>
       <td>Target Hit First</td>
       <td>Target</td>
       <td>2026-06-10</td>
@@ -2916,9 +3073,9 @@ h2 {
       <td>37289.25</td>
       <td>39078.36</td>
       <td>2.0</td>
-      <td>38055.0</td>
-      <td>+₹765.75 / +2.01%</td>
-      <td>+₹1023.36 / +2.69%</td>
+      <td>37560.0</td>
+      <td>+₹270.75 / +0.72%</td>
+      <td>+₹1518.36 / +4.04%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-04</td>
@@ -2939,9 +3096,9 @@ h2 {
       <td>1437.21</td>
       <td>1368.08</td>
       <td>2.0</td>
-      <td>1391.8</td>
-      <td>+₹45.41 / +3.26%</td>
-      <td>+₹23.72 / +1.70%</td>
+      <td>1397.0</td>
+      <td>+₹40.21 / +2.88%</td>
+      <td>+₹28.92 / +2.07%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-04</td>
@@ -2962,9 +3119,9 @@ h2 {
       <td>2430.23</td>
       <td>2517.17</td>
       <td>2.0</td>
-      <td>2136.0</td>
-      <td>-₹294.23 / -13.77%</td>
-      <td>+₹381.17 / +17.85%</td>
+      <td>2139.4</td>
+      <td>-₹290.83 / -13.59%</td>
+      <td>+₹377.77 / +17.66%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -2985,9 +3142,9 @@ h2 {
       <td>531.0</td>
       <td>555.23</td>
       <td>2.0</td>
-      <td>528.15</td>
-      <td>-₹2.85 / -0.54%</td>
-      <td>+₹27.08 / +5.13%</td>
+      <td>520.65</td>
+      <td>-₹10.35 / -1.99%</td>
+      <td>+₹34.58 / +6.64%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-03</td>
@@ -3008,9 +3165,9 @@ h2 {
       <td>2430.23</td>
       <td>2517.17</td>
       <td>2.0</td>
-      <td>2136.0</td>
-      <td>-₹294.23 / -13.77%</td>
-      <td>+₹381.17 / +17.85%</td>
+      <td>2139.4</td>
+      <td>-₹290.83 / -13.59%</td>
+      <td>+₹377.77 / +17.66%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -3031,9 +3188,9 @@ h2 {
       <td>531.0</td>
       <td>555.23</td>
       <td>2.0</td>
-      <td>528.15</td>
-      <td>-₹2.85 / -0.54%</td>
-      <td>+₹27.08 / +5.13%</td>
+      <td>520.65</td>
+      <td>-₹10.35 / -1.99%</td>
+      <td>+₹34.58 / +6.64%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-03</td>
@@ -3054,9 +3211,9 @@ h2 {
       <td>26992.71</td>
       <td>25430.42</td>
       <td>2.0</td>
-      <td>26315.0</td>
-      <td>+₹677.71 / +2.58%</td>
-      <td>+₹884.58 / +3.36%</td>
+      <td>26165.0</td>
+      <td>+₹827.71 / +3.16%</td>
+      <td>+₹734.58 / +2.81%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -3077,9 +3234,9 @@ h2 {
       <td>1294.89</td>
       <td>1258.7</td>
       <td>2.0</td>
-      <td>1278.1</td>
-      <td>+₹16.79 / +1.31%</td>
-      <td>+₹19.40 / +1.52%</td>
+      <td>1277.5</td>
+      <td>+₹17.39 / +1.36%</td>
+      <td>+₹18.80 / +1.47%</td>
       <td>Target Hit First</td>
       <td>Target</td>
       <td>2026-06-03</td>
@@ -3100,9 +3257,9 @@ h2 {
       <td>4511.7</td>
       <td>4293.92</td>
       <td>2.0</td>
-      <td>4524.9</td>
-      <td>-₹13.20 / -0.29%</td>
-      <td>+₹230.98 / +5.10%</td>
+      <td>4506.5</td>
+      <td>+₹5.20 / +0.12%</td>
+      <td>+₹212.58 / +4.72%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-03</td>
@@ -3123,9 +3280,9 @@ h2 {
       <td>13084.95</td>
       <td>12491.62</td>
       <td>2.0</td>
-      <td>13096.0</td>
-      <td>-₹11.05 / -0.08%</td>
-      <td>+₹604.38 / +4.61%</td>
+      <td>13098.0</td>
+      <td>-₹13.05 / -0.10%</td>
+      <td>+₹606.38 / +4.63%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-03</td>
@@ -3146,60 +3303,14 @@ h2 {
       <td>1294.89</td>
       <td>1258.7</td>
       <td>2.0</td>
-      <td>1278.1</td>
-      <td>+₹16.79 / +1.31%</td>
-      <td>+₹19.40 / +1.52%</td>
+      <td>1277.5</td>
+      <td>+₹17.39 / +1.36%</td>
+      <td>+₹18.80 / +1.47%</td>
       <td>Target Hit First</td>
       <td>Target</td>
       <td>2026-06-03</td>
       <td>Win</td>
       <td>2.0</td>
-      <td>10</td>
-      <td>Top 3 Intraday scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-01</td>
-      <td>Intraday</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>INDIGO</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>4439.1</td>
-      <td>4511.7</td>
-      <td>4293.92</td>
-      <td>2.0</td>
-      <td>4524.9</td>
-      <td>-₹13.20 / -0.29%</td>
-      <td>+₹230.98 / +5.10%</td>
-      <td>Stop Hit First</td>
-      <td>Stop</td>
-      <td>2026-06-03</td>
-      <td>Loss</td>
-      <td>-1</td>
-      <td>10</td>
-      <td>Top 3 Intraday scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-01</td>
-      <td>Intraday</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>MARUTI</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>12887.17</td>
-      <td>13084.95</td>
-      <td>12491.62</td>
-      <td>2.0</td>
-      <td>13096.0</td>
-      <td>-₹11.05 / -0.08%</td>
-      <td>+₹604.38 / +4.61%</td>
-      <td>Stop Hit First</td>
-      <td>Stop</td>
-      <td>2026-06-03</td>
-      <td>Loss</td>
-      <td>-1</td>
       <td>10</td>
       <td>Top 3 Intraday scanner pick</td>
     </tr>
