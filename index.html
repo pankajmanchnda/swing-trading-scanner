@@ -271,7 +271,7 @@ h2 {
 <div class="container">
   <h1>Indian Market Scanner</h1>
   <div class="subtitle">
-    Generated on 24 Jun 2026, 09:31:00 AM IST · Build 20260624093100 · NIFTY benchmark · Swing vs Intraday scanner
+    Generated on 24 Jun 2026, 01:29:35 PM IST · Build 20260624132935 · NIFTY benchmark · Swing vs Intraday scanner
   </div>
 
   <div class="refresh-panel">
@@ -293,11 +293,11 @@ h2 {
       </div>
 
       <div class="stats">
-        <div class="stat"><span>Total Candidates</span><b>0</b></div>
-        <div class="stat"><span>Highest Priority</span><b>0</b></div>
+        <div class="stat"><span>Total Candidates</span><b>1</b></div>
+        <div class="stat"><span>Highest Priority</span><b>1</b></div>
         <div class="stat"><span>Medium Priority</span><b>0</b></div>
         <div class="stat"><span>Low Priority</span><b>0</b></div>
-        <div class="stat"><span>Best Conviction</span><b>0</b></div>
+        <div class="stat"><span>Best Conviction</span><b>92</b></div>
       </div>
 
       <div class="market">
@@ -312,1537 +312,19 @@ h2 {
       </div>
 
       <h2>Top 3 Setups</h2>
-      <div class="setup-wrap"><p>No top setups in this mode right now.</p></div>
-
-      <div class="section">
-        <h2>Suggested Investment Criteria</h2>
-        <p>
-          Swing is calibrated slightly looser to avoid empty daily output:
-          <b>88–94</b> Highest Priority candidate range ·
-          <b>82–87</b> Medium Priority ·
-          <b>74–81</b> Low Priority.
-          Intraday remains stricter:
-          <b>90–94</b> Highest Priority ·
-          <b>84–89</b> Medium Priority ·
-          <b>78–83</b> Low Priority.
-          Only the top 5 ranked ideas per mode can receive the Highest Priority label. Score is setup quality, not probability of profit. No trade is assumed loss-proof, so the model intentionally avoids 100 scores. Stops use structure-aware ATR placement and targets use a more realistic 2R objective. Expert filter still requires NIFTY-direction alignment, relative strength/weakness, volume confirmation, controlled volatility, and a nearby trigger. Entry should only be considered if the trigger level breaks with confirmation.
-        </p>
-      </div>
-
-      <div class="section">
-        <h2>Scanner Table</h2>
-        <p>No qualifying setups in this mode right now.</p>
-      </div>
-
-      <div class="section">
-        <h2>Swing Top 3 Performance Log</h2>
-        <p>Latest 60 ideas for this mode are shown first, now separated into Highest Priority versus Medium/Low Priority buckets. Current Price, Stop Away, Target Away, First Hit, and Hit Date update on each scanner run to help track whether target or stop-loss was touched first.</p>
-        
-    
-    <div class="perf-summary">
-      <h3>Highest Priority Performance</h3>
-      <div class="perf-grid">
-        <div>Total Ideas<br><b>60</b></div>
-        <div>Closed Trades<br><b>7</b></div>
-        <div>Wins<br><b>0</b></div>
-        <div>Losses<br><b>7</b></div>
-        <div>Win Rate<br><b>0.0%</b></div>
-        <div>Total R<br><b>-7.0</b></div>
-        <div>Avg R<br><b>-1.0</b></div>
-      </div>
-    </div>
-    
-    <table border="1" class="dataframe data-table">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Date</th>
-      <th>Mode</th>
-      <th>Rank</th>
-      <th>Priority</th>
-      <th>Stock</th>
-      <th>Signal</th>
-      <th>Conviction</th>
-      <th>Entry</th>
-      <th>Stop</th>
-      <th>Target</th>
-      <th>RR</th>
-      <th>Current Price</th>
-      <th>Stop Away</th>
-      <th>Target Away</th>
-      <th>Status</th>
-      <th>First Hit</th>
-      <th>Hit Date</th>
-      <th>Result</th>
-      <th>R</th>
-      <th>Days</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>2026-06-24</td>
-      <td>Swing</td>
-      <td>1</td>
-      <td>Highest Priority</td>
-      <td>ABBOTINDIA</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>25962.97</td>
-      <td>26831.67</td>
-      <td>24225.57</td>
-      <td>2.0</td>
-      <td>25740.0</td>
-      <td>+₹1091.67 / +4.24%</td>
-      <td>+₹1514.43 / +5.88%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>0</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-24</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>CUMMINSIND</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>5807.09</td>
-      <td>5523.9</td>
-      <td>6373.47</td>
-      <td>2.0</td>
-      <td>5744.0</td>
-      <td>+₹220.10 / +3.83%</td>
-      <td>+₹629.47 / +10.96%</td>
-      <td>Pending Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>0</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-24</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>IRCTC</td>
-      <td>SELL</td>
-      <td>92</td>
-      <td>518.66</td>
-      <td>533.47</td>
-      <td>489.05</td>
-      <td>2.0</td>
-      <td>517.2</td>
-      <td>+₹16.27 / +3.15%</td>
-      <td>+₹28.15 / +5.44%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>0</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-23</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>AMBUJACEM</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>413.17</td>
-      <td>437.12</td>
-      <td>365.27</td>
-      <td>2.0</td>
-      <td>422.35</td>
-      <td>+₹14.77 / +3.50%</td>
-      <td>+₹57.08 / +13.51%</td>
-      <td>Pending Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>1</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-23</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>LUPIN</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>2384.76</td>
-      <td>2237.34</td>
-      <td>2679.6</td>
-      <td>2.0</td>
-      <td>2383.2</td>
-      <td>+₹145.86 / +6.12%</td>
-      <td>+₹296.40 / +12.44%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>1</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-23</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>CUMMINSIND</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>5807.09</td>
-      <td>5523.9</td>
-      <td>6373.47</td>
-      <td>2.0</td>
-      <td>5744.0</td>
-      <td>+₹220.10 / +3.83%</td>
-      <td>+₹629.47 / +10.96%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>1</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-23</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>IRCTC</td>
-      <td>SELL</td>
-      <td>92</td>
-      <td>518.66</td>
-      <td>533.47</td>
-      <td>489.05</td>
-      <td>2.0</td>
-      <td>517.2</td>
-      <td>+₹16.27 / +3.15%</td>
-      <td>+₹28.15 / +5.44%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>1</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-23</td>
-      <td>Swing</td>
-      <td>1</td>
-      <td>Highest Priority</td>
-      <td>ABBOTINDIA</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>25972.95</td>
-      <td>26832.53</td>
-      <td>24253.79</td>
-      <td>2.0</td>
-      <td>25740.0</td>
-      <td>+₹1092.53 / +4.24%</td>
-      <td>+₹1486.21 / +5.77%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>1</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-23</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>ADANIENT</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>3058.0</td>
-      <td>2876.78</td>
-      <td>3420.46</td>
-      <td>2.0</td>
-      <td>2997.4</td>
-      <td>+₹120.62 / +4.02%</td>
-      <td>+₹423.06 / +14.11%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>1</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-23</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>ADANIPORTS</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>1852.7</td>
-      <td>1773.08</td>
-      <td>2011.93</td>
-      <td>2.0</td>
-      <td>1784.8</td>
-      <td>+₹11.72 / +0.66%</td>
-      <td>+₹227.13 / +12.73%</td>
-      <td>Pending Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>1</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-22</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>CUMMINSIND</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>5807.09</td>
-      <td>5523.9</td>
-      <td>6373.47</td>
-      <td>2.0</td>
-      <td>5744.0</td>
-      <td>+₹220.10 / +3.83%</td>
-      <td>+₹629.47 / +10.96%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>2</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-22</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>IRCTC</td>
-      <td>SELL</td>
-      <td>92</td>
-      <td>518.66</td>
-      <td>533.47</td>
-      <td>489.05</td>
-      <td>2.0</td>
-      <td>517.2</td>
-      <td>+₹16.27 / +3.15%</td>
-      <td>+₹28.15 / +5.44%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>2</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-22</td>
-      <td>Swing</td>
-      <td>1</td>
-      <td>Highest Priority</td>
-      <td>CUMMINSIND</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>5807.09</td>
-      <td>5526.75</td>
-      <td>6367.77</td>
-      <td>2.0</td>
-      <td>5744.0</td>
-      <td>+₹217.25 / +3.78%</td>
-      <td>+₹623.77 / +10.86%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>2</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-22</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>PAGEIND</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>40520.88</td>
-      <td>37447.21</td>
-      <td>46668.21</td>
-      <td>2.0</td>
-      <td>40410.0</td>
-      <td>+₹2962.79 / +7.33%</td>
-      <td>+₹6258.21 / +15.49%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>2</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-22</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>PFC</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>445.69</td>
-      <td>411.36</td>
-      <td>514.35</td>
-      <td>2.0</td>
-      <td>435.0</td>
-      <td>+₹23.64 / +5.43%</td>
-      <td>+₹79.35 / +18.24%</td>
-      <td>Pending Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>2</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-22</td>
-      <td>Swing</td>
-      <td>1</td>
-      <td>Highest Priority</td>
-      <td>ABBOTINDIA</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>25972.95</td>
-      <td>26832.53</td>
-      <td>24253.79</td>
-      <td>2.0</td>
-      <td>25740.0</td>
-      <td>+₹1092.53 / +4.24%</td>
-      <td>+₹1486.21 / +5.77%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>2</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-22</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>ADANIENT</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>3058.0</td>
-      <td>2876.78</td>
-      <td>3420.46</td>
-      <td>2.0</td>
-      <td>2997.4</td>
-      <td>+₹120.62 / +4.02%</td>
-      <td>+₹423.06 / +14.11%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>2</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-22</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>ADANIPORTS</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>1852.7</td>
-      <td>1773.08</td>
-      <td>2011.93</td>
-      <td>2.0</td>
-      <td>1784.8</td>
-      <td>+₹11.72 / +0.66%</td>
-      <td>+₹227.13 / +12.73%</td>
-      <td>Pending Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>2</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-21</td>
-      <td>Swing</td>
-      <td>1</td>
-      <td>Highest Priority</td>
-      <td>ABBOTINDIA</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>25972.95</td>
-      <td>26832.53</td>
-      <td>24253.79</td>
-      <td>2.0</td>
-      <td>25740.0</td>
-      <td>+₹1092.53 / +4.24%</td>
-      <td>+₹1486.21 / +5.77%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>3</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-21</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>ADANIENT</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>3058.0</td>
-      <td>2876.78</td>
-      <td>3420.46</td>
-      <td>2.0</td>
-      <td>2997.4</td>
-      <td>+₹120.62 / +4.02%</td>
-      <td>+₹423.06 / +14.11%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>3</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-21</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>ADANIPORTS</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>1852.7</td>
-      <td>1773.08</td>
-      <td>2011.93</td>
-      <td>2.0</td>
-      <td>1784.8</td>
-      <td>+₹11.72 / +0.66%</td>
-      <td>+₹227.13 / +12.73%</td>
-      <td>Pending Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>3</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-20</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>ADANIENT</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>3058.0</td>
-      <td>2876.78</td>
-      <td>3420.46</td>
-      <td>2.0</td>
-      <td>2997.4</td>
-      <td>+₹120.62 / +4.02%</td>
-      <td>+₹423.06 / +14.11%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>4</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-20</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>ADANIPORTS</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>1852.7</td>
-      <td>1773.08</td>
-      <td>2011.93</td>
-      <td>2.0</td>
-      <td>1784.8</td>
-      <td>+₹11.72 / +0.66%</td>
-      <td>+₹227.13 / +12.73%</td>
-      <td>Pending Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>4</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-20</td>
-      <td>Swing</td>
-      <td>1</td>
-      <td>Highest Priority</td>
-      <td>ABBOTINDIA</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>25952.99</td>
-      <td>26834.97</td>
-      <td>24189.03</td>
-      <td>2.0</td>
-      <td>25740.0</td>
-      <td>+₹1094.97 / +4.25%</td>
-      <td>+₹1550.97 / +6.03%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>4</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-20</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>MPHASIS</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>2364.72</td>
-      <td>2225.29</td>
-      <td>2643.57</td>
-      <td>2.0</td>
-      <td>2259.4</td>
-      <td>+₹34.11 / +1.51%</td>
-      <td>+₹384.17 / +17.00%</td>
-      <td>Pending Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>4</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-20</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>PAGEIND</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>40430.7</td>
-      <td>37421.96</td>
-      <td>46448.19</td>
-      <td>2.0</td>
-      <td>40410.0</td>
-      <td>+₹2988.04 / +7.39%</td>
-      <td>+₹6038.19 / +14.94%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>4</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-19</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>ADANIENT</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>3058.0</td>
-      <td>2876.78</td>
-      <td>3420.46</td>
-      <td>2.0</td>
-      <td>2997.4</td>
-      <td>+₹120.62 / +4.02%</td>
-      <td>+₹423.06 / +14.11%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>5</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-19</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>ADANIPORTS</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>1852.7</td>
-      <td>1773.08</td>
-      <td>2011.93</td>
-      <td>2.0</td>
-      <td>1784.8</td>
-      <td>+₹11.72 / +0.66%</td>
-      <td>+₹227.13 / +12.73%</td>
-      <td>Pending Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>5</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-19</td>
-      <td>Swing</td>
-      <td>1</td>
-      <td>Highest Priority</td>
-      <td>MUTHOOTFIN</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>3073.64</td>
-      <td>3226.52</td>
-      <td>2767.88</td>
-      <td>2.0</td>
-      <td>3082.7</td>
-      <td>+₹143.82 / +4.67%</td>
-      <td>+₹314.82 / +10.21%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>5</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-19</td>
-      <td>Swing</td>
-      <td>1</td>
-      <td>Highest Priority</td>
-      <td>ABBOTINDIA</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>25952.99</td>
-      <td>26834.97</td>
-      <td>24189.03</td>
-      <td>2.0</td>
-      <td>25740.0</td>
-      <td>+₹1094.97 / +4.25%</td>
-      <td>+₹1550.97 / +6.03%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>5</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-19</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>MPHASIS</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>2364.72</td>
-      <td>2225.29</td>
-      <td>2643.57</td>
-      <td>2.0</td>
-      <td>2259.4</td>
-      <td>+₹34.11 / +1.51%</td>
-      <td>+₹384.17 / +17.00%</td>
-      <td>Pending Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>5</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-19</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>PAGEIND</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>40430.7</td>
-      <td>37421.96</td>
-      <td>46448.19</td>
-      <td>2.0</td>
-      <td>40410.0</td>
-      <td>+₹2988.04 / +7.39%</td>
-      <td>+₹6038.19 / +14.94%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>5</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-19</td>
-      <td>Swing</td>
-      <td>1</td>
-      <td>Highest Priority</td>
-      <td>AMBUJACEM</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>421.65</td>
-      <td>438.54</td>
-      <td>387.88</td>
-      <td>2.0</td>
-      <td>422.35</td>
-      <td>+₹16.19 / +3.83%</td>
-      <td>+₹34.47 / +8.16%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>5</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-19</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>COLPAL</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>2023.94</td>
-      <td>2142.67</td>
-      <td>1786.48</td>
-      <td>2.0</td>
-      <td>1986.0</td>
-      <td>+₹156.67 / +7.89%</td>
-      <td>+₹199.52 / +10.05%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>5</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-19</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>IRCTC</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>518.06</td>
-      <td>536.44</td>
-      <td>481.31</td>
-      <td>2.0</td>
-      <td>517.2</td>
-      <td>+₹19.24 / +3.72%</td>
-      <td>+₹35.89 / +6.94%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>5</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-18</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>PAGEIND</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>40430.7</td>
-      <td>37421.96</td>
-      <td>46448.19</td>
-      <td>2.0</td>
-      <td>40410.0</td>
-      <td>+₹2988.04 / +7.39%</td>
-      <td>+₹6038.19 / +14.94%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>6</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-18</td>
-      <td>Swing</td>
-      <td>1</td>
-      <td>Highest Priority</td>
-      <td>MUTHOOTFIN</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>3129.93</td>
-      <td>3272.13</td>
-      <td>2845.52</td>
-      <td>2.0</td>
-      <td>3082.7</td>
-      <td>+₹189.43 / +6.14%</td>
-      <td>+₹237.18 / +7.69%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>6</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-18</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>PERSISTENT</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>4886.21</td>
-      <td>5164.32</td>
-      <td>4329.99</td>
-      <td>2.0</td>
-      <td>4843.0</td>
-      <td>+₹321.32 / +6.63%</td>
-      <td>+₹513.01 / +10.59%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>6</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-18</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>VBL</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>552.8</td>
-      <td>516.15</td>
-      <td>626.11</td>
-      <td>2.0</td>
-      <td>510.8</td>
-      <td>-₹5.35 / -1.05%</td>
-      <td>+₹115.31 / +22.57%</td>
-      <td>Pending Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>6</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-18</td>
-      <td>Swing</td>
-      <td>1</td>
-      <td>Highest Priority</td>
-      <td>AMBUJACEM</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>421.65</td>
-      <td>438.54</td>
-      <td>387.88</td>
-      <td>2.0</td>
-      <td>422.35</td>
-      <td>+₹16.19 / +3.83%</td>
-      <td>+₹34.47 / +8.16%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>6</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-18</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>COLPAL</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>2023.94</td>
-      <td>2142.67</td>
-      <td>1786.48</td>
-      <td>2.0</td>
-      <td>1986.0</td>
-      <td>+₹156.67 / +7.89%</td>
-      <td>+₹199.52 / +10.05%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>6</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-18</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>IRCTC</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>518.06</td>
-      <td>536.44</td>
-      <td>481.31</td>
-      <td>2.0</td>
-      <td>517.2</td>
-      <td>+₹19.24 / +3.72%</td>
-      <td>+₹35.89 / +6.94%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>6</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-18</td>
-      <td>Swing</td>
-      <td>1</td>
-      <td>Highest Priority</td>
-      <td>ABBOTINDIA</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>25778.34</td>
-      <td>26840.93</td>
-      <td>23653.16</td>
-      <td>2.0</td>
-      <td>25740.0</td>
-      <td>+₹1100.93 / +4.28%</td>
-      <td>+₹2086.84 / +8.11%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>6</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-18</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>MPHASIS</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>2353.7</td>
-      <td>2225.07</td>
-      <td>2610.95</td>
-      <td>2.0</td>
-      <td>2259.4</td>
-      <td>+₹34.33 / +1.52%</td>
-      <td>+₹351.55 / +15.56%</td>
-      <td>Stop Hit First</td>
-      <td>Stop</td>
-      <td>2026-06-19</td>
-      <td>Loss</td>
-      <td>-1</td>
-      <td>6</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-18</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>PFC</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>424.0</td>
-      <td>442.02</td>
-      <td>387.95</td>
-      <td>2.0</td>
-      <td>435.0</td>
-      <td>+₹7.02 / +1.61%</td>
-      <td>+₹47.05 / +10.82%</td>
-      <td>Stop Hit First</td>
-      <td>Stop</td>
-      <td>2026-06-22</td>
-      <td>Loss</td>
-      <td>-1</td>
-      <td>6</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-17</td>
-      <td>Swing</td>
-      <td>1</td>
-      <td>Highest Priority</td>
-      <td>ADANIPORTS</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>1836.67</td>
-      <td>1772.79</td>
-      <td>1964.41</td>
-      <td>2.0</td>
-      <td>1784.8</td>
-      <td>+₹12.01 / +0.67%</td>
-      <td>+₹179.61 / +10.06%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>7</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-17</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>AMBUJACEM</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>421.65</td>
-      <td>438.54</td>
-      <td>387.88</td>
-      <td>2.0</td>
-      <td>422.35</td>
-      <td>+₹16.19 / +3.83%</td>
-      <td>+₹34.47 / +8.16%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>7</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-17</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>COLPAL</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>2023.94</td>
-      <td>2142.67</td>
-      <td>1786.48</td>
-      <td>2.0</td>
-      <td>1986.0</td>
-      <td>+₹156.67 / +7.89%</td>
-      <td>+₹199.52 / +10.05%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>7</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-17</td>
-      <td>Swing</td>
-      <td>1</td>
-      <td>Highest Priority</td>
-      <td>POLYCAB</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>10007.48</td>
-      <td>9325.0</td>
-      <td>11372.42</td>
-      <td>2.0</td>
-      <td>9867.0</td>
-      <td>+₹542.00 / +5.49%</td>
-      <td>+₹1505.42 / +15.26%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>7</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-17</td>
-      <td>Swing</td>
-      <td>1</td>
-      <td>Highest Priority</td>
-      <td>ABBOTINDIA</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>25778.34</td>
-      <td>26840.93</td>
-      <td>23653.16</td>
-      <td>2.0</td>
-      <td>25740.0</td>
-      <td>+₹1100.93 / +4.28%</td>
-      <td>+₹2086.84 / +8.11%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>7</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-17</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>MPHASIS</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>2353.7</td>
-      <td>2225.07</td>
-      <td>2610.95</td>
-      <td>2.0</td>
-      <td>2259.4</td>
-      <td>+₹34.33 / +1.52%</td>
-      <td>+₹351.55 / +15.56%</td>
-      <td>Stop Hit First</td>
-      <td>Stop</td>
-      <td>2026-06-19</td>
-      <td>Loss</td>
-      <td>-1</td>
-      <td>7</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-17</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>PFC</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>424.0</td>
-      <td>442.02</td>
-      <td>387.95</td>
-      <td>2.0</td>
-      <td>435.0</td>
-      <td>+₹7.02 / +1.61%</td>
-      <td>+₹47.05 / +10.82%</td>
-      <td>Stop Hit First</td>
-      <td>Stop</td>
-      <td>2026-06-22</td>
-      <td>Loss</td>
-      <td>-1</td>
-      <td>7</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-17</td>
-      <td>Swing</td>
-      <td>1</td>
-      <td>Highest Priority</td>
-      <td>BEL</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>405.19</td>
-      <td>417.96</td>
-      <td>379.65</td>
-      <td>2.0</td>
-      <td>420.75</td>
-      <td>-₹2.79 / -0.66%</td>
-      <td>+₹41.10 / +9.77%</td>
-      <td>Pending Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>7</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-17</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>COLPAL</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>2047.9</td>
-      <td>2142.42</td>
-      <td>1858.85</td>
-      <td>2.0</td>
-      <td>1986.0</td>
-      <td>+₹156.42 / +7.88%</td>
-      <td>+₹127.15 / +6.40%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>7</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-17</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>IRCTC</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>515.97</td>
-      <td>536.56</td>
-      <td>474.77</td>
-      <td>2.0</td>
-      <td>517.2</td>
-      <td>+₹19.36 / +3.74%</td>
-      <td>+₹42.43 / +8.20%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>7</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-16</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>ADANIPORTS</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>1831.66</td>
-      <td>1769.32</td>
-      <td>1956.34</td>
-      <td>2.0</td>
-      <td>1784.8</td>
-      <td>+₹15.48 / +0.87%</td>
-      <td>+₹171.54 / +9.61%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>8</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-16</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>MPHASIS</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>2353.7</td>
-      <td>2225.07</td>
-      <td>2610.95</td>
-      <td>2.0</td>
-      <td>2259.4</td>
-      <td>+₹34.33 / +1.52%</td>
-      <td>+₹351.55 / +15.56%</td>
-      <td>Stop Hit First</td>
-      <td>Stop</td>
-      <td>2026-06-19</td>
-      <td>Loss</td>
-      <td>-1</td>
-      <td>8</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-16</td>
-      <td>Swing</td>
-      <td>1</td>
-      <td>Highest Priority</td>
-      <td>MPHASIS</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>2353.7</td>
-      <td>2225.07</td>
-      <td>2610.95</td>
-      <td>2.0</td>
-      <td>2259.4</td>
-      <td>+₹34.33 / +1.52%</td>
-      <td>+₹351.55 / +15.56%</td>
-      <td>Stop Hit First</td>
-      <td>Stop</td>
-      <td>2026-06-19</td>
-      <td>Loss</td>
-      <td>-1</td>
-      <td>8</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-16</td>
-      <td>Swing</td>
-      <td>2</td>
-      <td>Highest Priority</td>
-      <td>POLYCAB</td>
-      <td>BUY</td>
-      <td>94</td>
-      <td>9690.34</td>
-      <td>9327.24</td>
-      <td>10416.55</td>
-      <td>2.0</td>
-      <td>9867.0</td>
-      <td>+₹539.76 / +5.47%</td>
-      <td>+₹549.55 / +5.57%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>8</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-    <tr>
-      <td>2026-06-16</td>
-      <td>Swing</td>
-      <td>3</td>
-      <td>Highest Priority</td>
-      <td>SBILIFE</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>1761.97</td>
-      <td>1818.55</td>
-      <td>1648.81</td>
-      <td>2.0</td>
-      <td>1765.1</td>
-      <td>+₹53.45 / +3.03%</td>
-      <td>+₹116.29 / +6.59%</td>
-      <td>Stop Hit First</td>
-      <td>Stop</td>
-      <td>2026-06-22</td>
-      <td>Loss</td>
-      <td>-1</td>
-      <td>8</td>
-      <td>Top 3 Swing scanner pick</td>
-    </tr>
-  </tbody>
-</table>
-
-    
-        <div class="perf-summary">
-          <h3>Medium + Low Priority Performance</h3>
-          <p>No records in this bucket yet.</p>
-        </div>
-        
-    <p>No Medium/Low Priority records yet for this mode.</p>
-
-    
-    
-      </div>
-    </section>
-    
-  
-    <section id="intraday" class="mode-panel ">
-      <div class="mode-heading">
-        <h2>Intraday Scanner</h2>
-        <p>15-Min Candle · Period 5d · Interval 15m</p>
-      </div>
-
-      <div class="stats">
-        <div class="stat"><span>Total Candidates</span><b>4</b></div>
-        <div class="stat"><span>Highest Priority</span><b>4</b></div>
-        <div class="stat"><span>Medium Priority</span><b>0</b></div>
-        <div class="stat"><span>Low Priority</span><b>0</b></div>
-        <div class="stat"><span>Best Conviction</span><b>94</b></div>
-      </div>
-
-      <div class="market">
-        <h2>NIFTY Bias: Bearish</h2>
-        <p>NIFTY trend is weak. Scanner will only show SELL setups. Benchmark proxy used: NIFTYBEES.</p>
-        <div class="market-grid">
-          <div>NIFTY Close<br><b>271.3</b></div>
-          <div>EMA 20<br><b>271.92</b></div>
-          <div>EMA 50<br><b>272.62</b></div>
-          <div>5-Candle Change<br><b>-0.13%</b></div>
-        </div>
-      </div>
-
-      <h2>Top 3 Setups</h2>
       <div class="setup-wrap">
         <div class="setup">
-          <h3>ABB — SELL</h3>
-          <p><b>Highest Priority</b> · Score 94</p>
+          <h3>AMBUJACEM — SELL</h3>
+          <p><b>Highest Priority</b> · Score 92</p>
           <div class="grid">
-            <div>Entry<br><b>7091.79</b></div>
-            <div>Stop<br><b>7207.3</b></div>
-            <div>Target<br><b>6860.76</b></div>
-            <div>Qty<br><b>28</b></div>
-            <div>Value<br><b>₹198,570</b></div>
+            <div>Entry<br><b>414.32</b></div>
+            <div>Stop<br><b>437.18</b></div>
+            <div>Target<br><b>368.59</b></div>
+            <div>Qty<br><b>437</b></div>
+            <div>Value<br><b>₹181,058</b></div>
             <div>RR<br><b>2.0</b></div>
           </div>
-          <p>Enter only below trigger; prefer candle close confirmation · Confirmed downtrend · Negative relative strength · RSI sweet spot · Institutional volume · Clean intraday volatility · Close to trigger · Not extended · Structure-aware stop</p>
-        </div>
-        
-        <div class="setup">
-          <h3>ADANIPORTS — SELL</h3>
-          <p><b>Highest Priority</b> · Score 94</p>
-          <div class="grid">
-            <div>Entry<br><b>1778.44</b></div>
-            <div>Stop<br><b>1801.09</b></div>
-            <div>Target<br><b>1733.13</b></div>
-            <div>Qty<br><b>112</b></div>
-            <div>Value<br><b>₹199,185</b></div>
-            <div>RR<br><b>2.0</b></div>
-          </div>
-          <p>Enter only below trigger; prefer candle close confirmation · Confirmed downtrend · Negative relative strength · RSI sweet spot · Institutional volume · Clean intraday volatility · Close to trigger · Not extended · Structure-aware stop</p>
-        </div>
-        
-        <div class="setup">
-          <h3>SAIL — SELL</h3>
-          <p><b>Highest Priority</b> · Score 94</p>
-          <div class="grid">
-            <div>Entry<br><b>166.87</b></div>
-            <div>Stop<br><b>170.48</b></div>
-            <div>Target<br><b>159.63</b></div>
-            <div>Qty<br><b>1198</b></div>
-            <div>Value<br><b>₹199,905</b></div>
-            <div>RR<br><b>2.0</b></div>
-          </div>
-          <p>Enter only below trigger; prefer candle close confirmation · Confirmed downtrend · Weak relative strength · Healthy RSI · Good volume · Clean intraday volatility · Close to trigger · Not extended · Structure-aware stop</p>
+          <p>Enter only below trigger; prefer candle close confirmation · Confirmed downtrend · Weak relative strength · Healthy RSI · Acceptable volume · Clean swing volatility · Trigger needs confirmation · Not extended · Structure-aware stop</p>
         </div>
         </div>
 
@@ -1892,103 +374,1521 @@ h2 {
   </thead>
   <tbody>
     <tr>
-      <td>Intraday</td>
+      <td>Swing</td>
       <td>Normal</td>
       <td>Highest Priority</td>
-      <td>ABB</td>
+      <td>AMBUJACEM</td>
       <td>SELL</td>
-      <td>94</td>
+      <td>92</td>
       <td>A</td>
-      <td>7106.0</td>
-      <td>7091.79</td>
-      <td>7207.30</td>
-      <td>6860.76</td>
+      <td>422.1</td>
+      <td>414.32</td>
+      <td>437.18</td>
+      <td>368.59</td>
       <td>2.0</td>
-      <td>40.5</td>
-      <td>0.46%</td>
-      <td>1.99</td>
-      <td>-0.78</td>
-      <td>0.2%</td>
-      <td>0.81%</td>
-      <td>28</td>
-      <td>₹198,570</td>
+      <td>47.4</td>
+      <td>2.53%</td>
+      <td>0.92</td>
+      <td>-4.93</td>
+      <td>1.84%</td>
+      <td>0.92%</td>
+      <td>437</td>
+      <td>₹181,058</td>
       <td>Enter only below trigger; prefer candle close confirmation</td>
-      <td>Confirmed downtrend · Negative relative strength · RSI sweet spot · Institutional volume · Clean intraday volatility · Close to trigger · Not extended · Structure-aware stop</td>
-    </tr>
-    <tr>
-      <td>Intraday</td>
-      <td>Normal</td>
-      <td>Highest Priority</td>
-      <td>ADANIPORTS</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>A</td>
-      <td>1785.5</td>
-      <td>1778.44</td>
-      <td>1801.09</td>
-      <td>1733.13</td>
-      <td>2.0</td>
-      <td>45.8</td>
-      <td>0.44%</td>
-      <td>1.46</td>
-      <td>-1.19</td>
-      <td>0.4%</td>
-      <td>0.54%</td>
-      <td>112</td>
-      <td>₹199,185</td>
-      <td>Enter only below trigger; prefer candle close confirmation</td>
-      <td>Confirmed downtrend · Negative relative strength · RSI sweet spot · Institutional volume · Clean intraday volatility · Close to trigger · Not extended · Structure-aware stop</td>
-    </tr>
-    <tr>
-      <td>Intraday</td>
-      <td>Normal</td>
-      <td>Highest Priority</td>
-      <td>SAIL</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>A</td>
-      <td>167.5</td>
-      <td>166.87</td>
-      <td>170.48</td>
-      <td>159.63</td>
-      <td>2.0</td>
-      <td>32.2</td>
-      <td>0.61%</td>
-      <td>1.27</td>
-      <td>-2.32</td>
-      <td>0.38%</td>
-      <td>1.65%</td>
-      <td>1198</td>
-      <td>₹199,905</td>
-      <td>Enter only below trigger; prefer candle close confirmation</td>
-      <td>Confirmed downtrend · Weak relative strength · Healthy RSI · Good volume · Clean intraday volatility · Close to trigger · Not extended · Structure-aware stop</td>
-    </tr>
-    <tr>
-      <td>Intraday</td>
-      <td>Normal</td>
-      <td>Highest Priority</td>
-      <td>SIEMENS</td>
-      <td>SELL</td>
-      <td>94</td>
-      <td>A</td>
-      <td>3649.0</td>
-      <td>3640.20</td>
-      <td>3711.70</td>
-      <td>3497.22</td>
-      <td>2.0</td>
-      <td>32.9</td>
-      <td>0.52%</td>
-      <td>1.49</td>
-      <td>-1.94</td>
-      <td>0.24%</td>
-      <td>1.24%</td>
-      <td>54</td>
-      <td>₹196,571</td>
-      <td>Enter only below trigger; prefer candle close confirmation</td>
-      <td>Confirmed downtrend · Weak relative strength · Healthy RSI · Institutional volume · Clean intraday volatility · Close to trigger · Not extended · Structure-aware stop</td>
+      <td>Confirmed downtrend · Weak relative strength · Healthy RSI · Acceptable volume · Clean swing volatility · Trigger needs confirmation · Not extended · Structure-aware stop</td>
     </tr>
   </tbody>
 </table>
+      </div>
+
+      <div class="section">
+        <h2>Swing Top 3 Performance Log</h2>
+        <p>Latest 60 ideas for this mode are shown first, now separated into Highest Priority versus Medium/Low Priority buckets. Current Price, Stop Away, Target Away, First Hit, and Hit Date update on each scanner run to help track whether target or stop-loss was touched first.</p>
+        
+    
+    <div class="perf-summary">
+      <h3>Highest Priority Performance</h3>
+      <div class="perf-grid">
+        <div>Total Ideas<br><b>60</b></div>
+        <div>Closed Trades<br><b>6</b></div>
+        <div>Wins<br><b>0</b></div>
+        <div>Losses<br><b>6</b></div>
+        <div>Win Rate<br><b>0.0%</b></div>
+        <div>Total R<br><b>-6.0</b></div>
+        <div>Avg R<br><b>-1.0</b></div>
+      </div>
+    </div>
+    
+    <table border="1" class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Date</th>
+      <th>Mode</th>
+      <th>Rank</th>
+      <th>Priority</th>
+      <th>Stock</th>
+      <th>Signal</th>
+      <th>Conviction</th>
+      <th>Entry</th>
+      <th>Stop</th>
+      <th>Target</th>
+      <th>RR</th>
+      <th>Current Price</th>
+      <th>Stop Away</th>
+      <th>Target Away</th>
+      <th>Status</th>
+      <th>First Hit</th>
+      <th>Hit Date</th>
+      <th>Result</th>
+      <th>R</th>
+      <th>Days</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2026-06-24</td>
+      <td>Swing</td>
+      <td>1</td>
+      <td>Highest Priority</td>
+      <td>AMBUJACEM</td>
+      <td>SELL</td>
+      <td>92</td>
+      <td>414.32</td>
+      <td>437.18</td>
+      <td>368.59</td>
+      <td>2.0</td>
+      <td>422.85</td>
+      <td>+₹14.33 / +3.39%</td>
+      <td>+₹54.26 / +12.83%</td>
+      <td>Pending Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-24</td>
+      <td>Swing</td>
+      <td>1</td>
+      <td>Highest Priority</td>
+      <td>ABBOTINDIA</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>25962.97</td>
+      <td>26831.67</td>
+      <td>24225.57</td>
+      <td>2.0</td>
+      <td>25540.0</td>
+      <td>+₹1291.67 / +5.06%</td>
+      <td>+₹1314.43 / +5.15%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-24</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>Highest Priority</td>
+      <td>CUMMINSIND</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>5807.09</td>
+      <td>5523.9</td>
+      <td>6373.47</td>
+      <td>2.0</td>
+      <td>5635.5</td>
+      <td>+₹111.60 / +1.98%</td>
+      <td>+₹737.97 / +13.10%</td>
+      <td>Pending Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-24</td>
+      <td>Swing</td>
+      <td>3</td>
+      <td>Highest Priority</td>
+      <td>IRCTC</td>
+      <td>SELL</td>
+      <td>92</td>
+      <td>518.66</td>
+      <td>533.47</td>
+      <td>489.05</td>
+      <td>2.0</td>
+      <td>515.75</td>
+      <td>+₹17.72 / +3.44%</td>
+      <td>+₹26.70 / +5.18%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>0</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-23</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>Highest Priority</td>
+      <td>AMBUJACEM</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>413.17</td>
+      <td>437.12</td>
+      <td>365.27</td>
+      <td>2.0</td>
+      <td>422.85</td>
+      <td>+₹14.27 / +3.37%</td>
+      <td>+₹57.58 / +13.62%</td>
+      <td>Pending Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-23</td>
+      <td>Swing</td>
+      <td>3</td>
+      <td>Highest Priority</td>
+      <td>LUPIN</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>2384.76</td>
+      <td>2237.34</td>
+      <td>2679.6</td>
+      <td>2.0</td>
+      <td>2376.3</td>
+      <td>+₹138.96 / +5.85%</td>
+      <td>+₹303.30 / +12.76%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-23</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>Highest Priority</td>
+      <td>CUMMINSIND</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>5807.09</td>
+      <td>5523.9</td>
+      <td>6373.47</td>
+      <td>2.0</td>
+      <td>5635.5</td>
+      <td>+₹111.60 / +1.98%</td>
+      <td>+₹737.97 / +13.10%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-23</td>
+      <td>Swing</td>
+      <td>3</td>
+      <td>Highest Priority</td>
+      <td>IRCTC</td>
+      <td>SELL</td>
+      <td>92</td>
+      <td>518.66</td>
+      <td>533.47</td>
+      <td>489.05</td>
+      <td>2.0</td>
+      <td>515.75</td>
+      <td>+₹17.72 / +3.44%</td>
+      <td>+₹26.70 / +5.18%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-23</td>
+      <td>Swing</td>
+      <td>1</td>
+      <td>Highest Priority</td>
+      <td>ABBOTINDIA</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>25972.95</td>
+      <td>26832.53</td>
+      <td>24253.79</td>
+      <td>2.0</td>
+      <td>25540.0</td>
+      <td>+₹1292.53 / +5.06%</td>
+      <td>+₹1286.21 / +5.04%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-23</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>Highest Priority</td>
+      <td>ADANIENT</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>3058.0</td>
+      <td>2876.78</td>
+      <td>3420.46</td>
+      <td>2.0</td>
+      <td>3046.0</td>
+      <td>+₹169.22 / +5.56%</td>
+      <td>+₹374.46 / +12.29%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-23</td>
+      <td>Swing</td>
+      <td>3</td>
+      <td>Highest Priority</td>
+      <td>ADANIPORTS</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>1852.7</td>
+      <td>1773.08</td>
+      <td>2011.93</td>
+      <td>2.0</td>
+      <td>1801.6</td>
+      <td>+₹28.52 / +1.58%</td>
+      <td>+₹210.33 / +11.67%</td>
+      <td>Pending Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-22</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>Highest Priority</td>
+      <td>CUMMINSIND</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>5807.09</td>
+      <td>5523.9</td>
+      <td>6373.47</td>
+      <td>2.0</td>
+      <td>5635.5</td>
+      <td>+₹111.60 / +1.98%</td>
+      <td>+₹737.97 / +13.10%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>2</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-22</td>
+      <td>Swing</td>
+      <td>3</td>
+      <td>Highest Priority</td>
+      <td>IRCTC</td>
+      <td>SELL</td>
+      <td>92</td>
+      <td>518.66</td>
+      <td>533.47</td>
+      <td>489.05</td>
+      <td>2.0</td>
+      <td>515.75</td>
+      <td>+₹17.72 / +3.44%</td>
+      <td>+₹26.70 / +5.18%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>2</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-22</td>
+      <td>Swing</td>
+      <td>1</td>
+      <td>Highest Priority</td>
+      <td>CUMMINSIND</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>5807.09</td>
+      <td>5526.75</td>
+      <td>6367.77</td>
+      <td>2.0</td>
+      <td>5635.5</td>
+      <td>+₹108.75 / +1.93%</td>
+      <td>+₹732.27 / +12.99%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>2</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-22</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>Highest Priority</td>
+      <td>PAGEIND</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>40520.88</td>
+      <td>37447.21</td>
+      <td>46668.21</td>
+      <td>2.0</td>
+      <td>40535.0</td>
+      <td>+₹3087.79 / +7.62%</td>
+      <td>+₹6133.21 / +15.13%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>2</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-22</td>
+      <td>Swing</td>
+      <td>3</td>
+      <td>Highest Priority</td>
+      <td>PFC</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>445.69</td>
+      <td>411.36</td>
+      <td>514.35</td>
+      <td>2.0</td>
+      <td>437.4</td>
+      <td>+₹26.04 / +5.95%</td>
+      <td>+₹76.95 / +17.59%</td>
+      <td>Pending Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>2</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-22</td>
+      <td>Swing</td>
+      <td>1</td>
+      <td>Highest Priority</td>
+      <td>ABBOTINDIA</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>25972.95</td>
+      <td>26832.53</td>
+      <td>24253.79</td>
+      <td>2.0</td>
+      <td>25540.0</td>
+      <td>+₹1292.53 / +5.06%</td>
+      <td>+₹1286.21 / +5.04%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>2</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-22</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>Highest Priority</td>
+      <td>ADANIENT</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>3058.0</td>
+      <td>2876.78</td>
+      <td>3420.46</td>
+      <td>2.0</td>
+      <td>3046.0</td>
+      <td>+₹169.22 / +5.56%</td>
+      <td>+₹374.46 / +12.29%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>2</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-22</td>
+      <td>Swing</td>
+      <td>3</td>
+      <td>Highest Priority</td>
+      <td>ADANIPORTS</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>1852.7</td>
+      <td>1773.08</td>
+      <td>2011.93</td>
+      <td>2.0</td>
+      <td>1801.6</td>
+      <td>+₹28.52 / +1.58%</td>
+      <td>+₹210.33 / +11.67%</td>
+      <td>Pending Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>2</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-21</td>
+      <td>Swing</td>
+      <td>1</td>
+      <td>Highest Priority</td>
+      <td>ABBOTINDIA</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>25972.95</td>
+      <td>26832.53</td>
+      <td>24253.79</td>
+      <td>2.0</td>
+      <td>25540.0</td>
+      <td>+₹1292.53 / +5.06%</td>
+      <td>+₹1286.21 / +5.04%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>3</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-21</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>Highest Priority</td>
+      <td>ADANIENT</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>3058.0</td>
+      <td>2876.78</td>
+      <td>3420.46</td>
+      <td>2.0</td>
+      <td>3046.0</td>
+      <td>+₹169.22 / +5.56%</td>
+      <td>+₹374.46 / +12.29%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>3</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-21</td>
+      <td>Swing</td>
+      <td>3</td>
+      <td>Highest Priority</td>
+      <td>ADANIPORTS</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>1852.7</td>
+      <td>1773.08</td>
+      <td>2011.93</td>
+      <td>2.0</td>
+      <td>1801.6</td>
+      <td>+₹28.52 / +1.58%</td>
+      <td>+₹210.33 / +11.67%</td>
+      <td>Pending Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>3</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-20</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>Highest Priority</td>
+      <td>ADANIENT</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>3058.0</td>
+      <td>2876.78</td>
+      <td>3420.46</td>
+      <td>2.0</td>
+      <td>3046.0</td>
+      <td>+₹169.22 / +5.56%</td>
+      <td>+₹374.46 / +12.29%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>4</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-20</td>
+      <td>Swing</td>
+      <td>3</td>
+      <td>Highest Priority</td>
+      <td>ADANIPORTS</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>1852.7</td>
+      <td>1773.08</td>
+      <td>2011.93</td>
+      <td>2.0</td>
+      <td>1801.6</td>
+      <td>+₹28.52 / +1.58%</td>
+      <td>+₹210.33 / +11.67%</td>
+      <td>Pending Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>4</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-20</td>
+      <td>Swing</td>
+      <td>1</td>
+      <td>Highest Priority</td>
+      <td>ABBOTINDIA</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>25952.99</td>
+      <td>26834.97</td>
+      <td>24189.03</td>
+      <td>2.0</td>
+      <td>25540.0</td>
+      <td>+₹1294.97 / +5.07%</td>
+      <td>+₹1350.97 / +5.29%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>4</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-20</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>Highest Priority</td>
+      <td>MPHASIS</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>2364.72</td>
+      <td>2225.29</td>
+      <td>2643.57</td>
+      <td>2.0</td>
+      <td>2257.5</td>
+      <td>+₹32.21 / +1.43%</td>
+      <td>+₹386.07 / +17.10%</td>
+      <td>Pending Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>4</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-20</td>
+      <td>Swing</td>
+      <td>3</td>
+      <td>Highest Priority</td>
+      <td>PAGEIND</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>40430.7</td>
+      <td>37421.96</td>
+      <td>46448.19</td>
+      <td>2.0</td>
+      <td>40535.0</td>
+      <td>+₹3113.04 / +7.68%</td>
+      <td>+₹5913.19 / +14.59%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>4</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-19</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>Highest Priority</td>
+      <td>ADANIENT</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>3058.0</td>
+      <td>2876.78</td>
+      <td>3420.46</td>
+      <td>2.0</td>
+      <td>3046.0</td>
+      <td>+₹169.22 / +5.56%</td>
+      <td>+₹374.46 / +12.29%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>5</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-19</td>
+      <td>Swing</td>
+      <td>3</td>
+      <td>Highest Priority</td>
+      <td>ADANIPORTS</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>1852.7</td>
+      <td>1773.08</td>
+      <td>2011.93</td>
+      <td>2.0</td>
+      <td>1801.6</td>
+      <td>+₹28.52 / +1.58%</td>
+      <td>+₹210.33 / +11.67%</td>
+      <td>Pending Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>5</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-19</td>
+      <td>Swing</td>
+      <td>1</td>
+      <td>Highest Priority</td>
+      <td>MUTHOOTFIN</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>3073.64</td>
+      <td>3226.52</td>
+      <td>2767.88</td>
+      <td>2.0</td>
+      <td>3118.0</td>
+      <td>+₹108.52 / +3.48%</td>
+      <td>+₹350.12 / +11.23%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>5</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-19</td>
+      <td>Swing</td>
+      <td>1</td>
+      <td>Highest Priority</td>
+      <td>ABBOTINDIA</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>25952.99</td>
+      <td>26834.97</td>
+      <td>24189.03</td>
+      <td>2.0</td>
+      <td>25540.0</td>
+      <td>+₹1294.97 / +5.07%</td>
+      <td>+₹1350.97 / +5.29%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>5</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-19</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>Highest Priority</td>
+      <td>MPHASIS</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>2364.72</td>
+      <td>2225.29</td>
+      <td>2643.57</td>
+      <td>2.0</td>
+      <td>2257.5</td>
+      <td>+₹32.21 / +1.43%</td>
+      <td>+₹386.07 / +17.10%</td>
+      <td>Pending Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>5</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-19</td>
+      <td>Swing</td>
+      <td>3</td>
+      <td>Highest Priority</td>
+      <td>PAGEIND</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>40430.7</td>
+      <td>37421.96</td>
+      <td>46448.19</td>
+      <td>2.0</td>
+      <td>40535.0</td>
+      <td>+₹3113.04 / +7.68%</td>
+      <td>+₹5913.19 / +14.59%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>5</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-19</td>
+      <td>Swing</td>
+      <td>1</td>
+      <td>Highest Priority</td>
+      <td>AMBUJACEM</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>421.65</td>
+      <td>438.54</td>
+      <td>387.88</td>
+      <td>2.0</td>
+      <td>422.85</td>
+      <td>+₹15.69 / +3.71%</td>
+      <td>+₹34.97 / +8.27%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>5</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-19</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>Highest Priority</td>
+      <td>COLPAL</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>2023.94</td>
+      <td>2142.67</td>
+      <td>1786.48</td>
+      <td>2.0</td>
+      <td>1970.3</td>
+      <td>+₹172.37 / +8.75%</td>
+      <td>+₹183.82 / +9.33%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>5</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-19</td>
+      <td>Swing</td>
+      <td>3</td>
+      <td>Highest Priority</td>
+      <td>IRCTC</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>518.06</td>
+      <td>536.44</td>
+      <td>481.31</td>
+      <td>2.0</td>
+      <td>515.75</td>
+      <td>+₹20.69 / +4.01%</td>
+      <td>+₹34.44 / +6.68%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>5</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-18</td>
+      <td>Swing</td>
+      <td>3</td>
+      <td>Highest Priority</td>
+      <td>PAGEIND</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>40430.7</td>
+      <td>37421.96</td>
+      <td>46448.19</td>
+      <td>2.0</td>
+      <td>40535.0</td>
+      <td>+₹3113.04 / +7.68%</td>
+      <td>+₹5913.19 / +14.59%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>6</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-18</td>
+      <td>Swing</td>
+      <td>1</td>
+      <td>Highest Priority</td>
+      <td>MUTHOOTFIN</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>3129.93</td>
+      <td>3272.13</td>
+      <td>2845.52</td>
+      <td>2.0</td>
+      <td>3118.0</td>
+      <td>+₹154.13 / +4.94%</td>
+      <td>+₹272.48 / +8.74%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>6</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-18</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>Highest Priority</td>
+      <td>PERSISTENT</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>4886.21</td>
+      <td>5164.32</td>
+      <td>4329.99</td>
+      <td>2.0</td>
+      <td>4914.0</td>
+      <td>+₹250.32 / +5.09%</td>
+      <td>+₹584.01 / +11.88%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>6</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-18</td>
+      <td>Swing</td>
+      <td>3</td>
+      <td>Highest Priority</td>
+      <td>VBL</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>552.8</td>
+      <td>516.15</td>
+      <td>626.11</td>
+      <td>2.0</td>
+      <td>508.25</td>
+      <td>-₹7.90 / -1.55%</td>
+      <td>+₹117.86 / +23.19%</td>
+      <td>Pending Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>6</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-18</td>
+      <td>Swing</td>
+      <td>1</td>
+      <td>Highest Priority</td>
+      <td>AMBUJACEM</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>421.65</td>
+      <td>438.54</td>
+      <td>387.88</td>
+      <td>2.0</td>
+      <td>422.85</td>
+      <td>+₹15.69 / +3.71%</td>
+      <td>+₹34.97 / +8.27%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>6</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-18</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>Highest Priority</td>
+      <td>COLPAL</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>2023.94</td>
+      <td>2142.67</td>
+      <td>1786.48</td>
+      <td>2.0</td>
+      <td>1970.3</td>
+      <td>+₹172.37 / +8.75%</td>
+      <td>+₹183.82 / +9.33%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>6</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-18</td>
+      <td>Swing</td>
+      <td>3</td>
+      <td>Highest Priority</td>
+      <td>IRCTC</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>518.06</td>
+      <td>536.44</td>
+      <td>481.31</td>
+      <td>2.0</td>
+      <td>515.75</td>
+      <td>+₹20.69 / +4.01%</td>
+      <td>+₹34.44 / +6.68%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>6</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-18</td>
+      <td>Swing</td>
+      <td>1</td>
+      <td>Highest Priority</td>
+      <td>ABBOTINDIA</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>25778.34</td>
+      <td>26840.93</td>
+      <td>23653.16</td>
+      <td>2.0</td>
+      <td>25540.0</td>
+      <td>+₹1300.93 / +5.09%</td>
+      <td>+₹1886.84 / +7.39%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>6</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-18</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>Highest Priority</td>
+      <td>MPHASIS</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>2353.7</td>
+      <td>2225.07</td>
+      <td>2610.95</td>
+      <td>2.0</td>
+      <td>2257.5</td>
+      <td>+₹32.43 / +1.44%</td>
+      <td>+₹353.45 / +15.66%</td>
+      <td>Stop Hit First</td>
+      <td>Stop</td>
+      <td>2026-06-19</td>
+      <td>Loss</td>
+      <td>-1</td>
+      <td>6</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-18</td>
+      <td>Swing</td>
+      <td>3</td>
+      <td>Highest Priority</td>
+      <td>PFC</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>424.0</td>
+      <td>442.02</td>
+      <td>387.95</td>
+      <td>2.0</td>
+      <td>437.4</td>
+      <td>+₹4.62 / +1.06%</td>
+      <td>+₹49.45 / +11.31%</td>
+      <td>Stop Hit First</td>
+      <td>Stop</td>
+      <td>2026-06-22</td>
+      <td>Loss</td>
+      <td>-1</td>
+      <td>6</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-17</td>
+      <td>Swing</td>
+      <td>1</td>
+      <td>Highest Priority</td>
+      <td>ADANIPORTS</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>1836.67</td>
+      <td>1772.79</td>
+      <td>1964.41</td>
+      <td>2.0</td>
+      <td>1801.6</td>
+      <td>+₹28.81 / +1.60%</td>
+      <td>+₹162.81 / +9.04%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>7</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-17</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>Highest Priority</td>
+      <td>AMBUJACEM</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>421.65</td>
+      <td>438.54</td>
+      <td>387.88</td>
+      <td>2.0</td>
+      <td>422.85</td>
+      <td>+₹15.69 / +3.71%</td>
+      <td>+₹34.97 / +8.27%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>7</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-17</td>
+      <td>Swing</td>
+      <td>3</td>
+      <td>Highest Priority</td>
+      <td>COLPAL</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>2023.94</td>
+      <td>2142.67</td>
+      <td>1786.48</td>
+      <td>2.0</td>
+      <td>1970.3</td>
+      <td>+₹172.37 / +8.75%</td>
+      <td>+₹183.82 / +9.33%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>7</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-17</td>
+      <td>Swing</td>
+      <td>1</td>
+      <td>Highest Priority</td>
+      <td>POLYCAB</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>10007.48</td>
+      <td>9325.0</td>
+      <td>11372.42</td>
+      <td>2.0</td>
+      <td>9783.0</td>
+      <td>+₹458.00 / +4.68%</td>
+      <td>+₹1589.42 / +16.25%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>7</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-17</td>
+      <td>Swing</td>
+      <td>1</td>
+      <td>Highest Priority</td>
+      <td>ABBOTINDIA</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>25778.34</td>
+      <td>26840.93</td>
+      <td>23653.16</td>
+      <td>2.0</td>
+      <td>25540.0</td>
+      <td>+₹1300.93 / +5.09%</td>
+      <td>+₹1886.84 / +7.39%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>7</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-17</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>Highest Priority</td>
+      <td>MPHASIS</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>2353.7</td>
+      <td>2225.07</td>
+      <td>2610.95</td>
+      <td>2.0</td>
+      <td>2257.5</td>
+      <td>+₹32.43 / +1.44%</td>
+      <td>+₹353.45 / +15.66%</td>
+      <td>Stop Hit First</td>
+      <td>Stop</td>
+      <td>2026-06-19</td>
+      <td>Loss</td>
+      <td>-1</td>
+      <td>7</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-17</td>
+      <td>Swing</td>
+      <td>3</td>
+      <td>Highest Priority</td>
+      <td>PFC</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>424.0</td>
+      <td>442.02</td>
+      <td>387.95</td>
+      <td>2.0</td>
+      <td>437.4</td>
+      <td>+₹4.62 / +1.06%</td>
+      <td>+₹49.45 / +11.31%</td>
+      <td>Stop Hit First</td>
+      <td>Stop</td>
+      <td>2026-06-22</td>
+      <td>Loss</td>
+      <td>-1</td>
+      <td>7</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-17</td>
+      <td>Swing</td>
+      <td>1</td>
+      <td>Highest Priority</td>
+      <td>BEL</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>405.19</td>
+      <td>417.96</td>
+      <td>379.65</td>
+      <td>2.0</td>
+      <td>416.7</td>
+      <td>+₹1.26 / +0.30%</td>
+      <td>+₹37.05 / +8.89%</td>
+      <td>Pending Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>7</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-17</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>Highest Priority</td>
+      <td>COLPAL</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>2047.9</td>
+      <td>2142.42</td>
+      <td>1858.85</td>
+      <td>2.0</td>
+      <td>1970.3</td>
+      <td>+₹172.12 / +8.74%</td>
+      <td>+₹111.45 / +5.66%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>7</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-17</td>
+      <td>Swing</td>
+      <td>3</td>
+      <td>Highest Priority</td>
+      <td>IRCTC</td>
+      <td>SELL</td>
+      <td>94</td>
+      <td>515.97</td>
+      <td>536.56</td>
+      <td>474.77</td>
+      <td>2.0</td>
+      <td>515.75</td>
+      <td>+₹20.81 / +4.03%</td>
+      <td>+₹40.98 / +7.95%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>7</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-16</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>Highest Priority</td>
+      <td>ADANIPORTS</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>1831.66</td>
+      <td>1769.32</td>
+      <td>1956.34</td>
+      <td>2.0</td>
+      <td>1801.6</td>
+      <td>+₹32.28 / +1.79%</td>
+      <td>+₹154.74 / +8.59%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>8</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-16</td>
+      <td>Swing</td>
+      <td>3</td>
+      <td>Highest Priority</td>
+      <td>MPHASIS</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>2353.7</td>
+      <td>2225.07</td>
+      <td>2610.95</td>
+      <td>2.0</td>
+      <td>2257.5</td>
+      <td>+₹32.43 / +1.44%</td>
+      <td>+₹353.45 / +15.66%</td>
+      <td>Stop Hit First</td>
+      <td>Stop</td>
+      <td>2026-06-19</td>
+      <td>Loss</td>
+      <td>-1</td>
+      <td>8</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-16</td>
+      <td>Swing</td>
+      <td>1</td>
+      <td>Highest Priority</td>
+      <td>MPHASIS</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>2353.7</td>
+      <td>2225.07</td>
+      <td>2610.95</td>
+      <td>2.0</td>
+      <td>2257.5</td>
+      <td>+₹32.43 / +1.44%</td>
+      <td>+₹353.45 / +15.66%</td>
+      <td>Stop Hit First</td>
+      <td>Stop</td>
+      <td>2026-06-19</td>
+      <td>Loss</td>
+      <td>-1</td>
+      <td>8</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+    <tr>
+      <td>2026-06-16</td>
+      <td>Swing</td>
+      <td>2</td>
+      <td>Highest Priority</td>
+      <td>POLYCAB</td>
+      <td>BUY</td>
+      <td>94</td>
+      <td>9690.34</td>
+      <td>9327.24</td>
+      <td>10416.55</td>
+      <td>2.0</td>
+      <td>9783.0</td>
+      <td>+₹455.76 / +4.66%</td>
+      <td>+₹633.55 / +6.48%</td>
+      <td>Active After Trigger</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>8</td>
+      <td>Top 3 Swing scanner pick</td>
+    </tr>
+  </tbody>
+</table>
+
+    
+        <div class="perf-summary">
+          <h3>Medium + Low Priority Performance</h3>
+          <p>No records in this bucket yet.</p>
+        </div>
+        
+    <p>No Medium/Low Priority records yet for this mode.</p>
+
+    
+    
+      </div>
+    </section>
+    
+  
+    <section id="intraday" class="mode-panel ">
+      <div class="mode-heading">
+        <h2>Intraday Scanner</h2>
+        <p>15-Min Candle · Period 5d · Interval 15m</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><span>Total Candidates</span><b>0</b></div>
+        <div class="stat"><span>Highest Priority</span><b>0</b></div>
+        <div class="stat"><span>Medium Priority</span><b>0</b></div>
+        <div class="stat"><span>Low Priority</span><b>0</b></div>
+        <div class="stat"><span>Best Conviction</span><b>0</b></div>
+      </div>
+
+      <div class="market">
+        <h2>NIFTY Bias: Mixed</h2>
+        <p>NIFTY is mixed/constructive. Scanner will show qualified setups, but entries need stricter confirmation. Benchmark proxy used: NIFTYBEES.</p>
+        <div class="market-grid">
+          <div>NIFTY Close<br><b>272.95</b></div>
+          <div>EMA 20<br><b>272.2</b></div>
+          <div>EMA 50<br><b>272.39</b></div>
+          <div>5-Candle Change<br><b>0.25%</b></div>
+        </div>
+      </div>
+
+      <h2>Top 3 Setups</h2>
+      <div class="setup-wrap"><p>No top setups in this mode right now.</p></div>
+
+      <div class="section">
+        <h2>Suggested Investment Criteria</h2>
+        <p>
+          Swing is calibrated slightly looser to avoid empty daily output:
+          <b>88–94</b> Highest Priority candidate range ·
+          <b>82–87</b> Medium Priority ·
+          <b>74–81</b> Low Priority.
+          Intraday remains stricter:
+          <b>90–94</b> Highest Priority ·
+          <b>84–89</b> Medium Priority ·
+          <b>78–83</b> Low Priority.
+          Only the top 5 ranked ideas per mode can receive the Highest Priority label. Score is setup quality, not probability of profit. No trade is assumed loss-proof, so the model intentionally avoids 100 scores. Stops use structure-aware ATR placement and targets use a more realistic 2R objective. Expert filter still requires NIFTY-direction alignment, relative strength/weakness, volume confirmation, controlled volatility, and a nearby trigger. Entry should only be considered if the trigger level breaks with confirmation.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Scanner Table</h2>
+        <p>No qualifying setups in this mode right now.</p>
       </div>
 
       <div class="section">
@@ -2000,12 +1900,12 @@ h2 {
       <h3>Highest Priority Performance</h3>
       <div class="perf-grid">
         <div>Total Ideas<br><b>39</b></div>
-        <div>Closed Trades<br><b>14</b></div>
-        <div>Wins<br><b>2</b></div>
-        <div>Losses<br><b>12</b></div>
-        <div>Win Rate<br><b>14.3%</b></div>
-        <div>Total R<br><b>-8.0</b></div>
-        <div>Avg R<br><b>-0.57</b></div>
+        <div>Closed Trades<br><b>25</b></div>
+        <div>Wins<br><b>5</b></div>
+        <div>Losses<br><b>20</b></div>
+        <div>Win Rate<br><b>20.0%</b></div>
+        <div>Total R<br><b>-10.0</b></div>
+        <div>Avg R<br><b>-0.4</b></div>
       </div>
     </div>
     
@@ -2048,10 +1948,10 @@ h2 {
       <td>7207.3</td>
       <td>6860.76</td>
       <td>2.0</td>
-      <td>7106.0</td>
-      <td>+₹101.30 / +1.43%</td>
-      <td>+₹245.24 / +3.45%</td>
-      <td>Pending Trigger</td>
+      <td>7064.5</td>
+      <td>+₹142.80 / +2.02%</td>
+      <td>+₹203.74 / +2.88%</td>
+      <td>Active After Trigger</td>
       <td></td>
       <td></td>
       <td></td>
@@ -2071,14 +1971,14 @@ h2 {
       <td>1801.09</td>
       <td>1733.13</td>
       <td>2.0</td>
-      <td>1785.5</td>
-      <td>+₹15.59 / +0.87%</td>
-      <td>+₹52.37 / +2.93%</td>
-      <td>Pending Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>1801.6</td>
+      <td>-₹0.51 / -0.03%</td>
+      <td>+₹68.47 / +3.80%</td>
+      <td>Stop Hit First</td>
+      <td>Stop</td>
+      <td>2026-06-24</td>
+      <td>Loss</td>
+      <td>-1</td>
       <td>0</td>
       <td>Top 3 Intraday scanner pick</td>
     </tr>
@@ -2094,14 +1994,14 @@ h2 {
       <td>170.48</td>
       <td>159.63</td>
       <td>2.0</td>
-      <td>167.5</td>
-      <td>+₹2.98 / +1.78%</td>
-      <td>+₹7.87 / +4.70%</td>
-      <td>Pending Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>172.24</td>
+      <td>-₹1.76 / -1.02%</td>
+      <td>+₹12.61 / +7.32%</td>
+      <td>Stop Hit First</td>
+      <td>Stop</td>
+      <td>2026-06-24</td>
+      <td>Loss</td>
+      <td>-1</td>
       <td>0</td>
       <td>Top 3 Intraday scanner pick</td>
     </tr>
@@ -2117,14 +2017,14 @@ h2 {
       <td>1796.74</td>
       <td>1734.35</td>
       <td>2.0</td>
-      <td>1785.5</td>
-      <td>+₹11.24 / +0.63%</td>
-      <td>+₹51.15 / +2.86%</td>
-      <td>Pending Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>1801.6</td>
+      <td>-₹4.86 / -0.27%</td>
+      <td>+₹67.25 / +3.73%</td>
+      <td>Stop Hit First</td>
+      <td>Stop</td>
+      <td>2026-06-24</td>
+      <td>Loss</td>
+      <td>-1</td>
       <td>0</td>
       <td>Top 3 Intraday scanner pick</td>
     </tr>
@@ -2140,9 +2040,9 @@ h2 {
       <td>405.17</td>
       <td>385.16</td>
       <td>2.0</td>
-      <td>404.85</td>
-      <td>+₹0.32 / +0.08%</td>
-      <td>+₹19.69 / +4.86%</td>
+      <td>402.35</td>
+      <td>+₹2.82 / +0.70%</td>
+      <td>+₹17.19 / +4.27%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -2163,14 +2063,14 @@ h2 {
       <td>1090.49</td>
       <td>1052.55</td>
       <td>2.0</td>
-      <td>1076.9</td>
-      <td>+₹13.59 / +1.26%</td>
-      <td>+₹24.35 / +2.26%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>1090.8</td>
+      <td>-₹0.31 / -0.03%</td>
+      <td>+₹38.25 / +3.51%</td>
+      <td>Stop Hit First</td>
+      <td>Stop</td>
+      <td>2026-06-24</td>
+      <td>Loss</td>
+      <td>-1</td>
       <td>0</td>
       <td>Top 3 Intraday scanner pick</td>
     </tr>
@@ -2186,14 +2086,14 @@ h2 {
       <td>1796.74</td>
       <td>1734.35</td>
       <td>2.0</td>
-      <td>1785.5</td>
-      <td>+₹11.24 / +0.63%</td>
-      <td>+₹51.15 / +2.86%</td>
-      <td>Pending Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>1801.6</td>
+      <td>-₹4.86 / -0.27%</td>
+      <td>+₹67.25 / +3.73%</td>
+      <td>Stop Hit First</td>
+      <td>Stop</td>
+      <td>2026-06-24</td>
+      <td>Loss</td>
+      <td>-1</td>
       <td>1</td>
       <td>Top 3 Intraday scanner pick</td>
     </tr>
@@ -2209,9 +2109,9 @@ h2 {
       <td>405.17</td>
       <td>385.16</td>
       <td>2.0</td>
-      <td>404.85</td>
-      <td>+₹0.32 / +0.08%</td>
-      <td>+₹19.69 / +4.86%</td>
+      <td>402.35</td>
+      <td>+₹2.82 / +0.70%</td>
+      <td>+₹17.19 / +4.27%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-24</td>
@@ -2232,14 +2132,14 @@ h2 {
       <td>1090.48</td>
       <td>1053.45</td>
       <td>2.0</td>
-      <td>1076.9</td>
-      <td>+₹13.58 / +1.26%</td>
-      <td>+₹23.45 / +2.18%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>1090.8</td>
+      <td>-₹0.32 / -0.03%</td>
+      <td>+₹37.35 / +3.42%</td>
+      <td>Stop Hit First</td>
+      <td>Stop</td>
+      <td>2026-06-24</td>
+      <td>Loss</td>
+      <td>-1</td>
       <td>1</td>
       <td>Top 3 Intraday scanner pick</td>
     </tr>
@@ -2255,9 +2155,9 @@ h2 {
       <td>4438.51</td>
       <td>4580.25</td>
       <td>2.0</td>
-      <td>4529.4</td>
-      <td>+₹90.89 / +2.01%</td>
-      <td>+₹50.85 / +1.12%</td>
+      <td>4503.2</td>
+      <td>+₹64.69 / +1.44%</td>
+      <td>+₹77.05 / +1.71%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -2278,9 +2178,9 @@ h2 {
       <td>515.19</td>
       <td>500.0</td>
       <td>2.0</td>
-      <td>510.95</td>
-      <td>+₹4.24 / +0.83%</td>
-      <td>+₹10.95 / +2.14%</td>
+      <td>508.3</td>
+      <td>+₹6.89 / +1.36%</td>
+      <td>+₹8.30 / +1.63%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -2301,9 +2201,9 @@ h2 {
       <td>4438.51</td>
       <td>4580.25</td>
       <td>2.0</td>
-      <td>4529.4</td>
-      <td>+₹90.89 / +2.01%</td>
-      <td>+₹50.85 / +1.12%</td>
+      <td>4503.2</td>
+      <td>+₹64.69 / +1.44%</td>
+      <td>+₹77.05 / +1.71%</td>
       <td>Active After Trigger</td>
       <td></td>
       <td></td>
@@ -2324,9 +2224,9 @@ h2 {
       <td>515.19</td>
       <td>500.0</td>
       <td>2.0</td>
-      <td>510.95</td>
-      <td>+₹4.24 / +0.83%</td>
-      <td>+₹10.95 / +2.14%</td>
+      <td>508.3</td>
+      <td>+₹6.89 / +1.36%</td>
+      <td>+₹8.30 / +1.63%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-23</td>
@@ -2347,9 +2247,9 @@ h2 {
       <td>308.46</td>
       <td>300.29</td>
       <td>2.0</td>
-      <td>310.45</td>
-      <td>-₹1.99 / -0.64%</td>
-      <td>+₹10.16 / +3.27%</td>
+      <td>311.3</td>
+      <td>-₹2.84 / -0.91%</td>
+      <td>+₹11.01 / +3.54%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -2370,14 +2270,14 @@ h2 {
       <td>628.94</td>
       <td>609.62</td>
       <td>2.0</td>
-      <td>615.6</td>
-      <td>+₹13.34 / +2.17%</td>
-      <td>+₹5.98 / +0.97%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>618.5</td>
+      <td>+₹10.44 / +1.69%</td>
+      <td>+₹8.88 / +1.44%</td>
+      <td>Target Hit First</td>
+      <td>Target</td>
+      <td>2026-06-24</td>
+      <td>Win</td>
+      <td>2.0</td>
       <td>2</td>
       <td>Top 3 Intraday scanner pick</td>
     </tr>
@@ -2393,9 +2293,9 @@ h2 {
       <td>938.49</td>
       <td>975.72</td>
       <td>2.0</td>
-      <td>907.5</td>
-      <td>-₹30.99 / -3.41%</td>
-      <td>+₹68.22 / +7.52%</td>
+      <td>928.35</td>
+      <td>-₹10.14 / -1.09%</td>
+      <td>+₹47.37 / +5.10%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -2416,9 +2316,9 @@ h2 {
       <td>308.46</td>
       <td>300.29</td>
       <td>2.0</td>
-      <td>310.45</td>
-      <td>-₹1.99 / -0.64%</td>
-      <td>+₹10.16 / +3.27%</td>
+      <td>311.3</td>
+      <td>-₹2.84 / -0.91%</td>
+      <td>+₹11.01 / +3.54%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -2439,14 +2339,14 @@ h2 {
       <td>628.94</td>
       <td>609.62</td>
       <td>2.0</td>
-      <td>615.6</td>
-      <td>+₹13.34 / +2.17%</td>
-      <td>+₹5.98 / +0.97%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>618.5</td>
+      <td>+₹10.44 / +1.69%</td>
+      <td>+₹8.88 / +1.44%</td>
+      <td>Target Hit First</td>
+      <td>Target</td>
+      <td>2026-06-24</td>
+      <td>Win</td>
+      <td>2.0</td>
       <td>3</td>
       <td>Top 3 Intraday scanner pick</td>
     </tr>
@@ -2462,9 +2362,9 @@ h2 {
       <td>938.49</td>
       <td>975.72</td>
       <td>2.0</td>
-      <td>907.5</td>
-      <td>-₹30.99 / -3.41%</td>
-      <td>+₹68.22 / +7.52%</td>
+      <td>928.35</td>
+      <td>-₹10.14 / -1.09%</td>
+      <td>+₹47.37 / +5.10%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -2485,9 +2385,9 @@ h2 {
       <td>308.46</td>
       <td>300.29</td>
       <td>2.0</td>
-      <td>310.45</td>
-      <td>-₹1.99 / -0.64%</td>
-      <td>+₹10.16 / +3.27%</td>
+      <td>311.3</td>
+      <td>-₹2.84 / -0.91%</td>
+      <td>+₹11.01 / +3.54%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -2508,14 +2408,14 @@ h2 {
       <td>628.94</td>
       <td>609.62</td>
       <td>2.0</td>
-      <td>615.6</td>
-      <td>+₹13.34 / +2.17%</td>
-      <td>+₹5.98 / +0.97%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>618.5</td>
+      <td>+₹10.44 / +1.69%</td>
+      <td>+₹8.88 / +1.44%</td>
+      <td>Target Hit First</td>
+      <td>Target</td>
+      <td>2026-06-24</td>
+      <td>Win</td>
+      <td>2.0</td>
       <td>4</td>
       <td>Top 3 Intraday scanner pick</td>
     </tr>
@@ -2531,9 +2431,9 @@ h2 {
       <td>938.49</td>
       <td>975.72</td>
       <td>2.0</td>
-      <td>907.5</td>
-      <td>-₹30.99 / -3.41%</td>
-      <td>+₹68.22 / +7.52%</td>
+      <td>928.35</td>
+      <td>-₹10.14 / -1.09%</td>
+      <td>+₹47.37 / +5.10%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -2554,9 +2454,9 @@ h2 {
       <td>308.46</td>
       <td>300.29</td>
       <td>2.0</td>
-      <td>310.45</td>
-      <td>-₹1.99 / -0.64%</td>
-      <td>+₹10.16 / +3.27%</td>
+      <td>311.3</td>
+      <td>-₹2.84 / -0.91%</td>
+      <td>+₹11.01 / +3.54%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-22</td>
@@ -2577,9 +2477,9 @@ h2 {
       <td>628.94</td>
       <td>609.62</td>
       <td>2.0</td>
-      <td>615.6</td>
-      <td>+₹13.34 / +2.17%</td>
-      <td>+₹5.98 / +0.97%</td>
+      <td>618.5</td>
+      <td>+₹10.44 / +1.69%</td>
+      <td>+₹8.88 / +1.44%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-22</td>
@@ -2600,9 +2500,9 @@ h2 {
       <td>938.49</td>
       <td>975.72</td>
       <td>2.0</td>
-      <td>907.5</td>
-      <td>-₹30.99 / -3.41%</td>
-      <td>+₹68.22 / +7.52%</td>
+      <td>928.35</td>
+      <td>-₹10.14 / -1.09%</td>
+      <td>+₹47.37 / +5.10%</td>
       <td>Pending Trigger</td>
       <td></td>
       <td></td>
@@ -2623,9 +2523,9 @@ h2 {
       <td>134.96</td>
       <td>137.09</td>
       <td>2.0</td>
-      <td>130.9</td>
-      <td>-₹4.06 / -3.10%</td>
-      <td>+₹6.19 / +4.73%</td>
+      <td>130.5</td>
+      <td>-₹4.46 / -3.42%</td>
+      <td>+₹6.59 / +5.05%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-18</td>
@@ -2646,9 +2546,9 @@ h2 {
       <td>98.83</td>
       <td>104.8</td>
       <td>2.0</td>
-      <td>93.79</td>
-      <td>-₹5.04 / -5.37%</td>
-      <td>+₹11.01 / +11.74%</td>
+      <td>93.94</td>
+      <td>-₹4.89 / -5.21%</td>
+      <td>+₹10.86 / +11.56%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-23</td>
@@ -2669,9 +2569,9 @@ h2 {
       <td>304.12</td>
       <td>313.69</td>
       <td>2.0</td>
-      <td>283.95</td>
-      <td>-₹20.17 / -7.10%</td>
-      <td>+₹29.74 / +10.47%</td>
+      <td>282.2</td>
+      <td>-₹21.92 / -7.77%</td>
+      <td>+₹31.49 / +11.16%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-18</td>
@@ -2692,9 +2592,9 @@ h2 {
       <td>134.96</td>
       <td>137.09</td>
       <td>2.0</td>
-      <td>130.9</td>
-      <td>-₹4.06 / -3.10%</td>
-      <td>+₹6.19 / +4.73%</td>
+      <td>130.5</td>
+      <td>-₹4.46 / -3.42%</td>
+      <td>+₹6.59 / +5.05%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-18</td>
@@ -2715,9 +2615,9 @@ h2 {
       <td>98.83</td>
       <td>104.8</td>
       <td>2.0</td>
-      <td>93.79</td>
-      <td>-₹5.04 / -5.37%</td>
-      <td>+₹11.01 / +11.74%</td>
+      <td>93.94</td>
+      <td>-₹4.89 / -5.21%</td>
+      <td>+₹10.86 / +11.56%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-23</td>
@@ -2738,9 +2638,9 @@ h2 {
       <td>304.12</td>
       <td>313.69</td>
       <td>2.0</td>
-      <td>283.95</td>
-      <td>-₹20.17 / -7.10%</td>
-      <td>+₹29.74 / +10.47%</td>
+      <td>282.2</td>
+      <td>-₹21.92 / -7.77%</td>
+      <td>+₹31.49 / +11.16%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-18</td>
@@ -2761,9 +2661,9 @@ h2 {
       <td>181.59</td>
       <td>176.67</td>
       <td>2.0</td>
-      <td>167.5</td>
-      <td>+₹14.09 / +8.41%</td>
-      <td>-₹9.17 / -5.47%</td>
+      <td>172.24</td>
+      <td>+₹9.35 / +5.43%</td>
+      <td>-₹4.43 / -2.57%</td>
       <td>Ambiguous Entry Candle</td>
       <td>Entry/exit same candle</td>
       <td>2026-06-17</td>
@@ -2784,9 +2684,9 @@ h2 {
       <td>181.59</td>
       <td>176.67</td>
       <td>2.0</td>
-      <td>167.5</td>
-      <td>+₹14.09 / +8.41%</td>
-      <td>-₹9.17 / -5.47%</td>
+      <td>172.24</td>
+      <td>+₹9.35 / +5.43%</td>
+      <td>-₹4.43 / -2.57%</td>
       <td>Ambiguous Entry Candle</td>
       <td>Entry/exit same candle</td>
       <td>2026-06-16</td>
@@ -2807,14 +2707,14 @@ h2 {
       <td>5660.49</td>
       <td>6001.1</td>
       <td>2.0</td>
-      <td>5742.0</td>
-      <td>+₹81.51 / +1.42%</td>
-      <td>+₹259.10 / +4.51%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>5635.5</td>
+      <td>-₹24.99 / -0.44%</td>
+      <td>+₹365.60 / +6.49%</td>
+      <td>Stop Hit First</td>
+      <td>Stop</td>
+      <td>2026-06-24</td>
+      <td>Loss</td>
+      <td>-1</td>
       <td>8</td>
       <td>Top 3 Intraday scanner pick</td>
     </tr>
@@ -2830,9 +2730,9 @@ h2 {
       <td>4215.74</td>
       <td>4479.6</td>
       <td>2.0</td>
-      <td>4495.0</td>
-      <td>+₹279.26 / +6.21%</td>
-      <td>-₹15.40 / -0.34%</td>
+      <td>4407.3</td>
+      <td>+₹191.56 / +4.35%</td>
+      <td>+₹72.30 / +1.64%</td>
       <td>Target Hit First</td>
       <td>Target</td>
       <td>2026-06-17</td>
@@ -2853,14 +2753,14 @@ h2 {
       <td>5660.49</td>
       <td>6001.1</td>
       <td>2.0</td>
-      <td>5742.0</td>
-      <td>+₹81.51 / +1.42%</td>
-      <td>+₹259.10 / +4.51%</td>
-      <td>Active After Trigger</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>5635.5</td>
+      <td>-₹24.99 / -0.44%</td>
+      <td>+₹365.60 / +6.49%</td>
+      <td>Stop Hit First</td>
+      <td>Stop</td>
+      <td>2026-06-24</td>
+      <td>Loss</td>
+      <td>-1</td>
       <td>9</td>
       <td>Top 3 Intraday scanner pick</td>
     </tr>
@@ -2876,9 +2776,9 @@ h2 {
       <td>4215.74</td>
       <td>4479.6</td>
       <td>2.0</td>
-      <td>4495.0</td>
-      <td>+₹279.26 / +6.21%</td>
-      <td>-₹15.40 / -0.34%</td>
+      <td>4407.3</td>
+      <td>+₹191.56 / +4.35%</td>
+      <td>+₹72.30 / +1.64%</td>
       <td>Target Hit First</td>
       <td>Target</td>
       <td>2026-06-17</td>
@@ -2899,9 +2799,9 @@ h2 {
       <td>548.9</td>
       <td>585.7</td>
       <td>2.0</td>
-      <td>541.45</td>
-      <td>-₹7.45 / -1.38%</td>
-      <td>+₹44.25 / +8.17%</td>
+      <td>545.65</td>
+      <td>-₹3.25 / -0.60%</td>
+      <td>+₹40.05 / +7.34%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-17</td>
@@ -2922,9 +2822,9 @@ h2 {
       <td>548.9</td>
       <td>585.7</td>
       <td>2.0</td>
-      <td>541.45</td>
-      <td>-₹7.45 / -1.38%</td>
-      <td>+₹44.25 / +8.17%</td>
+      <td>545.65</td>
+      <td>-₹3.25 / -0.60%</td>
+      <td>+₹40.05 / +7.34%</td>
       <td>Stop Hit First</td>
       <td>Stop</td>
       <td>2026-06-17</td>
