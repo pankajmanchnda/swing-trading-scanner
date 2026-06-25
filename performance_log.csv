@@ -1,124 +1,129 @@
 Date,Mode,Rank,Priority,Stock,Signal,Conviction,Entry,Stop,Target,RR,Current Price,Stop Away,Target Away,Status,First Hit,Hit Date,Result,R,Days,Notes
-2026-06-25,Intraday,1,Highest Priority,HDFCAMC,SELL,94,2641.31,2689.96,2543.99,2.0,2653.0,+₹36.96 / +1.39%,+₹109.01 / +4.11%,Pending Trigger,,,,,0,Top 3 Intraday scanner pick
-2026-06-25,Swing,2,Highest Priority,APLAPOLLO,SELL,94,1784.92,1883.12,1588.53,2.0,1793.5,+₹89.62 / +5.00%,+₹204.97 / +11.43%,Pending Trigger,,,,,0,Top 3 Swing scanner pick
-2026-06-25,Swing,3,Highest Priority,CANBK,SELL,94,127.75,136.74,109.78,2.0,128.95,+₹7.79 / +6.04%,+₹19.17 / +14.87%,Pending Trigger,,,,,0,Top 3 Swing scanner pick
-2026-06-25,Intraday,1,Highest Priority,ASHOKLEY,BUY,94,161.62,159.74,165.4,2.0,160.68,+₹0.94 / +0.59%,+₹4.72 / +2.94%,Active After Trigger,,,,,0,Top 3 Intraday scanner pick
-2026-06-25,Intraday,2,Highest Priority,PAYTM,BUY,94,1128.95,1108.49,1169.88,2.0,1122.7,+₹14.21 / +1.27%,+₹47.18 / +4.20%,Pending Trigger,,,,,0,Top 3 Intraday scanner pick
-2026-06-25,Swing,1,Highest Priority,MUTHOOTFIN,SELL,94,3060.27,3239.61,2701.58,2.0,3025.6,+₹214.01 / +7.07%,+₹324.02 / +10.71%,Active After Trigger,,,,,0,Top 3 Swing scanner pick
-2026-06-25,Swing,2,Highest Priority,ADANIENT,BUY,94,3083.96,2876.16,3499.56,2.0,3038.0,+₹161.84 / +5.33%,+₹461.56 / +15.19%,Active After Trigger,,,,,0,Top 3 Swing scanner pick
-2026-06-25,Swing,3,Highest Priority,ADANIPORTS,BUY,94,1821.64,1767.19,1930.53,2.0,1796.0,+₹28.81 / +1.60%,+₹134.53 / +7.49%,Active After Trigger,,,,,0,Top 3 Swing scanner pick
-2026-06-25,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25284.33,26836.26,22180.48,2.0,25585.0,+₹1251.26 / +4.89%,+₹3404.52 / +13.31%,Pending Trigger,,,,,0,Top 3 Swing scanner pick
-2026-06-25,Swing,2,Highest Priority,AMBUJACEM,SELL,94,413.17,437.12,365.27,2.0,423.75,+₹13.37 / +3.16%,+₹58.48 / +13.80%,Pending Trigger,,,,,0,Top 3 Swing scanner pick
-2026-06-25,Swing,3,Highest Priority,LUPIN,BUY,94,2384.76,2237.34,2679.6,2.0,2343.5,+₹106.16 / +4.53%,+₹336.10 / +14.34%,Active After Trigger,,,,,0,Top 3 Swing scanner pick
-2026-06-25,Intraday,1,Highest Priority,BAJFINANCE,BUY,94,995.84,979.65,1028.2,2.0,980.4,+₹0.75 / +0.08%,+₹47.80 / +4.88%,Stop Hit First,Stop,2026-06-25,Loss,-1,0,Top 3 Intraday scanner pick
-2026-06-25,Intraday,2,Highest Priority,COLPAL,SELL,94,1956.08,1989.52,1889.2,2.0,1990.0,-₹0.48 / -0.02%,+₹100.80 / +5.07%,Pending Trigger,,,,,0,Top 3 Intraday scanner pick
-2026-06-25,Intraday,3,Highest Priority,HAL,SELL,94,4346.39,4426.83,4185.52,2.0,4361.0,+₹65.83 / +1.51%,+₹175.48 / +4.02%,Pending Trigger,,,,,0,Top 3 Intraday scanner pick
-2026-06-24,Swing,2,Highest Priority,ADANIENT,BUY,94,3083.96,2876.16,3499.56,2.0,3038.0,+₹161.84 / +5.33%,+₹461.56 / +15.19%,Active After Trigger,,,,,1,Top 3 Swing scanner pick
-2026-06-24,Swing,3,Highest Priority,NTPC,SELL,94,354.79,370.19,323.98,2.0,352.05,+₹18.14 / +5.15%,+₹28.07 / +7.97%,Active After Trigger,,,,,1,Top 3 Swing scanner pick
-2026-06-24,Intraday,1,Highest Priority,BAJFINANCE,BUY,94,995.84,979.65,1028.2,2.0,980.4,+₹0.75 / +0.08%,+₹47.80 / +4.88%,Stop Hit First,Stop,2026-06-25,Loss,-1,1,Top 3 Intraday scanner pick
-2026-06-24,Intraday,2,Highest Priority,COLPAL,SELL,94,1956.08,1989.52,1889.2,2.0,1990.0,-₹0.48 / -0.02%,+₹100.80 / +5.07%,Pending Trigger,,,,,1,Top 3 Intraday scanner pick
-2026-06-24,Intraday,3,Highest Priority,HAL,SELL,94,4346.39,4426.83,4185.52,2.0,4361.0,+₹65.83 / +1.51%,+₹175.48 / +4.02%,Ambiguous Entry Candle,Entry/exit same candle,2026-06-24,Ambiguous,,1,Top 3 Intraday scanner pick
-2026-06-24,Swing,1,Highest Priority,AMBUJACEM,SELL,92,414.32,437.18,368.59,2.0,423.75,+₹13.43 / +3.17%,+₹55.16 / +13.02%,Pending Trigger,,,,,1,Top 3 Swing scanner pick
-2026-06-24,Intraday,1,Highest Priority,ABB,SELL,94,7091.79,7207.3,6860.76,2.0,6994.0,+₹213.30 / +3.05%,+₹133.24 / +1.91%,Active After Trigger,,,,,1,Top 3 Intraday scanner pick
-2026-06-24,Intraday,2,Highest Priority,ADANIPORTS,SELL,94,1778.44,1801.09,1733.13,2.0,1795.0,+₹6.09 / +0.34%,+₹61.87 / +3.45%,Stop Hit First,Stop,2026-06-24,Loss,-1,1,Top 3 Intraday scanner pick
-2026-06-24,Intraday,3,Highest Priority,SAIL,SELL,94,166.87,170.48,159.63,2.0,170.29,+₹0.19 / +0.11%,+₹10.66 / +6.26%,Stop Hit First,Stop,2026-06-24,Loss,-1,1,Top 3 Intraday scanner pick
-2026-06-24,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25962.97,26831.67,24225.57,2.0,25585.0,+₹1246.67 / +4.87%,+₹1359.43 / +5.31%,Active After Trigger,,,,,1,Top 3 Swing scanner pick
-2026-06-24,Swing,2,Highest Priority,CUMMINSIND,BUY,94,5807.09,5523.9,6373.47,2.0,5642.0,+₹118.10 / +2.09%,+₹731.47 / +12.96%,Pending Trigger,,,,,1,Top 3 Swing scanner pick
-2026-06-24,Swing,3,Highest Priority,IRCTC,SELL,92,518.66,533.47,489.05,2.0,514.1,+₹19.37 / +3.77%,+₹25.05 / +4.87%,Active After Trigger,,,,,1,Top 3 Swing scanner pick
-2026-06-24,Intraday,1,Highest Priority,ADANIPORTS,SELL,94,1775.94,1796.74,1734.35,2.0,1795.0,+₹1.74 / +0.10%,+₹60.65 / +3.38%,Stop Hit First,Stop,2026-06-24,Loss,-1,1,Top 3 Intraday scanner pick
-2026-06-24,Intraday,2,Highest Priority,BHEL,SELL,94,398.5,405.17,385.16,2.0,402.0,+₹3.17 / +0.79%,+₹16.84 / +4.19%,Pending Trigger,,,,,1,Top 3 Intraday scanner pick
-2026-06-24,Intraday,3,Highest Priority,JINDALSTEL,SELL,94,1077.84,1090.49,1052.55,2.0,1059.5,+₹30.99 / +2.92%,+₹6.95 / +0.66%,Stop Hit First,Stop,2026-06-24,Loss,-1,1,Top 3 Intraday scanner pick
-2026-06-23,Swing,2,Highest Priority,AMBUJACEM,SELL,94,413.17,437.12,365.27,2.0,423.75,+₹13.37 / +3.16%,+₹58.48 / +13.80%,Pending Trigger,,,,,2,Top 3 Swing scanner pick
-2026-06-23,Swing,3,Highest Priority,LUPIN,BUY,94,2384.76,2237.34,2679.6,2.0,2343.5,+₹106.16 / +4.53%,+₹336.10 / +14.34%,Active After Trigger,,,,,2,Top 3 Swing scanner pick
-2026-06-23,Intraday,1,Highest Priority,ADANIPORTS,SELL,94,1775.94,1796.74,1734.35,2.0,1795.0,+₹1.74 / +0.10%,+₹60.65 / +3.38%,Stop Hit First,Stop,2026-06-24,Loss,-1,2,Top 3 Intraday scanner pick
-2026-06-23,Intraday,2,Highest Priority,BHEL,SELL,94,398.5,405.17,385.16,2.0,402.0,+₹3.17 / +0.79%,+₹16.84 / +4.19%,Stop Hit First,Stop,2026-06-24,Loss,-1,2,Top 3 Intraday scanner pick
-2026-06-23,Intraday,3,Highest Priority,JINDALSTEL,SELL,94,1078.14,1090.48,1053.45,2.0,1059.5,+₹30.98 / +2.92%,+₹6.05 / +0.57%,Stop Hit First,Stop,2026-06-24,Loss,-1,2,Top 3 Intraday scanner pick
-2026-06-23,Swing,2,Highest Priority,CUMMINSIND,BUY,94,5807.09,5523.9,6373.47,2.0,5642.0,+₹118.10 / +2.09%,+₹731.47 / +12.96%,Active After Trigger,,,,,2,Top 3 Swing scanner pick
-2026-06-23,Swing,3,Highest Priority,IRCTC,SELL,92,518.66,533.47,489.05,2.0,514.1,+₹19.37 / +3.77%,+₹25.05 / +4.87%,Active After Trigger,,,,,2,Top 3 Swing scanner pick
-2026-06-23,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25972.95,26832.53,24253.79,2.0,25585.0,+₹1247.53 / +4.88%,+₹1331.21 / +5.20%,Active After Trigger,,,,,2,Top 3 Swing scanner pick
-2026-06-23,Swing,2,Highest Priority,ADANIENT,BUY,94,3058.0,2876.78,3420.46,2.0,3038.0,+₹161.22 / +5.31%,+₹382.46 / +12.59%,Active After Trigger,,,,,2,Top 3 Swing scanner pick
-2026-06-23,Swing,3,Highest Priority,ADANIPORTS,BUY,94,1852.7,1773.08,2011.93,2.0,1796.0,+₹22.92 / +1.28%,+₹215.93 / +12.02%,Pending Trigger,,,,,2,Top 3 Swing scanner pick
-2026-06-23,Intraday,1,Highest Priority,TORNTPHARM,BUY,94,4485.75,4438.51,4580.25,2.0,4516.2,+₹77.69 / +1.72%,+₹64.05 / +1.42%,Active After Trigger,,,,,2,Top 3 Intraday scanner pick
-2026-06-23,Intraday,2,Highest Priority,VBL,SELL,94,510.13,515.19,500.0,2.0,507.15,+₹8.04 / +1.59%,+₹7.15 / +1.41%,Active After Trigger,,,,,2,Top 3 Intraday scanner pick
-2026-06-22,Swing,2,Highest Priority,CUMMINSIND,BUY,94,5807.09,5523.9,6373.47,2.0,5642.0,+₹118.10 / +2.09%,+₹731.47 / +12.96%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
-2026-06-22,Swing,3,Highest Priority,IRCTC,SELL,92,518.66,533.47,489.05,2.0,514.1,+₹19.37 / +3.77%,+₹25.05 / +4.87%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
-2026-06-22,Intraday,1,Highest Priority,TORNTPHARM,BUY,94,4485.75,4438.51,4580.25,2.0,4516.2,+₹77.69 / +1.72%,+₹64.05 / +1.42%,Active After Trigger,,,,,3,Top 3 Intraday scanner pick
-2026-06-22,Intraday,2,Highest Priority,VBL,SELL,94,510.13,515.19,500.0,2.0,507.15,+₹8.04 / +1.59%,+₹7.15 / +1.41%,Stop Hit First,Stop,2026-06-23,Loss,-1,3,Top 3 Intraday scanner pick
-2026-06-22,Swing,1,Highest Priority,CUMMINSIND,BUY,94,5807.09,5526.75,6367.77,2.0,5642.0,+₹115.25 / +2.04%,+₹725.77 / +12.86%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
-2026-06-22,Swing,2,Highest Priority,PAGEIND,BUY,94,40520.88,37447.21,46668.21,2.0,40950.0,+₹3502.79 / +8.55%,+₹5718.21 / +13.96%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
-2026-06-22,Swing,3,Highest Priority,PFC,BUY,94,445.69,411.36,514.35,2.0,432.65,+₹21.29 / +4.92%,+₹81.70 / +18.88%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
-2026-06-22,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25972.95,26832.53,24253.79,2.0,25585.0,+₹1247.53 / +4.88%,+₹1331.21 / +5.20%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
-2026-06-22,Swing,2,Highest Priority,ADANIENT,BUY,94,3058.0,2876.78,3420.46,2.0,3038.0,+₹161.22 / +5.31%,+₹382.46 / +12.59%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
-2026-06-22,Swing,3,Highest Priority,ADANIPORTS,BUY,94,1852.7,1773.08,2011.93,2.0,1796.0,+₹22.92 / +1.28%,+₹215.93 / +12.02%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
-2026-06-22,Intraday,1,Highest Priority,BPCL,SELL,94,305.74,308.46,300.29,2.0,309.85,-₹1.39 / -0.45%,+₹9.56 / +3.09%,Pending Trigger,,,,,3,Top 3 Intraday scanner pick
-2026-06-22,Intraday,2,Highest Priority,DLF,SELL,94,622.5,628.94,609.62,2.0,621.35,+₹7.59 / +1.22%,+₹11.73 / +1.89%,Target Hit First,Target,2026-06-24,Win,2.0,3,Top 3 Intraday scanner pick
-2026-06-22,Intraday,3,Highest Priority,INDUSINDBK,BUY,94,950.9,938.49,975.72,2.0,918.95,-₹19.54 / -2.13%,+₹56.77 / +6.18%,Pending Trigger,,,,,3,Top 3 Intraday scanner pick
-2026-06-21,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25972.95,26832.53,24253.79,2.0,25585.0,+₹1247.53 / +4.88%,+₹1331.21 / +5.20%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
-2026-06-21,Swing,2,Highest Priority,ADANIENT,BUY,94,3058.0,2876.78,3420.46,2.0,3038.0,+₹161.22 / +5.31%,+₹382.46 / +12.59%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
-2026-06-21,Swing,3,Highest Priority,ADANIPORTS,BUY,94,1852.7,1773.08,2011.93,2.0,1796.0,+₹22.92 / +1.28%,+₹215.93 / +12.02%,Pending Trigger,,,,,4,Top 3 Swing scanner pick
-2026-06-21,Intraday,1,Highest Priority,BPCL,SELL,94,305.74,308.46,300.29,2.0,309.85,-₹1.39 / -0.45%,+₹9.56 / +3.09%,Pending Trigger,,,,,4,Top 3 Intraday scanner pick
-2026-06-21,Intraday,2,Highest Priority,DLF,SELL,94,622.5,628.94,609.62,2.0,621.35,+₹7.59 / +1.22%,+₹11.73 / +1.89%,Target Hit First,Target,2026-06-24,Win,2.0,4,Top 3 Intraday scanner pick
-2026-06-21,Intraday,3,Highest Priority,INDUSINDBK,BUY,94,950.9,938.49,975.72,2.0,918.95,-₹19.54 / -2.13%,+₹56.77 / +6.18%,Pending Trigger,,,,,4,Top 3 Intraday scanner pick
-2026-06-20,Swing,2,Highest Priority,ADANIENT,BUY,94,3058.0,2876.78,3420.46,2.0,3038.0,+₹161.22 / +5.31%,+₹382.46 / +12.59%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
-2026-06-20,Swing,3,Highest Priority,ADANIPORTS,BUY,94,1852.7,1773.08,2011.93,2.0,1796.0,+₹22.92 / +1.28%,+₹215.93 / +12.02%,Pending Trigger,,,,,5,Top 3 Swing scanner pick
-2026-06-20,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25952.99,26834.97,24189.03,2.0,25585.0,+₹1249.97 / +4.89%,+₹1395.97 / +5.46%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
-2026-06-20,Swing,2,Highest Priority,MPHASIS,BUY,94,2364.72,2225.29,2643.57,2.0,2263.4,+₹38.11 / +1.68%,+₹380.17 / +16.80%,Pending Trigger,,,,,5,Top 3 Swing scanner pick
-2026-06-20,Swing,3,Highest Priority,PAGEIND,BUY,94,40430.7,37421.96,46448.19,2.0,40950.0,+₹3528.04 / +8.62%,+₹5498.19 / +13.43%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
-2026-06-20,Intraday,1,Highest Priority,BPCL,SELL,94,305.74,308.46,300.29,2.0,309.85,-₹1.39 / -0.45%,+₹9.56 / +3.09%,Pending Trigger,,,,,5,Top 3 Intraday scanner pick
-2026-06-20,Intraday,2,Highest Priority,DLF,SELL,94,622.5,628.94,609.62,2.0,621.35,+₹7.59 / +1.22%,+₹11.73 / +1.89%,Target Hit First,Target,2026-06-24,Win,2.0,5,Top 3 Intraday scanner pick
-2026-06-20,Intraday,3,Highest Priority,INDUSINDBK,BUY,94,950.9,938.49,975.72,2.0,918.95,-₹19.54 / -2.13%,+₹56.77 / +6.18%,Pending Trigger,,,,,5,Top 3 Intraday scanner pick
-2026-06-19,Swing,2,Highest Priority,ADANIENT,BUY,94,3058.0,2876.78,3420.46,2.0,3038.0,+₹161.22 / +5.31%,+₹382.46 / +12.59%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
-2026-06-19,Swing,3,Highest Priority,ADANIPORTS,BUY,94,1852.7,1773.08,2011.93,2.0,1796.0,+₹22.92 / +1.28%,+₹215.93 / +12.02%,Pending Trigger,,,,,6,Top 3 Swing scanner pick
-2026-06-19,Intraday,1,Highest Priority,BPCL,SELL,94,305.74,308.46,300.29,2.0,309.85,-₹1.39 / -0.45%,+₹9.56 / +3.09%,Stop Hit First,Stop,2026-06-22,Loss,-1,6,Top 3 Intraday scanner pick
-2026-06-19,Intraday,2,Highest Priority,DLF,SELL,94,622.5,628.94,609.62,2.0,621.35,+₹7.59 / +1.22%,+₹11.73 / +1.89%,Stop Hit First,Stop,2026-06-22,Loss,-1,6,Top 3 Intraday scanner pick
-2026-06-19,Intraday,3,Highest Priority,INDUSINDBK,BUY,94,950.9,938.49,975.72,2.0,918.95,-₹19.54 / -2.13%,+₹56.77 / +6.18%,Pending Trigger,,,,,6,Top 3 Intraday scanner pick
-2026-06-19,Swing,1,Highest Priority,MUTHOOTFIN,SELL,94,3073.64,3226.52,2767.88,2.0,3025.6,+₹200.92 / +6.64%,+₹257.72 / +8.52%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
-2026-06-19,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25952.99,26834.97,24189.03,2.0,25585.0,+₹1249.97 / +4.89%,+₹1395.97 / +5.46%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
-2026-06-19,Swing,2,Highest Priority,MPHASIS,BUY,94,2364.72,2225.29,2643.57,2.0,2263.4,+₹38.11 / +1.68%,+₹380.17 / +16.80%,Pending Trigger,,,,,6,Top 3 Swing scanner pick
-2026-06-19,Swing,3,Highest Priority,PAGEIND,BUY,94,40430.7,37421.96,46448.19,2.0,40950.0,+₹3528.04 / +8.62%,+₹5498.19 / +13.43%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
-2026-06-19,Swing,1,Highest Priority,AMBUJACEM,SELL,94,421.65,438.54,387.88,2.0,423.75,+₹14.79 / +3.49%,+₹35.87 / +8.46%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
-2026-06-19,Swing,2,Highest Priority,COLPAL,SELL,94,2023.94,2142.67,1786.48,2.0,1993.0,+₹149.67 / +7.51%,+₹206.52 / +10.36%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
-2026-06-19,Swing,3,Highest Priority,IRCTC,SELL,94,518.06,536.44,481.31,2.0,514.1,+₹22.34 / +4.35%,+₹32.79 / +6.38%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
-2026-06-18,Swing,3,Highest Priority,PAGEIND,BUY,94,40430.7,37421.96,46448.19,2.0,40950.0,+₹3528.04 / +8.62%,+₹5498.19 / +13.43%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
-2026-06-18,Swing,1,Highest Priority,MUTHOOTFIN,SELL,94,3129.93,3272.13,2845.52,2.0,3025.6,+₹246.53 / +8.15%,+₹180.08 / +5.95%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
-2026-06-18,Swing,2,Highest Priority,PERSISTENT,SELL,94,4886.21,5164.32,4329.99,2.0,4841.5,+₹322.82 / +6.67%,+₹511.51 / +10.57%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
-2026-06-18,Swing,3,Highest Priority,VBL,BUY,94,552.8,516.15,626.11,2.0,507.65,-₹8.50 / -1.67%,+₹118.46 / +23.33%,Pending Trigger,,,,,7,Top 3 Swing scanner pick
-2026-06-18,Swing,1,Highest Priority,AMBUJACEM,SELL,94,421.65,438.54,387.88,2.0,423.75,+₹14.79 / +3.49%,+₹35.87 / +8.46%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
-2026-06-18,Swing,2,Highest Priority,COLPAL,SELL,94,2023.94,2142.67,1786.48,2.0,1993.0,+₹149.67 / +7.51%,+₹206.52 / +10.36%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
-2026-06-18,Swing,3,Highest Priority,IRCTC,SELL,94,518.06,536.44,481.31,2.0,514.1,+₹22.34 / +4.35%,+₹32.79 / +6.38%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
-2026-06-18,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25778.34,26840.93,23653.16,2.0,25585.0,+₹1255.93 / +4.91%,+₹1931.84 / +7.55%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
-2026-06-18,Swing,2,Highest Priority,MPHASIS,BUY,94,2353.7,2225.07,2610.95,2.0,2263.4,+₹38.33 / +1.69%,+₹347.55 / +15.36%,Stop Hit First,Stop,2026-06-19,Loss,-1,7,Top 3 Swing scanner pick
-2026-06-18,Swing,3,Highest Priority,PFC,SELL,94,424.0,442.02,387.95,2.0,432.65,+₹9.37 / +2.17%,+₹44.70 / +10.33%,Stop Hit First,Stop,2026-06-22,Loss,-1,7,Top 3 Swing scanner pick
-2026-06-18,Intraday,1,Highest Priority,CANBK,BUY,94,135.67,134.96,137.09,2.0,129.26,-₹5.70 / -4.41%,+₹7.83 / +6.06%,Stop Hit First,Stop,2026-06-18,Loss,-1,7,Top 3 Intraday scanner pick
-2026-06-18,Intraday,2,Highest Priority,IRFC,BUY,94,100.82,98.83,104.8,2.0,91.73,-₹7.10 / -7.74%,+₹13.07 / +14.25%,Stop Hit First,Stop,2026-06-23,Loss,-1,7,Top 3 Intraday scanner pick
-2026-06-18,Intraday,3,Highest Priority,VEDL,BUY,94,307.31,304.12,313.69,2.0,273.55,-₹30.57 / -11.18%,+₹40.14 / +14.67%,Stop Hit First,Stop,2026-06-18,Loss,-1,7,Top 3 Intraday scanner pick
-2026-06-17,Swing,1,Highest Priority,ADANIPORTS,BUY,94,1836.67,1772.79,1964.41,2.0,1796.0,+₹23.21 / +1.29%,+₹168.41 / +9.38%,Active After Trigger,,,,,8,Top 3 Swing scanner pick
-2026-06-17,Swing,2,Highest Priority,AMBUJACEM,SELL,94,421.65,438.54,387.88,2.0,423.75,+₹14.79 / +3.49%,+₹35.87 / +8.46%,Active After Trigger,,,,,8,Top 3 Swing scanner pick
-2026-06-17,Swing,3,Highest Priority,COLPAL,SELL,94,2023.94,2142.67,1786.48,2.0,1993.0,+₹149.67 / +7.51%,+₹206.52 / +10.36%,Active After Trigger,,,,,8,Top 3 Swing scanner pick
-2026-06-17,Intraday,1,Highest Priority,CANBK,BUY,94,135.67,134.96,137.09,2.0,129.26,-₹5.70 / -4.41%,+₹7.83 / +6.06%,Stop Hit First,Stop,2026-06-18,Loss,-1,8,Top 3 Intraday scanner pick
-2026-06-17,Intraday,2,Highest Priority,IRFC,BUY,94,100.82,98.83,104.8,2.0,91.73,-₹7.10 / -7.74%,+₹13.07 / +14.25%,Stop Hit First,Stop,2026-06-23,Loss,-1,8,Top 3 Intraday scanner pick
-2026-06-17,Intraday,3,Highest Priority,VEDL,BUY,94,307.31,304.12,313.69,2.0,273.55,-₹30.57 / -11.18%,+₹40.14 / +14.67%,Stop Hit First,Stop,2026-06-18,Loss,-1,8,Top 3 Intraday scanner pick
-2026-06-17,Swing,1,Highest Priority,POLYCAB,BUY,94,10007.48,9325.0,11372.42,2.0,9531.0,+₹206.00 / +2.16%,+₹1841.42 / +19.32%,Active After Trigger,,,,,8,Top 3 Swing scanner pick
-2026-06-17,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25778.34,26840.93,23653.16,2.0,25585.0,+₹1255.93 / +4.91%,+₹1931.84 / +7.55%,Active After Trigger,,,,,8,Top 3 Swing scanner pick
-2026-06-17,Swing,2,Highest Priority,MPHASIS,BUY,94,2353.7,2225.07,2610.95,2.0,2263.4,+₹38.33 / +1.69%,+₹347.55 / +15.36%,Stop Hit First,Stop,2026-06-19,Loss,-1,8,Top 3 Swing scanner pick
-2026-06-17,Swing,3,Highest Priority,PFC,SELL,94,424.0,442.02,387.95,2.0,432.65,+₹9.37 / +2.17%,+₹44.70 / +10.33%,Stop Hit First,Stop,2026-06-22,Loss,-1,8,Top 3 Swing scanner pick
-2026-06-17,Swing,1,Highest Priority,BEL,SELL,94,405.19,417.96,379.65,2.0,407.2,+₹10.76 / +2.64%,+₹27.55 / +6.77%,Pending Trigger,,,,,8,Top 3 Swing scanner pick
-2026-06-17,Swing,2,Highest Priority,COLPAL,SELL,94,2047.9,2142.42,1858.85,2.0,1993.0,+₹149.42 / +7.50%,+₹134.15 / +6.73%,Active After Trigger,,,,,8,Top 3 Swing scanner pick
-2026-06-17,Swing,3,Highest Priority,IRCTC,SELL,94,515.97,536.56,474.77,2.0,514.1,+₹22.46 / +4.37%,+₹39.33 / +7.65%,Active After Trigger,,,,,8,Top 3 Swing scanner pick
-2026-06-17,Intraday,1,Highest Priority,SAIL,SELL,94,179.95,181.59,176.67,2.0,170.29,+₹11.30 / +6.64%,-₹6.38 / -3.75%,Ambiguous Entry Candle,Entry/exit same candle,2026-06-17,Ambiguous,,8,Top 3 Intraday scanner pick
-2026-06-16,Swing,2,Highest Priority,ADANIPORTS,BUY,94,1831.66,1769.32,1956.34,2.0,1796.0,+₹26.68 / +1.49%,+₹160.34 / +8.93%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
-2026-06-16,Swing,3,Highest Priority,MPHASIS,BUY,94,2353.7,2225.07,2610.95,2.0,2263.4,+₹38.33 / +1.69%,+₹347.55 / +15.36%,Stop Hit First,Stop,2026-06-19,Loss,-1,9,Top 3 Swing scanner pick
-2026-06-16,Intraday,1,Highest Priority,SAIL,SELL,94,179.95,181.59,176.67,2.0,170.29,+₹11.30 / +6.64%,-₹6.38 / -3.75%,Ambiguous Entry Candle,Entry/exit same candle,2026-06-16,Ambiguous,,9,Top 3 Intraday scanner pick
-2026-06-16,Swing,1,Highest Priority,MPHASIS,BUY,94,2353.7,2225.07,2610.95,2.0,2263.4,+₹38.33 / +1.69%,+₹347.55 / +15.36%,Stop Hit First,Stop,2026-06-19,Loss,-1,9,Top 3 Swing scanner pick
-2026-06-16,Swing,2,Highest Priority,POLYCAB,BUY,94,9690.34,9327.24,10416.55,2.0,9531.0,+₹203.76 / +2.14%,+₹885.55 / +9.29%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
-2026-06-16,Swing,3,Highest Priority,SBILIFE,SELL,94,1761.97,1818.55,1648.81,2.0,1744.9,+₹73.65 / +4.22%,+₹96.09 / +5.51%,Stop Hit First,Stop,2026-06-22,Loss,-1,9,Top 3 Swing scanner pick
-2026-06-16,Swing,1,Highest Priority,BEL,SELL,94,405.19,417.96,379.65,2.0,407.2,+₹10.76 / +2.64%,+₹27.55 / +6.77%,Pending Trigger,,,,,9,Top 3 Swing scanner pick
-2026-06-16,Swing,2,Highest Priority,COLPAL,SELL,94,2047.9,2142.42,1858.85,2.0,1993.0,+₹149.42 / +7.50%,+₹134.15 / +6.73%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
+2026-06-26,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25483.93,26643.56,23164.68,2.0,25595.0,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
+2026-06-26,Swing,2,Highest Priority,ADANIENT,BUY,94,3083.96,2876.16,3499.56,2.0,3069.7,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
+2026-06-26,Swing,3,Highest Priority,ADANIPORTS,BUY,94,1821.64,1767.19,1930.53,2.0,1813.3,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
+2026-06-26,Intraday,1,Highest Priority,HDFCAMC,SELL,94,2641.31,2689.96,2543.99,2.0,2653.0,,,Pending Trigger,,,,,0,Top 3 Intraday scanner pick
+2026-06-26,Intraday,2,Highest Priority,PAYTM,BUY,94,1129.96,1108.48,1172.9,2.0,1122.7,,,Pending Trigger,,,,,0,Top 3 Intraday scanner pick
+2026-06-25,Intraday,1,Highest Priority,HDFCAMC,SELL,94,2641.31,2689.96,2543.99,2.0,2653.0,+₹36.96 / +1.39%,+₹109.01 / +4.11%,Pending Trigger,,,,,1,Top 3 Intraday scanner pick
+2026-06-25,Swing,2,Highest Priority,APLAPOLLO,SELL,94,1784.92,1883.12,1588.53,2.0,1793.5,+₹89.62 / +5.00%,+₹204.97 / +11.43%,Pending Trigger,,,,,1,Top 3 Swing scanner pick
+2026-06-25,Swing,3,Highest Priority,CANBK,SELL,94,127.75,136.74,109.78,2.0,128.95,+₹7.79 / +6.04%,+₹19.17 / +14.87%,Pending Trigger,,,,,1,Top 3 Swing scanner pick
+2026-06-25,Intraday,1,Highest Priority,ASHOKLEY,BUY,94,161.62,159.74,165.4,2.0,160.68,+₹0.94 / +0.59%,+₹4.72 / +2.94%,Active After Trigger,,,,,1,Top 3 Intraday scanner pick
+2026-06-25,Intraday,2,Highest Priority,PAYTM,BUY,94,1128.95,1108.49,1169.88,2.0,1122.7,+₹14.21 / +1.27%,+₹47.18 / +4.20%,Pending Trigger,,,,,1,Top 3 Intraday scanner pick
+2026-06-25,Swing,1,Highest Priority,MUTHOOTFIN,SELL,94,3060.27,3239.61,2701.58,2.0,3025.6,+₹214.01 / +7.07%,+₹324.02 / +10.71%,Active After Trigger,,,,,1,Top 3 Swing scanner pick
+2026-06-25,Swing,2,Highest Priority,ADANIENT,BUY,94,3083.96,2876.16,3499.56,2.0,3038.0,+₹161.84 / +5.33%,+₹461.56 / +15.19%,Active After Trigger,,,,,1,Top 3 Swing scanner pick
+2026-06-25,Swing,3,Highest Priority,ADANIPORTS,BUY,94,1821.64,1767.19,1930.53,2.0,1796.0,+₹28.81 / +1.60%,+₹134.53 / +7.49%,Active After Trigger,,,,,1,Top 3 Swing scanner pick
+2026-06-25,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25284.33,26836.26,22180.48,2.0,25585.0,+₹1251.26 / +4.89%,+₹3404.52 / +13.31%,Pending Trigger,,,,,1,Top 3 Swing scanner pick
+2026-06-25,Swing,2,Highest Priority,AMBUJACEM,SELL,94,413.17,437.12,365.27,2.0,423.75,+₹13.37 / +3.16%,+₹58.48 / +13.80%,Pending Trigger,,,,,1,Top 3 Swing scanner pick
+2026-06-25,Swing,3,Highest Priority,LUPIN,BUY,94,2384.76,2237.34,2679.6,2.0,2343.5,+₹106.16 / +4.53%,+₹336.10 / +14.34%,Active After Trigger,,,,,1,Top 3 Swing scanner pick
+2026-06-25,Intraday,1,Highest Priority,BAJFINANCE,BUY,94,995.84,979.65,1028.2,2.0,980.4,+₹0.75 / +0.08%,+₹47.80 / +4.88%,Stop Hit First,Stop,2026-06-25,Loss,-1,1,Top 3 Intraday scanner pick
+2026-06-25,Intraday,2,Highest Priority,COLPAL,SELL,94,1956.08,1989.52,1889.2,2.0,1990.0,-₹0.48 / -0.02%,+₹100.80 / +5.07%,Pending Trigger,,,,,1,Top 3 Intraday scanner pick
+2026-06-25,Intraday,3,Highest Priority,HAL,SELL,94,4346.39,4426.83,4185.52,2.0,4361.0,+₹65.83 / +1.51%,+₹175.48 / +4.02%,Pending Trigger,,,,,1,Top 3 Intraday scanner pick
+2026-06-24,Swing,2,Highest Priority,ADANIENT,BUY,94,3083.96,2876.16,3499.56,2.0,3069.7,+₹193.54 / +6.30%,+₹429.86 / +14.00%,Pending Trigger,,,,,2,Top 3 Swing scanner pick
+2026-06-24,Swing,3,Highest Priority,NTPC,SELL,94,354.79,370.19,323.98,2.0,357.05,+₹13.14 / +3.68%,+₹33.07 / +9.26%,Pending Trigger,,,,,2,Top 3 Swing scanner pick
+2026-06-24,Intraday,1,Highest Priority,BAJFINANCE,BUY,94,995.84,979.65,1028.2,2.0,980.4,+₹0.75 / +0.08%,+₹47.80 / +4.88%,Stop Hit First,Stop,2026-06-25,Loss,-1,2,Top 3 Intraday scanner pick
+2026-06-24,Intraday,2,Highest Priority,COLPAL,SELL,94,1956.08,1989.52,1889.2,2.0,1990.0,-₹0.48 / -0.02%,+₹100.80 / +5.07%,Pending Trigger,,,,,2,Top 3 Intraday scanner pick
+2026-06-24,Intraday,3,Highest Priority,HAL,SELL,94,4346.39,4426.83,4185.52,2.0,4361.0,+₹65.83 / +1.51%,+₹175.48 / +4.02%,Ambiguous Entry Candle,Entry/exit same candle,2026-06-24,Ambiguous,,2,Top 3 Intraday scanner pick
+2026-06-24,Swing,1,Highest Priority,AMBUJACEM,SELL,92,414.32,437.18,368.59,2.0,426.85,+₹10.33 / +2.42%,+₹58.26 / +13.65%,Pending Trigger,,,,,2,Top 3 Swing scanner pick
+2026-06-24,Intraday,1,Highest Priority,ABB,SELL,94,7091.79,7207.3,6860.76,2.0,6994.0,+₹213.30 / +3.05%,+₹133.24 / +1.91%,Active After Trigger,,,,,2,Top 3 Intraday scanner pick
+2026-06-24,Intraday,2,Highest Priority,ADANIPORTS,SELL,94,1778.44,1801.09,1733.13,2.0,1795.0,+₹6.09 / +0.34%,+₹61.87 / +3.45%,Stop Hit First,Stop,2026-06-24,Loss,-1,2,Top 3 Intraday scanner pick
+2026-06-24,Intraday,3,Highest Priority,SAIL,SELL,94,166.87,170.48,159.63,2.0,170.29,+₹0.19 / +0.11%,+₹10.66 / +6.26%,Stop Hit First,Stop,2026-06-24,Loss,-1,2,Top 3 Intraday scanner pick
+2026-06-24,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25962.97,26831.67,24225.57,2.0,25595.0,+₹1236.67 / +4.83%,+₹1369.43 / +5.35%,Active After Trigger,,,,,2,Top 3 Swing scanner pick
+2026-06-24,Swing,2,Highest Priority,CUMMINSIND,BUY,94,5807.09,5523.9,6373.47,2.0,5555.5,+₹31.60 / +0.57%,+₹817.97 / +14.72%,Pending Trigger,,,,,2,Top 3 Swing scanner pick
+2026-06-24,Swing,3,Highest Priority,IRCTC,SELL,92,518.66,533.47,489.05,2.0,515.25,+₹18.22 / +3.54%,+₹26.20 / +5.08%,Active After Trigger,,,,,2,Top 3 Swing scanner pick
+2026-06-24,Intraday,1,Highest Priority,ADANIPORTS,SELL,94,1775.94,1796.74,1734.35,2.0,1795.0,+₹1.74 / +0.10%,+₹60.65 / +3.38%,Stop Hit First,Stop,2026-06-24,Loss,-1,2,Top 3 Intraday scanner pick
+2026-06-24,Intraday,2,Highest Priority,BHEL,SELL,94,398.5,405.17,385.16,2.0,402.0,+₹3.17 / +0.79%,+₹16.84 / +4.19%,Pending Trigger,,,,,2,Top 3 Intraday scanner pick
+2026-06-24,Intraday,3,Highest Priority,JINDALSTEL,SELL,94,1077.84,1090.49,1052.55,2.0,1059.5,+₹30.99 / +2.92%,+₹6.95 / +0.66%,Stop Hit First,Stop,2026-06-24,Loss,-1,2,Top 3 Intraday scanner pick
+2026-06-23,Swing,2,Highest Priority,AMBUJACEM,SELL,94,413.17,437.12,365.27,2.0,426.85,+₹10.27 / +2.41%,+₹61.58 / +14.43%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
+2026-06-23,Swing,3,Highest Priority,LUPIN,BUY,94,2384.76,2237.34,2679.6,2.0,2367.6,+₹130.26 / +5.50%,+₹312.00 / +13.18%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
+2026-06-23,Intraday,1,Highest Priority,ADANIPORTS,SELL,94,1775.94,1796.74,1734.35,2.0,1795.0,+₹1.74 / +0.10%,+₹60.65 / +3.38%,Stop Hit First,Stop,2026-06-24,Loss,-1,3,Top 3 Intraday scanner pick
+2026-06-23,Intraday,2,Highest Priority,BHEL,SELL,94,398.5,405.17,385.16,2.0,402.0,+₹3.17 / +0.79%,+₹16.84 / +4.19%,Stop Hit First,Stop,2026-06-24,Loss,-1,3,Top 3 Intraday scanner pick
+2026-06-23,Intraday,3,Highest Priority,JINDALSTEL,SELL,94,1078.14,1090.48,1053.45,2.0,1059.5,+₹30.98 / +2.92%,+₹6.05 / +0.57%,Stop Hit First,Stop,2026-06-24,Loss,-1,3,Top 3 Intraday scanner pick
+2026-06-23,Swing,2,Highest Priority,CUMMINSIND,BUY,94,5807.09,5523.9,6373.47,2.0,5555.5,+₹31.60 / +0.57%,+₹817.97 / +14.72%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
+2026-06-23,Swing,3,Highest Priority,IRCTC,SELL,92,518.66,533.47,489.05,2.0,515.25,+₹18.22 / +3.54%,+₹26.20 / +5.08%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
+2026-06-23,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25972.95,26832.53,24253.79,2.0,25595.0,+₹1237.53 / +4.84%,+₹1341.21 / +5.24%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
+2026-06-23,Swing,2,Highest Priority,ADANIENT,BUY,94,3058.0,2876.78,3420.46,2.0,3069.7,+₹192.92 / +6.28%,+₹350.76 / +11.43%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
+2026-06-23,Swing,3,Highest Priority,ADANIPORTS,BUY,94,1852.7,1773.08,2011.93,2.0,1813.3,+₹40.22 / +2.22%,+₹198.63 / +10.95%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
+2026-06-23,Intraday,1,Highest Priority,TORNTPHARM,BUY,94,4485.75,4438.51,4580.25,2.0,4516.2,+₹77.69 / +1.72%,+₹64.05 / +1.42%,Active After Trigger,,,,,3,Top 3 Intraday scanner pick
+2026-06-23,Intraday,2,Highest Priority,VBL,SELL,94,510.13,515.19,500.0,2.0,507.15,+₹8.04 / +1.59%,+₹7.15 / +1.41%,Active After Trigger,,,,,3,Top 3 Intraday scanner pick
+2026-06-22,Swing,2,Highest Priority,CUMMINSIND,BUY,94,5807.09,5523.9,6373.47,2.0,5555.5,+₹31.60 / +0.57%,+₹817.97 / +14.72%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
+2026-06-22,Swing,3,Highest Priority,IRCTC,SELL,92,518.66,533.47,489.05,2.0,515.25,+₹18.22 / +3.54%,+₹26.20 / +5.08%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
+2026-06-22,Intraday,1,Highest Priority,TORNTPHARM,BUY,94,4485.75,4438.51,4580.25,2.0,4516.2,+₹77.69 / +1.72%,+₹64.05 / +1.42%,Active After Trigger,,,,,4,Top 3 Intraday scanner pick
+2026-06-22,Intraday,2,Highest Priority,VBL,SELL,94,510.13,515.19,500.0,2.0,507.15,+₹8.04 / +1.59%,+₹7.15 / +1.41%,Stop Hit First,Stop,2026-06-23,Loss,-1,4,Top 3 Intraday scanner pick
+2026-06-22,Swing,1,Highest Priority,CUMMINSIND,BUY,94,5807.09,5526.75,6367.77,2.0,5555.5,+₹28.75 / +0.52%,+₹812.27 / +14.62%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
+2026-06-22,Swing,2,Highest Priority,PAGEIND,BUY,94,40520.88,37447.21,46668.21,2.0,40885.0,+₹3437.79 / +8.41%,+₹5783.21 / +14.15%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
+2026-06-22,Swing,3,Highest Priority,PFC,BUY,94,445.69,411.36,514.35,2.0,437.1,+₹25.74 / +5.89%,+₹77.25 / +17.67%,Pending Trigger,,,,,4,Top 3 Swing scanner pick
+2026-06-22,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25972.95,26832.53,24253.79,2.0,25595.0,+₹1237.53 / +4.84%,+₹1341.21 / +5.24%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
+2026-06-22,Swing,2,Highest Priority,ADANIENT,BUY,94,3058.0,2876.78,3420.46,2.0,3069.7,+₹192.92 / +6.28%,+₹350.76 / +11.43%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
+2026-06-22,Swing,3,Highest Priority,ADANIPORTS,BUY,94,1852.7,1773.08,2011.93,2.0,1813.3,+₹40.22 / +2.22%,+₹198.63 / +10.95%,Pending Trigger,,,,,4,Top 3 Swing scanner pick
+2026-06-22,Intraday,1,Highest Priority,BPCL,SELL,94,305.74,308.46,300.29,2.0,309.85,-₹1.39 / -0.45%,+₹9.56 / +3.09%,Pending Trigger,,,,,4,Top 3 Intraday scanner pick
+2026-06-22,Intraday,2,Highest Priority,DLF,SELL,94,622.5,628.94,609.62,2.0,621.35,+₹7.59 / +1.22%,+₹11.73 / +1.89%,Target Hit First,Target,2026-06-24,Win,2.0,4,Top 3 Intraday scanner pick
+2026-06-22,Intraday,3,Highest Priority,INDUSINDBK,BUY,94,950.9,938.49,975.72,2.0,918.95,-₹19.54 / -2.13%,+₹56.77 / +6.18%,Pending Trigger,,,,,4,Top 3 Intraday scanner pick
+2026-06-21,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25972.95,26832.53,24253.79,2.0,25595.0,+₹1237.53 / +4.84%,+₹1341.21 / +5.24%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
+2026-06-21,Swing,2,Highest Priority,ADANIENT,BUY,94,3058.0,2876.78,3420.46,2.0,3069.7,+₹192.92 / +6.28%,+₹350.76 / +11.43%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
+2026-06-21,Swing,3,Highest Priority,ADANIPORTS,BUY,94,1852.7,1773.08,2011.93,2.0,1813.3,+₹40.22 / +2.22%,+₹198.63 / +10.95%,Pending Trigger,,,,,5,Top 3 Swing scanner pick
+2026-06-21,Intraday,1,Highest Priority,BPCL,SELL,94,305.74,308.46,300.29,2.0,309.85,-₹1.39 / -0.45%,+₹9.56 / +3.09%,Pending Trigger,,,,,5,Top 3 Intraday scanner pick
+2026-06-21,Intraday,2,Highest Priority,DLF,SELL,94,622.5,628.94,609.62,2.0,621.35,+₹7.59 / +1.22%,+₹11.73 / +1.89%,Target Hit First,Target,2026-06-24,Win,2.0,5,Top 3 Intraday scanner pick
+2026-06-21,Intraday,3,Highest Priority,INDUSINDBK,BUY,94,950.9,938.49,975.72,2.0,918.95,-₹19.54 / -2.13%,+₹56.77 / +6.18%,Pending Trigger,,,,,5,Top 3 Intraday scanner pick
+2026-06-20,Swing,2,Highest Priority,ADANIENT,BUY,94,3058.0,2876.78,3420.46,2.0,3069.7,+₹192.92 / +6.28%,+₹350.76 / +11.43%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
+2026-06-20,Swing,3,Highest Priority,ADANIPORTS,BUY,94,1852.7,1773.08,2011.93,2.0,1813.3,+₹40.22 / +2.22%,+₹198.63 / +10.95%,Pending Trigger,,,,,6,Top 3 Swing scanner pick
+2026-06-20,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25952.99,26834.97,24189.03,2.0,25595.0,+₹1239.97 / +4.84%,+₹1405.97 / +5.49%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
+2026-06-20,Swing,2,Highest Priority,MPHASIS,BUY,94,2364.72,2225.29,2643.57,2.0,2261.1,+₹35.81 / +1.58%,+₹382.47 / +16.92%,Pending Trigger,,,,,6,Top 3 Swing scanner pick
+2026-06-20,Swing,3,Highest Priority,PAGEIND,BUY,94,40430.7,37421.96,46448.19,2.0,40885.0,+₹3463.04 / +8.47%,+₹5563.19 / +13.61%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
+2026-06-20,Intraday,1,Highest Priority,BPCL,SELL,94,305.74,308.46,300.29,2.0,309.85,-₹1.39 / -0.45%,+₹9.56 / +3.09%,Pending Trigger,,,,,6,Top 3 Intraday scanner pick
+2026-06-20,Intraday,2,Highest Priority,DLF,SELL,94,622.5,628.94,609.62,2.0,621.35,+₹7.59 / +1.22%,+₹11.73 / +1.89%,Target Hit First,Target,2026-06-24,Win,2.0,6,Top 3 Intraday scanner pick
+2026-06-20,Intraday,3,Highest Priority,INDUSINDBK,BUY,94,950.9,938.49,975.72,2.0,918.95,-₹19.54 / -2.13%,+₹56.77 / +6.18%,Pending Trigger,,,,,6,Top 3 Intraday scanner pick
+2026-06-19,Swing,2,Highest Priority,ADANIENT,BUY,94,3058.0,2876.78,3420.46,2.0,3069.7,+₹192.92 / +6.28%,+₹350.76 / +11.43%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
+2026-06-19,Swing,3,Highest Priority,ADANIPORTS,BUY,94,1852.7,1773.08,2011.93,2.0,1813.3,+₹40.22 / +2.22%,+₹198.63 / +10.95%,Pending Trigger,,,,,7,Top 3 Swing scanner pick
+2026-06-19,Intraday,1,Highest Priority,BPCL,SELL,94,305.74,308.46,300.29,2.0,309.85,-₹1.39 / -0.45%,+₹9.56 / +3.09%,Stop Hit First,Stop,2026-06-22,Loss,-1,7,Top 3 Intraday scanner pick
+2026-06-19,Intraday,2,Highest Priority,DLF,SELL,94,622.5,628.94,609.62,2.0,621.35,+₹7.59 / +1.22%,+₹11.73 / +1.89%,Stop Hit First,Stop,2026-06-22,Loss,-1,7,Top 3 Intraday scanner pick
+2026-06-19,Intraday,3,Highest Priority,INDUSINDBK,BUY,94,950.9,938.49,975.72,2.0,918.95,-₹19.54 / -2.13%,+₹56.77 / +6.18%,Pending Trigger,,,,,7,Top 3 Intraday scanner pick
+2026-06-19,Swing,1,Highest Priority,MUTHOOTFIN,SELL,94,3073.64,3226.52,2767.88,2.0,3129.9,+₹96.62 / +3.09%,+₹362.02 / +11.57%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
+2026-06-19,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25952.99,26834.97,24189.03,2.0,25595.0,+₹1239.97 / +4.84%,+₹1405.97 / +5.49%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
+2026-06-19,Swing,2,Highest Priority,MPHASIS,BUY,94,2364.72,2225.29,2643.57,2.0,2261.1,+₹35.81 / +1.58%,+₹382.47 / +16.92%,Pending Trigger,,,,,7,Top 3 Swing scanner pick
+2026-06-19,Swing,3,Highest Priority,PAGEIND,BUY,94,40430.7,37421.96,46448.19,2.0,40885.0,+₹3463.04 / +8.47%,+₹5563.19 / +13.61%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
+2026-06-19,Swing,1,Highest Priority,AMBUJACEM,SELL,94,421.65,438.54,387.88,2.0,426.85,+₹11.69 / +2.74%,+₹38.97 / +9.13%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
+2026-06-19,Swing,2,Highest Priority,COLPAL,SELL,94,2023.94,2142.67,1786.48,2.0,1965.3,+₹177.37 / +9.03%,+₹178.82 / +9.10%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
+2026-06-19,Swing,3,Highest Priority,IRCTC,SELL,94,518.06,536.44,481.31,2.0,515.25,+₹21.19 / +4.11%,+₹33.94 / +6.59%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
+2026-06-18,Swing,3,Highest Priority,PAGEIND,BUY,94,40430.7,37421.96,46448.19,2.0,40885.0,+₹3463.04 / +8.47%,+₹5563.19 / +13.61%,Active After Trigger,,,,,8,Top 3 Swing scanner pick
+2026-06-18,Swing,1,Highest Priority,MUTHOOTFIN,SELL,94,3129.93,3272.13,2845.52,2.0,3129.9,+₹142.23 / +4.54%,+₹284.38 / +9.09%,Active After Trigger,,,,,8,Top 3 Swing scanner pick
+2026-06-18,Swing,2,Highest Priority,PERSISTENT,SELL,94,4886.21,5164.32,4329.99,2.0,4928.5,+₹235.82 / +4.78%,+₹598.51 / +12.14%,Active After Trigger,,,,,8,Top 3 Swing scanner pick
+2026-06-18,Swing,3,Highest Priority,VBL,BUY,94,552.8,516.15,626.11,2.0,506.7,-₹9.45 / -1.87%,+₹119.41 / +23.57%,Pending Trigger,,,,,8,Top 3 Swing scanner pick
+2026-06-18,Swing,1,Highest Priority,AMBUJACEM,SELL,94,421.65,438.54,387.88,2.0,426.85,+₹11.69 / +2.74%,+₹38.97 / +9.13%,Active After Trigger,,,,,8,Top 3 Swing scanner pick
+2026-06-18,Swing,2,Highest Priority,COLPAL,SELL,94,2023.94,2142.67,1786.48,2.0,1965.3,+₹177.37 / +9.03%,+₹178.82 / +9.10%,Active After Trigger,,,,,8,Top 3 Swing scanner pick
+2026-06-18,Swing,3,Highest Priority,IRCTC,SELL,94,518.06,536.44,481.31,2.0,515.25,+₹21.19 / +4.11%,+₹33.94 / +6.59%,Active After Trigger,,,,,8,Top 3 Swing scanner pick
+2026-06-18,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25778.34,26840.93,23653.16,2.0,25595.0,+₹1245.93 / +4.87%,+₹1941.84 / +7.59%,Active After Trigger,,,,,8,Top 3 Swing scanner pick
+2026-06-18,Swing,2,Highest Priority,MPHASIS,BUY,94,2353.7,2225.07,2610.95,2.0,2261.1,+₹36.03 / +1.59%,+₹349.85 / +15.47%,Stop Hit First,Stop,2026-06-19,Loss,-1,8,Top 3 Swing scanner pick
+2026-06-18,Swing,3,Highest Priority,PFC,SELL,94,424.0,442.02,387.95,2.0,437.1,+₹4.92 / +1.13%,+₹49.15 / +11.24%,Stop Hit First,Stop,2026-06-22,Loss,-1,8,Top 3 Swing scanner pick
+2026-06-18,Intraday,1,Highest Priority,CANBK,BUY,94,135.67,134.96,137.09,2.0,129.26,-₹5.70 / -4.41%,+₹7.83 / +6.06%,Stop Hit First,Stop,2026-06-18,Loss,-1,8,Top 3 Intraday scanner pick
+2026-06-18,Intraday,2,Highest Priority,IRFC,BUY,94,100.82,98.83,104.8,2.0,91.73,-₹7.10 / -7.74%,+₹13.07 / +14.25%,Stop Hit First,Stop,2026-06-23,Loss,-1,8,Top 3 Intraday scanner pick
+2026-06-18,Intraday,3,Highest Priority,VEDL,BUY,94,307.31,304.12,313.69,2.0,273.55,-₹30.57 / -11.18%,+₹40.14 / +14.67%,Stop Hit First,Stop,2026-06-18,Loss,-1,8,Top 3 Intraday scanner pick
+2026-06-17,Swing,1,Highest Priority,ADANIPORTS,BUY,94,1836.67,1772.79,1964.41,2.0,1813.3,+₹40.51 / +2.23%,+₹151.11 / +8.33%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
+2026-06-17,Swing,2,Highest Priority,AMBUJACEM,SELL,94,421.65,438.54,387.88,2.0,426.85,+₹11.69 / +2.74%,+₹38.97 / +9.13%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
+2026-06-17,Swing,3,Highest Priority,COLPAL,SELL,94,2023.94,2142.67,1786.48,2.0,1965.3,+₹177.37 / +9.03%,+₹178.82 / +9.10%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
+2026-06-17,Intraday,1,Highest Priority,CANBK,BUY,94,135.67,134.96,137.09,2.0,129.26,-₹5.70 / -4.41%,+₹7.83 / +6.06%,Stop Hit First,Stop,2026-06-18,Loss,-1,9,Top 3 Intraday scanner pick
+2026-06-17,Intraday,2,Highest Priority,IRFC,BUY,94,100.82,98.83,104.8,2.0,91.73,-₹7.10 / -7.74%,+₹13.07 / +14.25%,Stop Hit First,Stop,2026-06-23,Loss,-1,9,Top 3 Intraday scanner pick
+2026-06-17,Intraday,3,Highest Priority,VEDL,BUY,94,307.31,304.12,313.69,2.0,273.55,-₹30.57 / -11.18%,+₹40.14 / +14.67%,Stop Hit First,Stop,2026-06-18,Loss,-1,9,Top 3 Intraday scanner pick
+2026-06-17,Swing,1,Highest Priority,POLYCAB,BUY,94,10007.48,9325.0,11372.42,2.0,9692.5,+₹367.50 / +3.79%,+₹1679.92 / +17.33%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
+2026-06-17,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25778.34,26840.93,23653.16,2.0,25595.0,+₹1245.93 / +4.87%,+₹1941.84 / +7.59%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
+2026-06-17,Swing,2,Highest Priority,MPHASIS,BUY,94,2353.7,2225.07,2610.95,2.0,2261.1,+₹36.03 / +1.59%,+₹349.85 / +15.47%,Stop Hit First,Stop,2026-06-19,Loss,-1,9,Top 3 Swing scanner pick
+2026-06-17,Swing,3,Highest Priority,PFC,SELL,94,424.0,442.02,387.95,2.0,437.1,+₹4.92 / +1.13%,+₹49.15 / +11.24%,Stop Hit First,Stop,2026-06-22,Loss,-1,9,Top 3 Swing scanner pick
+2026-06-17,Swing,1,Highest Priority,BEL,SELL,94,405.19,417.96,379.65,2.0,413.55,+₹4.41 / +1.07%,+₹33.90 / +8.20%,Pending Trigger,,,,,9,Top 3 Swing scanner pick
+2026-06-17,Swing,2,Highest Priority,COLPAL,SELL,94,2047.9,2142.42,1858.85,2.0,1965.3,+₹177.12 / +9.01%,+₹106.45 / +5.42%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
+2026-06-17,Swing,3,Highest Priority,IRCTC,SELL,94,515.97,536.56,474.77,2.0,515.25,+₹21.31 / +4.14%,+₹40.48 / +7.86%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
+2026-06-17,Intraday,1,Highest Priority,SAIL,SELL,94,179.95,181.59,176.67,2.0,170.29,+₹11.30 / +6.64%,-₹6.38 / -3.75%,Ambiguous Entry Candle,Entry/exit same candle,2026-06-17,Ambiguous,,9,Top 3 Intraday scanner pick
+2026-06-16,Swing,2,Highest Priority,ADANIPORTS,BUY,94,1831.66,1769.32,1956.34,2.0,1813.3,+₹43.98 / +2.43%,+₹143.04 / +7.89%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
+2026-06-16,Swing,3,Highest Priority,MPHASIS,BUY,94,2353.7,2225.07,2610.95,2.0,2261.1,+₹36.03 / +1.59%,+₹349.85 / +15.47%,Stop Hit First,Stop,2026-06-19,Loss,-1,10,Top 3 Swing scanner pick
+2026-06-16,Intraday,1,Highest Priority,SAIL,SELL,94,179.95,181.59,176.67,2.0,170.29,+₹11.30 / +6.64%,-₹6.38 / -3.75%,Ambiguous Entry Candle,Entry/exit same candle,2026-06-16,Ambiguous,,10,Top 3 Intraday scanner pick
+2026-06-16,Swing,1,Highest Priority,MPHASIS,BUY,94,2353.7,2225.07,2610.95,2.0,2261.1,+₹36.03 / +1.59%,+₹349.85 / +15.47%,Stop Hit First,Stop,2026-06-19,Loss,-1,10,Top 3 Swing scanner pick
+2026-06-16,Swing,2,Highest Priority,POLYCAB,BUY,94,9690.34,9327.24,10416.55,2.0,9692.5,+₹365.26 / +3.77%,+₹724.05 / +7.47%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
+2026-06-16,Swing,3,Highest Priority,SBILIFE,SELL,94,1761.97,1818.55,1648.81,2.0,1767.7,+₹50.85 / +2.88%,+₹118.89 / +6.73%,Stop Hit First,Stop,2026-06-22,Loss,-1,10,Top 3 Swing scanner pick
+2026-06-16,Swing,1,Highest Priority,BEL,SELL,94,405.19,417.96,379.65,2.0,413.55,+₹4.41 / +1.07%,+₹33.90 / +8.20%,Pending Trigger,,,,,10,Top 3 Swing scanner pick
+2026-06-16,Swing,2,Highest Priority,COLPAL,SELL,94,2047.9,2142.42,1858.85,2.0,1965.3,+₹177.12 / +9.01%,+₹106.45 / +5.42%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
 2026-06-16,Swing,3,Highest Priority,IRCTC,SELL,94,515.97,536.56,474.77,2.0,514.1,+₹22.46 / +4.37%,+₹39.33 / +7.65%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
 2026-06-16,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25908.08,27244.81,23234.61,2.0,25585.0,+₹1659.81 / +6.49%,+₹2350.39 / +9.19%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
 2026-06-16,Swing,2,Highest Priority,ADANIENT,BUY,94,2977.84,2843.71,3246.11,2.0,3038.0,+₹194.29 / +6.40%,+₹208.11 / +6.85%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
 2026-06-16,Swing,3,Highest Priority,ADANIPORTS,BUY,94,1821.64,1740.26,1984.39,2.0,1796.0,+₹55.74 / +3.10%,+₹188.39 / +10.49%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
-2026-06-16,Intraday,1,Highest Priority,CUMMINSIND,BUY,94,5774.02,5660.49,6001.1,2.0,5642.0,-₹18.49 / -0.33%,+₹359.10 / +6.36%,Stop Hit First,Stop,2026-06-24,Loss,-1,9,Top 3 Intraday scanner pick
+2026-06-16,Intraday,1,Highest Priority,CUMMINSIND,BUY,94,5774.02,5660.49,6001.1,2.0,5642.0,-₹18.49 / -0.33%,+₹359.10 / +6.36%,Stop Hit First,Stop,2026-06-24,Loss,-1.0,9,Top 3 Intraday scanner pick
 2026-06-16,Intraday,2,Highest Priority,HAL,BUY,94,4303.69,4215.74,4479.6,2.0,4367.2,+₹151.46 / +3.47%,+₹112.40 / +2.57%,Target Hit First,Target,2026-06-17,Win,2.0,9,Top 3 Intraday scanner pick
 2026-06-15,Swing,1,Highest Priority,BEL,SELL,94,405.19,417.96,379.65,2.0,411.45,+₹6.51 / +1.58%,+₹31.80 / +7.73%,Pending Trigger,,,,,10,Top 3 Swing scanner pick
 2026-06-15,Swing,2,Highest Priority,COLPAL,SELL,94,2047.9,2142.42,1858.85,2.0,1993.0,+₹149.42 / +7.50%,+₹134.15 / +6.73%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
