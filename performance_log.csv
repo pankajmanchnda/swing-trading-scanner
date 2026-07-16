@@ -113,7 +113,7 @@ Date,Mode,Rank,Priority,Stock,Signal,Conviction,Entry,Stop,Target,RR,Current Pri
 2026-07-08,Swing,3,Highest Priority,HINDUNILVR,BUY,94,2225.84,2110.24,2457.05,2.0,2098.4,-₹11.84 / -0.56%,+₹358.65 / +17.09%,Pending Trigger,,,,,8,Top 3 Swing scanner pick
 2026-07-08,Intraday,1,Highest Priority,BAJFINANCE,BUY,94,1044.59,1030.39,1072.98,2.0,1037.6,+₹7.21 / +0.69%,+₹35.38 / +3.41%,Pending Trigger,,,,,8,Top 3 Intraday scanner pick
 2026-07-08,Intraday,2,Highest Priority,HDFCAMC,BUY,94,2798.09,2754.63,2884.99,2.0,2601.0,-₹153.63 / -5.91%,+₹283.99 / +10.92%,Pending Trigger,,,,,8,Top 3 Intraday scanner pick
-2026-07-08,Intraday,3,Highest Priority,HINDUNILVR,BUY,94,2216.42,2200.61,2248.06,2.0,2102.0,-₹98.61 / -4.69%,+₹146.06 / +6.95%,Pending Trigger,,,,,8,Top 3 Intraday scanner pick
+2026-07-08,Intraday,3,Highest Priority,HINDUNILVR,BUY,94,2216.42,2200.61,2248.06,2.0,2098.4,-₹102.21 / -4.87%,+₹149.66 / +7.13%,Pending Trigger,,,,,8,Top 3 Intraday scanner pick
 2026-07-07,Swing,1,Highest Priority,BPCL,BUY,94,316.48,298.83,351.79,2.0,312.0,+₹13.17 / +4.22%,+₹39.79 / +12.75%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
 2026-07-07,Swing,2,Highest Priority,NESTLEIND,BUY,94,1485.87,1377.18,1703.23,2.0,1423.5,+₹46.32 / +3.25%,+₹279.73 / +19.65%,Pending Trigger,,,,,9,Top 3 Swing scanner pick
 2026-07-07,Swing,3,Highest Priority,SBIN,BUY,94,1051.7,1018.37,1118.36,2.0,1031.2,+₹12.83 / +1.24%,+₹87.16 / +8.45%,Pending Trigger,,,,,9,Top 3 Swing scanner pick
