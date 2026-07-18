@@ -1,4 +1,6 @@
 Date,Mode,Rank,Priority,Stock,Signal,Conviction,Entry,Stop,Target,RR,Current Price,Stop Away,Target Away,Status,First Hit,Hit Date,Result,R,Days,Notes
+2026-07-18,Swing,2,Highest Priority,ICICIBANK,BUY,94,1458.01,1372.8,1628.44,2.0,1444.3,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
+2026-07-18,Swing,3,Highest Priority,LUPIN,BUY,94,2494.58,2421.2,2641.34,2.0,2443.2,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
 2026-07-18,Swing,1,Highest Priority,DLF,BUY,94,678.35,627.93,779.21,2.0,667.8,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
 2026-07-18,Swing,2,Highest Priority,HAL,BUY,94,4518.42,4295.42,4964.41,2.0,4500.7,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
 2026-07-18,Swing,3,Highest Priority,ICICIBANK,BUY,94,1458.01,1372.8,1628.44,2.0,1444.3,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
