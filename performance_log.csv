@@ -1,4 +1,5 @@
 Date,Mode,Rank,Priority,Stock,Signal,Conviction,Entry,Stop,Target,RR,Current Price,Stop Away,Target Away,Status,First Hit,Hit Date,Result,R,Days,Notes
+2026-08-13,Swing,2,Highest Priority,BANKBARODA,SELL,94,243.11,251.85,225.64,2.0,246.2,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
 2026-08-13,Swing,3,Highest Priority,BANKBARODA,SELL,94,243.11,251.85,225.64,2.0,246.2,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
 2026-08-13,Swing,1,Highest Priority,ABCAPITAL,BUY,94,410.72,386.54,459.07,2.0,407.15,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
 2026-08-13,Swing,2,Highest Priority,ASIANPAINT,BUY,94,2753.1,2658.76,2941.77,2.0,2735.5,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
