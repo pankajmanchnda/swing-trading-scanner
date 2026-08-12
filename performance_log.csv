@@ -1,4 +1,6 @@
 Date,Mode,Rank,Priority,Stock,Signal,Conviction,Entry,Stop,Target,RR,Current Price,Stop Away,Target Away,Status,First Hit,Hit Date,Result,R,Days,Notes
+2026-08-12,Swing,1,Highest Priority,BRITANNIA,BUY,94,5656.79,5349.03,6272.32,2.0,5645.5,+₹296.47 / +5.25%,+₹626.82 / +11.10%,Pending Trigger,,,,,0,Top 3 Swing scanner pick
+2026-08-12,Swing,3,Highest Priority,HDFCAMC,SELL,94,2477.34,2650.74,2130.53,2.0,2490.0,+₹160.74 / +6.46%,+₹359.47 / +14.44%,Pending Trigger,,,,,0,Top 3 Swing scanner pick
 2026-08-12,Swing,3,Highest Priority,CUMMINSIND,SELL,94,5319.34,5611.5,4735.03,2.0,5365.0,+₹246.50 / +4.59%,+₹629.97 / +11.74%,Pending Trigger,,,,,0,Top 3 Swing scanner pick
 2026-08-12,Swing,1,Highest Priority,BHEL,BUY,94,419.64,398.47,461.98,2.0,420.0,+₹21.53 / +5.13%,+₹41.98 / +10.00%,Active After Trigger,,,,,0,Top 3 Swing scanner pick
 2026-08-12,Swing,2,Highest Priority,CUMMINSIND,SELL,94,5319.34,5611.5,4735.03,2.0,5365.0,+₹246.50 / +4.59%,+₹629.97 / +11.74%,Pending Trigger,,,,,0,Top 3 Swing scanner pick
