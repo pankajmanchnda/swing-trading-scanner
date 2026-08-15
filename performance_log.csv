@@ -48,7 +48,7 @@ Date,Mode,Rank,Priority,Stock,Signal,Conviction,Entry,Stop,Target,RR,Current Pri
 2026-08-12,Swing,1,Highest Priority,BHEL,BUY,94,419.64,398.47,461.98,2.0,421.7,+₹23.23 / +5.51%,+₹40.28 / +9.55%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
 2026-08-12,Swing,2,Highest Priority,CUMMINSIND,SELL,94,5319.34,5611.5,4735.03,2.0,5400.0,+₹211.50 / +3.92%,+₹664.97 / +12.31%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
 2026-08-12,Swing,3,Highest Priority,NTPC,SELL,94,334.68,351.62,300.79,2.0,340.0,+₹11.62 / +3.42%,+₹39.21 / +11.53%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
-2026-08-12,Swing,1,Highest Priority,TATASTEEL,SELL,94,183.23,194.13,161.44,2.0,184.85,+₹9.28 / +5.02%,+₹23.41 / +12.66%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
+2026-08-12,Swing,1,Highest Priority,TATASTEEL,SELL,94,183.23,194.13,161.44,2.0,183.5,+₹10.63 / +5.79%,+₹22.06 / +12.02%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
 2026-08-12,Swing,2,Highest Priority,TECHM,BUY,92,1660.31,1602.43,1776.09,2.0,1632.8,+₹30.37 / +1.86%,+₹143.29 / +8.78%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
 2026-08-12,Intraday,1,Highest Priority,BHEL,BUY,94,414.33,403.11,436.76,2.0,421.7,+₹18.59 / +4.41%,+₹15.06 / +3.57%,Active After Trigger,,,,,3,Top 3 Intraday scanner pick
 2026-08-12,Swing,2,Highest Priority,BHARTIARTL,SELL,94,1897.5,2034.51,1623.48,2.0,1992.1,+₹42.41 / +2.13%,+₹368.62 / +18.50%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
