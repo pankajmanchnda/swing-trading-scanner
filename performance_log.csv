@@ -102,10 +102,10 @@ Date,Mode,Rank,Priority,Stock,Signal,Conviction,Entry,Stop,Target,RR,Current Pri
 2026-08-11,Swing,3,Highest Priority,TRENT,BUY,94,3053.09,2899.79,3359.7,2.0,2942.1,+₹42.31 / +1.44%,+₹417.60 / +14.19%,Pending Trigger,,,,,7,Top 3 Swing scanner pick
 2026-08-11,Swing,1,Highest Priority,BPCL,BUY,94,324.2,311.98,348.62,2.0,310.3,-₹1.68 / -0.54%,+₹38.32 / +12.35%,Pending Trigger,,,,,7,Top 3 Swing scanner pick
 2026-08-11,Swing,2,Highest Priority,RECLTD,BUY,94,369.44,356.02,396.26,2.0,338.5,-₹17.52 / -5.18%,+₹57.76 / +17.06%,Pending Trigger,,,,,7,Top 3 Swing scanner pick
-2026-08-11,Intraday,1,Highest Priority,NAUKRI,BUY,94,1284.56,1251.74,1350.22,2.0,1354.9,+₹103.16 / +7.61%,-₹4.68 / -0.35%,Target Hit First,Target,2026-08-11,Win,2.0,7,Top 3 Intraday scanner pick
+2026-08-11,Intraday,1,Highest Priority,NAUKRI,BUY,94,1284.56,1251.74,1350.22,2.0,1357.9,+₹106.16 / +7.82%,-₹7.68 / -0.57%,Target Hit First,Target,2026-08-11,Win,2.0,7,Top 3 Intraday scanner pick
 2026-08-10,Swing,2,Highest Priority,JSWSTEEL,BUY,94,1314.62,1238.0,1467.87,2.0,1267.6,+₹29.60 / +2.34%,+₹200.27 / +15.80%,Pending Trigger,,,,,8,Top 3 Swing scanner pick
 2026-08-10,Swing,3,Highest Priority,KOTAKBANK,BUY,94,394.29,382.26,418.33,2.0,387.65,+₹5.39 / +1.39%,+₹30.68 / +7.91%,Active After Trigger,,,,,8,Top 3 Swing scanner pick
-2026-08-10,Intraday,1,Highest Priority,NAUKRI,BUY,94,1284.56,1251.74,1350.22,2.0,1354.9,+₹103.16 / +7.61%,-₹4.68 / -0.35%,Target Hit First,Target,2026-08-11,Win,2.0,8,Top 3 Intraday scanner pick
+2026-08-10,Intraday,1,Highest Priority,NAUKRI,BUY,94,1284.56,1251.74,1350.22,2.0,1357.9,+₹106.16 / +7.82%,-₹7.68 / -0.57%,Target Hit First,Target,2026-08-11,Win,2.0,8,Top 3 Intraday scanner pick
 2026-08-10,Swing,1,Highest Priority,BRITANNIA,BUY,94,5654.79,5328.46,6307.44,2.0,5495.0,+₹166.54 / +3.03%,+₹812.44 / +14.79%,Active After Trigger,,,,,8,Top 3 Swing scanner pick
 2026-08-10,Swing,1,Highest Priority,IRCTC,BUY,94,528.05,486.01,612.14,2.0,493.05,+₹7.04 / +1.43%,+₹119.09 / +24.15%,Pending Trigger,,,,,8,Top 3 Swing scanner pick
 2026-08-10,Swing,2,Highest Priority,KOTAKBANK,BUY,94,393.79,384.48,412.4,2.0,387.65,+₹3.17 / +0.82%,+₹24.75 / +6.38%,Active After Trigger,,,,,8,Top 3 Swing scanner pick
