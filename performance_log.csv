@@ -1,4 +1,5 @@
 Date,Mode,Rank,Priority,Stock,Signal,Conviction,Entry,Stop,Target,RR,Current Price,Stop Away,Target Away,Status,First Hit,Hit Date,Result,R,Days,Notes
+2026-08-19,Swing,2,Highest Priority,DLF,BUY,94,676.0,633.07,761.86,2.0,669.9,+₹36.83 / +5.50%,+₹91.96 / +13.73%,Pending Trigger,,,,,0,Top 3 Swing scanner pick
 2026-08-19,Swing,3,Highest Priority,HDFCLIFE,SELL,94,532.23,546.01,504.69,2.0,536.3,+₹9.71 / +1.81%,+₹31.61 / +5.89%,Pending Trigger,,,,,0,Top 3 Swing scanner pick
 2026-08-19,Swing,1,Highest Priority,DIXON,BUY,94,14579.1,13598.59,16540.13,2.0,14462.0,+₹863.41 / +5.97%,+₹2078.13 / +14.37%,Pending Trigger,,,,,0,Top 3 Swing scanner pick
 2026-08-19,Swing,2,Highest Priority,GRASIM,BUY,94,3285.26,3151.87,3552.04,2.0,3270.0,+₹118.13 / +3.61%,+₹282.04 / +8.63%,Pending Trigger,,,,,0,Top 3 Swing scanner pick
