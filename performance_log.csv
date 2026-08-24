@@ -1,124 +1,124 @@
 Date,Mode,Rank,Priority,Stock,Signal,Conviction,Entry,Stop,Target,RR,Current Price,Stop Away,Target Away,Status,First Hit,Hit Date,Result,R,Days,Notes
-2026-08-24,Swing,1,Highest Priority,AUBANK,BUY,94,1110.42,1045.55,1240.14,2.0,1108.2,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
-2026-08-24,Swing,2,Highest Priority,COALINDIA,SELL,94,400.9,415.76,371.16,2.0,405.2,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
-2026-08-24,Swing,3,Highest Priority,GRASIM,BUY,94,3349.79,3190.32,3668.72,2.0,3308.0,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
-2026-08-23,Swing,1,Highest Priority,AUBANK,BUY,94,1110.42,1045.55,1240.14,2.0,1108.2,,,Pending Trigger,,,,,1,Top 3 Swing scanner pick
-2026-08-23,Swing,2,Highest Priority,COALINDIA,SELL,94,400.9,415.76,371.16,2.0,405.2,,,Pending Trigger,,,,,1,Top 3 Swing scanner pick
-2026-08-23,Swing,3,Highest Priority,GRASIM,BUY,94,3349.79,3190.32,3668.72,2.0,3308.0,,,Pending Trigger,,,,,1,Top 3 Swing scanner pick
-2026-08-22,Swing,2,Highest Priority,COALINDIA,SELL,94,400.9,415.76,371.16,2.0,405.2,,,Pending Trigger,,,,,2,Top 3 Swing scanner pick
-2026-08-22,Swing,3,Highest Priority,GRASIM,BUY,94,3349.79,3190.32,3668.72,2.0,3308.0,,,Pending Trigger,,,,,2,Top 3 Swing scanner pick
-2026-08-22,Swing,1,Highest Priority,AUBANK,BUY,94,1094.68,1045.58,1192.9,2.0,1088.0,,,Pending Trigger,,,,,2,Top 3 Swing scanner pick
-2026-08-22,Swing,2,Highest Priority,GRASIM,BUY,94,3316.62,3171.68,3606.49,2.0,3300.0,,,Pending Trigger,,,,,2,Top 3 Swing scanner pick
-2026-08-22,Swing,3,Highest Priority,HINDALCO,BUY,94,1050.1,1009.64,1131.01,2.0,1029.85,,,Pending Trigger,,,,,2,Top 3 Swing scanner pick
-2026-08-21,Swing,2,Highest Priority,COALINDIA,SELL,94,400.9,415.76,371.16,2.0,405.2,+₹10.56 / +2.61%,+₹34.04 / +8.40%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
-2026-08-21,Swing,3,Highest Priority,GRASIM,BUY,94,3311.61,3186.5,3561.84,2.0,3308.0,+₹121.50 / +3.67%,+₹253.84 / +7.67%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
-2026-08-21,Swing,2,Highest Priority,JSWSTEEL,BUY,94,1301.4,1247.38,1409.43,2.0,1293.7,+₹46.32 / +3.58%,+₹115.73 / +8.95%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
-2026-08-21,Swing,3,Highest Priority,KOTAKBANK,BUY,94,406.81,385.73,448.98,2.0,402.8,+₹17.07 / +4.24%,+₹46.18 / +11.46%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
-2026-08-21,Swing,1,Highest Priority,COALINDIA,SELL,94,400.9,415.76,371.16,2.0,405.2,+₹10.56 / +2.61%,+₹34.04 / +8.40%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
-2026-08-21,Swing,2,Highest Priority,KOTAKBANK,BUY,94,406.81,385.73,448.98,2.0,402.8,+₹17.07 / +4.24%,+₹46.18 / +11.46%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
-2026-08-21,Swing,3,Highest Priority,LICHSGFIN,SELL,92,490.02,512.4,445.25,2.0,497.0,+₹15.40 / +3.10%,+₹51.75 / +10.41%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
-2026-08-21,Swing,1,Highest Priority,LICHSGFIN,SELL,92,490.02,512.4,445.25,2.0,497.0,+₹15.40 / +3.10%,+₹51.75 / +10.41%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
-2026-08-21,Swing,1,Highest Priority,AUBANK,BUY,94,1094.68,1045.58,1192.9,2.0,1108.2,+₹62.62 / +5.65%,+₹84.70 / +7.64%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
-2026-08-21,Swing,3,Highest Priority,HINDALCO,BUY,94,1050.1,1009.22,1131.84,2.0,1034.0,+₹24.78 / +2.40%,+₹97.84 / +9.46%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
-2026-08-21,Swing,1,Highest Priority,GRASIM,BUY,94,3285.26,3151.87,3552.04,2.0,3308.0,+₹156.13 / +4.72%,+₹244.04 / +7.38%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
-2026-08-21,Swing,2,Highest Priority,HDFCLIFE,SELL,94,532.23,546.01,504.69,2.0,554.8,-₹8.79 / -1.58%,+₹50.11 / +9.03%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
-2026-08-21,Swing,3,Highest Priority,IOC,SELL,94,135.98,145.03,117.87,2.0,135.9,+₹9.13 / +6.72%,+₹18.03 / +13.27%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
-2026-08-21,Swing,1,Highest Priority,DIXON,BUY,94,14579.1,13598.59,16540.13,2.0,14850.0,+₹1251.41 / +8.43%,+₹1690.13 / +11.38%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
-2026-08-21,Swing,2,Highest Priority,GRASIM,BUY,94,3285.26,3151.87,3552.04,2.0,3308.0,+₹156.13 / +4.72%,+₹244.04 / +7.38%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
-2026-08-21,Swing,3,Highest Priority,HDFCLIFE,SELL,94,532.23,546.01,504.69,2.0,554.8,-₹8.79 / -1.58%,+₹50.11 / +9.03%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
-2026-08-20,Swing,3,Highest Priority,HINDALCO,BUY,94,1050.1,1009.22,1131.84,2.0,1034.0,+₹24.78 / +2.40%,+₹97.84 / +9.46%,Pending Trigger,,,,,4,Top 3 Swing scanner pick
-2026-08-20,Swing,3,Highest Priority,IRFC,SELL,94,85.13,89.63,76.13,2.0,86.4,+₹3.23 / +3.74%,+₹10.27 / +11.89%,Pending Trigger,,,,,4,Top 3 Swing scanner pick
-2026-08-20,Swing,3,Highest Priority,PERSISTENT,BUY,94,5700.88,5371.94,6358.76,2.0,5667.5,+₹295.56 / +5.21%,+₹691.26 / +12.20%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
-2026-08-20,Swing,3,Highest Priority,LICHSGFIN,SELL,94,497.2,509.88,471.84,2.0,497.0,+₹12.88 / +2.59%,+₹25.16 / +5.06%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
-2026-08-20,Swing,1,Highest Priority,AUBANK,BUY,94,1094.68,1045.58,1192.9,2.0,1108.2,+₹62.62 / +5.65%,+₹84.70 / +7.64%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
-2026-08-20,Swing,2,Highest Priority,JSWSTEEL,BUY,94,1313.22,1247.29,1445.09,2.0,1293.7,+₹46.41 / +3.59%,+₹151.39 / +11.70%,Pending Trigger,,,,,4,Top 3 Swing scanner pick
-2026-08-20,Swing,1,Highest Priority,JSWSTEEL,BUY,94,1301.1,1247.87,1407.56,2.0,1293.7,+₹45.83 / +3.54%,+₹113.86 / +8.80%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
-2026-08-20,Swing,1,Highest Priority,DIXON,BUY,94,14579.1,13598.59,16540.13,2.0,14850.0,+₹1251.41 / +8.43%,+₹1690.13 / +11.38%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
-2026-08-20,Swing,3,Highest Priority,HDFCLIFE,SELL,94,532.23,546.01,504.69,2.0,554.8,-₹8.79 / -1.58%,+₹50.11 / +9.03%,Pending Trigger,,,,,4,Top 3 Swing scanner pick
-2026-08-20,Swing,1,Highest Priority,GRASIM,BUY,94,3304.3,3124.86,3663.16,2.0,3308.0,+₹183.14 / +5.54%,+₹355.16 / +10.74%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
-2026-08-20,Swing,2,Highest Priority,HDFCLIFE,SELL,94,532.23,546.01,504.69,2.0,554.8,-₹8.79 / -1.58%,+₹50.11 / +9.03%,Pending Trigger,,,,,4,Top 3 Swing scanner pick
-2026-08-20,Swing,1,Highest Priority,COALINDIA,SELL,94,405.94,418.19,381.44,2.0,405.2,+₹12.99 / +3.21%,+₹23.76 / +5.86%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
-2026-08-20,Swing,2,Highest Priority,GRASIM,BUY,94,3304.3,3124.86,3663.16,2.0,3308.0,+₹183.14 / +5.54%,+₹355.16 / +10.74%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
-2026-08-20,Swing,3,Highest Priority,IOC,SELL,94,137.47,145.03,122.37,2.0,135.9,+₹9.13 / +6.72%,+₹13.53 / +9.96%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
-2026-08-19,Swing,2,Highest Priority,HDFCLIFE,SELL,94,532.23,546.01,504.69,2.0,554.8,-₹8.79 / -1.58%,+₹50.11 / +9.03%,Pending Trigger,,,,,5,Top 3 Swing scanner pick
-2026-08-19,Swing,3,Highest Priority,IOC,SELL,94,135.98,145.03,117.87,2.0,135.9,+₹9.13 / +6.72%,+₹18.03 / +13.27%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
-2026-08-19,Swing,2,Highest Priority,DLF,BUY,94,676.0,633.07,761.86,2.0,678.1,+₹45.03 / +6.64%,+₹83.76 / +12.35%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
-2026-08-19,Swing,3,Highest Priority,HDFCLIFE,SELL,94,532.23,546.01,504.69,2.0,554.8,-₹8.79 / -1.58%,+₹50.11 / +9.03%,Pending Trigger,,,,,5,Top 3 Swing scanner pick
-2026-08-19,Swing,1,Highest Priority,DIXON,BUY,94,14579.1,13598.59,16540.13,2.0,14850.0,+₹1251.41 / +8.43%,+₹1690.13 / +11.38%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
-2026-08-19,Swing,2,Highest Priority,GRASIM,BUY,94,3285.26,3151.87,3552.04,2.0,3308.0,+₹156.13 / +4.72%,+₹244.04 / +7.38%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
-2026-08-19,Swing,3,Highest Priority,HDFCAMC,SELL,94,2496.0,2580.97,2326.06,2.0,2610.0,-₹29.03 / -1.11%,+₹283.94 / +10.88%,Pending Trigger,,,,,5,Top 3 Swing scanner pick
-2026-08-19,Swing,1,Highest Priority,GRASIM,BUY,94,3285.26,3150.25,3555.27,2.0,3308.0,+₹157.75 / +4.77%,+₹247.27 / +7.47%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
-2026-08-19,Swing,2,Highest Priority,ONGC,SELL,94,237.12,244.11,223.15,2.0,236.4,+₹7.71 / +3.26%,+₹13.25 / +5.60%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
-2026-08-19,Swing,1,Highest Priority,ONGC,SELL,94,238.02,244.03,226.02,2.0,236.4,+₹7.63 / +3.23%,+₹10.38 / +4.39%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
-2026-08-19,Swing,2,Highest Priority,POLYCAB,SELL,90,8945.57,9413.05,8010.63,2.0,8966.0,+₹447.05 / +4.99%,+₹955.37 / +10.66%,Pending Trigger,,,,,5,Top 3 Swing scanner pick
-2026-08-19,Swing,2,Highest Priority,COALINDIA,SELL,94,405.94,418.19,381.44,2.0,405.2,+₹12.99 / +3.21%,+₹23.76 / +5.86%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
-2026-08-19,Swing,3,Highest Priority,DLF,BUY,94,676.25,633.18,762.39,2.0,678.1,+₹44.92 / +6.62%,+₹84.29 / +12.43%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
-2026-08-19,Swing,3,Highest Priority,CUMMINSIND,SELL,94,5327.82,5610.78,4761.92,2.0,5107.5,+₹503.28 / +9.85%,+₹345.58 / +6.77%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
-2026-08-19,Swing,1,Highest Priority,AUROPHARMA,BUY,94,1655.3,1531.8,1902.3,2.0,1621.3,+₹89.50 / +5.52%,+₹281.00 / +17.33%,Pending Trigger,,,,,5,Top 3 Swing scanner pick
-2026-08-19,Swing,2,Highest Priority,BHARTIARTL,BUY,94,1997.19,1896.48,2198.59,2.0,1946.0,+₹49.52 / +2.54%,+₹252.59 / +12.98%,Pending Trigger,,,,,5,Top 3 Swing scanner pick
-2026-08-19,Swing,3,Highest Priority,GRASIM,BUY,94,3278.74,3104.08,3628.08,2.0,3308.0,+₹203.92 / +6.16%,+₹320.08 / +9.68%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
-2026-08-18,Swing,1,Highest Priority,COALINDIA,SELL,94,405.94,418.19,381.44,2.0,405.2,+₹12.99 / +3.21%,+₹23.76 / +5.86%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
-2026-08-18,Swing,1,Highest Priority,GRASIM,BUY,94,3304.3,3124.86,3663.16,2.0,3308.0,+₹183.14 / +5.54%,+₹355.16 / +10.74%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
-2026-08-18,Swing,2,Highest Priority,COALINDIA,SELL,92,406.78,418.18,384.0,2.0,405.2,+₹12.98 / +3.20%,+₹21.20 / +5.23%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
-2026-08-18,Swing,3,Highest Priority,ONGC,SELL,92,238.38,245.47,224.21,2.0,236.4,+₹9.07 / +3.84%,+₹12.19 / +5.16%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
-2026-08-18,Swing,2,Highest Priority,GRASIM,BUY,94,3304.3,3124.86,3663.16,2.0,3308.0,+₹183.14 / +5.54%,+₹355.16 / +10.74%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
-2026-08-18,Swing,1,Highest Priority,DLF,BUY,94,682.06,633.07,780.04,2.0,678.1,+₹45.03 / +6.64%,+₹101.94 / +15.03%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
-2026-08-18,Intraday,1,Highest Priority,PAYTM,SELL,94,1580.43,1609.26,1522.77,2.0,1632.0,-₹22.74 / -1.39%,+₹109.23 / +6.69%,Stop Hit First,Stop,2026-08-20,Loss,-1,6,Top 3 Intraday scanner pick
-2026-08-18,Swing,1,Highest Priority,AUROPHARMA,BUY,94,1655.3,1531.79,1902.33,2.0,1621.3,+₹89.51 / +5.52%,+₹281.03 / +17.33%,Pending Trigger,,,,,6,Top 3 Swing scanner pick
-2026-08-18,Swing,2,Highest Priority,BHARTIARTL,BUY,94,1997.19,1896.48,2198.59,2.0,1946.0,+₹49.52 / +2.54%,+₹252.59 / +12.98%,Pending Trigger,,,,,6,Top 3 Swing scanner pick
-2026-08-18,Swing,3,Highest Priority,CUMMINSIND,SELL,94,5328.82,5611.5,4763.45,2.0,5107.5,+₹504.00 / +9.87%,+₹344.05 / +6.74%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
-2026-08-18,Swing,1,Highest Priority,BHARTIARTL,BUY,94,2009.81,1896.55,2236.33,2.0,1946.0,+₹49.45 / +2.54%,+₹290.33 / +14.92%,Pending Trigger,,,,,6,Top 3 Swing scanner pick
-2026-08-18,Swing,2,Highest Priority,CUMMINSIND,SELL,94,5328.82,5611.5,4763.45,2.0,5107.5,+₹504.00 / +9.87%,+₹344.05 / +6.74%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
-2026-08-18,Swing,3,Highest Priority,IOC,SELL,94,138.54,145.49,124.65,2.0,135.9,+₹9.59 / +7.06%,+₹11.25 / +8.28%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
-2026-08-17,Swing,3,Highest Priority,CUMMINSIND,SELL,94,5327.82,5610.78,4761.92,2.0,5107.5,+₹503.28 / +9.85%,+₹345.58 / +6.77%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
-2026-08-17,Swing,2,Highest Priority,BHARTIARTL,BUY,94,1997.19,1896.48,2198.59,2.0,1946.0,+₹49.52 / +2.54%,+₹252.59 / +12.98%,Pending Trigger,,,,,7,Top 3 Swing scanner pick
-2026-08-17,Swing,3,Highest Priority,GRASIM,BUY,94,3278.74,3104.25,3627.73,2.0,3308.0,+₹203.75 / +6.16%,+₹319.73 / +9.67%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
-2026-08-17,Swing,3,Highest Priority,DLF,BUY,94,676.25,633.18,762.39,2.0,678.1,+₹44.92 / +6.62%,+₹84.29 / +12.43%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
-2026-08-17,Intraday,1,Highest Priority,PAYTM,SELL,94,1583.63,1609.13,1532.62,2.0,1632.0,-₹22.87 / -1.40%,+₹99.38 / +6.09%,Stop Hit First,Stop,2026-08-20,Loss,-1,7,Top 3 Intraday scanner pick
-2026-08-17,Swing,2,Highest Priority,IRFC,SELL,94,86.03,90.74,76.61,2.0,86.4,+₹4.34 / +5.02%,+₹9.79 / +11.33%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
-2026-08-17,Swing,3,Highest Priority,ONGC,SELL,94,235.68,245.46,216.11,2.0,236.4,+₹9.06 / +3.83%,+₹20.29 / +8.58%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
-2026-08-17,Swing,1,Highest Priority,GRASIM,BUY,94,3264.92,3104.19,3586.36,2.0,3308.0,+₹203.81 / +6.16%,+₹278.36 / +8.41%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
-2026-08-17,Swing,1,Highest Priority,AUROPHARMA,BUY,94,1655.3,1575.76,1814.4,2.0,1621.3,+₹45.54 / +2.81%,+₹193.10 / +11.91%,Pending Trigger,,,,,7,Top 3 Swing scanner pick
-2026-08-17,Swing,2,Highest Priority,ONGC,SELL,94,235.68,244.03,218.97,2.0,236.4,+₹7.63 / +3.23%,+₹17.43 / +7.37%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
-2026-08-17,Swing,1,Highest Priority,NMDC,SELL,94,81.0,87.37,68.25,2.0,84.61,+₹2.76 / +3.26%,+₹16.36 / +19.34%,Pending Trigger,,,,,7,Top 3 Swing scanner pick
-2026-08-17,Swing,1,Highest Priority,BHARTIARTL,BUY,94,2009.81,1896.55,2236.33,2.0,1946.0,+₹49.45 / +2.54%,+₹290.33 / +14.92%,Pending Trigger,,,,,7,Top 3 Swing scanner pick
-2026-08-17,Swing,2,Highest Priority,CUMMINSIND,SELL,94,5328.82,5611.5,4763.45,2.0,5107.5,+₹504.00 / +9.87%,+₹344.05 / +6.74%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
-2026-08-17,Swing,3,Highest Priority,IOC,SELL,94,138.54,145.49,124.65,2.0,135.9,+₹9.59 / +7.06%,+₹11.25 / +8.28%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
-2026-08-17,Intraday,1,Highest Priority,PAGEIND,SELL,94,36651.55,37014.25,35926.15,2.0,35480.0,+₹1534.25 / +4.32%,-₹446.15 / -1.26%,Stop Hit First,Stop,2026-08-17,Loss,-1,7,Top 3 Intraday scanner pick
-2026-08-16,Swing,1,Highest Priority,BHARTIARTL,BUY,94,2009.81,1896.55,2236.33,2.0,1946.0,+₹49.45 / +2.54%,+₹290.33 / +14.92%,Pending Trigger,,,,,8,Top 3 Swing scanner pick
-2026-08-16,Swing,2,Highest Priority,CUMMINSIND,SELL,94,5328.82,5611.5,4763.45,2.0,5107.5,+₹504.00 / +9.87%,+₹344.05 / +6.74%,Active After Trigger,,,,,8,Top 3 Swing scanner pick
-2026-08-16,Swing,3,Highest Priority,IOC,SELL,94,138.54,145.49,124.65,2.0,135.9,+₹9.59 / +7.06%,+₹11.25 / +8.28%,Active After Trigger,,,,,8,Top 3 Swing scanner pick
-2026-08-16,Intraday,1,Highest Priority,PAGEIND,SELL,94,36651.55,37014.25,35926.15,2.0,35480.0,+₹1534.25 / +4.32%,-₹446.15 / -1.26%,Stop Hit First,Stop,2026-08-17,Loss,-1,8,Top 3 Intraday scanner pick
-2026-08-15,Swing,2,Highest Priority,CUMMINSIND,SELL,94,5328.82,5611.5,4763.45,2.0,5107.5,+₹504.00 / +9.87%,+₹344.05 / +6.74%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
-2026-08-15,Swing,3,Highest Priority,IOC,SELL,94,138.54,145.49,124.65,2.0,135.9,+₹9.59 / +7.06%,+₹11.25 / +8.28%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
-2026-08-15,Swing,1,Highest Priority,BHARTIARTL,BUY,94,1973.94,1896.95,2127.91,2.0,1946.0,+₹49.05 / +2.52%,+₹181.91 / +9.35%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
-2026-08-15,Swing,2,Highest Priority,BHEL,BUY,94,421.34,398.97,466.09,2.0,413.0,+₹14.03 / +3.40%,+₹53.09 / +12.85%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
-2026-08-15,Swing,3,Highest Priority,DIXON,BUY,94,14093.13,13533.69,15212.01,2.0,14850.0,+₹1316.31 / +8.86%,+₹362.01 / +2.44%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
-2026-08-15,Swing,1,Highest Priority,DIXON,BUY,94,14093.13,13533.69,15212.01,2.0,14850.0,+₹1316.31 / +8.86%,+₹362.01 / +2.44%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
-2026-08-15,Swing,2,Highest Priority,GRASIM,BUY,94,3305.9,3074.86,3767.98,2.0,3308.0,+₹233.14 / +7.05%,+₹459.98 / +13.91%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
-2026-08-15,Swing,3,Highest Priority,HDFCAMC,SELL,94,2473.24,2650.42,2118.9,2.0,2610.0,+₹40.42 / +1.55%,+₹491.10 / +18.82%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
-2026-08-15,Intraday,1,Highest Priority,PAGEIND,SELL,94,36651.55,37014.25,35926.15,2.0,35480.0,+₹1534.25 / +4.32%,-₹446.15 / -1.26%,Stop Hit First,Stop,2026-08-17,Loss,-1,9,Top 3 Intraday scanner pick
-2026-08-14,Intraday,1,Highest Priority,PAGEIND,SELL,94,36651.55,37014.25,35926.15,2.0,35480.0,+₹1534.25 / +4.32%,-₹446.15 / -1.26%,Stop Hit First,Stop,2026-08-17,Loss,-1,10,Top 3 Intraday scanner pick
-2026-08-14,Swing,3,Highest Priority,IOC,SELL,94,138.54,145.49,124.65,2.0,135.9,+₹9.59 / +7.06%,+₹11.25 / +8.28%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
-2026-08-14,Swing,2,Highest Priority,TECHM,BUY,94,1655.3,1599.57,1766.77,2.0,1584.0,-₹15.57 / -0.98%,+₹182.77 / +11.54%,Pending Trigger,,,,,10,Top 3 Swing scanner pick
-2026-08-14,Swing,1,Highest Priority,BHARTIARTL,BUY,94,2007.21,1896.57,2228.47,2.0,1946.0,+₹49.43 / +2.54%,+₹282.47 / +14.52%,Pending Trigger,,,,,10,Top 3 Swing scanner pick
-2026-08-14,Intraday,1,Highest Priority,APLAPOLLO,BUY,94,2076.04,2036.06,2156.01,2.0,2139.0,+₹102.94 / +4.81%,+₹17.01 / +0.80%,Target Hit First,Target,2026-08-21,Win,2.0,10,Top 3 Intraday scanner pick
-2026-08-14,Intraday,2,Highest Priority,BHEL,BUY,94,426.8,420.13,440.14,2.0,413.0,-₹7.13 / -1.73%,+₹27.14 / +6.57%,Ambiguous Entry Candle,Entry/exit same candle,2026-08-14,Ambiguous,,10,Top 3 Intraday scanner pick
-2026-08-14,Swing,1,Highest Priority,HDFCAMC,SELL,94,2468.05,2593.75,2216.66,2.0,2610.0,-₹16.25 / -0.62%,+₹393.34 / +15.07%,Pending Trigger,,,,,10,Top 3 Swing scanner pick
-2026-08-14,Intraday,1,Highest Priority,SHREECEM,SELL,94,24670.56,25254.82,23502.04,2.0,24280.0,+₹974.82 / +4.01%,+₹777.96 / +3.20%,Active After Trigger,,,,,10,Top 3 Intraday scanner pick
-2026-08-14,Swing,3,Highest Priority,GRASIM,BUY,94,3305.9,3081.96,3753.77,2.0,3308.0,+₹226.04 / +6.83%,+₹445.77 / +13.48%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
-2026-08-14,Swing,1,Highest Priority,CUMMINSIND,SELL,94,5319.34,5611.5,4735.03,2.0,5107.5,+₹504.00 / +9.87%,+₹372.47 / +7.29%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
-2026-08-14,Swing,2,Highest Priority,DIXON,BUY,94,14093.13,13533.69,15212.01,2.0,14850.0,+₹1316.31 / +8.86%,+₹362.01 / +2.44%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
-2026-08-14,Swing,2,Highest Priority,CUMMINSIND,SELL,94,5319.34,5611.5,4735.03,2.0,5107.5,+₹504.00 / +9.87%,+₹372.47 / +7.29%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
-2026-08-14,Swing,3,Highest Priority,HDFCAMC,SELL,94,2477.34,2650.74,2130.53,2.0,2610.0,+₹40.74 / +1.56%,+₹479.47 / +18.37%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
-2026-08-14,Swing,1,Highest Priority,BHEL,BUY,94,421.04,398.45,466.21,2.0,413.0,+₹14.55 / +3.52%,+₹53.21 / +12.88%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
-2026-08-14,Swing,2,Highest Priority,BRITANNIA,BUY,94,5656.79,5349.03,6272.32,2.0,5365.0,+₹15.97 / +0.30%,+₹907.32 / +16.91%,Pending Trigger,,,,,10,Top 3 Swing scanner pick
-2026-08-14,Swing,3,Highest Priority,CUMMINSIND,SELL,94,5319.34,5611.5,4735.03,2.0,5107.5,+₹504.00 / +9.87%,+₹372.47 / +7.29%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
-2026-08-13,Swing,1,Highest Priority,BHEL,BUY,94,421.34,398.97,466.09,2.0,413.0,+₹14.03 / +3.40%,+₹53.09 / +12.85%,Active After Trigger,,,,,11,Top 3 Swing scanner pick
-2026-08-13,Swing,3,Highest Priority,HDFCAMC,SELL,94,2473.24,2650.42,2118.9,2.0,2610.0,+₹40.42 / +1.55%,+₹491.10 / +18.82%,Active After Trigger,,,,,11,Top 3 Swing scanner pick
-2026-08-13,Swing,1,Highest Priority,DIXON,BUY,94,14093.13,13533.69,15212.01,2.0,14850.0,+₹1316.31 / +8.86%,+₹362.01 / +2.44%,Active After Trigger,,,,,11,Top 3 Swing scanner pick
-2026-08-13,Swing,2,Highest Priority,HDFCAMC,SELL,94,2473.24,2650.42,2118.9,2.0,2610.0,+₹40.42 / +1.55%,+₹491.10 / +18.82%,Active After Trigger,,,,,11,Top 3 Swing scanner pick
-2026-08-13,Swing,3,Highest Priority,M&M,BUY,94,3446.88,3233.43,3873.77,2.0,3412.2,+₹178.77 / +5.24%,+₹461.57 / +13.53%,Active After Trigger,,,,,11,Top 3 Swing scanner pick
+2026-08-24,Swing,1,Highest Priority,AUBANK,BUY,94,1110.42,1045.55,1240.14,2.0,1105.4,+₹59.85 / +5.41%,+₹134.74 / +12.19%,Active After Trigger,,,,,0,Top 3 Swing scanner pick
+2026-08-24,Swing,2,Highest Priority,COALINDIA,SELL,94,400.9,415.76,371.16,2.0,407.15,+₹8.61 / +2.11%,+₹35.99 / +8.84%,Pending Trigger,,,,,0,Top 3 Swing scanner pick
+2026-08-24,Swing,3,Highest Priority,GRASIM,BUY,94,3349.79,3190.32,3668.72,2.0,3288.3,+₹97.98 / +2.98%,+₹380.42 / +11.57%,Pending Trigger,,,,,0,Top 3 Swing scanner pick
+2026-08-23,Swing,1,Highest Priority,AUBANK,BUY,94,1110.42,1045.55,1240.14,2.0,1105.4,+₹59.85 / +5.41%,+₹134.74 / +12.19%,Active After Trigger,,,,,1,Top 3 Swing scanner pick
+2026-08-23,Swing,2,Highest Priority,COALINDIA,SELL,94,400.9,415.76,371.16,2.0,407.15,+₹8.61 / +2.11%,+₹35.99 / +8.84%,Pending Trigger,,,,,1,Top 3 Swing scanner pick
+2026-08-23,Swing,3,Highest Priority,GRASIM,BUY,94,3349.79,3190.32,3668.72,2.0,3288.3,+₹97.98 / +2.98%,+₹380.42 / +11.57%,Pending Trigger,,,,,1,Top 3 Swing scanner pick
+2026-08-22,Swing,2,Highest Priority,COALINDIA,SELL,94,400.9,415.76,371.16,2.0,407.15,+₹8.61 / +2.11%,+₹35.99 / +8.84%,Pending Trigger,,,,,2,Top 3 Swing scanner pick
+2026-08-22,Swing,3,Highest Priority,GRASIM,BUY,94,3349.79,3190.32,3668.72,2.0,3288.3,+₹97.98 / +2.98%,+₹380.42 / +11.57%,Pending Trigger,,,,,2,Top 3 Swing scanner pick
+2026-08-22,Swing,1,Highest Priority,AUBANK,BUY,94,1094.68,1045.58,1192.9,2.0,1105.4,+₹59.82 / +5.41%,+₹87.50 / +7.92%,Active After Trigger,,,,,2,Top 3 Swing scanner pick
+2026-08-22,Swing,2,Highest Priority,GRASIM,BUY,94,3316.62,3171.68,3606.49,2.0,3288.3,+₹116.62 / +3.55%,+₹318.19 / +9.68%,Pending Trigger,,,,,2,Top 3 Swing scanner pick
+2026-08-22,Swing,3,Highest Priority,HINDALCO,BUY,94,1050.1,1009.64,1131.01,2.0,1049.1,+₹39.46 / +3.76%,+₹81.91 / +7.81%,Active After Trigger,,,,,2,Top 3 Swing scanner pick
+2026-08-21,Swing,2,Highest Priority,COALINDIA,SELL,94,400.9,415.76,371.16,2.0,407.15,+₹8.61 / +2.11%,+₹35.99 / +8.84%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
+2026-08-21,Swing,3,Highest Priority,GRASIM,BUY,94,3311.61,3186.5,3561.84,2.0,3288.3,+₹101.80 / +3.10%,+₹273.54 / +8.32%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
+2026-08-21,Swing,2,Highest Priority,JSWSTEEL,BUY,94,1301.4,1247.38,1409.43,2.0,1304.0,+₹56.62 / +4.34%,+₹105.43 / +8.09%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
+2026-08-21,Swing,3,Highest Priority,KOTAKBANK,BUY,94,406.81,385.73,448.98,2.0,403.0,+₹17.27 / +4.29%,+₹45.98 / +11.41%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
+2026-08-21,Swing,1,Highest Priority,COALINDIA,SELL,94,400.9,415.76,371.16,2.0,407.15,+₹8.61 / +2.11%,+₹35.99 / +8.84%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
+2026-08-21,Swing,2,Highest Priority,KOTAKBANK,BUY,94,406.81,385.73,448.98,2.0,403.0,+₹17.27 / +4.29%,+₹45.98 / +11.41%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
+2026-08-21,Swing,3,Highest Priority,LICHSGFIN,SELL,92,490.02,512.4,445.25,2.0,498.75,+₹13.65 / +2.74%,+₹53.50 / +10.73%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
+2026-08-21,Swing,1,Highest Priority,LICHSGFIN,SELL,92,490.02,512.4,445.25,2.0,498.75,+₹13.65 / +2.74%,+₹53.50 / +10.73%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
+2026-08-21,Swing,1,Highest Priority,AUBANK,BUY,94,1094.68,1045.58,1192.9,2.0,1105.4,+₹59.82 / +5.41%,+₹87.50 / +7.92%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
+2026-08-21,Swing,3,Highest Priority,HINDALCO,BUY,94,1050.1,1009.22,1131.84,2.0,1049.1,+₹39.88 / +3.80%,+₹82.74 / +7.89%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
+2026-08-21,Swing,1,Highest Priority,GRASIM,BUY,94,3285.26,3151.87,3552.04,2.0,3288.3,+₹136.43 / +4.15%,+₹263.74 / +8.02%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
+2026-08-21,Swing,2,Highest Priority,HDFCLIFE,SELL,94,532.23,546.01,504.69,2.0,554.7,-₹8.69 / -1.57%,+₹50.01 / +9.02%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
+2026-08-21,Swing,3,Highest Priority,IOC,SELL,94,135.98,145.03,117.87,2.0,136.35,+₹8.68 / +6.37%,+₹18.48 / +13.55%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
+2026-08-21,Swing,1,Highest Priority,DIXON,BUY,94,14579.1,13598.59,16540.13,2.0,14583.0,+₹984.41 / +6.75%,+₹1957.13 / +13.42%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
+2026-08-21,Swing,2,Highest Priority,GRASIM,BUY,94,3285.26,3151.87,3552.04,2.0,3288.3,+₹136.43 / +4.15%,+₹263.74 / +8.02%,Active After Trigger,,,,,3,Top 3 Swing scanner pick
+2026-08-21,Swing,3,Highest Priority,HDFCLIFE,SELL,94,532.23,546.01,504.69,2.0,554.7,-₹8.69 / -1.57%,+₹50.01 / +9.02%,Pending Trigger,,,,,3,Top 3 Swing scanner pick
+2026-08-20,Swing,3,Highest Priority,HINDALCO,BUY,94,1050.1,1009.22,1131.84,2.0,1049.1,+₹39.88 / +3.80%,+₹82.74 / +7.89%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
+2026-08-20,Swing,3,Highest Priority,IRFC,SELL,94,85.13,89.63,76.13,2.0,86.38,+₹3.25 / +3.76%,+₹10.25 / +11.87%,Pending Trigger,,,,,4,Top 3 Swing scanner pick
+2026-08-20,Swing,3,Highest Priority,PERSISTENT,BUY,94,5700.88,5371.94,6358.76,2.0,5691.5,+₹319.56 / +5.61%,+₹667.26 / +11.72%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
+2026-08-20,Swing,3,Highest Priority,LICHSGFIN,SELL,94,497.2,509.88,471.84,2.0,498.75,+₹11.13 / +2.23%,+₹26.91 / +5.40%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
+2026-08-20,Swing,1,Highest Priority,AUBANK,BUY,94,1094.68,1045.58,1192.9,2.0,1105.4,+₹59.82 / +5.41%,+₹87.50 / +7.92%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
+2026-08-20,Swing,2,Highest Priority,JSWSTEEL,BUY,94,1313.22,1247.29,1445.09,2.0,1304.0,+₹56.71 / +4.35%,+₹141.09 / +10.82%,Pending Trigger,,,,,4,Top 3 Swing scanner pick
+2026-08-20,Swing,1,Highest Priority,JSWSTEEL,BUY,94,1301.1,1247.87,1407.56,2.0,1304.0,+₹56.13 / +4.30%,+₹103.56 / +7.94%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
+2026-08-20,Swing,1,Highest Priority,DIXON,BUY,94,14579.1,13598.59,16540.13,2.0,14583.0,+₹984.41 / +6.75%,+₹1957.13 / +13.42%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
+2026-08-20,Swing,3,Highest Priority,HDFCLIFE,SELL,94,532.23,546.01,504.69,2.0,554.7,-₹8.69 / -1.57%,+₹50.01 / +9.02%,Pending Trigger,,,,,4,Top 3 Swing scanner pick
+2026-08-20,Swing,1,Highest Priority,GRASIM,BUY,94,3304.3,3124.86,3663.16,2.0,3288.3,+₹163.44 / +4.97%,+₹374.86 / +11.40%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
+2026-08-20,Swing,2,Highest Priority,HDFCLIFE,SELL,94,532.23,546.01,504.69,2.0,554.7,-₹8.69 / -1.57%,+₹50.01 / +9.02%,Pending Trigger,,,,,4,Top 3 Swing scanner pick
+2026-08-20,Swing,1,Highest Priority,COALINDIA,SELL,94,405.94,418.19,381.44,2.0,407.15,+₹11.04 / +2.71%,+₹25.71 / +6.31%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
+2026-08-20,Swing,2,Highest Priority,GRASIM,BUY,94,3304.3,3124.86,3663.16,2.0,3288.3,+₹163.44 / +4.97%,+₹374.86 / +11.40%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
+2026-08-20,Swing,3,Highest Priority,IOC,SELL,94,137.47,145.03,122.37,2.0,136.35,+₹8.68 / +6.37%,+₹13.98 / +10.25%,Active After Trigger,,,,,4,Top 3 Swing scanner pick
+2026-08-19,Swing,2,Highest Priority,HDFCLIFE,SELL,94,532.23,546.01,504.69,2.0,554.7,-₹8.69 / -1.57%,+₹50.01 / +9.02%,Pending Trigger,,,,,5,Top 3 Swing scanner pick
+2026-08-19,Swing,3,Highest Priority,IOC,SELL,94,135.98,145.03,117.87,2.0,136.35,+₹8.68 / +6.37%,+₹18.48 / +13.55%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
+2026-08-19,Swing,2,Highest Priority,DLF,BUY,94,676.0,633.07,761.86,2.0,680.95,+₹47.88 / +7.03%,+₹80.91 / +11.88%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
+2026-08-19,Swing,3,Highest Priority,HDFCLIFE,SELL,94,532.23,546.01,504.69,2.0,554.7,-₹8.69 / -1.57%,+₹50.01 / +9.02%,Pending Trigger,,,,,5,Top 3 Swing scanner pick
+2026-08-19,Swing,1,Highest Priority,DIXON,BUY,94,14579.1,13598.59,16540.13,2.0,14583.0,+₹984.41 / +6.75%,+₹1957.13 / +13.42%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
+2026-08-19,Swing,2,Highest Priority,GRASIM,BUY,94,3285.26,3151.87,3552.04,2.0,3288.3,+₹136.43 / +4.15%,+₹263.74 / +8.02%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
+2026-08-19,Swing,3,Highest Priority,HDFCAMC,SELL,94,2496.0,2580.97,2326.06,2.0,2614.5,-₹33.53 / -1.28%,+₹288.44 / +11.03%,Pending Trigger,,,,,5,Top 3 Swing scanner pick
+2026-08-19,Swing,1,Highest Priority,GRASIM,BUY,94,3285.26,3150.25,3555.27,2.0,3288.3,+₹138.05 / +4.20%,+₹266.97 / +8.12%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
+2026-08-19,Swing,2,Highest Priority,ONGC,SELL,94,237.12,244.11,223.15,2.0,236.78,+₹7.33 / +3.10%,+₹13.63 / +5.76%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
+2026-08-19,Swing,1,Highest Priority,ONGC,SELL,94,238.02,244.03,226.02,2.0,236.78,+₹7.25 / +3.06%,+₹10.76 / +4.54%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
+2026-08-19,Swing,2,Highest Priority,POLYCAB,SELL,90,8945.57,9413.05,8010.63,2.0,8968.0,+₹445.05 / +4.96%,+₹957.37 / +10.68%,Pending Trigger,,,,,5,Top 3 Swing scanner pick
+2026-08-19,Swing,2,Highest Priority,COALINDIA,SELL,94,405.94,418.19,381.44,2.0,407.15,+₹11.04 / +2.71%,+₹25.71 / +6.31%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
+2026-08-19,Swing,3,Highest Priority,DLF,BUY,94,676.25,633.18,762.39,2.0,680.95,+₹47.77 / +7.02%,+₹81.44 / +11.96%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
+2026-08-19,Swing,3,Highest Priority,CUMMINSIND,SELL,94,5327.82,5610.78,4761.92,2.0,5128.0,+₹482.78 / +9.41%,+₹366.08 / +7.14%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
+2026-08-19,Swing,1,Highest Priority,AUROPHARMA,BUY,94,1655.3,1531.8,1902.3,2.0,1627.0,+₹95.20 / +5.85%,+₹275.30 / +16.92%,Pending Trigger,,,,,5,Top 3 Swing scanner pick
+2026-08-19,Swing,2,Highest Priority,BHARTIARTL,BUY,94,1997.19,1896.48,2198.59,2.0,1940.7,+₹44.22 / +2.28%,+₹257.89 / +13.29%,Pending Trigger,,,,,5,Top 3 Swing scanner pick
+2026-08-19,Swing,3,Highest Priority,GRASIM,BUY,94,3278.74,3104.08,3628.08,2.0,3288.3,+₹184.22 / +5.60%,+₹339.78 / +10.33%,Active After Trigger,,,,,5,Top 3 Swing scanner pick
+2026-08-18,Swing,1,Highest Priority,COALINDIA,SELL,94,405.94,418.19,381.44,2.0,407.15,+₹11.04 / +2.71%,+₹25.71 / +6.31%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
+2026-08-18,Swing,1,Highest Priority,GRASIM,BUY,94,3304.3,3124.86,3663.16,2.0,3288.3,+₹163.44 / +4.97%,+₹374.86 / +11.40%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
+2026-08-18,Swing,2,Highest Priority,COALINDIA,SELL,92,406.78,418.18,384.0,2.0,407.15,+₹11.03 / +2.71%,+₹23.15 / +5.69%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
+2026-08-18,Swing,3,Highest Priority,ONGC,SELL,92,238.38,245.47,224.21,2.0,236.78,+₹8.69 / +3.67%,+₹12.57 / +5.31%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
+2026-08-18,Swing,2,Highest Priority,GRASIM,BUY,94,3304.3,3124.86,3663.16,2.0,3288.3,+₹163.44 / +4.97%,+₹374.86 / +11.40%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
+2026-08-18,Swing,1,Highest Priority,DLF,BUY,94,682.06,633.07,780.04,2.0,680.95,+₹47.88 / +7.03%,+₹99.09 / +14.55%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
+2026-08-18,Intraday,1,Highest Priority,PAYTM,SELL,94,1580.43,1609.26,1522.77,2.0,1613.9,-₹4.64 / -0.29%,+₹91.13 / +5.65%,Stop Hit First,Stop,2026-08-20,Loss,-1,6,Top 3 Intraday scanner pick
+2026-08-18,Swing,1,Highest Priority,AUROPHARMA,BUY,94,1655.3,1531.79,1902.33,2.0,1627.0,+₹95.21 / +5.85%,+₹275.33 / +16.92%,Pending Trigger,,,,,6,Top 3 Swing scanner pick
+2026-08-18,Swing,2,Highest Priority,BHARTIARTL,BUY,94,1997.19,1896.48,2198.59,2.0,1940.7,+₹44.22 / +2.28%,+₹257.89 / +13.29%,Pending Trigger,,,,,6,Top 3 Swing scanner pick
+2026-08-18,Swing,3,Highest Priority,CUMMINSIND,SELL,94,5328.82,5611.5,4763.45,2.0,5128.0,+₹483.50 / +9.43%,+₹364.55 / +7.11%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
+2026-08-18,Swing,1,Highest Priority,BHARTIARTL,BUY,94,2009.81,1896.55,2236.33,2.0,1940.7,+₹44.15 / +2.27%,+₹295.63 / +15.23%,Pending Trigger,,,,,6,Top 3 Swing scanner pick
+2026-08-18,Swing,2,Highest Priority,CUMMINSIND,SELL,94,5328.82,5611.5,4763.45,2.0,5128.0,+₹483.50 / +9.43%,+₹364.55 / +7.11%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
+2026-08-18,Swing,3,Highest Priority,IOC,SELL,94,138.54,145.49,124.65,2.0,136.35,+₹9.14 / +6.70%,+₹11.70 / +8.58%,Active After Trigger,,,,,6,Top 3 Swing scanner pick
+2026-08-17,Swing,3,Highest Priority,CUMMINSIND,SELL,94,5327.82,5610.78,4761.92,2.0,5128.0,+₹482.78 / +9.41%,+₹366.08 / +7.14%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
+2026-08-17,Swing,2,Highest Priority,BHARTIARTL,BUY,94,1997.19,1896.48,2198.59,2.0,1940.7,+₹44.22 / +2.28%,+₹257.89 / +13.29%,Pending Trigger,,,,,7,Top 3 Swing scanner pick
+2026-08-17,Swing,3,Highest Priority,GRASIM,BUY,94,3278.74,3104.25,3627.73,2.0,3288.3,+₹184.05 / +5.60%,+₹339.43 / +10.32%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
+2026-08-17,Swing,3,Highest Priority,DLF,BUY,94,676.25,633.18,762.39,2.0,680.95,+₹47.77 / +7.02%,+₹81.44 / +11.96%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
+2026-08-17,Intraday,1,Highest Priority,PAYTM,SELL,94,1583.63,1609.13,1532.62,2.0,1613.9,-₹4.77 / -0.30%,+₹81.28 / +5.04%,Stop Hit First,Stop,2026-08-20,Loss,-1,7,Top 3 Intraday scanner pick
+2026-08-17,Swing,2,Highest Priority,IRFC,SELL,94,86.03,90.74,76.61,2.0,86.38,+₹4.36 / +5.05%,+₹9.77 / +11.31%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
+2026-08-17,Swing,3,Highest Priority,ONGC,SELL,94,235.68,245.46,216.11,2.0,236.78,+₹8.68 / +3.67%,+₹20.67 / +8.73%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
+2026-08-17,Swing,1,Highest Priority,GRASIM,BUY,94,3264.92,3104.19,3586.36,2.0,3288.3,+₹184.11 / +5.60%,+₹298.06 / +9.06%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
+2026-08-17,Swing,1,Highest Priority,AUROPHARMA,BUY,94,1655.3,1575.76,1814.4,2.0,1627.0,+₹51.24 / +3.15%,+₹187.40 / +11.52%,Pending Trigger,,,,,7,Top 3 Swing scanner pick
+2026-08-17,Swing,2,Highest Priority,ONGC,SELL,94,235.68,244.03,218.97,2.0,236.78,+₹7.25 / +3.06%,+₹17.81 / +7.52%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
+2026-08-17,Swing,1,Highest Priority,NMDC,SELL,94,81.0,87.37,68.25,2.0,84.96,+₹2.41 / +2.84%,+₹16.71 / +19.67%,Pending Trigger,,,,,7,Top 3 Swing scanner pick
+2026-08-17,Swing,1,Highest Priority,BHARTIARTL,BUY,94,2009.81,1896.55,2236.33,2.0,1940.7,+₹44.15 / +2.27%,+₹295.63 / +15.23%,Pending Trigger,,,,,7,Top 3 Swing scanner pick
+2026-08-17,Swing,2,Highest Priority,CUMMINSIND,SELL,94,5328.82,5611.5,4763.45,2.0,5128.0,+₹483.50 / +9.43%,+₹364.55 / +7.11%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
+2026-08-17,Swing,3,Highest Priority,IOC,SELL,94,138.54,145.49,124.65,2.0,136.35,+₹9.14 / +6.70%,+₹11.70 / +8.58%,Active After Trigger,,,,,7,Top 3 Swing scanner pick
+2026-08-17,Intraday,1,Highest Priority,PAGEIND,SELL,94,36651.55,37014.25,35926.15,2.0,35500.0,+₹1514.25 / +4.27%,-₹426.15 / -1.20%,Stop Hit First,Stop,2026-08-17,Loss,-1,7,Top 3 Intraday scanner pick
+2026-08-16,Swing,1,Highest Priority,BHARTIARTL,BUY,94,2009.81,1896.55,2236.33,2.0,1940.7,+₹44.15 / +2.27%,+₹295.63 / +15.23%,Pending Trigger,,,,,8,Top 3 Swing scanner pick
+2026-08-16,Swing,2,Highest Priority,CUMMINSIND,SELL,94,5328.82,5611.5,4763.45,2.0,5128.0,+₹483.50 / +9.43%,+₹364.55 / +7.11%,Active After Trigger,,,,,8,Top 3 Swing scanner pick
+2026-08-16,Swing,3,Highest Priority,IOC,SELL,94,138.54,145.49,124.65,2.0,136.35,+₹9.14 / +6.70%,+₹11.70 / +8.58%,Active After Trigger,,,,,8,Top 3 Swing scanner pick
+2026-08-16,Intraday,1,Highest Priority,PAGEIND,SELL,94,36651.55,37014.25,35926.15,2.0,35500.0,+₹1514.25 / +4.27%,-₹426.15 / -1.20%,Stop Hit First,Stop,2026-08-17,Loss,-1,8,Top 3 Intraday scanner pick
+2026-08-15,Swing,2,Highest Priority,CUMMINSIND,SELL,94,5328.82,5611.5,4763.45,2.0,5128.0,+₹483.50 / +9.43%,+₹364.55 / +7.11%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
+2026-08-15,Swing,3,Highest Priority,IOC,SELL,94,138.54,145.49,124.65,2.0,136.35,+₹9.14 / +6.70%,+₹11.70 / +8.58%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
+2026-08-15,Swing,1,Highest Priority,BHARTIARTL,BUY,94,1973.94,1896.95,2127.91,2.0,1940.7,+₹43.75 / +2.25%,+₹187.21 / +9.65%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
+2026-08-15,Swing,2,Highest Priority,BHEL,BUY,94,421.34,398.97,466.09,2.0,413.3,+₹14.33 / +3.47%,+₹52.79 / +12.77%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
+2026-08-15,Swing,3,Highest Priority,DIXON,BUY,94,14093.13,13533.69,15212.01,2.0,14583.0,+₹1049.31 / +7.20%,+₹629.01 / +4.31%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
+2026-08-15,Swing,1,Highest Priority,DIXON,BUY,94,14093.13,13533.69,15212.01,2.0,14583.0,+₹1049.31 / +7.20%,+₹629.01 / +4.31%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
+2026-08-15,Swing,2,Highest Priority,GRASIM,BUY,94,3305.9,3074.86,3767.98,2.0,3288.3,+₹213.44 / +6.49%,+₹479.68 / +14.59%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
+2026-08-15,Swing,3,Highest Priority,HDFCAMC,SELL,94,2473.24,2650.42,2118.9,2.0,2614.5,+₹35.92 / +1.37%,+₹495.60 / +18.96%,Active After Trigger,,,,,9,Top 3 Swing scanner pick
+2026-08-15,Intraday,1,Highest Priority,PAGEIND,SELL,94,36651.55,37014.25,35926.15,2.0,35500.0,+₹1514.25 / +4.27%,-₹426.15 / -1.20%,Stop Hit First,Stop,2026-08-17,Loss,-1,9,Top 3 Intraday scanner pick
+2026-08-14,Intraday,1,Highest Priority,PAGEIND,SELL,94,36651.55,37014.25,35926.15,2.0,35500.0,+₹1514.25 / +4.27%,-₹426.15 / -1.20%,Stop Hit First,Stop,2026-08-17,Loss,-1,10,Top 3 Intraday scanner pick
+2026-08-14,Swing,3,Highest Priority,IOC,SELL,94,138.54,145.49,124.65,2.0,136.35,+₹9.14 / +6.70%,+₹11.70 / +8.58%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
+2026-08-14,Swing,2,Highest Priority,TECHM,BUY,94,1655.3,1599.57,1766.77,2.0,1591.4,-₹8.17 / -0.51%,+₹175.37 / +11.02%,Pending Trigger,,,,,10,Top 3 Swing scanner pick
+2026-08-14,Swing,1,Highest Priority,BHARTIARTL,BUY,94,2007.21,1896.57,2228.47,2.0,1940.7,+₹44.13 / +2.27%,+₹287.77 / +14.83%,Pending Trigger,,,,,10,Top 3 Swing scanner pick
+2026-08-14,Intraday,1,Highest Priority,APLAPOLLO,BUY,94,2076.04,2036.06,2156.01,2.0,2151.0,+₹114.94 / +5.34%,+₹5.01 / +0.23%,Target Hit First,Target,2026-08-21,Win,2.0,10,Top 3 Intraday scanner pick
+2026-08-14,Intraday,2,Highest Priority,BHEL,BUY,94,426.8,420.13,440.14,2.0,413.3,-₹6.83 / -1.65%,+₹26.84 / +6.49%,Ambiguous Entry Candle,Entry/exit same candle,2026-08-14,Ambiguous,,10,Top 3 Intraday scanner pick
+2026-08-14,Swing,1,Highest Priority,HDFCAMC,SELL,94,2468.05,2593.75,2216.66,2.0,2614.5,-₹20.75 / -0.79%,+₹397.84 / +15.22%,Pending Trigger,,,,,10,Top 3 Swing scanner pick
+2026-08-14,Intraday,1,Highest Priority,SHREECEM,SELL,94,24670.56,25254.82,23502.04,2.0,24165.0,+₹1089.82 / +4.51%,+₹662.96 / +2.74%,Active After Trigger,,,,,10,Top 3 Intraday scanner pick
+2026-08-14,Swing,3,Highest Priority,GRASIM,BUY,94,3305.9,3081.96,3753.77,2.0,3288.3,+₹206.34 / +6.27%,+₹465.47 / +14.16%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
+2026-08-14,Swing,1,Highest Priority,CUMMINSIND,SELL,94,5319.34,5611.5,4735.03,2.0,5128.0,+₹483.50 / +9.43%,+₹392.97 / +7.66%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
+2026-08-14,Swing,2,Highest Priority,DIXON,BUY,94,14093.13,13533.69,15212.01,2.0,14583.0,+₹1049.31 / +7.20%,+₹629.01 / +4.31%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
+2026-08-14,Swing,2,Highest Priority,CUMMINSIND,SELL,94,5319.34,5611.5,4735.03,2.0,5128.0,+₹483.50 / +9.43%,+₹392.97 / +7.66%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
+2026-08-14,Swing,3,Highest Priority,HDFCAMC,SELL,94,2477.34,2650.74,2130.53,2.0,2614.5,+₹36.24 / +1.39%,+₹483.97 / +18.51%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
+2026-08-14,Swing,1,Highest Priority,BHEL,BUY,94,421.04,398.45,466.21,2.0,413.3,+₹14.85 / +3.59%,+₹52.91 / +12.80%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
+2026-08-14,Swing,2,Highest Priority,BRITANNIA,BUY,94,5656.79,5349.03,6272.32,2.0,5334.0,-₹15.03 / -0.28%,+₹938.32 / +17.59%,Pending Trigger,,,,,10,Top 3 Swing scanner pick
+2026-08-14,Swing,3,Highest Priority,CUMMINSIND,SELL,94,5319.34,5611.5,4735.03,2.0,5128.0,+₹483.50 / +9.43%,+₹392.97 / +7.66%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
+2026-08-13,Swing,1,Highest Priority,BHEL,BUY,94,421.34,398.97,466.09,2.0,413.3,+₹14.33 / +3.47%,+₹52.79 / +12.77%,Active After Trigger,,,,,11,Top 3 Swing scanner pick
+2026-08-13,Swing,3,Highest Priority,HDFCAMC,SELL,94,2473.24,2650.42,2118.9,2.0,2614.5,+₹35.92 / +1.37%,+₹495.60 / +18.96%,Active After Trigger,,,,,11,Top 3 Swing scanner pick
+2026-08-13,Swing,1,Highest Priority,DIXON,BUY,94,14093.13,13533.69,15212.01,2.0,14583.0,+₹1049.31 / +7.20%,+₹629.01 / +4.31%,Active After Trigger,,,,,11,Top 3 Swing scanner pick
+2026-08-13,Swing,2,Highest Priority,HDFCAMC,SELL,94,2473.24,2650.42,2118.9,2.0,2614.5,+₹35.92 / +1.37%,+₹495.60 / +18.96%,Active After Trigger,,,,,11,Top 3 Swing scanner pick
+2026-08-13,Swing,3,Highest Priority,M&M,BUY,94,3446.88,3233.43,3873.77,2.0,3416.7,+₹183.27 / +5.36%,+₹457.07 / +13.38%,Active After Trigger,,,,,11,Top 3 Swing scanner pick
 2026-08-13,Swing,2,Highest Priority,DIXON,BUY,92,14051.05,13507.92,15137.3,2.0,14850.0,+₹1342.08 / +9.04%,+₹287.30 / +1.93%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
 2026-08-13,Swing,2,Highest Priority,GRASIM,BUY,94,3305.9,3074.86,3767.98,2.0,3308.0,+₹233.14 / +7.05%,+₹459.98 / +13.91%,Active After Trigger,,,,,10,Top 3 Swing scanner pick
 2026-08-13,Intraday,1,Highest Priority,MPHASIS,BUY,94,2534.06,2494.85,2612.47,2.0,2430.0,-₹64.85 / -2.67%,+₹182.47 / +7.51%,Stop Hit First,Stop,2026-08-17,Loss,-1.0,10,Top 3 Intraday scanner pick
