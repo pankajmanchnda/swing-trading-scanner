@@ -1,4 +1,7 @@
 Date,Mode,Rank,Priority,Stock,Signal,Conviction,Entry,Stop,Target,RR,Current Price,Stop Away,Target Away,Status,First Hit,Hit Date,Result,R,Days,Notes
+2026-08-26,Swing,1,Highest Priority,DIVISLAB,BUY,94,8761.99,8396.33,9493.32,2.0,8744.5,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
+2026-08-26,Swing,2,Highest Priority,GRASIM,BUY,94,3322.63,3191.11,3585.68,2.0,3288.0,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
+2026-08-26,Swing,3,Highest Priority,KOTAKBANK,BUY,94,402.85,385.99,436.59,2.0,401.6,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
 2026-08-26,Swing,1,Highest Priority,BANKBARODA,SELL,94,239.42,251.89,214.47,2.0,241.0,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
 2026-08-26,Swing,2,Highest Priority,COALINDIA,SELL,94,400.3,414.34,372.22,2.0,404.0,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
 2026-08-26,Swing,3,Highest Priority,CUMMINSIND,SELL,94,5139.7,5498.09,4422.92,2.0,5239.5,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
