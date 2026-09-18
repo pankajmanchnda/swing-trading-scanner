@@ -1,4 +1,6 @@
 Date,Mode,Rank,Priority,Stock,Signal,Conviction,Entry,Stop,Target,RR,Current Price,Stop Away,Target Away,Status,First Hit,Hit Date,Result,R,Days,Notes
+2026-09-18,Swing,2,Highest Priority,DMART,SELL,94,3672.64,3788.53,3440.86,2.0,3749.9,+₹38.63 / +1.03%,+₹309.04 / +8.24%,Pending Trigger,,,,,0,Top 3 Swing scanner pick
+2026-09-18,Swing,3,Highest Priority,HINDALCO,SELL,94,977.44,1035.08,862.16,2.0,986.5,+₹48.58 / +4.92%,+₹124.34 / +12.60%,Pending Trigger,,,,,0,Top 3 Swing scanner pick
 2026-09-18,Swing,1,Highest Priority,ASIANPAINT,SELL,94,2433.12,2559.9,2179.57,2.0,2451.3,+₹108.60 / +4.43%,+₹271.73 / +11.09%,Pending Trigger,,,,,0,Top 3 Swing scanner pick
 2026-09-18,Swing,2,Highest Priority,CUMMINSIND,SELL,94,4990.0,5251.27,4467.47,2.0,5099.5,+₹151.77 / +2.98%,+₹632.03 / +12.39%,Pending Trigger,,,,,0,Top 3 Swing scanner pick
 2026-09-18,Swing,1,Highest Priority,FEDERALBNK,SELL,94,324.9,347.78,279.14,2.0,332.75,+₹15.03 / +4.52%,+₹53.61 / +16.11%,Pending Trigger,,,,,0,Top 3 Swing scanner pick
@@ -117,7 +119,7 @@ Date,Mode,Rank,Priority,Stock,Signal,Conviction,Entry,Stop,Target,RR,Current Pri
 2026-09-05,Swing,1,Highest Priority,BPCL,BUY,94,322.59,306.32,355.13,2.0,314.0,+₹7.68 / +2.45%,+₹41.13 / +13.10%,Pending Trigger,,,,,13,Top 3 Swing scanner pick
 2026-09-05,Swing,2,Highest Priority,COLPAL,SELL,94,1841.31,1912.48,1698.97,2.0,1917.8,-₹5.32 / -0.28%,+₹218.83 / +11.41%,Stop Hit First,Stop,2026-09-18,Loss,-1,13,Top 3 Swing scanner pick
 2026-09-05,Swing,3,Highest Priority,DLF,BUY,94,690.73,649.27,773.65,2.0,644.35,-₹4.92 / -0.76%,+₹129.30 / +20.07%,Pending Trigger,,,,,13,Top 3 Swing scanner pick
-2026-09-04,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25758.38,26795.74,23683.65,2.0,27270.0,-₹474.26 / -1.74%,+₹3586.35 / +13.15%,Stop Hit First,Stop,2026-09-18,Loss,-1,14,Top 3 Swing scanner pick
+2026-09-04,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25758.38,26795.74,23683.65,2.0,27270.0,-₹474.26 / -1.74%,+₹3586.35 / +13.15%,Stop Hit First,Stop,2026-09-18,Loss,-1.0,14,Top 3 Swing scanner pick
 2026-09-04,Swing,2,Highest Priority,BANKBARODA,SELL,94,238.52,246.6,222.37,2.0,234.94,+₹11.66 / +4.96%,+₹12.57 / +5.35%,Active After Trigger,,,,,14,Top 3 Swing scanner pick
 2026-09-04,Swing,2,Highest Priority,IDFCFIRSTB,BUY,94,88.16,82.31,99.86,2.0,86.95,+₹4.64 / +5.34%,+₹12.91 / +14.85%,Pending Trigger,,,,,14,Top 3 Swing scanner pick
 2026-09-04,Swing,3,Highest Priority,BIOCON,SELL,92,397.75,422.49,348.27,2.0,382.05,+₹40.44 / +10.59%,+₹33.78 / +8.84%,Active After Trigger,,,,,14,Top 3 Swing scanner pick
