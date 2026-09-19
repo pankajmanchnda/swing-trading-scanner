@@ -107,7 +107,7 @@ Date,Mode,Rank,Priority,Stock,Signal,Conviction,Entry,Stop,Target,RR,Current Pri
 2026-09-07,Swing,3,Highest Priority,CIPLA,SELL,94,1374.05,1438.56,1245.01,2.0,1394.5,+₹44.06 / +3.16%,+₹149.49 / +10.72%,Active After Trigger,,,,,12,Top 3 Swing scanner pick
 2026-09-07,Intraday,1,Highest Priority,DIXON,SELL,94,14075.79,14375.21,13476.96,2.0,13005.0,+₹1370.21 / +10.54%,-₹471.96 / -3.63%,Target Hit First,Target,2026-09-10,Win,2.0,12,Top 3 Intraday scanner pick
 2026-09-07,Intraday,2,Highest Priority,SHREECEM,SELL,94,23318.27,23658.64,22637.52,2.0,22600.0,+₹1058.64 / +4.68%,-₹37.52 / -0.17%,Target Hit First,Target,2026-09-11,Win,2.0,12,Top 3 Intraday scanner pick
-2026-09-07,Swing,1,Highest Priority,SBILIFE,SELL,94,1741.51,1802.14,1620.25,2.0,1766.9,+₹35.24 / +1.99%,+₹146.65 / +8.30%,Active After Trigger,,,,,12,Top 3 Swing scanner pick
+2026-09-07,Swing,1,Highest Priority,SBILIFE,SELL,94,1741.51,1802.14,1620.25,2.0,1731.0,+₹71.14 / +4.11%,+₹110.75 / +6.40%,Active After Trigger,,,,,12,Top 3 Swing scanner pick
 2026-09-07,Swing,2,Highest Priority,WIPRO,SELL,94,172.71,184.88,148.39,2.0,166.83,+₹18.05 / +10.82%,+₹18.44 / +11.05%,Active After Trigger,,,,,12,Top 3 Swing scanner pick
 2026-09-07,Swing,3,Highest Priority,SBIN,SELL,92,999.7,1061.64,875.81,2.0,996.2,+₹65.44 / +6.57%,+₹120.39 / +12.08%,Active After Trigger,,,,,12,Top 3 Swing scanner pick
 2026-09-07,Swing,1,Highest Priority,ABBOTINDIA,SELL,94,25758.38,26795.74,23683.65,2.0,26125.0,+₹670.74 / +2.57%,+₹2441.35 / +9.34%,Active After Trigger,,,,,12,Top 3 Swing scanner pick
