@@ -93,7 +93,7 @@ Date,Mode,Rank,Priority,Stock,Signal,Conviction,Entry,Stop,Target,RR,Current Pri
 2026-10-23,Swing,1,Highest Priority,SBIN,SELL,94,948.05,985.65,872.85,2.0,961.85,+₹23.80 / +2.47%,+₹89.00 / +9.25%,Active After Trigger,,,,,11,Top 3 Swing scanner pick
 2026-10-23,Swing,2,Highest Priority,ONGC,SELL,92,223.24,228.14,213.45,2.0,225.39,+₹2.75 / +1.22%,+₹11.94 / +5.30%,Active After Trigger,,,,,11,Top 3 Swing scanner pick
 2026-10-23,Swing,3,Highest Priority,TATACONSUM,SELL,92,947.0,1013.15,814.72,2.0,1025.9,-₹12.75 / -1.24%,+₹211.18 / +20.58%,Stop Hit First,Stop,2026-10-29,Loss,-1,11,Top 3 Swing scanner pick
-2026-10-23,Intraday,1,Highest Priority,ABBOTINDIA,SELL,94,24820.26,25055.46,24349.85,2.0,25820.0,-₹764.54 / -2.96%,+₹1470.15 / +5.69%,Stop Hit First,Stop,2026-10-23,Loss,-1,11,Top 3 Intraday scanner pick
+2026-10-23,Intraday,1,Highest Priority,ABBOTINDIA,SELL,94,24820.26,25055.46,24349.85,2.0,25895.0,-₹839.54 / -3.24%,+₹1545.15 / +5.97%,Stop Hit First,Stop,2026-10-23,Loss,-1,11,Top 3 Intraday scanner pick
 2026-10-23,Swing,1,Highest Priority,BAJAJFINSV,SELL,94,1659.97,1763.18,1453.56,2.0,1667.6,+₹95.58 / +5.73%,+₹214.04 / +12.84%,Active After Trigger,,,,,11,Top 3 Swing scanner pick
 2026-10-23,Swing,2,Highest Priority,BOSCHLTD,SELL,94,43807.21,46024.29,39373.06,2.0,47200.0,-₹1175.71 / -2.49%,+₹7826.94 / +16.58%,Stop Hit First,Stop,2026-10-28,Loss,-1,11,Top 3 Swing scanner pick
 2026-10-23,Swing,3,Highest Priority,BRITANNIA,SELL,94,4640.4,4976.35,3968.51,2.0,4640.0,+₹336.35 / +7.25%,+₹671.49 / +14.47%,Active After Trigger,,,,,11,Top 3 Swing scanner pick
