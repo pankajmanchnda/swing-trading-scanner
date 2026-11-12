@@ -1,4 +1,10 @@
 Date,Mode,Rank,Priority,Stock,Signal,Conviction,Entry,Stop,Target,RR,Current Price,Stop Away,Target Away,Status,First Hit,Hit Date,Result,R,Days,Notes
+2026-11-12,Swing,1,Highest Priority,BAJAJ-AUTO,BUY,94,11000.96,10212.82,12577.23,2.0,10979.0,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
+2026-11-12,Swing,2,Highest Priority,EICHERMOT,BUY,94,7676.82,7112.7,8805.07,2.0,7629.0,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
+2026-11-12,Swing,3,Highest Priority,HCLTECH,BUY,94,1434.86,1380.2,1544.19,2.0,1407.0,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
+2026-11-12,Intraday,1,Highest Priority,BHARTIARTL,BUY,94,2113.22,2078.75,2182.15,2.0,2109.0,,,Pending Trigger,,,,,0,Top 3 Intraday scanner pick
+2026-11-12,Intraday,2,Highest Priority,GRASIM,SELL,94,3133.72,3184.55,3032.07,2.0,3156.7,,,Pending Trigger,,,,,0,Top 3 Intraday scanner pick
+2026-11-12,Intraday,3,Highest Priority,M&M,BUY,94,3471.93,3409.24,3597.31,2.0,3465.0,,,Pending Trigger,,,,,0,Top 3 Intraday scanner pick
 2026-11-12,Swing,1,Highest Priority,WIPRO,BUY,92,202.4,190.28,226.65,2.0,197.99,,,Pending Trigger,,,,,0,Top 3 Swing scanner pick
 2026-11-12,Intraday,1,Highest Priority,RELIANCE,BUY,94,1327.65,1306.6,1369.76,2.0,1324.4,,,Pending Trigger,,,,,0,Top 3 Intraday scanner pick
 2026-11-11,Swing,1,Highest Priority,WIPRO,BUY,92,202.4,190.28,226.65,2.0,197.99,+₹7.71 / +3.89%,+₹28.66 / +14.48%,Pending Trigger,,,,,1,Top 3 Swing scanner pick
@@ -114,11 +120,11 @@ Date,Mode,Rank,Priority,Stock,Signal,Conviction,Entry,Stop,Target,RR,Current Pri
 2026-10-27,Swing,2,Highest Priority,ASIANPAINT,SELL,94,2264.16,2404.7,1983.09,2.0,2509.3,-₹104.60 / -4.17%,+₹526.21 / +20.97%,Stop Hit First,Stop,2026-11-03,Loss,-1,16,Top 3 Swing scanner pick
 2026-10-27,Swing,3,Highest Priority,AUROPHARMA,SELL,94,1594.01,1712.52,1356.98,2.0,1855.3,-₹142.78 / -7.70%,+₹498.32 / +26.86%,Pending Trigger,,,,,16,Top 3 Swing scanner pick
 2026-10-27,Intraday,1,Highest Priority,BAJAJ-AUTO,BUY,94,10410.78,10198.89,10834.57,2.0,11040.0,+₹841.11 / +7.62%,-₹205.43 / -1.86%,Target Hit First,Target,2026-11-06,Win,2.0,16,Top 3 Intraday scanner pick
-2026-10-27,Intraday,2,Highest Priority,INFY,BUY,94,1165.33,1149.49,1197.0,2.0,1155.0,+₹5.51 / +0.48%,+₹42.00 / +3.64%,Stop Hit First,Stop,2026-10-28,Loss,-1,16,Top 3 Intraday scanner pick
+2026-10-27,Intraday,2,Highest Priority,INFY,BUY,94,1165.33,1149.49,1197.0,2.0,1155.0,+₹5.51 / +0.48%,+₹42.00 / +3.64%,Stop Hit First,Stop,2026-10-28,Loss,-1.0,16,Top 3 Intraday scanner pick
 2026-10-27,Intraday,3,Highest Priority,IOC,BUY,94,132.01,130.35,135.34,2.0,148.38,+₹18.03 / +12.15%,-₹13.04 / -8.79%,Ambiguous Entry Candle,Entry/exit same candle,2026-11-02,Ambiguous,,16,Top 3 Intraday scanner pick
-2026-10-27,Intraday,1,Highest Priority,POLYCAB,BUY,94,7770.51,7644.46,8022.62,2.0,7948.0,+₹303.54 / +3.82%,+₹74.62 / +0.94%,Stop Hit First,Stop,2026-10-30,Loss,-1,16,Top 3 Intraday scanner pick
-2026-10-27,Swing,1,Highest Priority,AMBUJACEM,SELL,94,351.84,373.11,309.32,2.0,389.55,-₹16.44 / -4.22%,+₹80.23 / +20.60%,Stop Hit First,Stop,2026-11-03,Loss,-1,16,Top 3 Swing scanner pick
-2026-10-27,Swing,2,Highest Priority,ASHOKLEY,SELL,94,141.74,150.95,123.3,2.0,174.86,-₹23.91 / -13.67%,+₹51.56 / +29.49%,Stop Hit First,Stop,2026-11-03,Loss,-1,16,Top 3 Swing scanner pick
+2026-10-27,Intraday,1,Highest Priority,POLYCAB,BUY,94,7770.51,7644.46,8022.62,2.0,7948.0,+₹303.54 / +3.82%,+₹74.62 / +0.94%,Stop Hit First,Stop,2026-10-30,Loss,-1.0,16,Top 3 Intraday scanner pick
+2026-10-27,Swing,1,Highest Priority,AMBUJACEM,SELL,94,351.84,373.11,309.32,2.0,389.55,-₹16.44 / -4.22%,+₹80.23 / +20.60%,Stop Hit First,Stop,2026-11-03,Loss,-1.0,16,Top 3 Swing scanner pick
+2026-10-27,Swing,2,Highest Priority,ASHOKLEY,SELL,94,141.74,150.95,123.3,2.0,174.86,-₹23.91 / -13.67%,+₹51.56 / +29.49%,Stop Hit First,Stop,2026-11-03,Loss,-1.0,16,Top 3 Swing scanner pick
 2026-10-27,Swing,3,Highest Priority,ASIANPAINT,SELL,94,2255.48,2404.75,1956.95,2.0,2550.3,-₹145.55 / -5.71%,+₹593.35 / +23.27%,Stop Hit First,Stop,2026-11-03,Loss,-1.0,15,Top 3 Swing scanner pick
 2026-10-26,Swing,2,Highest Priority,MARUTI,SELL,94,11079.8,11732.08,9775.23,2.0,13185.0,-₹1452.92 / -11.02%,+₹3409.77 / +25.86%,Pending Trigger,,,,,16,Top 3 Swing scanner pick
 2026-10-26,Swing,1,Highest Priority,GODREJCP,SELL,94,825.35,879.93,716.18,2.0,850.65,+₹29.28 / +3.44%,+₹134.47 / +15.81%,Stop Hit First,Stop,2026-11-05,Loss,-1.0,16,Top 3 Swing scanner pick
